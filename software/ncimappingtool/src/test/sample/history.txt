@@ -1,0 +1,54 @@
+b&cell&lymphoma|b&cell non-hodgkin lymphoma
+benign&neoplasm&bone|benign bone neoplasm
+benign&neoplasm&bronchus|benign respiratory tract neoplasm
+carcinoid&tumor|atypical carcinoid tumor
+carcinoma&situ|carcinoma in situ
+history&cancer|individual cancer history
+history&leukaemia|individual cancer history
+history&lymphomas|individual cancer history
+history&lymphoma|individual cancer history
+history&neoplasm|individual cancer history
+history&tumor|individual cancer history
+kaposi&sarcoma|kaposi sarcoma
+leukaemias|leukaemia
+malignant&melanoma|melanoma
+monocytic&leukaemia|acute monocytic leukemia
+neoplasm&adrenal|malignant adrenal gland neoplasm
+neoplasm&bladder|malignant bladder neoplasm
+neoplasm&bones|malignant bone neoplasm
+neoplasm&bone|malignant bone neoplasm
+neoplasm&brain|malignant brain neoplasm
+neoplasm&breast|female breast carcinoma
+neoplasm&bronchus|malignant respiratory tract neoplasm
+neoplasm&caecum|malignant cecum neoplasm
+neoplasm&carcinoid|malignant carcinoid neoplasm
+neoplasm&colon|malignant colon neoplasm
+neoplasm&epiglottis|malignant epiglottis neoplasm
+neoplasm&fallopian&tube|malignant fallopian tube neoplasm
+neoplasm&hepatic flexure|malignant colon neoplasm
+neoplasm&ileum|malignant small intestinal neoplasm
+neoplasm&lip|malignant lip neoplasm
+neoplasm&liver|liver angiosarcoma
+neoplasm&mediastinum|malignant mediastinal neoplasm
+neoplasm&melanoma|melanoma
+neoplasm&mouth|malignant oral cavity neoplasm
+neoplasm&mucosa|malignant buccal mucosa neoplasm
+neoplasm&oesophagus|malignant esophageal neoplasm
+neoplasm&oropharynx|malignant oropharyngeal neoplasm
+neoplasm&ovarian|malignant ovarian neoplasm
+neoplasm&ovary|malignant ovarian neoplasm
+neoplasm&pancreas|malignant pancreatic neoplasm
+neoplasm&paraganglia|malignant paraganglioma
+neoplasm&retina|malignant retinal neoplasm
+neoplasm&skin|malignant skin neoplasm
+neoplasm&splenic flexure|malignant colon neoplasm
+neoplasm&stomach|malignant gastric neoplasm
+neoplasm&testis|malignant testicular neoplasm
+neoplasm&tissue|malignant soft tissue neoplasm
+neoplasm&tongue|malignant tongue neoplasm
+neoplasm&tonsil|malignant tonsillar neoplasm
+neoplasm&ureter|malignant ureter neoplasm
+neuroendocrine&tumors|metastatic digestive system neuroendocrine tumor g1
+non-hodgkin&lymphoma|non-hodgkin lymphoma
+skin&basal&cell carcinoma|skin basal cell carcinoma
+t&cell&lymphoma|mature t-cell and nk-cell non-hodgkin lymphoma

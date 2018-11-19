@@ -1,0 +1,2012 @@
+DOID:162	cancer
+DOID:0050687	cell type cancer
+DOID:2426	gangliocytoma
+DOID:3350	mesenchymal cell neoplasm
+DOID:6755	amyloid tumor
+DOID:8303	congenital granular cell tumor
+DOID:6193	epithelioid sarcoma
+DOID:6988	peripheral epithelioid sarcoma
+DOID:8282	adult epithelioid sarcoma
+DOID:7095	pediatric epithelioid sarcoma
+DOID:7492	central epithelioid sarcoma
+DOID:7491	vulvar proximal-type epithelioid sarcoma
+DOID:2685	ossifying fibromyxoid tumor
+DOID:8305	nonossifying fibromyxoid tumor
+DOID:2647	parachordoma
+DOID:8043	chest wall parachordoma
+DOID:0050905	inflammatory myofibroblastic tumor
+DOID:1909	melanoma
+DOID:4360	epithelioid cell melanoma
+DOID:4359	amelanotic melanoma
+DOID:3162	malignant spindle cell melanoma
+DOID:6846	familial melanoma
+DOID:0050929	mucosal melanoma
+DOID:7206	melanomatosis
+DOID:2994	germ cell cancer
+DOID:6053	pediatric germ cell cancer
+DOID:8149	malignant childhood germ cell neoplasm
+DOID:6082	pediatric testicular germ cell tumor
+DOID:6162	childhood embryonal testis carcinoma
+DOID:6160	childhood choriocarcinoma of the testis
+DOID:6161	childhood testicular mixed germ cell tumor
+DOID:6474	childhood teratocarcinoma of the testis
+DOID:3304	germinoma
+DOID:3095	germ cell and embryonal cancer
+DOID:4085	trophoblastic neoplasm
+DOID:4084	testicular trophoblastic tumor
+DOID:5551	choriocarcinoma of the testis
+DOID:6693	testicular monophasic choriocarcinoma
+DOID:3593	epithelioid trophoblastic tumor
+DOID:3590	gestational trophoblastic neoplasm
+DOID:3305	teratocarcinoma
+DOID:3307	teratoma
+DOID:5566	mature teratoma
+DOID:6857	pineal region mature teratoma
+DOID:8118	mature gastric teratoma
+DOID:6231	mature teratoma of the ovary
+DOID:6229	childhood mature teratoma of the ovary
+DOID:6314	ovarian fetiform teratoma
+DOID:5118	ovarian cystic teratoma
+DOID:6315	ovarian solid teratoma
+DOID:5563	malignant teratoma
+DOID:6331	immature teratoma of ovary
+DOID:7037	childhood immature teratoma of ovary
+DOID:7202	intermediate malignant teratoma
+DOID:5207	monodermal teratoma
+DOID:2641	ovarian germ cell monodermal and highly specialized teratoma
+DOID:2640	struma ovarii
+DOID:5209	benign struma ovarii
+DOID:5208	malignant struma ovarii
+DOID:5565	adult teratoma
+DOID:7079	adult cystic teratoma
+DOID:5567	ovarian germ cell teratoma
+DOID:6232	ovarian biphasic or triphasic teratoma
+DOID:6230	childhood teratoma of the ovary
+DOID:2660	cystic teratoma
+DOID:2658	dermoid cyst
+DOID:5117	dermoid cyst of ovary
+DOID:13691	dermoid cyst of skin
+DOID:3306	mixed germ cell cancer
+DOID:4743	mixed testicular germ cell tumor
+DOID:5936	ovarian mixed germ cell neoplasm
+DOID:0050907	mixed extragonadal germ cell cancer
+DOID:688	embryonal cancer
+DOID:4766	embryoma
+DOID:3308	embryonal carcinoma
+DOID:5681	ovarian embryonal carcinoma
+DOID:8036	childhood ovarian embryonal carcinoma
+DOID:5680	embryonal testis carcinoma
+DOID:8275	intratubular embryonal carcinoma
+DOID:4441	dysgerminoma
+DOID:5511	dysgerminoma of ovary
+DOID:7340	pediatric ovarian dysgerminoma
+DOID:4717	extragonadal germ cell cancer
+DOID:5677	extragonadal nonseminomatous germ cell tumor
+DOID:4440	seminoma
+DOID:5834	spermatocytoma
+DOID:7891	testicular spermatocytic seminoma
+DOID:5838	extragonadal seminoma
+DOID:1911	endodermal sinus tumor
+DOID:5342	childhood endodermal sinus tumor
+DOID:5348	adult endodermal sinus tumor
+DOID:154	mixed cell type cancer
+DOID:2678	adult mesoblastic nephroma
+DOID:2996	mixed germ cell-sex cord neoplasm
+DOID:4236	carcinosarcoma
+DOID:2609	adenomyoma
+DOID:4994	adenomyoma of uterine corpus
+DOID:7878	uterine corpus atypical polypoid adenomyoma
+DOID:4993	atypical polypoid adenomyoma
+DOID:8179	cervical atypical polypoid adenomyoma
+DOID:4995	cervical adenomyoma
+DOID:8178	endometrial type cervical adenomyoma
+DOID:8177	endocervical type cervical adenomyoma
+DOID:1974	adenosarcoma
+DOID:4113	uterine corpus adenosarcoma
+DOID:4422	malignant adenofibroma
+DOID:7281	uterine corpus adenocarcinofibroma
+DOID:6278	ovarian mucinous malignant adenofibroma
+DOID:5088	mixed epithelial stromal tumour
+DOID:1790	malignant mesothelioma
+DOID:4489	malignant epithelial mesothelioma
+DOID:1788	peritoneal mesothelioma
+DOID:4486	malignant biphasic mesothelioma
+DOID:4488	sarcomatoid mesothelioma
+DOID:0070003	blastoma
+DOID:305	carcinoma
+DOID:4838	myoepithelial carcinoma
+DOID:3113	papillary carcinoma
+DOID:2671	transitional cell carcinoma
+DOID:4014	sarcomatoid transitional cell carcinoma
+DOID:4012	papillary transitional carcinoma
+DOID:0050685	small cell carcinoma
+DOID:3025	acinar cell carcinoma
+DOID:1800	neuroendocrine carcinoma
+DOID:4552	large cell carcinoma
+DOID:1749	squamous cell carcinoma
+DOID:5524	adenoid squamous cell carcinoma
+DOID:3737	verrucous carcinoma
+DOID:4385	papillary squamous carcinoma
+DOID:5521	keratinizing squamous cell carcinoma
+DOID:5522	basaloid squamous cell carcinoma
+DOID:4830	adenosquamous carcinoma
+DOID:4015	spindle cell carcinoma
+DOID:5662	pleomorphic carcinoma
+DOID:299	adenocarcinoma
+DOID:4917	villous adenocarcinoma
+DOID:3030	mucinous adenocarcinoma
+DOID:4468	clear cell adenocarcinoma
+DOID:4024	scirrhous adenocarcinoma
+DOID:3112	papillary adenocarcinoma
+DOID:2632	papillary serous adenocarcinoma
+DOID:3111	cystadenocarcinoma
+DOID:3603	mucinous cystadenocarcinoma
+DOID:3114	serous cystadenocarcinoma
+DOID:3110	papillary cystadenocarcinoma
+DOID:4929	tubular adenocarcinoma
+DOID:3493	signet ring cell adenocarcinoma
+DOID:5660	lymphoepithelioma-like carcinoma
+DOID:4903	granular cell carcinoma
+DOID:3070	malignant glioma
+DOID:3069	astrocytoma
+DOID:4856	gliofibroma
+DOID:7305	astroblastoma
+DOID:3068	glioblastoma multiforme
+DOID:0050805	glioblastoma mesenchymal subtype
+DOID:0050804	glioblastoma proneural subtype
+DOID:0050803	glioblastoma classical subtype
+DOID:3074	giant cell glioblastoma
+DOID:3071	gliosarcoma
+DOID:0050806	glioblastoma neural subtype
+DOID:7008	protoplasmic astrocytoma
+DOID:3076	adult astrocytic tumour
+DOID:7656	adult infiltrating astrocytic neoplasm
+DOID:7005	gemistocytic astrocytoma
+DOID:3079	juvenile astrocytoma
+DOID:3078	grade III astrocytoma
+DOID:4845	pilomyxoid astrocytoma
+DOID:4852	pleomorphic xanthoastrocytoma
+DOID:4851	pilocytic astrocytoma
+DOID:6812	childhood pilocytic astrocytoma
+DOID:6811	juvenile pilocytic astrocytoma
+DOID:6726	fibrillary astrocytoma
+DOID:3181	oligodendroglioma
+DOID:3186	adult oligodendroglioma
+DOID:3183	childhood oligodendroglioma
+DOID:3774	chordoid glioma
+DOID:5076	mixed glioma
+DOID:7907	mixed astrocytoma-ependymoma
+DOID:7817	mixed astrocytoma-ependymoma-oligodendroglioma
+DOID:7912	mixed oligodendroglioma-astrocytoma
+DOID:5074	malignant ependymoma
+DOID:5890	malignant adult ependymoma
+DOID:5509	pediatric ependymoma
+DOID:1115	sarcoma
+DOID:355	mast-cell sarcoma
+DOID:4233	clear cell sarcoma
+DOID:4235	spindle cell sarcoma
+DOID:7615	sarcomatosis
+DOID:0001816	angiosarcoma
+DOID:4512	conventional angiosarcoma
+DOID:4505	pediatric angiosarcoma
+DOID:4513	gallbladder angiosarcoma
+DOID:4525	mediastinum angiosarcoma
+DOID:4522	superior vena cava angiosarcoma
+DOID:4527	ovarian angiosarcoma
+DOID:268	liver angiosarcoma
+DOID:4524	prostate angiosarcoma
+DOID:265	spleen angiosarcoma
+DOID:0050686	organ system cancer
+DOID:11934	head and neck cancer
+DOID:1542	head and neck carcinoma
+DOID:5520	head and neck squamous cell carcinoma
+DOID:5093	thoracic cancer
+DOID:5559	mediastinal cancer
+DOID:5568	mediastinum teratoma
+DOID:6249	mediastinum seminoma
+DOID:4050	mediastinum sarcoma
+DOID:5292	mediastinum leiomyosarcoma
+DOID:6209	malignant mediastinum hemangiopericytoma
+DOID:6208	mediastinal osteogenic sarcoma
+DOID:5488	mediastinum synovial sarcoma
+DOID:4049	mediastinum rhabdomyosarcoma
+DOID:5713	mediastinum liposarcoma
+DOID:5560	mediastinal mesenchymal tumor
+DOID:7077	malignant melanocytic peripheral nerve sheath tumor of mediastinum
+DOID:4691	malignant mediastinal neurogenic neoplasm
+DOID:10661	mediastinum ganglioneuroblastoma
+DOID:4690	childhood mediastinal neurogenic tumor
+DOID:10660	mediastinum neuroblastoma
+DOID:6175	mediastinal neurilemmoma
+DOID:6484	mediastinal melanocytic neurilemmoma
+DOID:5046	mediastinal granular cell myoblastoma
+DOID:12064	mediastinum neurofibroma
+DOID:6868	mediastinal malignant lymphoma
+DOID:6867	mediastinal gray zone lymphoma
+DOID:436	posterior mediastinum cancer
+DOID:6758	chest wall lymphoma
+DOID:1612	breast cancer
+DOID:3016	breast malignant phyllodes tumor
+DOID:7983	breast malignant eccrine spiradenoma
+DOID:0060081	triple-receptor negative breast cancer
+DOID:0060080	Her2-receptor negative breast cancer
+DOID:1614	male breast cancer
+DOID:0050671	female breast cancer
+DOID:1647	female breast upper-inner quadrant cancer
+DOID:13972	female breast lower-outer quadrant cancer
+DOID:1649	female breast lower-inner quadrant cancer
+DOID:11889	female breast nipple and areola cancer
+DOID:13799	female breast central part cancer
+DOID:9773	female breast upper-outer quadrant cancer
+DOID:1650	female breast axillary tail cancer
+DOID:3004	breast myoepithelial neoplasm
+DOID:7521	breast myoepitheliosis
+DOID:8068	intraductal breast myoepitheliosis
+DOID:7520	periductal breast myoepitheliosis
+DOID:1642	breast adenomyoepithelioma
+DOID:6657	breast large cell neuroendocrine carcinoma
+DOID:3011	breast granular cell tumor
+DOID:5826	breast lymphoma
+DOID:0060078	progesterone-receptor negative breast cancer
+DOID:4364	malignant breast melanoma
+DOID:3017	breast sarcoma
+DOID:6001	breast fibrosarcoma
+DOID:5285	breast leiomyosarcoma
+DOID:7787	breast osteosarcoma
+DOID:4511	breast angiosarcoma
+DOID:5701	breast liposarcoma
+DOID:5370	breast hemangiopericytoma
+DOID:4060	breast rhabdomyosarcoma
+DOID:3459	breast carcinoma
+DOID:3007	breast ductal carcinoma
+DOID:3008	invasive ductal carcinoma
+DOID:5050	ehrlich tumor carcinoma
+DOID:6776	breast myoepithelial carcinoma
+DOID:6741	bilateral breast cancer
+DOID:6742	synchronous bilateral breast carcinoma
+DOID:7076	lipid-rich breast carcinoma
+DOID:6629	nipple carcinoma
+DOID:7953	nipple duct carcinoma
+DOID:7578	breast scirrhous carcinoma
+DOID:3458	breast adenocarcinoma
+DOID:6585	oncocytic breast carcinoma
+DOID:5743	acinic cell breast carcinoma
+DOID:6581	breast apocrine carcinoma
+DOID:3503	breast signet ring cell adenocarcinoma
+DOID:3443	mammary Paget's disease
+DOID:5310	glycogen-rich clear cell breast carcinoma
+DOID:3610	breast mucinous carcinoma
+DOID:8130	breast columnar cell mucinous carcinoma
+DOID:3609	breast mucinous cystadenocarcinoma
+DOID:6587	invasive tubular breast carcinoma
+DOID:4922	breast secretory carcinoma
+DOID:7537	breast cystic hypersecretory carcinoma
+DOID:5605	breast medullary carcinoma
+DOID:6263	inflammatory breast carcinoma
+DOID:4877	breast adenoid cystic carcinoma
+DOID:8029	sporadic breast cancer
+DOID:5760	sebaceous breast carcinoma
+DOID:7843	female breast carcinoma
+DOID:4680	breast metaplastic carcinoma
+DOID:7541	mixed epithelial/mesenchymal metaplastic breast carcinoma
+DOID:4679	breast mucoepidermoid carcinoma
+DOID:5514	breast squamous cell carcinoma
+DOID:7460	spindle cell variant squamous cell breast carcinoma
+DOID:7459	acantholytic variant squamous cell breast carcinoma
+DOID:7461	large cell keratinizing variant squamous cell breast carcinoma
+DOID:5623	adenosquamous breast carcinoma
+DOID:5658	lipid-rich carcinoma
+DOID:0050938	breast lobular carcinoma
+DOID:3457	invasive lobular carcinoma
+DOID:5592	breast papillary carcinoma
+DOID:5675	cribriform carcinoma
+DOID:0060075	estrogen-receptor positive breast cancer
+DOID:0060079	Her2-receptor positive breast cancer
+DOID:0060077	progesterone-receptor positive breast cancer
+DOID:0060076	estrogen-receptor negative breast cancer
+DOID:0050615	respiratory system cancer
+DOID:1325	bronchus cancer
+DOID:0050916	bronchus mucoepidermoid carcinoma
+DOID:3904	bronchus carcinoma
+DOID:1324	lung cancer
+DOID:5410	pulmonary neuroendocrine tumor
+DOID:7081	lung mixed small cell and squamous cell carcinoma
+DOID:3924	main bronchus cancer
+DOID:2784	lung sarcoma
+DOID:5265	lung leiomyosarcoma
+DOID:4765	pulmonary blastoma
+DOID:4768	epithelial predominant pulmonary blastoma
+DOID:4769	pleuropulmonary blastoma
+DOID:4767	classic pulmonary blastoma
+DOID:6760	lung lymphoma
+DOID:0050870	in situ pulmonary adenocarcinoma
+DOID:5764	lung meningioma
+DOID:3905	lung carcinoma
+DOID:5409	lung small cell carcinoma
+DOID:0050875	small cell neuroendocrine carcinoma
+DOID:5411	lung oat cell carcinoma
+DOID:5421	lung combined type small cell carcinoma
+DOID:0050917	lung combined type small cell adenocarcinoma
+DOID:5414	lung occult small cell carcinoma
+DOID:8207	hilar lung carcinoma
+DOID:0050932	lung mucoepidermoid carcinoma
+DOID:4872	lung adenoid cystic carcinoma
+DOID:7596	asbestos-related lung carcinoma
+DOID:3908	non-small cell lung carcinoma
+DOID:4556	lung large cell carcinoma
+DOID:6658	pulmonary large cell neuroendocrine carcinoma
+DOID:7207	lung combined large cell neuroendocrine carcinoma
+DOID:7480	large cell carcinoma with rhabdoid phenotype
+DOID:5583	lung giant cell carcinoma
+DOID:7169	lung occult large cell carcinoma
+DOID:0050872	large cell neuroendocrine carcinoma
+DOID:3907	lung squamous cell carcinoma
+DOID:6510	lung occult squamous cell carcinoma
+DOID:7045	basaloid lung carcinoma
+DOID:3910	lung adenocarcinoma
+DOID:7168	lung occult adenocarcinoma
+DOID:5588	lung papillary adenocarcinoma
+DOID:7267	lung clear cell carcinoma
+DOID:3909	bronchogenic lung adenocarcinoma
+DOID:6482	lung acinar adenocarcinoma
+DOID:4926	bronchiolo-alveolar adenocarcinoma
+DOID:4829	adenosquamous cell lung carcinoma
+DOID:8007	Pancoast tumor
+DOID:8208	lung superior sulcus carcinoma
+DOID:7696	lung hilum cancer
+DOID:2596	larynx cancer
+DOID:11472	subglottis cancer
+DOID:7764	subglottis carcinoma
+DOID:7585	subglottis squamous cell carcinoma
+DOID:7584	subglottis verrucous carcinoma
+DOID:13348	laryngeal cartilage cancer
+DOID:13476	supraglottis cancer
+DOID:7763	carcinoma of supraglottis
+DOID:7587	supraglottis squamous cell carcinoma
+DOID:7586	supraglottis verrucous carcinoma
+DOID:8133	epiglottis cancer
+DOID:2595	glottis cancer
+DOID:2599	glottis carcinoma
+DOID:7031	glottis squamous cell carcinoma
+DOID:7583	glottis verrucous carcinoma
+DOID:2600	laryngeal carcinoma
+DOID:4869	laryngeal adenoid cystic carcinoma
+DOID:2876	laryngeal squamous cell carcinoma
+DOID:3752	larynx verrucous carcinoma
+DOID:4688	laryngeal mucoepidermoid carcinoma
+DOID:7144	laryngeal small cell carcinoma
+DOID:2877	larynx sarcoma
+DOID:5696	larynx liposarcoma
+DOID:5288	larynx leiomyosarcoma
+DOID:10811	nasal cavity cancer
+DOID:4931	nasal cavity carcinoma
+DOID:8415	carcinoma arising in nasal papillomatosis
+DOID:4930	nasal cavity adenocarcinoma
+DOID:5515	nasal cavity squamous cell carcinoma
+DOID:10812	nasal cavity olfactory neuroblastoma
+DOID:10813	nasal cavity lymphoma
+DOID:0050619	paranasal sinus cancer
+DOID:1355	paranasal sinus lymphoma
+DOID:14546	sphenoidal sinus cancer
+DOID:14547	sphenoid sinus squamous cell carcinoma
+DOID:1360	frontal sinus cancer
+DOID:2441	frontal sinus squamous cell carcinoma
+DOID:1363	ethmoid sinus cancer
+DOID:2764	ethmoid sinus adenoid cystic carcinoma
+DOID:2766	ethmoid sinus adenocarcinoma
+DOID:2763	ethmoid sinus squamous cell carcinoma
+DOID:1362	paranasal sinus sarcoma
+DOID:1357	maxillary sinus cancer
+DOID:7198	maxillary sinus adenoid cystic carcinoma
+DOID:4003	Schneiderian carcinoma
+DOID:7910	maxillary sinus squamous cell carcinoma
+DOID:7684	maxillary sinus adenocarcinoma
+DOID:11920	tracheal cancer
+DOID:12001	tracheal lymphoma
+DOID:12002	trachea sarcoma
+DOID:4876	trachea carcinoma
+DOID:12003	trachea squamous cell carcinoma
+DOID:4875	trachea adenoid cystic carcinoma
+DOID:0050919	trachea mucoepidermoid carcinoma
+DOID:5875	retroperitoneal cancer
+DOID:12341	retroperitoneal sarcoma
+DOID:5284	retroperitoneal leiomyosarcoma
+DOID:12339	retroperitoneal lymphoma
+DOID:5874	retroperitoneal germ cell neoplasm
+DOID:12342	retroperitoneum carcinoma
+DOID:0050937	retroperitoneal neuroblastoma
+DOID:193	reproductive organ cancer
+DOID:192	sex cord-gonadal stromal tumor
+DOID:0050618	malignant Sertoli-Leydig cell tumor
+DOID:0050616	malignant Leydig cell tumor
+DOID:6021	malignant testicular Leydig cell tumor
+DOID:2999	granulosa cell tumor
+DOID:5331	testicular granulosa cell tumor
+DOID:8394	adult type testicular granulosa cell tumor
+DOID:6032	juvenile type testicular granulosa cell tumor
+DOID:0050617	malignant Sertoli cell tumor
+DOID:120	female reproductive organ cancer
+DOID:119	vaginal cancer
+DOID:138	vaginal squamous tumor
+DOID:137	vagina squamous papilloma
+DOID:5171	vaginal endometrial stromal tumor
+DOID:1901	vagina sarcoma
+DOID:5170	vaginal endometrial stromal sarcoma
+DOID:6788	vagina botryoid rhabdomyosarcoma
+DOID:6787	childhood vagina botryoid rhabdomyosarcoma
+DOID:6848	adult vagina botryoid rhabdomyosarcoma
+DOID:5283	vagina leiomyosarcoma
+DOID:134	vaginal glandular tumor
+DOID:133	vaginal mullerian papilloma
+DOID:0050918	vaginal carcinoma
+DOID:136	vaginal carcinosarcoma
+DOID:4117	vaginal adenosarcoma
+DOID:1910	vaginal yolk sac tumor
+DOID:14059	paraurethral gland cancer
+DOID:7284	skene gland carcinoma
+DOID:2021	placenta cancer
+DOID:3594	choriocarcinoma
+DOID:4320	non-gestational choriocarcinoma
+DOID:2025	gestational choriocarcinoma
+DOID:8187	gestational uterine corpus choriocarcinoma
+DOID:2024	placental choriocarcinoma
+DOID:3596	placental site trophoblastic tumor
+DOID:5550	choriocarcinoma of ovary
+DOID:8336	childhood choriocarcinoma of the ovary
+DOID:7591	gestational ovarian choriocarcinoma
+DOID:7665	non-gestational ovarian choriocarcinoma
+DOID:6634	adult central nervous system choriocarcinoma
+DOID:8188	uterine corpus choriocarcinoma
+DOID:3001	female reproductive endometrioid cancer
+DOID:2394	ovarian cancer
+DOID:2153	ovarian Wilms' cancer
+DOID:2143	ovarian malignant mesothelioma
+DOID:3002	ovary neuroendocrine neoplasm
+DOID:2146	ovary sarcoma
+DOID:4059	ovary rhabdomyosarcoma
+DOID:5697	liposarcoma of the ovary
+DOID:8023	myxoid liposarcoma of the ovary
+DOID:5263	ovary leiomyosarcoma
+DOID:5169	ovarian endometrioid stromal sarcoma
+DOID:0050928	ovarian melanoma
+DOID:2150	ovarian lymphoma
+DOID:2156	ovarian germ cell cancer
+DOID:6084	pediatric ovarian germ cell tumor
+DOID:2155	malignant ovarian germ cell neoplasm
+DOID:5351	ovarian primitive germ cell tumor
+DOID:6774	polyembryoma of the ovary
+DOID:5350	ovarian endodermal sinus tumor
+DOID:6511	glandular pattern ovarian yolk sac tumor
+DOID:6514	polyvesicular vitelline pattern ovarian yolk sac tumor
+DOID:6083	childhood ovarian endodermal sinus tumor
+DOID:6512	hepatoid pattern ovarian yolk sac tumor
+DOID:2145	malignant ovarian cyst
+DOID:2152	ovary epithelial cancer
+DOID:6901	familiar ovarian carcinoma
+DOID:4000	ovary transitional cell carcinoma
+DOID:6212	ovarian endometrial cancer
+DOID:6214	ovarian papillary neoplasm
+DOID:6407	ovarian surface papilloma
+DOID:6408	ovary papillary carcinoma
+DOID:6405	ovarian papillary cystadenoma
+DOID:6067	ovarian mucinous neoplasm
+DOID:2151	malignant ovarian surface epithelial-stromal neoplasm
+DOID:4217	malignant ovarian Brenner tumor
+DOID:6170	ovarian carcinosarcoma
+DOID:4115	ovarian mesodermal adenosarcoma
+DOID:6445	ovarian endometrioid malignant adenofibroma
+DOID:4001	ovarian carcinoma
+DOID:0050933	ovarian serous carcinoma
+DOID:0050934	ovarian clear cell carcinoma
+DOID:6898	ovary mixed epithelial carcinoma
+DOID:5531	ovarian squamous cell carcinoma
+DOID:3713	ovary adenocarcinoma
+DOID:3605	ovarian cystadenocarcinoma
+DOID:7438	ovarian clear cell cystadenocarcinoma
+DOID:5746	ovarian serous cystadenocarcinoma
+DOID:3604	ovarian mucinous cystadenocarcinoma
+DOID:5744	ovary serous adenocarcinoma
+DOID:5304	ovarian clear cell adenocarcinoma
+DOID:4894	rete ovarii adenocarcinoma
+DOID:3606	ovarian mucinous adenocarcinoma
+DOID:5828	endometrioid ovary carcinoma
+DOID:6179	ovarian small cell carcinoma
+DOID:7650	pulmonary type ovarian small cell carcinoma
+DOID:7651	hypercalcemic type ovarian small cell carcinoma
+DOID:4555	ovarian large-cell neuroendocrine carcinoma
+DOID:9597	Krukenberg carcinoma
+DOID:5532	ovarian squamous cell neoplasm
+DOID:6554	ovarian clear cell malignant adenofibroma
+DOID:363	uterine cancer
+DOID:1380	endometrial cancer
+DOID:5166	endometrial stromal tumor
+DOID:4226	endometrial stromal sarcoma
+DOID:2871	endometrial carcinoma
+DOID:5533	endometrial squamous cell carcinoma
+DOID:7139	endometrial small cell carcinoma
+DOID:4005	endometrial transitional cell carcinoma
+DOID:5631	endometrial adenosquamous carcinoma
+DOID:2870	endometrial adenocarcinoma
+DOID:7664	endometrial mixed adenocarcinoma
+DOID:6865	oxyphilic endometrial endometrioid adenocarcinoma
+DOID:7436	sarcomatoid uterine corpus endometrioid adenocarcinoma
+DOID:6777	villoglandular endometrial endometrioid adenocarcinoma
+DOID:3707	endometrial mucinous adenocarcinoma
+DOID:5299	endometrial clear cell adenocarcinoma
+DOID:7293	mucin-rich endometrial endometrioid adenocarcinoma
+DOID:7289	secretory uterine corpus endometrioid adenocarcinoma
+DOID:11747	uterine adnexa cancer
+DOID:11748	round ligament malignant neoplasm
+DOID:11746	parametrium malignant neoplasm
+DOID:10744	broad ligament malignant neoplasm
+DOID:5727	uterine ligament cancer
+DOID:7514	Wolffian adnexal neoplasm
+DOID:3700	uterine ligament adenocarcinoma
+DOID:5302	uterine ligament clear cell adenocarcinoma
+DOID:5747	uterine ligament serous adenocarcinoma
+DOID:3699	uterine ligament mucinous adenocarcinoma
+DOID:5829	uterine ligament endometrioid adenocarcinoma
+DOID:5726	uterine ligament papillary cystadenoma
+DOID:9460	uterine corpus cancer
+DOID:7437	uterus perivascular epithelioid cell tumor
+DOID:0050939	uterine corpus endometrial carcinoma
+DOID:4114	uterine body mixed cancer
+DOID:6171	uterine carcinosarcoma
+DOID:8302	mixed endometrial stromal and smooth muscle tumor
+DOID:5750	uterine corpus serous adenocarcinoma
+DOID:5165	uterine corpus sarcoma
+DOID:5289	uterus leiomyosarcoma
+DOID:6567	uterine corpus myxoid leiomyosarcoma
+DOID:6139	uterine corpus epithelioid leiomyosarcoma
+DOID:4227	uterine corpus endometrial stromal sarcoma
+DOID:9459	isthmus cancer
+DOID:1245	vulva cancer
+DOID:2076	vulvar glandular tumor
+DOID:2075	minor vestibular glands adenoma
+DOID:2068	Bartholin's gland neoplasm
+DOID:6518	Bartholin's gland adenomyoma
+DOID:5382	Bartholin's gland adenoma
+DOID:1243	labia minora cancer
+DOID:1293	labia minora carcinoma
+DOID:2072	vulvar squamous tumor
+DOID:2071	vulvar squamous papilloma
+DOID:6569	micropapillomatosis labialis
+DOID:6944	vulvar seborrheic keratosis
+DOID:6943	vulvar inverted follicular keratosis
+DOID:1294	vulva carcinoma
+DOID:7565	vulvar eccrine porocarcinoma
+DOID:7567	vulvar clear cell hidradenocarcinoma
+DOID:2101	vulva squamous cell carcinoma
+DOID:7409	vulvar non-keratinizing squamous cell carcinoma
+DOID:7048	vulvar basaloid squamous cell carcinoma
+DOID:7363	vulvar keratinizing squamous cell carcinoma
+DOID:6961	Bartholin's gland squamous cell carcinoma
+DOID:7408	vulvar keratoacanthoma-like carcinoma
+DOID:3740	vulva verrucous carcinoma
+DOID:3999	Bartholin's gland carcinoma
+DOID:7140	Bartholin's gland small cell carcinoma
+DOID:6316	Bartholin's gland adenocarcinoma
+DOID:3998	Bartholin's gland transitional cell carcinoma
+DOID:4879	Bartholin's gland adenoid cystic carcinoma
+DOID:5630	Bartholin's gland adenosquamous carcinoma
+DOID:4301	vulva basal cell carcinoma
+DOID:5761	vulvar sebaceous carcinoma
+DOID:13389	labia majora carcinoma
+DOID:2098	vulva adenocarcinoma
+DOID:2097	vulval Paget's disease
+DOID:6339	vulvar eccrine adenocarcinoma
+DOID:6448	vulvar apocrine adenocarcinoma
+DOID:2096	vulvar sarcoma
+DOID:5313	vulvar alveolar soft part sarcoma
+DOID:5286	vulvar leiomyosarcoma
+DOID:5711	vulvar liposarcoma
+DOID:6789	vulvar childhood botryoid-type embryonal rhabdomyosarcoma
+DOID:2401	clitoris cancer
+DOID:11905	labium majus cancer
+DOID:2093	vulvar melanoma
+DOID:4362	cervical cancer
+DOID:4442	cervical alveolar soft part sarcoma
+DOID:4413	cervix melanoma
+DOID:4521	cervix endometrial stromal tumor
+DOID:4520	cervical endometrial stromal sarcoma
+DOID:4112	cervical carcinosarcoma
+DOID:5190	cervical Wilms' tumor
+DOID:4111	cervical adenosarcoma
+DOID:2893	cervix carcinoma
+DOID:7519	endocervical carcinoma
+DOID:0050940	endocervical adenocarcinoma
+DOID:2892	exocervical carcinoma
+DOID:6659	cervical large cell neuroendocrine carcinoma
+DOID:3702	cervical adenocarcinoma
+DOID:5830	cervical endometrioid adenocarcinoma
+DOID:3701	cervical mucinous adenocarcinoma
+DOID:6101	signet ring cell variant cervical mucinous adenocarcinoma
+DOID:8339	intestinal variant cervical mucinous adenocarcinoma
+DOID:8340	endocervical type cervical mucinous adenocarcinoma
+DOID:6627	cervical adenoma malignum
+DOID:8338	villoglandular variant cervical mucinous adenocarcinoma
+DOID:5636	cervical adenosquamous carcinoma
+DOID:8361	glassy cell variant cervical adenosquamous carcinoma
+DOID:5752	cervical serous adenocarcinoma
+DOID:8307	early invasive cervical adenocarcinoma
+DOID:5303	cervical clear cell adenocarcinoma
+DOID:5368	Wolffian duct adenocarcinoma
+DOID:6740	cervix small cell carcinoma
+DOID:3744	cervical squamous cell carcinoma
+DOID:7483	cervical keratinizing squamous cell carcinoma
+DOID:7046	cervical basaloid squamous cell carcinoma
+DOID:8409	microinvasive cervical squamous cell carcinoma
+DOID:7598	cervical lymphoepithelioma-like carcinoma
+DOID:3743	cervical verrucous carcinoma
+DOID:7961	cervical non-keratinizing squamous cell carcinoma
+DOID:6428	cervical adenoid basal carcinoma
+DOID:4867	cervical adenoid cystic carcinoma
+DOID:1964	fallopian tube cancer
+DOID:1965	fallopian tube leiomyosarcoma
+DOID:1970	fallopian tube carcinosarcoma
+DOID:1973	fallopian tube adenosarcoma
+DOID:1963	fallopian tube carcinoma
+DOID:7266	familiar fallopian tube carcinoma
+DOID:4008	fallopian tube transitional cell carcinoma
+DOID:5540	fallopian tube squamous cell carcinoma
+DOID:3706	fallopian tube adenocarcinoma
+DOID:5831	fallopian tube endometrioid adenocarcinoma
+DOID:5598	fallopian tube serous adenocarcinoma
+DOID:5301	fallopian tube clear cell adenocarcinoma
+DOID:3704	fallopian tube mucinous adenocarcinoma
+DOID:5597	fallopian tube papillary adenocarcinoma
+DOID:8186	fallopian tube gestational choriocarcinoma
+DOID:5324	fallopian tube germ cell cancer
+DOID:5564	fallopian tube teratoma
+DOID:3856	male reproductive organ cancer
+DOID:6721	littre gland carcinoma
+DOID:5639	rete testis neoplasm
+DOID:14544	rete testis adenocarcinoma
+DOID:6483	rete testis adenoma
+DOID:14545	seminal vesicle adenocarcinoma
+DOID:7632	cowper gland carcinoma
+DOID:10283	prostate cancer
+DOID:10286	prostate carcinoma
+DOID:4868	prostate adenoid cystic carcinoma
+DOID:4011	prostate transitional cell carcinoma
+DOID:7141	prostate small cell carcinoma
+DOID:2526	prostate adenocarcinoma
+DOID:3504	prostate signet ring cell adenocarcinoma
+DOID:7246	lymphoepithelioma-like acinar prostate adenocarcinoma
+DOID:3024	prostatic acinar adenocarcinoma
+DOID:3703	prostate colloid adenocarcinoma
+DOID:10287	prostate squamous cell carcinoma
+DOID:5634	adenosquamous prostate carcinoma
+DOID:4054	prostate sarcoma
+DOID:3252	prostate rhabdomyosarcoma
+DOID:3251	prostate embryonal rhabdomyosarcoma
+DOID:7152	prostate stromal sarcoma
+DOID:5282	prostate leiomyosarcoma
+DOID:10290	prostate lymphoma
+DOID:10289	prostate malignant phyllodes tumor
+DOID:2992	prostate neuroendocrine neoplasm
+DOID:13169	spermatic cord cancer
+DOID:10366	epididymis cancer
+DOID:10368	epididymis adenocarcinoma
+DOID:2998	testicular cancer
+DOID:512	epididymal neoplasm
+DOID:5554	childhood neoplasm of the testis
+DOID:5557	testicular germ cell cancer
+DOID:4086	testicular germ cell tumor non-seminomatous
+DOID:5556	testicular malignant germ cell cancer
+DOID:5842	testis seminoma
+DOID:8358	pseudoglandular variant testicular seminoma
+DOID:6706	tubular variant testicular seminoma
+DOID:7269	cribriform variant testicular seminoma
+DOID:8042	testis polyembryoma
+DOID:7928	testis refractory cancer
+DOID:5345	testicular non-seminomatous germ cell cancer
+DOID:5344	testicular yolk sac tumor
+DOID:7930	glandular-alveolar pattern testicular yolk sac tumor
+DOID:8081	myxomatous pattern testicular yolk sac tumor
+DOID:7097	macrocystic pattern testicular yolk sac tumor
+DOID:8392	reticular pattern testicular yolk sac tumor
+DOID:7435	polyvesicular vitelline pattern testicular yolk sac tumor
+DOID:7360	solid pattern testicular yolk sac tumor
+DOID:8193	papillary pattern testicular yolk sac tumor
+DOID:8195	hepatoid pattern testicular yolk sac tumor
+DOID:7302	endodermal sinus pattern testicular yolk sac tumor
+DOID:8362	enteric pattern testicular yolk sac tumor
+DOID:4087	testicular pure germ cell tumor
+DOID:12253	testicular lymphoma
+DOID:4062	testis sarcoma
+DOID:4061	testis rhabdomyosarcoma
+DOID:12276	malignant tumor of undescended testis
+DOID:12286	testicular leukemia
+DOID:4739	testicular Brenner tumor
+DOID:518	scrotum neoplasm
+DOID:13160	scrotum melanoma
+DOID:3445	scrotal carcinoma
+DOID:3444	scrotum Paget's disease
+DOID:13159	scrotum squamous cell carcinoma
+DOID:4278	scrotum basal cell carcinoma
+DOID:11615	penile cancer
+DOID:3449	penis carcinoma
+DOID:5518	penis squamous cell carcinoma
+DOID:7047	penis basaloid carcinoma
+DOID:7958	sarcomatoid penile squamous cell carcinoma
+DOID:8009	penis mixed squamous cell carcinoma
+DOID:8013	penis papillary carcinoma
+DOID:5908	penis verrucous carcinoma
+DOID:5907	penis non-invasive verrucous carcinoma
+DOID:3448	penis Paget's disease
+DOID:4277	penis basal cell carcinoma
+DOID:11839	glans penis cancer
+DOID:11838	penis sarcoma
+DOID:0060122	integumentary system cancer
+DOID:4159	skin cancer
+DOID:13168	prepuce cancer
+DOID:8923	skin melanoma
+DOID:10047	nodular malignant melanoma
+DOID:10040	malignant eyelid melanoma
+DOID:10044	balloon cell malignant melanoma
+DOID:10054	skin amelanotic melanoma
+DOID:6367	acral lentiginous melanoma
+DOID:5042	malignant granular cell myoblastoma
+DOID:2095	sweat gland cancer
+DOID:4934	apocrine sweat gland cancer
+DOID:4933	apocrine adenocarcinoma
+DOID:6446	ceruminous carcinoma
+DOID:5667	sweat gland carcinoma
+DOID:4921	eccrine sweat gland cancer
+DOID:7566	eccrine porocarcinoma
+DOID:4920	eccrine adenocarcinoma
+DOID:5591	eccrine papillary adenocarcinoma
+DOID:5569	malignant syringoma
+DOID:7960	malignant spiradenoma
+DOID:5570	malignant acrospiroma
+DOID:3451	skin carcinoma
+DOID:5590	aggressive digital papillary adenocarcinoma
+DOID:3151	skin squamous cell carcinoma
+DOID:8122	pseudovascular skin squamous cell carcinoma
+DOID:5536	sarcomatoid squamous cell skin carcinoma
+DOID:7049	basaloid squamous cell skin carcinoma
+DOID:3149	keratoacanthoma
+DOID:5585	Ferguson-Smith tumor
+DOID:7643	acantholytic squamous cell skin carcinoma
+DOID:8288	clear cell squamous cell skin carcinoma
+DOID:3751	plantar verrucous skin carcinoma
+DOID:3450	cutaneous Paget's disease
+DOID:3965	Merkel cell carcinoma
+DOID:4871	cutaneous adenocystic carcinoma
+DOID:6425	eyelid carcinoma
+DOID:5376	skin pilomatrix carcinoma
+DOID:2513	basal cell carcinoma
+DOID:4282	pigmented basal cell carcinoma
+DOID:4280	nodular basal cell carcinoma
+DOID:4293	clear cell basal cell carcinoma
+DOID:4304	signet ring basal cell carcinoma
+DOID:4291	fibroepithelial basal cell carcinoma
+DOID:4302	cystic basal cell carcinoma
+DOID:5063	basosquamous carcinoma
+DOID:4294	adenoid basal cell carcinoma
+DOID:4289	micronodular basal cell carcinoma
+DOID:4279	infundibulocystic basal cell carcinoma
+DOID:4281	metatypical basal cell carcinoma
+DOID:4292	morpheaform basal cell carcinoma
+DOID:4295	follicular basal cell carcinoma
+DOID:4303	sarcomatoid basal cell carcinoma
+DOID:4286	sebaceous basal cell carcinoma
+DOID:4300	superficial basal cell carcinoma
+DOID:4290	adamantinoid basal cell epithelioma
+DOID:4299	infiltrative basal cell carcinoma
+DOID:7039	Borst-Jadassohn intraepidermal carcinoma
+DOID:4840	sebaceous carcinoma
+DOID:4839	sebaceous adenocarcinoma
+DOID:5274	malignant dermis tumor
+DOID:7639	malignant granular cell skin tumor
+DOID:1906	malignant skin fibrous histiocytoma
+DOID:2687	skin sarcoma
+DOID:5273	cutaneous leiomyosarcoma
+DOID:5712	cutaneous liposarcoma
+DOID:4517	skin angiosarcoma
+DOID:1725	peritoneum cancer
+DOID:4490	malignant peritoneal solitary fibrous tumor
+DOID:3119	gastrointestinal system cancer
+DOID:10155	intestinal cancer
+DOID:11239	appendix cancer
+DOID:0050911	appendix carcinoid tumor
+DOID:4902	appendix carcinoma
+DOID:3608	appendix adenocarcinoma
+DOID:3607	appendix mucinous cystadenocarcinoma
+DOID:11241	appendix lymphoma
+DOID:8151	appendiceal L-cell glucagon-like peptide producing tumor
+DOID:3559	pseudomyxoma peritonei
+DOID:10154	small intestine cancer
+DOID:5740	small intestinal vasoactive intestinal peptide producing tumor
+DOID:13996	small intestine lymphoma
+DOID:0050925	small intestine carcinoid neuroendocrine tumor
+DOID:13499	jejunal cancer
+DOID:0050926	jejunal adenocarcinoma
+DOID:3216	jejunal somatostatinoma
+DOID:10153	ileum cancer
+DOID:10152	Meckel's diverticulum cancer
+DOID:10021	duodenum cancer
+DOID:7959	duodenal gastrinoma
+DOID:7479	duodenal somatostatinoma
+DOID:10020	ampulla of Vater cancer
+DOID:4932	ampulla of Vater carcinoma
+DOID:5527	ampulla of Vater squamous cell carcinoma
+DOID:3502	ampulla of Vater adenocarcinoma
+DOID:5308	ampulla of Vater clear cell adenocarcinoma
+DOID:3693	ampulla of Vater mucinous adenocarcinoma
+DOID:8110	periampullary adenocarcinoma
+DOID:3501	ampullary signet ring cell adenocarcinoma
+DOID:5628	ampulla of Vater adenosquamous carcinoma
+DOID:7136	ampulla of Vater small cell carcinoma
+DOID:10816	duodenum adenocarcinoma
+DOID:5272	small intestinal sarcoma
+DOID:5271	small intestine leiomyosarcoma
+DOID:6880	small bowel fibrosarcoma
+DOID:7506	small intestinal L-cell glucagon-like peptide producing tumor
+DOID:4907	small intestine carcinoma
+DOID:4906	small intestine adenocarcinoma
+DOID:5672	large intestine cancer
+DOID:0050688	anal canal cancer
+DOID:3692	anal canal adenocarcinoma
+DOID:8119	anal canal Paget's disease
+DOID:7177	anal canal squamous cell carcinoma
+DOID:6126	anal canal carcinoma
+DOID:14110	anus cancer
+DOID:4067	anus sarcoma
+DOID:4066	anus rhabdomyosarcoma
+DOID:5267	anus leiomyosarcoma
+DOID:14139	anus lymphoma
+DOID:4908	anal carcinoma
+DOID:5525	anal squamous cell carcinoma
+DOID:7173	cloacogenic carcinoma
+DOID:7174	anus basaloid carcinoma
+DOID:7175	anal Buschke-Lowenstein tumor
+DOID:4284	anal margin carcinoma
+DOID:4283	anal margin basal cell carcinoma
+DOID:12239	anal margin squamous cell carcinoma
+DOID:7708	perianal skin Paget's disease
+DOID:3447	anus adenocarcinoma
+DOID:3691	anal colloid adenocarcinoma
+DOID:3446	anal Paget's disease
+DOID:7531	anal gland adenocarcinoma
+DOID:14145	malignant anus melanoma
+DOID:0050913	large intestine adenocarcinoma
+DOID:1521	cecum cancer
+DOID:1519	cecum carcinoma
+DOID:3039	cecum adenocarcinoma
+DOID:1522	cecum lymphoma
+DOID:9256	colorectal cancer
+DOID:0050861	colorectal adenocarcinoma
+DOID:219	colon cancer
+DOID:7401	colonic L-cell glucagon-like peptide producing tumor
+DOID:12190	descending colon cancer
+DOID:12191	splenic flexure cancer
+DOID:12192	sigmoid colon cancer
+DOID:2782	rectosigmoid junction cancer
+DOID:2781	rectosigmoid cancer
+DOID:218	ascending colon cancer
+DOID:260	hepatic flexure cancer
+DOID:261	transverse colon cancer
+DOID:5260	colon sarcoma
+DOID:6804	colon Kaposi sarcoma
+DOID:5259	colon leiomyosarcoma
+DOID:1523	colon lymphoma
+DOID:1520	colon carcinoma
+DOID:5629	adenosquamous colon carcinoma
+DOID:6727	colon small cell carcinoma
+DOID:5519	colon squamous cell carcinoma
+DOID:234	colon adenocarcinoma
+DOID:3029	colon mucinous adenocarcinoma
+DOID:3038	submucosal invasive colon adenocarcinoma
+DOID:3033	colon signet ring adenocarcinoma
+DOID:1993	rectum cancer
+DOID:5528	rectum squamous cell carcinoma
+DOID:6959	rectal cloacogenic carcinoma
+DOID:1995	rectum sarcoma
+DOID:4053	rectum rhabdomyosarcoma
+DOID:6190	rectum Kaposi's sarcoma
+DOID:5297	rectum leiomyosarcoma
+DOID:1988	rectum lymphoma
+DOID:1992	rectum malignant melanoma
+DOID:7356	rectum sarcomatoid carcinoma
+DOID:1996	rectum adenocarcinoma
+DOID:7707	rectum signet ring adenocarcinoma
+DOID:3709	rectum mucinous adenocarcinoma
+DOID:9253	gastrointestinal stromal tumor
+DOID:5041	esophageal cancer
+DOID:1114	esophagus sarcoma
+DOID:5694	esophagus liposarcoma
+DOID:5276	esophagus leiomyosarcoma
+DOID:1106	esophagus lymphoma
+DOID:1107	esophageal carcinoma
+DOID:3748	esophagus squamous cell carcinoma
+DOID:7051	esophageal basaloid squamous cell carcinoma
+DOID:3747	esophagus verrucous carcinoma
+DOID:5625	esophageal adenosquamous carcinoma
+DOID:4686	mucoepidermoid esophageal carcinoma
+DOID:4878	esophageal adenoid cystic carcinoma
+DOID:7134	esophagus small cell carcinoma
+DOID:4914	esophagus adenocarcinoma
+DOID:7941	Barrett's adenocarcinoma
+DOID:1108	esophagus melanoma
+DOID:5784	esophageal neuroendocrine tumor
+DOID:5040	malignant granular cell esophageal tumor
+DOID:4944	gastroesophageal junction adenocarcinoma
+DOID:0050922	gastrointestinal carcinoma
+DOID:4607	biliary tract cancer
+DOID:3121	gallbladder cancer
+DOID:4058	gallbladder sarcoma
+DOID:5275	gallbladder leiomyosarcoma
+DOID:4057	gallbladder rhabdomyosarcoma
+DOID:4948	gallbladder carcinoma
+DOID:7133	gallbladder small cell carcinoma
+DOID:5627	adenosquamous gallbladder carcinoma
+DOID:5535	gallbladder squamous cell carcinoma
+DOID:3500	gallbladder adenocarcinoma
+DOID:6998	gallbladder mucinous carcinoma
+DOID:7222	gallbladder pleomorphic giant cell adenocarcinoma
+DOID:3499	gallbladder signet ring cell adenocarcinoma
+DOID:7221	gallbladder papillary carcinoma
+DOID:8167	gallbladder melanoma
+DOID:12298	intrahepatic gall duct cancer
+DOID:8135	gallbladder lymphoma
+DOID:4606	bile duct cancer
+DOID:4064	bile duct sarcoma
+DOID:3254	bile duct rhabdomyosarcoma
+DOID:3253	embryonal extrahepatic bile duct rhabdomyosarcoma
+DOID:5293	extrahepatic bile duct leiomyosarcoma
+DOID:4897	bile duct carcinoma
+DOID:5624	adenosquamous bile duct carcinoma
+DOID:4681	bile duct mucoepidermoid carcinoma
+DOID:4896	bile duct adenocarcinoma
+DOID:3698	bile duct mucinous adenocarcinoma
+DOID:7032	bile duct clear cell adenocarcinoma
+DOID:4947	cholangiocarcinoma
+DOID:4928	intrahepatic cholangiocarcinoma
+DOID:8072	sarcomatous intrahepatic cholangiocarcinoma
+DOID:7024	mucinous intrahepatic cholangiocarcinoma
+DOID:7733	signet ring cell intrahepatic cholangiocarcinoma
+DOID:4927	Klatskin's tumor
+DOID:7642	cholangiolocellular carcinoma
+DOID:5246	hilar cholangiocellular carcinoma
+DOID:4075	bile duct cystadenocarcinoma
+DOID:5537	squamous cell bile duct carcinoma
+DOID:5923	distal biliary tract carcinoma
+DOID:3494	bile duct signet ring cell carcinoma
+DOID:4682	extrahepatic bile duct carcinoma
+DOID:3495	extrahepatic bile duct adenocarcinoma
+DOID:5926	extrahepatic bile duct small cell adenocarcinoma
+DOID:6931	papillary extrahepatic bile duct adenocarcinoma
+DOID:3571	liver cancer
+DOID:270	liver sarcoma
+DOID:5296	liver leiomyosarcoma
+DOID:8022	liver fibrosarcoma
+DOID:6370	hepatic osteogenic sarcoma
+DOID:4047	liver rhabdomyosarcoma
+DOID:901	liver lymphoma
+DOID:687	hepatoblastoma
+DOID:5789	mixed hepatoblastoma
+DOID:5798	macrotrabecular hepatoblastoma
+DOID:686	liver carcinoma
+DOID:684	hepatocellular carcinoma
+DOID:5022	aflatoxins-related hepatocellular carcinoma
+DOID:5016	hepatocellular clear cell carcinoma
+DOID:5015	hepatocellular fibrolamellar carcinoma
+DOID:5026	sclerosing hepatic carcinoma
+DOID:8618	oral cavity cancer
+DOID:8702	cheek mucosa cancer
+DOID:9188	vestibule of mouth cancer
+DOID:8850	salivary gland cancer
+DOID:9173	submandibular gland cancer
+DOID:8849	sublingual gland cancer
+DOID:0050930	sublingual gland adenoid cystic carcinoma
+DOID:9036	parotid gland cancer
+DOID:0050931	parotid gland adenoid cystic carcinoma
+DOID:297	pleomorphic adenoma carcinoma
+DOID:5309	epithelial-myoepithelial carcinoma
+DOID:0050904	salivary gland carcinoma
+DOID:4866	salivary gland adenoid cystic carcinoma
+DOID:4531	mucoepidermoid carcinoma
+DOID:8649	tongue cancer
+DOID:0050865	tongue squamous cell carcinoma
+DOID:8564	lip cancer
+DOID:8883	lower lip cancer
+DOID:8630	upper lip cancer
+DOID:9149	hard palate cancer
+DOID:8602	gum cancer
+DOID:9125	lower gum cancer
+DOID:8601	upper gum cancer
+DOID:8578	soft palate cancer
+DOID:8635	uvula cancer
+DOID:0050866	oral squamous cell carcinoma
+DOID:8930	retromolar area cancer
+DOID:4147	gastrointestinal adenoma
+DOID:0050626	gastrointestinal neuroendocrine tumor
+DOID:1791	peritoneal carcinoma
+DOID:4901	peritoneal serous adenocarcinoma
+DOID:6228	peritoneal serous papillary adenocarcinoma
+DOID:10534	stomach cancer
+DOID:10540	gastric lymphoma
+DOID:10544	pylorus cancer
+DOID:10547	pyloric antrum cancer
+DOID:10548	cardia cancer
+DOID:5517	stomach carcinoma
+DOID:6705	gastric body carcinoma
+DOID:5516	gastric squamous cell carcinoma
+DOID:6552	gastric small cell carcinoma
+DOID:6700	gastric fundus carcinoma
+DOID:5635	gastric adenosquamous carcinoma
+DOID:3717	gastric adenocarcinoma
+DOID:6217	gastric diffuse adenocarcinoma
+DOID:8025	gastric signet ring cell adenocarcinoma
+DOID:4023	linitis plastica
+DOID:3716	mucinous stomach adenocarcinoma
+DOID:6271	gastric cardia adenocarcinoma
+DOID:6595	gastric tubular adenocarcinoma
+DOID:10541	microinvasive gastric cancer
+DOID:5593	gastric papillary adenocarcinoma
+DOID:6270	gastric cardia carcinoma
+DOID:6703	gastric pylorus carcinoma
+DOID:10536	malignant gastric granular cell tumor
+DOID:5700	gastric liposarcoma
+DOID:5280	gastric leiomyosarcoma
+DOID:4716	malignant gastric germ cell tumor
+DOID:6948	malignant gastric teratoma
+DOID:5579	gastric gastrinoma
+DOID:10538	gastric fundus cancer
+DOID:0060119	pharynx cancer
+DOID:8533	hypopharynx cancer
+DOID:9235	pyriform sinus cancer
+DOID:8660	postcricoid region cancer
+DOID:8663	aryepiglottic fold cancer
+DOID:8557	oropharynx cancer
+DOID:8858	tonsil cancer
+DOID:0050920	tonsil squamous cell carcinoma
+DOID:8937	Waldeyer's ring cancer
+DOID:8556	vallecula cancer
+DOID:8688	tonsillar pillar cancer
+DOID:8969	tonsillar fossa cancer
+DOID:9261	nasopharynx carcinoma
+DOID:0050921	pharynx squamous cell carcinoma
+DOID:903	gastrointestinal lymphoma
+DOID:0060083	immune system cancer
+DOID:3277	thymus cancer
+DOID:10146	thymus lymphoma
+DOID:3275	thymoma
+DOID:3280	mixed type thymoma
+DOID:6723	malignant type AB thymoma
+DOID:3281	combined thymoma
+DOID:7214	noninvasive malignant thymoma
+DOID:3279	spindle cell thymoma
+DOID:7927	malignant type A thymoma
+DOID:3282	dendritic cell thymoma
+DOID:6530	cortical thymoma
+DOID:7926	epithelial malignant thymoma
+DOID:6917	predominantly cortical thymoma
+DOID:4554	type C thymoma
+DOID:3278	encapsulated thymoma
+DOID:3283	invasive malignant thymoma
+DOID:3284	thymic carcinoma
+DOID:5626	thymus adenosquamous carcinoma
+DOID:4553	thymus large cell carcinoma
+DOID:5530	thymus squamous cell carcinoma
+DOID:7050	thymus basaloid carcinoma
+DOID:4678	thymus mucoepidermoid carcinoma
+DOID:7599	lymphoepithelioma-like thymic carcinoma
+DOID:8137	thymus clear cell carcinoma
+DOID:7142	thymus small cell carcinoma
+DOID:4923	thymus adenocarcinoma
+DOID:5595	papillary thymic adenocarcinoma
+DOID:8138	thymus sarcomatoid carcinoma
+DOID:0060073	lymphatic system cancer
+DOID:672	spleen cancer
+DOID:710	splenic manifestation of leukemia
+DOID:4334	splenic manifestation of prolymphocytic leukemia
+DOID:709	splenic manifestation of hairy cell leukemia
+DOID:2689	lymphangiosarcoma
+DOID:10619	lymph node cancer
+DOID:0060219	lymph node adenoid cystic carcinoma
+DOID:12972	intrapelvic lymph node leukemic reticuloendotheliosis
+DOID:13005	intra-abdominal lymph node mast cell malignancy
+DOID:8304	lymph node palisaded myofibroblastoma
+DOID:8675	lymphosarcoma
+DOID:8538	reticulosarcoma
+DOID:2531	hematologic cancer
+DOID:712	refractory hematologic cancer
+DOID:7936	precursor T-lymphoblastic lymphoma/leukemia refractory
+DOID:9544	refractory plasma cell neoplasm
+DOID:711	refractory hairy cell leukemia
+DOID:5621	histiocytic and dendritic cell cancer
+DOID:7849	dendritic cell sarcoma
+DOID:6262	follicular dendritic cell sarcoma
+DOID:7848	interdigitating dendritic cell sarcoma
+DOID:7146	Langerhans cell sarcoma
+DOID:4960	bone marrow cancer
+DOID:4972	myelodysplastic myeloproliferative cancer
+DOID:0050458	juvenile myelomonocytic leukemia
+DOID:0070004	myeloma
+DOID:4971	myelofibrosis
+DOID:8106	cellular phase chronic idiopathic myelofibrosis
+DOID:9538	multiple myeloma
+DOID:9550	indolent myeloma
+DOID:9551	smoldering myeloma
+DOID:9547	non-secretory myeloma
+DOID:9541	osteosclerotic myeloma
+DOID:2228	thrombocytosis
+DOID:2226	chronic myeloproliferative disease
+DOID:2224	hemorrhagic thrombocythemia
+DOID:3166	leukemoid reaction
+DOID:2354	myelophthisic anemia
+DOID:2225	megakaryocytic tumor
+DOID:0050908	myelodysplastic syndrome
+DOID:8683	myeloid sarcoma
+DOID:1240	leukemia
+DOID:1037	lymphoblastic leukemia
+DOID:9952	acute lymphocytic leukemia
+DOID:9954	null-cell leukemia
+DOID:9953	B- and T-cell mixed leukemia
+DOID:5604	adult acute lymphocytic leukemia
+DOID:5602	T-cell adult acute lymphocytic leukemia
+DOID:10747	lymphoid leukemia
+DOID:715	T-cell leukemia
+DOID:5603	acute T cell leukemia
+DOID:0050523	adult T-cell leukemia
+DOID:9513	plasmacytic leukemia
+DOID:1035	natural killer cell leukemia
+DOID:1040	chronic lymphocytic leukemia
+DOID:6354	CLL/SLL
+DOID:8144	pregerminal center chronic lymphocytic leukemia/small lymphocytic lymphoma
+DOID:7230	postgerminal center chronic lymphocytic leukemia/small lymphocytic lymphoma
+DOID:285	hairy cell leukemia
+DOID:10265	hairy cell leukemia of spleen
+DOID:713	HCL-V
+DOID:0050751	T-cell large granular lymphocyte leukemia
+DOID:1039	prolymphocytic leukemia
+DOID:1703	Richter's syndrome
+DOID:8692	myeloid leukemia
+DOID:9119	acute myeloid leukemia
+DOID:8747	subacute myeloid leukemia
+DOID:8552	chronic myeloid leukemia
+DOID:8527	monocytic leukemia
+DOID:8593	chronic monocytic leukemia
+DOID:8864	acute monocytic leukemia
+DOID:8696	subacute monocytic leukemia
+DOID:6004	aleukemic leukemia
+DOID:6003	aleukemic leukemia cutis
+DOID:6958	aleukemic monocytic leukemia cutis
+DOID:8761	megakaryocytic leukemia
+DOID:1036	chronic leukemia
+DOID:9254	mast-cell leukemia
+DOID:3264	subacute leukemia
+DOID:7757	childhood leukemia
+DOID:7756	neonatal leukemia
+DOID:11868	chronic erythremia
+DOID:12603	acute leukemia
+DOID:12965	subleukemic leukemia
+DOID:0060058	lymphoma
+DOID:8567	Hodgkin's lymphoma
+DOID:8838	Hodgkin's lymphoma, nodular sclerosis
+DOID:8628	Hodgkin's lymphoma, lymphocytic depletion
+DOID:8651	Hodgkin's granuloma
+DOID:8642	Hodgkin's paragranuloma
+DOID:8543	Hodgkin's lymphoma, lymphocytic-histiocytic predominance
+DOID:8654	Hodgkin's lymphoma, mixed cellularity
+DOID:5823	pediatric lymphoma
+DOID:5600	precursor lymphoblastic lymphoma/leukemia
+DOID:7061	precursor B lymphoblastic lymphoma/leukemia
+DOID:5599	precursor T-lymphoblastic lymphoma/leukemia
+DOID:7933	childhood precursor T-lymphoblastic lymphoma/leukemia
+DOID:5825	adult lymphoma
+DOID:0060060	non-Hodgkin lymphoma
+DOID:0050744	anaplastic large cell lymphoma
+DOID:0050909	MALT lymphoma
+DOID:0050873	follicular lymphoma
+DOID:707	B-cell lymphoma
+DOID:0050746	mantle cell lymphoma
+DOID:0050748	marginal zone B-cell lymphoma
+DOID:0050750	splenic marginal zone lymphoma
+DOID:0050745	diffuse large B-cell lymphoma
+DOID:706	mature B-cell neoplasm
+DOID:6536	plasma cell neoplasm
+DOID:7442	monoclonal gammopathy of uncertain significance
+DOID:3721	plasmacytoma
+DOID:3720	extramedullary plasmacytoma
+DOID:3722	solitary osseous plasmacytoma
+DOID:3723	solitary plasmacytoma of chest wall
+DOID:8584	Burkitt lymphoma
+DOID:0050747	lymphoplasmacytic lymphoma
+DOID:5820	composite lymphoma
+DOID:0050743	mature T-cell and NK-cell lymphoma
+DOID:0050749	peripheral T-cell lymphoma
+DOID:0060061	cutaneous T cell lymphoma
+DOID:8541	Sezary's disease
+DOID:8691	mycosis fungoides
+DOID:5822	gray zone lymphoma
+DOID:5821	methotrexate-associated lymphoproliferation
+DOID:3664	mast cell neoplasm
+DOID:3666	cutaneous solitary mastocytoma
+DOID:4660	indolent systemic mastocytosis
+DOID:4659	extracutaneous mastocytoma
+DOID:176	cardiovascular cancer
+DOID:175	vascular cancer
+DOID:8352	aortic malignant tumor
+DOID:3316	perivascular tumor
+DOID:3850	hemangiopericytic tumor
+DOID:2431	glomus tumor
+DOID:5236	subungual glomus tumor
+DOID:5233	glomangiosarcoma
+DOID:2430	skin glomus tumor
+DOID:2643	perivascular epithelioid cell tumor
+DOID:8731	carotid body cancer
+DOID:7389	pulmonary artery leiomyosarcoma
+DOID:4510	aorta angiosarcoma
+DOID:5547	pulmonary artery choriocarcinoma
+DOID:7388	pulmonary vein leiomyosarcoma
+DOID:7390	superior vena cava leiomyosarcoma
+DOID:117	heart cancer
+DOID:116	pericardium cancer
+DOID:6201	pericardial mesothelioma
+DOID:4699	epicardium cancer
+DOID:5262	heart sarcoma
+DOID:5261	heart leiomyosarcoma
+DOID:6034	heart malignant hemangiopericytoma
+DOID:6033	heart fibrosarcoma
+DOID:9299	myocardium cancer
+DOID:6547	heart lymphoma
+DOID:14535	malignant cardiac germ cell tumor
+DOID:5877	endocardium cancer
+DOID:3093	nervous system cancer
+DOID:1192	peripheral nervous system neoplasm
+DOID:4698	nerve root neoplasm
+DOID:2621	autonomic nervous system neoplasm
+DOID:769	neuroblastoma
+DOID:371	extracranial neuroblastoma
+DOID:0050935	cervical neuroblastoma
+DOID:4160	differentiating neuroblastoma
+DOID:4163	ganglioneuroblastoma
+DOID:5193	nodular ganglioneuroblastoma
+DOID:7949	stroma-dominant and stroma-poor composite ganglioneuroblastoma
+DOID:7951	Schwannian stroma-rich and stroma-poor composite ganglioneuroblastoma
+DOID:5194	intermixed schwannian stroma-rich ganglioneuroblastoma
+DOID:5195	peripheral nervous system ganglioneuroblastoma
+DOID:4817	ganglioneuroma
+DOID:3201	sympathetic neurilemmoma
+DOID:4693	nerve plexus neoplasm
+DOID:8389	lumbar plexus neoplasm
+DOID:5913	brachial plexus neoplasm
+DOID:3193	peripheral nerve sheath neoplasm
+DOID:4697	perineurioma
+DOID:4696	intraneural perineurioma
+DOID:962	neurofibroma
+DOID:5150	neurofibroma of gallbladder
+DOID:9300	neurofibroma of the heart
+DOID:5151	plexiform neurofibroma
+DOID:961	neurofibroma of the esophagus
+DOID:5153	atypical neurofibroma
+DOID:5152	cellular neurofibroma
+DOID:13742	neurofibroma of spinal cord
+DOID:2669	Pacinian tumor
+DOID:5149	epithelioid neurofibroma
+DOID:3512	neurofibrosarcoma
+DOID:5940	malignant peripheral nerve sheath tumor
+DOID:8353	epithelioid malignant peripheral nerve sheath tumor
+DOID:8420	malignant glandular tumor of peripheral nerve sheath
+DOID:8369	adult malignant schwannoma
+DOID:7732	childhood malignant schwannoma
+DOID:6345	malignant melanocytic neoplasm of the peripheral nerve sheath
+DOID:6344	melanocytic psammomatous MPNST
+DOID:6707	malignant triton tumor
+DOID:14534	malignant cardiac peripheral nerve sheath neoplasm
+DOID:171	neuroectodermal tumor
+DOID:6607	nervous system hibernoma
+DOID:3620	central nervous system cancer
+DOID:12969	central nervous system leukemia
+DOID:5772	central nervous system hematologic cancer
+DOID:0060103	central nervous system primitive neuroectodermal neoplasm
+DOID:3870	childhood central nervous system primitive neuroectodermal neoplasm
+DOID:4788	intracranial primitive neuroectodermal tumor
+DOID:3865	adult central nervous system primitive neuroectodermal neoplasm
+DOID:4790	medulloepithelioma
+DOID:4794	ependymoblastoma
+DOID:7631	adult ependymoblastoma
+DOID:7841	pediatric cerebral ependymoblastoma
+DOID:7522	pediatric infratentorial ependymoblastoma
+DOID:1319	brain cancer
+DOID:2129	atypical teratoid rhabdoid tumor
+DOID:1659	supratentorial cancer
+DOID:4791	supratentorial primitive neuroectodermal tumor
+DOID:3843	diencephalic neoplasm
+DOID:6098	thalamic neoplasm
+DOID:4855	diencephalic astrocytomas
+DOID:3644	hypothalamic neoplasm
+DOID:368	cerebrum cancer
+DOID:3541	cerebral ventricle cancer
+DOID:3773	third ventricle chordoid glioma
+DOID:14174	central neurocytoma
+DOID:3540	choroid plexus cancer
+DOID:3542	adult choroid plexus cancer
+DOID:5648	choroid plexus carcinoma
+DOID:3544	atypical choroid plexus papilloma
+DOID:3545	childhood choroid plexus cancer
+DOID:3772	intraventricular meningioma
+DOID:6115	lateral ventricle meningioma
+DOID:6112	cerebral meningioma
+DOID:6114	cerebral convexity meningioma
+DOID:6869	parasagittal meningioma
+DOID:8000	frontal convexity meningioma
+DOID:6113	intracerebral cystic meningioma
+DOID:12016	frontal lobe neoplasm
+DOID:14384	parietal lobe neoplasm
+DOID:0050903	parietal lobe ependymoma
+DOID:5815	cerebral lymphoma
+DOID:7007	childhood cerebral astrocytoma
+DOID:7398	cerebral primitive neuroectodermal tumor
+DOID:6291	cerebral hemisphere lipoma
+DOID:6294	corpus callosum lipoma
+DOID:2135	temporal lobe neoplasm
+DOID:910	occipital lobe neoplasm
+DOID:7502	pediatric supratentorial ependymoma
+DOID:2132	brain sarcoma
+DOID:2127	brain germinoma
+DOID:7429	childhood brain germinoma
+DOID:4164	cerebral neuroblastoma
+DOID:6128	gliomatosis cerebri
+DOID:0060106	brain meningioma
+DOID:6939	childhood brain meningioma
+DOID:0060108	brain glioma
+DOID:3073	brain glioblastoma multiforme
+DOID:7497	brain ependymoma
+DOID:7750	adult brain ependymoma
+DOID:3187	brain oligodendroglioma
+DOID:0050901	corpus callosum oligodendroglioma
+DOID:0060105	brain medulloblastoma
+DOID:6380	adult brain medulloblastoma
+DOID:4706	infratentorial cancer
+DOID:7501	pediatric infratentorial ependymoma
+DOID:4203	brain stem cancer
+DOID:0050899	brain stem medulloblastoma
+DOID:3200	cerebellopontine angle tumor
+DOID:4787	cerebellopontine angle primitive neuroectodermal
+DOID:3199	C-P angle neurinoma
+DOID:6337	cerebellopontine angle meningioma
+DOID:4206	childhood brain stem neoplasm
+DOID:6383	childhood brain stem glioma
+DOID:6386	childhood brainstem astrocytoma
+DOID:6501	brain stem angioblastoma
+DOID:4202	brain stem glioma
+DOID:4860	brain stem astrocytic neoplasm
+DOID:5508	brain stem ependymoma
+DOID:4813	adult brain stem glioma
+DOID:5921	adult brainstem mixed glioma
+DOID:4812	adult brainstem gliosarcoma
+DOID:5922	adult brainstem astrocytoma
+DOID:4207	childhood infratentorial neoplasm
+DOID:4209	brainstem intraparenchymal clear cell meningioma
+DOID:4707	cervicomedullary junction neoplasm
+DOID:4205	cerebellum cancer
+DOID:0060104	cerebellar medulloblastoma
+DOID:3860	cerebellar vermis medulloblastoma
+DOID:5059	childhood cerebellar neoplasm
+DOID:4848	cerebellar astrocytoma
+DOID:4853	pilocytic astrocytoma of cerebellum
+DOID:6286	childhood cerebellar astrocytic neoplasm
+DOID:5056	adult cerebellar neoplasm
+DOID:6500	cerebellar angioblastoma
+DOID:6458	cerebellar liponeurocytoma
+DOID:5057	papillary meningioma of the cerebellum
+DOID:0050902	medulloblastoma
+DOID:3857	large cell medulloblastoma
+DOID:3869	childhood medulloblastoma
+DOID:3864	adult medulloblastoma
+DOID:3861	medullomyoblastoma
+DOID:3868	melanotic medulloblastoma
+DOID:3873	nodular medulloblastoma
+DOID:4439	central nervous system germ cell tumor
+DOID:3640	central nervous system teratoma
+DOID:6017	central nervous system mature teratoma
+DOID:6423	childhood central nervous system mature teratoma
+DOID:6016	adult central nervous system mature teratoma
+DOID:6015	adult central nervous system teratoma
+DOID:6018	adult central nervous system immature teratoma
+DOID:6019	central nervous system immature teratoma
+DOID:6654	childhood central nervous system immature teratoma
+DOID:5343	central nervous system endodermal sinus tumor
+DOID:5349	central nervous system adult germ cell tumor
+DOID:7945	adult central nervous system mixed germ cell tumor
+DOID:7233	adult central nervous system embryonal carcinoma
+DOID:4438	central nervous system germinoma
+DOID:8078	childhood central nervous system germinoma
+DOID:7867	adult central nervous system germinoma
+DOID:6052	central nervous system childhood germ cell tumor
+DOID:6639	pediatric CNS choriocarcinoma
+DOID:7231	pediatric CNS embryonal cell carcinoma
+DOID:7430	childhood germ cell brain tumor
+DOID:7516	childhood central nervous system mixed germ cell tumor
+DOID:7232	central nervous system embryonal carcinoma
+DOID:2133	central nervous system sarcoma
+DOID:6451	central nervous system fibrosarcoma
+DOID:4504	central nervous system angiosarcoma
+DOID:4048	central nervous system rhabdomyosarcoma
+DOID:3565	meningioma
+DOID:5058	rhabdoid meningioma
+DOID:7826	adult papillary meningioma
+DOID:4211	posterior cranial fossa meningioma
+DOID:6517	clivus meningioma
+DOID:8239	lower clivus meningioma
+DOID:8221	upper clivus meningioma
+DOID:4210	clear cell meningioma
+DOID:8368	chordoid meningioma
+DOID:4436	anterior cranial fossa meningioma
+DOID:8057	olfactory groove meningioma
+DOID:7986	cerebral falx meningioma
+DOID:4588	secretory meningioma
+DOID:8030	periocular meningioma
+DOID:7635	gasserian ganglion meningioma
+DOID:7211	fibrous meningioma
+DOID:7482	petrous apex meningioma
+DOID:6086	malignant leptomeningeal tumor
+DOID:7689	leptomeninges sarcoma
+DOID:6085	meningeal melanoma
+DOID:6089	pediatric leptomeningeal melanoma
+DOID:6090	adult leptomeningeal melanoma
+DOID:8216	parapharyngeal meningioma
+DOID:4584	choroid plexus meningioma
+DOID:6110	jugular foramen meningioma
+DOID:4586	familial meningioma
+DOID:4594	microcystic meningioma
+DOID:4591	lymphoplasmacyte-rich meningioma
+DOID:7213	transitional meningioma
+DOID:4749	middle cranial fossa meningioma
+DOID:7210	psammomatous meningioma
+DOID:6548	angiomatous meningioma
+DOID:4593	pediatric meningioma
+DOID:7212	meningothelial meningioma
+DOID:7614	meninges sarcoma
+DOID:7613	sarcomatosis of the meninges
+DOID:7634	suprasellar meningioma
+DOID:4957	meninges hemangiopericytoma
+DOID:4955	central nervous system melanocytic neoplasm
+DOID:6379	diffuse meningeal melanocytosis
+DOID:8243	meningeal melanomatosis
+DOID:5900	meningeal melanocytoma
+DOID:5612	spinal cancer
+DOID:14150	spinal cord lymphoma
+DOID:3641	conus medullaris neoplasm
+DOID:4847	cauda equina neoplasm
+DOID:4846	cauda equina intradural extramedullary astrocytoma
+DOID:3639	spinal cord intramedullary teratoma
+DOID:13743	spinal cord lipoma
+DOID:14152	spinal cord sarcoma
+DOID:6872	spinal cord primitive neuroectodermal neoplasm
+DOID:6871	spinal cord neuroblastoma
+DOID:1140	spinal canal and spinal cord meningioma
+DOID:6103	thoracic spinal canal and spinal cord meningioma
+DOID:7515	lumbar spinal canal and spinal cord meningioma
+DOID:1138	spinal meningioma
+DOID:7646	multiple spinal canal and spinal cord meningioma
+DOID:7824	spinal multifocal clear cell meningioma
+DOID:3809	epidural spinal canal meningioma
+DOID:8203	sacral spinal canal and spinal cord meningioma
+DOID:7915	cervical spinal canal and spinal cord meningioma
+DOID:7224	spinal meninges cancer
+DOID:3618	epidural neoplasm
+DOID:3617	epidural spinal canal angiolipoma
+DOID:14151	spinal cord melanoma
+DOID:5615	spinal canal intradural extramedullary neoplasm
+DOID:3637	childhood spinal cord tumor
+DOID:7071	spinal cord dermoid cyst
+DOID:3185	spinal cord glioma
+DOID:3184	spinal cord oligodendroglioma
+DOID:5503	spinal cord ependymoma
+DOID:7788	adult spinal cord ependymoma
+DOID:4863	spinal cord astrocytoma
+DOID:7806	adult spinal cord glioblastoma multiforme
+DOID:502	central nervous system mesenchymal non-meningothelial tumor
+DOID:6293	central nervous system lipoma
+DOID:3813	central nervous system chondroma
+DOID:5254	central nervous system leiomyosarcoma
+DOID:501	central nervous system hemangioma
+DOID:7994	central nervous system osteosarcoma
+DOID:4055	ectomesenchymoma
+DOID:3234	central nervous system lymphoma
+DOID:338	cranial nerve neoplasm
+DOID:2817	cranial nerve III tumor
+DOID:2816	malignant oculomotor nerve tumor
+DOID:1760	facial nerve neoplasm
+DOID:1201	trigeminal nerve neoplasm
+DOID:3202	neurilemmoma of the fifth cranial nerve
+DOID:3417	glossopharyngeal nerve neoplasm
+DOID:3419	optic nerve neoplasm
+DOID:4992	optic nerve glioma
+DOID:4991	optic nerve astrocytoma
+DOID:6575	childhood optic tract astrocytoma
+DOID:6576	childhood optic nerve glioma
+DOID:5632	optic nerve sheath meningioma
+DOID:6334	anterior optic tract meningioma
+DOID:6335	bilateral meningioma of optic nerve
+DOID:337	spinal accessory nerve neoplasm
+DOID:12984	vagus nerve neoplasm
+DOID:14125	abducens nerve neoplasm
+DOID:3198	hypoglossal nerve neoplasm
+DOID:3197	schwannoma of twelfth cranial nerve
+DOID:3421	trochlear nerve neoplasm
+DOID:2815	cranial nerve malignant neoplasm
+DOID:2814	malignant neoplasm of acoustic nerve
+DOID:366	olfactory nerve neoplasm
+DOID:369	olfactory neuroblastoma
+DOID:8256	olfactory neural tumor
+DOID:0060116	sensory system cancer
+DOID:2174	ocular cancer
+DOID:3479	uveal cancer
+DOID:4352	ciliary body cancer
+DOID:6524	malignant ciliary body melanoma
+DOID:6523	ciliary body mixed cell melanoma
+DOID:6043	ciliary body spindle cell melanoma
+DOID:6997	intermediate cell type ciliary body melanoma
+DOID:7042	ciliary body epithelioid cell melanoma
+DOID:3478	iris cancer
+DOID:6994	malignant iris melanoma
+DOID:7328	iris spindle cell melanoma
+DOID:6993	iris mixed cell melanoma
+DOID:6039	uveal melanoma
+DOID:6522	mixed cell uveal melanoma
+DOID:6525	choroid mixed cell melanoma
+DOID:7040	uveal epithelioid cell melanoma
+DOID:7041	choroid epithelioid cell melanoma
+DOID:6566	posterior uveal melanoma
+DOID:7808	necrotic uveal melanoma
+DOID:7807	choroid necrotic melanoma
+DOID:12759	choroid cancer
+DOID:6438	malignant choroid melanoma
+DOID:6041	choroid spindle cell melanoma
+DOID:6996	intermediate cell type choroid melanoma
+DOID:1752	ocular melanoma
+DOID:6037	spindle cell intraocular melanoma
+DOID:6992	intraocular mixed cell type melanoma
+DOID:5467	conjunctival cancer
+DOID:1748	conjunctiva squamous cell carcinoma
+DOID:1751	malignant conjunctiva melanoma
+DOID:295	eye carcinoma
+DOID:6199	cornea cancer
+DOID:8400	malignant cornea melanoma
+DOID:13538	cornea squamous cell carcinoma
+DOID:6903	eye lymphoma
+DOID:775	intraocular lymphoma
+DOID:292	lacrimal system cancer
+DOID:12756	lacrimal duct cancer
+DOID:294	lacrimal gland cancer
+DOID:293	lacrimal gland carcinoma
+DOID:5529	lacrimal gland squamous cell carcinoma
+DOID:4685	lacrimal gland mucoepidermoid carcinoma
+DOID:298	lacrimal gland adenocarcinoma
+DOID:4870	lacrimal gland adenoid cystic carcinoma
+DOID:296	mixed lacrimal gland cancer
+DOID:4645	retinal cancer
+DOID:8427	retinal melanoma
+DOID:774	retina lymphoma
+DOID:771	retinal cell cancer
+DOID:768	retinoblastoma
+DOID:4648	familial retinoblastoma
+DOID:4650	bilateral retinoblastoma
+DOID:4647	trilateral retinoblastoma
+DOID:4653	intraocular retinoblastoma
+DOID:6938	pediatric Intraocular retinoblastoma
+DOID:4651	unilateral retinoblastoma
+DOID:4656	extraocular retinoblastoma
+DOID:7747	pediatric extraocular retinoblastoma
+DOID:5240	retinal hemangioblastoma
+DOID:833	auditory system cancer
+DOID:5101	auricular cancer
+DOID:5990	internal auditory canal meningioma
+DOID:5102	inner ear cancer
+DOID:5099	middle ear cancer
+DOID:4893	middle ear carcinoma
+DOID:4892	middle ear adenocarcinoma
+DOID:5526	middle ear squamous cell carcinoma
+DOID:5665	external ear cancer
+DOID:4288	external ear carcinoma
+DOID:4287	external ear basal cell carcinoma
+DOID:5538	external ear squamous cell carcinoma
+DOID:6752	internal auditory canal lipoma
+DOID:0060100	musculoskeletal system cancer
+DOID:201	connective tissue cancer
+DOID:4136	myxosarcoma
+DOID:5158	pleural cancer
+DOID:14033	malignant visceral pleura tumor
+DOID:7474	malignant pleural mesothelioma
+DOID:7381	lymphohistiocytoid mesothelioma
+DOID:14032	malignant parietal pleura tumor
+DOID:0050695	malignant pleural solitary fibrous tumor
+DOID:3355	fibrosarcoma
+DOID:3507	dermatofibrosarcoma protuberans
+DOID:3520	pediatric fibrosarcoma
+DOID:8418	congenital fibrosarcoma
+DOID:3517	conventional fibrosarcoma
+DOID:3516	adult fibrosarcoma
+DOID:2668	mesenchymoma
+DOID:2667	benign mesenchymoma
+DOID:5758	malignant mesenchymoma
+DOID:5893	childhood malignant mesenchymoma
+DOID:5894	adult malignant mesenchymoma
+DOID:200	giant cell tumor
+DOID:5638	malignant giant cell tumor of soft parts
+DOID:2705	malignant giant cell tumor
+DOID:4719	bone giant cell sarcoma
+DOID:314	tenosynovial giant cell tumor
+DOID:4305	bone giant cell tumor
+DOID:1866	giant cell reparative granuloma
+DOID:4231	histiocytoma
+DOID:1907	malignant fibroxanthoma
+DOID:3352	malignant fibrous histiocytoma of bone
+DOID:6192	inflammatory MFH
+DOID:4415	fibrous histiocytoma
+DOID:3098	small cell sarcoma
+DOID:3371	chondrosarcoma
+DOID:5862	localized chondrosarcoma
+DOID:5866	juxtacortical chondrosarcoma
+DOID:4549	extraosseous chondrosarcoma
+DOID:6496	extraskeletal myxoid chondrosarcoma
+DOID:7903	intracranial chondrosarcoma
+DOID:4548	extraskeletal mesenchymal chondrosarcoma
+DOID:7902	adult extraosseous chondrosarcoma
+DOID:4545	mesenchymal chondrosarcoma
+DOID:4546	pediatric mesenchymal chondrosarcoma
+DOID:4547	adult mesenchymal chondrosarcoma
+DOID:5859	periosteal chondrosarcoma
+DOID:5861	myxoid chondrosarcoma
+DOID:6495	adult myxoid chondrosarcoma
+DOID:6494	pediatric myxoid chondrosarcoma
+DOID:5867	clear cell chondrosarcoma
+DOID:0050897	bone chondrosarcoma
+DOID:3939	lipomatous cancer
+DOID:3382	liposarcoma
+DOID:5693	adult liposarcoma
+DOID:5690	atypical lipomatous tumor
+DOID:8233	inflammatory liposarcoma
+DOID:5705	spindle cell Liposarcoma
+DOID:5704	Sclerosing liposarcoma
+DOID:5702	pleomorphic liposarcoma
+DOID:5714	intracranial liposarcoma
+DOID:5699	kidney liposarcoma
+DOID:5709	mixed-type liposarcoma
+DOID:3381	liposarcoma of bone
+DOID:5692	cellular myxoid liposarcoma
+DOID:5363	myxoid liposarcoma
+DOID:5695	pediatric liposarcoma
+DOID:5698	fibroblastic liposarcoma
+DOID:5703	mixed liposarcoma
+DOID:6333	adult intracranial malignant hemangiopericytoma
+DOID:0060102	cartilage cancer
+DOID:184	bone cancer
+DOID:2762	bone carcinoma
+DOID:0050896	bone squamous cell carcinoma
+DOID:5546	femoral cancer
+DOID:6579	chest wall bone cancer
+DOID:1863	skull cancer
+DOID:3842	skull base neoplasm
+DOID:3643	sella turcica neoplasm
+DOID:7713	tuberculum sellae meningioma
+DOID:7103	diaphragma sellae meningioma
+DOID:8058	pituitary stalk meningioma
+DOID:5048	posterior pituitary gland neoplasm
+DOID:5047	neurohypophysis granular cell tumor
+DOID:4435	cavernous sinus meningioma
+DOID:4437	skull base meningioma
+DOID:4708	foramen magnum meningioma
+DOID:6553	posterior foramen magnum meningioma
+DOID:6381	anterior foramen magnum meningioma
+DOID:7820	sphenocavernous meningioma
+DOID:7819	sphenoorbital meningioma
+DOID:7818	petroclival meningioma
+DOID:7054	multiple skull base meningioma
+DOID:10149	long bones of lower limb cancer
+DOID:10151	malignant neoplasm of short bones of lower limb
+DOID:5090	sternum cancer
+DOID:6762	sternum lymphoma
+DOID:2776	adamantinoma
+DOID:2775	long bone adamantinoma
+DOID:6322	tibial adamantinoma
+DOID:6759	bone lymphoma
+DOID:3369	peripheral primitive neuroectodermal tumor
+DOID:3368	bone Ewing's sarcoma
+DOID:4388	bone peripheral neuroepithelioma
+DOID:4232	extraosseous Ewing's sarcoma
+DOID:4389	soft tissue peripheral neuroepithelioma
+DOID:4985	extraosseous Ewings sarcoma-primitive neuroepithelial tumor
+DOID:0050608	Askin's tumor
+DOID:7827	adult extraosseous osteosarcoma
+DOID:1862	jaw cancer
+DOID:4618	maxillary neoplasm
+DOID:2338	mandibular cancer
+DOID:4143	orbital cancer
+DOID:4141	intraorbital meningioma
+DOID:9986	orbit lymphoma
+DOID:9987	orbit sarcoma
+DOID:3259	orbit rhabdomyosarcoma
+DOID:4384	orbit alveolar rhabdomyosarcoma
+DOID:3258	orbit embryonal rhabdomyosarcoma
+DOID:3303	notochordal cancer
+DOID:3302	chordoma
+DOID:4151	skull base chordoma
+DOID:6312	clivus chordoma
+DOID:6313	clivus chondroid chordoma
+DOID:4152	chondroid chordoma
+DOID:4153	spinal chordoma
+DOID:0050900	sacrum chordoma
+DOID:3347	osteosarcoma
+DOID:3354	fibrosarcoma of bone
+DOID:3360	multifocal osteogenic sarcoma
+DOID:6696	synchronous multifocal osteogenic sarcoma
+DOID:6697	asynchronous multifocal osteogenic sarcoma
+DOID:3361	pediatric osteosarcoma
+DOID:7612	childhood intracortical osteosarcoma
+DOID:5809	childhood parosteal osteogenic sarcoma
+DOID:3357	extraosseous osteosarcoma
+DOID:7297	childhood extraosseous osteosarcoma
+DOID:3367	bone leiomyosarcoma
+DOID:3376	bone osteosarcoma
+DOID:7542	osteosarcoma arising in bone Paget's disease
+DOID:3378	conventional central osteosarcoma
+DOID:7602	intracortical osteogenic sarcoma
+DOID:6951	telangiectatic osteogenic sarcoma
+DOID:3377	small cell osteogenic sarcoma
+DOID:7603	fibrosarcomatous osteosarcoma
+DOID:3374	peripheral osteosarcoma
+DOID:3373	juxtacortical osteosarcoma
+DOID:6489	periosteal osteogenic sarcoma
+DOID:3379	metachronous osteosarcoma of the bone
+DOID:3351	bone angioendothelial sarcoma
+DOID:3372	chondroblastic osteosarcoma
+DOID:3356	localized osteosarcoma
+DOID:264	hemangiopericytoma
+DOID:6197	conventional malignant hemangiopericytoma
+DOID:6332	adult malignant hemangiopericytoma
+DOID:5373	retroperitoneal hemangiopericytoma
+DOID:7731	childhood malignant hemangiopericytoma
+DOID:2649	chondroblastoma
+DOID:8632	Kaposi's sarcoma
+DOID:2706	synovium cancer
+DOID:2704	malignant giant cell tumor of the tendon sheath
+DOID:5485	synovial sarcoma
+DOID:5484	fibrous synovial sarcoma
+DOID:5495	monophasic synovial sarcoma
+DOID:5494	epithelioid cell synovial sarcoma
+DOID:5492	biphasic synovial sarcoma
+DOID:5487	spindle cell synovial sarcoma
+DOID:4386	myofibroma
+DOID:4045	muscle cancer
+DOID:4043	skeletal muscle cancer
+DOID:4239	alveolar soft part sarcoma
+DOID:3247	rhabdomyosarcoma
+DOID:3250	pleomorphic rhabdomyosarcoma
+DOID:8251	adult pleomorphic rhabdomyosarcoma
+DOID:7463	childhood pleomorphic rhabdomyosarcoma
+DOID:4051	alveolar rhabdomyosarcoma
+DOID:4065	mixed type rhabdomyosarcoma
+DOID:3246	embryonal rhabdomyosarcoma
+DOID:3255	botryoid rhabdomyosarcoma
+DOID:6786	childhood botryoid rhabdomyosarcoma
+DOID:6847	adult botryoid rhabdomyosarcoma
+DOID:3260	spindle cell rhabdomyosarcoma
+DOID:0050924	striated muscle rhabdoid tumor
+DOID:4230	smooth muscle cancer
+DOID:1967	leiomyosarcoma
+DOID:5251	inflammatory leiomyosarcoma
+DOID:5268	myxoid leiomyosarcoma
+DOID:5264	epithelioid leiomyosarcoma
+DOID:5253	conventional leiomyosarcoma
+DOID:5258	granular cell leiomyosarcoma
+DOID:3996	urinary system cancer
+DOID:11819	ureter cancer
+DOID:4939	ureter carcinoma
+DOID:14491	regional ureteric cancer
+DOID:4938	ureter adenocarcinoma
+DOID:5539	ureter squamous cell carcinoma
+DOID:6886	ureter small cell carcinoma
+DOID:6888	ureter transitional cell carcinoma
+DOID:6845	infiltrating ureter transitional cell carcinoma
+DOID:11818	ureteric orifice cancer
+DOID:14489	ureteral lymphoma
+DOID:263	kidney cancer
+DOID:4242	kidney sarcoma
+DOID:5287	kidney leiomyosarcoma
+DOID:5982	kidney fibrosarcoma
+DOID:4880	kidney clear cell sarcoma
+DOID:5983	kidney osteogenic sarcoma
+DOID:4919	renal pelvis carcinoma
+DOID:5974	renal pelvis transitional cell carcinoma
+DOID:0050620	infiltrating renal pelvis transitional cell carcinoma
+DOID:6844	kidney pelvis sarcomatoid transitional cell carcinoma
+DOID:5973	kidney pelvis papillary carcinoma
+DOID:5534	renal pelvis squamous cell carcinoma
+DOID:4918	renal pelvis adenocarcinoma
+DOID:3675	childhood kidney neoplasm
+DOID:4454	childhood kidney cell carcinoma
+DOID:3672	rhabdoid cancer
+DOID:3674	kidney rhabdoid cancer
+DOID:8410	childhood kidney angiomyolipoma
+DOID:4773	congenital mesoblastic nephroma
+DOID:8082	cellular congenital mesoblastic nephroma
+DOID:8083	classic congenital mesoblastic nephroma
+DOID:262	kidney hemangiopericytoma
+DOID:2154	nephroblastoma
+DOID:5182	blastema predominant kidney Wilms' tumor
+DOID:5178	metachronous kidney Wilms' tumor
+DOID:5179	mixed cell type kidney Wilms' tumor
+DOID:5191	stromal predominant kidney Wilms' tumor
+DOID:5176	renal Wilms' tumor
+DOID:5183	hereditary Wilms' tumor
+DOID:5189	epithelial predominant Wilms' tumor
+DOID:4451	renal carcinoma
+DOID:4450	renal cell carcinoma
+DOID:4471	chromophobe adenocarcinoma
+DOID:6605	classic variant of chromophobe renal cell carcinoma
+DOID:6606	eosinophilic variant of chromophobe renal cell carcinoma
+DOID:4455	hereditary renal cell carcinoma
+DOID:7192	hereditary conventional renal cell carcinoma
+DOID:6163	familial renal papillary carcinoma
+DOID:0050387	nonpapillary renal cell carcinoma
+DOID:4467	renal clear cell carcinoma
+DOID:4464	collecting duct carcinoma
+DOID:4473	sarcomatoid renal cell carcinoma
+DOID:4463	multilocular clear cell renal cell carcinoma
+DOID:4465	papillary renal cell carcinoma
+DOID:4472	mucinous tubular and spindle renal cell carcinoma
+DOID:7571	malignant cystic nephroma
+DOID:4772	mesoblastic nephroma
+DOID:11054	urinary bladder cancer
+DOID:11812	bladder sarcoma
+DOID:11820	bladder dome cancer
+DOID:11593	bladder lateral wall cancer
+DOID:5427	urinary bladder villous adenoma
+DOID:4007	bladder carcinoma
+DOID:4006	bladder transitional cell carcinoma
+DOID:7244	bladder urachal urothelial carcinoma
+DOID:6975	bladder urothelial papillary carcinoma
+DOID:6477	invasive bladder transitional cell carcinoma
+DOID:6976	micropapillary variant infiltrating bladder urothelial carcinoma
+DOID:7968	plasmacytoid variant infiltrating bladder urothelial carcinoma
+DOID:7553	infiltrating bladder urothelial carcinoma sarcomatoid variant
+DOID:7972	lymphoma-like variant infiltrating bladder urothelial carcinoma
+DOID:7967	lipid-cell variant infiltrating bladder urothelial carcinoma
+DOID:7600	infiltrating bladder lymphoepithelioma-like carcinoma
+DOID:7969	nested variant infiltrating bladder urothelial carcinoma
+DOID:7971	microcystic variant infiltrating bladder urothelial carcinoma
+DOID:6476	clear cell variant infiltrating bladder urothelial carcinoma
+DOID:6571	non-invasive bladder urothelial carcinoma
+DOID:3711	bladder adenocarcinoma
+DOID:8096	bladder mixed adenocarcinoma
+DOID:5306	bladder clear cell adenocarcinoma
+DOID:6210	bladder diffuse clear cell adenocarcinoma
+DOID:8051	bladder papillary clear cell adenocarcinoma
+DOID:8050	bladder tubulo-cystic clear cell adenocarcinoma
+DOID:3710	bladder colloid adenocarcinoma
+DOID:6594	bladder colonic type adenocarcinoma
+DOID:8097	bladder hepatoid adenocarcinoma
+DOID:6481	bladder signet ring cell adenocarcinoma
+DOID:7694	bladder urachal adenocarcinoma
+DOID:7371	superficial urinary bladder cancer
+DOID:5958	bladder urachal carcinoma
+DOID:5957	bladder urachal squamous cell carcinoma
+DOID:3742	bladder squamous cell carcinoma
+DOID:3741	bladder verrucous squamous cell carcinoma
+DOID:7315	Jewett-Marshall bladder cancer
+DOID:7132	urinary bladder small cell neuroendocrine carcinoma
+DOID:11809	bladder neck cancer
+DOID:11821	bladder lymphoma
+DOID:11814	urinary bladder anterior wall cancer
+DOID:11813	bladder trigone cancer
+DOID:11817	urachus cancer
+DOID:11811	urinary bladder posterior wall cancer
+DOID:734	urethra cancer
+DOID:4910	urethra adenocarcinoma
+DOID:5307	urethra clear cell adenocarcinoma
+DOID:4013	urethra transitional cell carcinoma
+DOID:3750	urethra squamous cell carcinoma
+DOID:3749	urethral verrucous carcinoma
+DOID:736	male urethral cancer
+DOID:8259	bulbomembranous urethral cancer
+DOID:6167	prostatic urethral cancer
+DOID:6166	prostatic urethra urothelial carcinoma
+DOID:8223	penile urethral cancer
+DOID:738	female urethral cancer
+DOID:7488	posterior urethra cancer
+DOID:8272	anterior urethra cancer
+DOID:170	endocrine gland cancer
+DOID:1540	parathyroid carcinoma
+DOID:5032	pineal gland cancer
+DOID:1660	malignant pineal area germ cell neoplasm
+DOID:5553	pineal region choriocarcinoma
+DOID:5510	pineal dysgerminoma
+DOID:6856	pineal region teratoma
+DOID:6858	pineal region immature teratoma
+DOID:7428	pineal region germinoma
+DOID:5341	pineal region yolk sac tumor
+DOID:1664	pineoblastoma
+DOID:5030	pineal parenchymal tumor of intermediate differentiation
+DOID:4858	pineal gland astrocytoma
+DOID:8031	pineal region meningioma
+DOID:5031	adult pineal parenchymal tumor
+DOID:6648	adult pineoblastoma
+DOID:1781	thyroid cancer
+DOID:10011	thyroid lymphoma
+DOID:4515	thyroid sarcoma
+DOID:4514	thyroid angiosarcoma
+DOID:3963	thyroid carcinoma
+DOID:0050923	spindle epithelial tumor with thymus-like differentiation tumor
+DOID:3962	follicular thyroid carcinoma
+DOID:3973	thyroid medullary carcinoma
+DOID:0050547	familial medullary thyroid carcinoma
+DOID:3964	trabecular follicular adenocarcinoma
+DOID:3969	papillary thyroid carcinoma
+DOID:3968	papillary follicular thyroid adenocarcinoma
+DOID:7086	multicentric papillary thyroid carcinoma
+DOID:7088	columnar cell variant papillary carcinoma
+DOID:7089	tall cell variant papillary carcinoma
+DOID:5914	nonencapsulated sclerosing carcinoma
+DOID:8161	thyroid hurthle cell carcinoma
+DOID:4687	mucoepidermoid thyroid carcinoma
+DOID:3953	adrenal gland cancer
+DOID:5718	adrenal neuroblastoma
+DOID:3950	adrenal carcinoma
+DOID:8140	adrenal gland ganglioneuroblastoma
+DOID:660	adrenal cortex cancer
+DOID:3948	adrenocortical carcinoma
+DOID:3959	adrenal cortical adenocarcinoma
+DOID:5719	adrenal medulla cancer
+DOID:0050936	extra-adrenal pheochromocytoma
+DOID:7379	adrenal medulla carcinoma
+DOID:0050892	adrenal gland pheochromocytoma
+DOID:1793	pancreatic cancer
+DOID:1796	pancreas sarcoma
+DOID:1799	islet cell tumor
+DOID:4432	pancreatic somatostatinoma
+DOID:3892	insulinoma
+DOID:7698	non-functioning pancreatic endocrine tumor
+DOID:7840	pancreatic non-functioning delta cell tumor
+DOID:4433	pancreatic delta cell neoplasm
+DOID:5580	pancreatic gastrinoma
+DOID:7697	pancreatic ACTH hormone producing tumor
+DOID:1798	pancreatic endocrine carcinoma
+DOID:5741	pancreatic vasoactive intestinal peptide producing tumor
+DOID:1792	pancreas lymphoma
+DOID:1795	tumor of exocrine pancreas
+DOID:3919	pancreatic serous cystic neoplasm
+DOID:7575	pancreatic intraductal papillary-mucinous neoplasm
+DOID:7851	pancreatic intraductal papillary-mucinous adenoma
+DOID:7574	pancreatic intraductal papillary-colloid carcinoma
+DOID:8150	pancreatic invasive intraductal papillary-mucinous carcinoma
+DOID:7685	pancreatic non-invasive intraductal papillary-mucinous carcinoma
+DOID:4905	pancreatic carcinoma
+DOID:3587	pancreatic ductal carcinoma
+DOID:6823	pancreatoblastoma
+DOID:6827	pancreatic solid pseudopapillary carcinoma
+DOID:4074	pancreas adenocarcinoma
+DOID:4073	pancreatic cystadenocarcinoma
+DOID:5751	pancreatic serous cystadenocarcinoma
+DOID:7234	pancreatic colloid cystadenocarcinoma
+DOID:7236	pancreatic invasive mucinous cystadenocarcinoma
+DOID:7237	pancreatic non-invasive mucinous cystadenocarcinoma
+DOID:7729	acinar cell cystadenocarcinoma
+DOID:7577	pancreatic foamy gland adenocarcinoma
+DOID:3498	pancreatic ductal adenocarcinoma
+DOID:3497	pancreatic signet ring cell adenocarcinoma
+DOID:7718	osteoclast-like giant cell neoplasm of the pancreas
+DOID:7716	mixed ductal-endocrine carcinoma
+DOID:5637	adenosquamous pancreas carcinoma
+DOID:7717	colloid carcinoma of the pancreas
+DOID:5742	pancreatic acinar cell adenocarcinoma
+DOID:169	neuroendocrine tumor
+DOID:5574	VIPoma
+DOID:5577	gastrinoma
+DOID:0050773	paraganglioma
+DOID:4430	somatostatinoma
+DOID:1785	pituitary cancer
+DOID:5716	hormone producing pituitary cancer
+DOID:6276	malignant ACTH producing neoplasm of pituitary gland
+DOID:6274	malignant thyroid stimulating hormone producing neoplasm of pituitary gland
+DOID:5396	prolactin producing pituitary tumor
+DOID:6256	malignant growth hormone secreting neoplasm of pituitary
+DOID:4916	pituitary carcinoma
+DOID:4915	basophilic carcinoma
