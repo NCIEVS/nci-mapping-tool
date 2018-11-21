@@ -509,9 +509,6 @@ public class MappingUtils {
 		Vector v = readFile(filename);
 		for (int i=0; i<v.size(); i++) {
 			String line = (String) v.elementAt(i);
-
-			//System.out.println(line);
-
             Vector u = parseData(line, '|');
             String condition = (String) u.elementAt(0);
             condition = condition.toLowerCase();
@@ -524,23 +521,56 @@ public class MappingUtils {
 
 	public String search_history(String term) {
 		term = term.toLowerCase();
-		Vector words = tokenize(term);
+		Vector words = tokenize_str(term);
 		Iterator it = historyMap.keySet().iterator();
 		while (it.hasNext()) {
-			String condition = (String) it.next();
-			Vector tokens = tokenize(condition, true);
 			boolean bool = true;
-			for (int i=0; i<tokens.size(); i++) {
-				String token = (String) tokens.elementAt(i);
-				if (!words.contains(token)) {
-					bool = false;
-					break;
+			String condition = (String) it.next();
+				Vector tokens = tokenize_str(condition, true);
+				for (int i=0; i<tokens.size(); i++) {
+					String token = (String) tokens.elementAt(i);
+					if (!words.contains(token)) {
+						bool = false;
+						break;
+					}
 				}
-			}
-			if (bool) return (String) historyMap.get(condition);
+				if (bool) {
+					return (String) historyMap.get(condition);
+				}
 		}
 		return null;
 	}
+
+
+	public Vector tokenize_str(String t) {
+		boolean removeFillers = true;
+		return tokenize_str(t, removeFillers);
+	}
+
+
+	public Vector tokenize_str(String t, boolean removeFillers) {
+		if (t == null) return null;
+		t = t.toLowerCase();
+		t = t.replaceAll("[^a-zA-Z0-9]", " ");
+
+		StringTokenizer st = new StringTokenizer(t);
+		Vector words = new Vector();
+		while (st.hasMoreTokens()) {
+			 String token = st.nextToken();
+			 token = removeTrailingDiscardedChar(token);
+			 token = removeLeadingDiscardedChar(token);
+			 if (removeFillers) {
+				 if (!isFiller(token)) {
+					 if (!words.contains(token)) {
+						 words.add(token);
+					 }
+				 }
+			 }
+		}
+		words = new SortUtils().quickSort(words);
+		return words;
+	}
+
 
 	public Vector tokenize(String t, boolean removeFillers) {
 		if (t == null) return null;
@@ -577,7 +607,7 @@ public class MappingUtils {
 			pw = new PrintWriter(outputfile, "UTF-8");
 			for (int i=0; i<v.size(); i++) {
 				String line = (String) v.elementAt(i);
-				String sourceCode = "NA";
+     			String sourceCode = "NA";
 				String sourceTerm = line;
 				Vector u0 = parseData(line, '\t');
 				if (u0.size() == 2) {
@@ -585,17 +615,19 @@ public class MappingUtils {
 				    sourceTerm = (String) u0.elementAt(1);
 				}
 				lcv++;
-
 				Vector w = get_matches(sourceTerm);
+
 				if (w == null || w.size() == 0) {
 					w = mapTo(search_history(sourceTerm));
 				}
 
 				if (w == null || w.size() == 0) {
-					w = mapTo(substitute(sourceTerm));
+					String history_term = substitute(sourceTerm);
+					w = mapTo(history_term);
 				}
 
 				if (w != null && w.size()>0) {
+
 					match_knt++;
 					for (int j=0; j<w.size(); j++) {
 						String t = (String) w.elementAt(j);
@@ -613,8 +645,7 @@ public class MappingUtils {
 					System.out.println("Processing " + i + " of " + v.size() + " -- " + line);
 				}
 			}
-			System.out.println("Done");
-			System.out.println("Number of matches: " + match_knt + " (out of " + v.size() + ")");
+			System.out.println("Done. Number of matches: " + match_knt + " (out of " + v.size() + ")");
 
 		} catch (Exception ex) {
 
@@ -641,6 +672,8 @@ public class MappingUtils {
 		}
 		return t.trim();
 	}
+
+
 
 	public void generateMapping(String vbtfile) {
         String outputfile = "mapping_" + vbtfile;
@@ -687,6 +720,7 @@ public class MappingUtils {
     public static void main(String[] args) {
 		long ms = System.currentTimeMillis();
 		String vbtfile = args[0];
+
 		MappingUtils test = new MappingUtils();
 		test.generateMapping(vbtfile);
 	}
