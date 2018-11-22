@@ -622,8 +622,21 @@ public class MappingUtils {
 				}
 
 				if (w == null || w.size() == 0) {
-					String history_term = substitute(sourceTerm);
-					w = mapTo(history_term);
+					String term = substitute(sourceTerm);
+					w = mapTo(term);
+				}
+
+				if (w == null || w.size() == 0) {
+					int n = sourceTerm.indexOf(",");
+					if (n != -1) {
+						String term = sourceTerm.substring(0, n);
+						w = mapTo(term);
+					}
+				}
+
+				if (w == null || w.size() == 0) {
+					String term = removeBrackets(sourceTerm);
+					w = mapTo(term);
 				}
 
 				if (w != null && w.size()>0) {
@@ -673,7 +686,18 @@ public class MappingUtils {
 		return t.trim();
 	}
 
-
+    public String removeBrackets(String str) {
+		int m = str.indexOf("[");
+		if (m == -1) return str;
+		int n = str.indexOf("]");
+		if (n == -1) return str;
+		String s1 = str.substring(0, m);
+		s1 = s1.trim();
+		String s2 = str.substring(n+1, str.length());
+		s2 = s2.trim();
+		String t = s1 + " " + s2;
+		return t;
+	}
 
 	public void generateMapping(String vbtfile) {
         String outputfile = "mapping_" + vbtfile;
