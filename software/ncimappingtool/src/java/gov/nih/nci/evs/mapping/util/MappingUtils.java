@@ -380,6 +380,8 @@ public class MappingUtils {
 			}
 
 			String key = toKey(pt);
+			//System.out.println(pt + " --> " + key);
+
 			Vector w = new Vector();
 			if (hmap.containsKey(key)) {
 				w = (Vector) hmap.get(key);
@@ -390,6 +392,9 @@ public class MappingUtils {
 			hmap.put(key, w);
 
 			key = toKey(syn);
+			//System.out.println(syn + " --> " + key);
+
+
 			w = new Vector();
 			if (hmap.containsKey(key)) {
 				w = (Vector) hmap.get(key);
@@ -614,8 +619,11 @@ public class MappingUtils {
 				    sourceCode = (String) u0.elementAt(0);
 				    sourceTerm = (String) u0.elementAt(1);
 				}
+
 				lcv++;
-				Vector w = get_matches(sourceTerm);
+				String line2 = sourceTerm;
+				line2 = line2.trim();
+				Vector w = mapTo(line2);
 
 				if (w == null || w.size() == 0) {
 					w = mapTo(search_history(sourceTerm));
@@ -635,8 +643,13 @@ public class MappingUtils {
 				}
 
 				if (w == null || w.size() == 0) {
-					String term = removeBrackets(sourceTerm);
-					w = mapTo(term);
+					String term = removeOpenBrackets(sourceTerm);
+					if (term.compareToIgnoreCase(sourceTerm) != 0) w = mapTo(term);
+				}
+
+				if (w == null || w.size() == 0) {
+					String term = removeCloseBrackets(sourceTerm);
+					if (term.compareToIgnoreCase(sourceTerm) != 0) w = mapTo(term);
 				}
 
 				if (w != null && w.size()>0) {
@@ -686,7 +699,20 @@ public class MappingUtils {
 		return t.trim();
 	}
 
-    public String removeBrackets(String str) {
+    public String removeOpenBrackets(String str) {
+		int m = str.indexOf("(");
+		if (m == -1) return str;
+		int n = str.indexOf(")");
+		if (n == -1) return str;
+		String s1 = str.substring(0, m);
+		s1 = s1.trim();
+		String s2 = str.substring(n+1, str.length());
+		s2 = s2.trim();
+		String t = s1 + " " + s2;
+		return t;
+	}
+
+    public String removeCloseBrackets(String str) {
 		int m = str.indexOf("[");
 		if (m == -1) return str;
 		int n = str.indexOf("]");

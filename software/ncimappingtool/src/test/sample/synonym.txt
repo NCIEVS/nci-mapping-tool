@@ -39,7 +39,7 @@ meningeal|meninges
 muscular|muscle
 nasal|nose
 nasothroat|nasopharyngeal
-neoplastic|neoplasm
+neoplasm|neoplasms|tumoral
 ocular|eye
 omental|omentum
 orbit|orbital
@@ -72,8 +72,6 @@ thorax|chest
 thymic|thymus
 tissues|tissue
 tracheal|trachea
-tumoral|neoplasm
-tumor|neoplasm
 ureteral|ureter
 urethral|urethra
 vaginal|vagina

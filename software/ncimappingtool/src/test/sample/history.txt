@@ -269,3 +269,11 @@ neuroendocrine&tumors|metastatic digestive system neuroendocrine tumor g1
 non-hodgkin&lymphoma|non-hodgkin lymphoma
 skin&basal&cell&carcinoma|skin basal cell carcinoma
 t&cell&lymphoma|mature t-cell and nk-cell non-hodgkin lymphoma
+screening&neoplasms|cancer screening
+screening&neoplasm|cancer screening
+screening|disease screening
+carcinoma&lip|lip squamous cell carcinoma
+carcinoma&skin|skin squamous cell carcinoma
+lymphoblastic&lymphoma|Lymphoblastic Lymphoma
+examination|medical examination
+abnormal&finding|Abnormal Finding
