@@ -1,4 +1,3 @@
-abetalipoproteinaemia|abetalipoproteinemia
 abettors|abetters
 abettor|abetter
 abnormalized|abnormalised
@@ -78,8 +77,7 @@ acroanesthesia|acroanaesthesia
 acroesthesia|acroaesthesia
 acronically|acronycally
 acronical|acronycal
-acroparaesthesia|acroparesthesia
-acroparesthesia|acroparesthaesia
+acroparaesthesia|acroparesthaesia|acroparesthesia
 activization|activisation
 actualizations|actualisations
 actualization|actualisation
@@ -118,7 +116,6 @@ advertizers|advertisers
 advertizer|advertiser
 advisers|advisors
 adviser|advisor
-adze|adz
 adz|adze
 aediles|ediles
 aedile|edile
@@ -505,8 +502,7 @@ anesthetics|anaesthetics
 anesthetic|anaesthetic
 anesthetists|anaesthetists
 anesthetist|anaesthetist
-anesthetizations|anaesthetisations|anaesthetizations|anesthetisation
-anesthetization|anaesthetisation|anaesthetization|anesthetisation
+anaesthetisation|anaesthetisations|anaesthetization|anaesthetizations|anesthetisation|anesthetization|anesthetizations
 anesthetized|anaesthetised|anaesthetized|anesthetised
 anesthetizers|anaesthetisers|anaesthetizers|anesthetisers
 anesthetizer|anaesthetiser|anaesthetizer|anesthetiser
@@ -785,11 +781,9 @@ archaeologise|archaeologise
 archaeologising|archaeologising
 archaeologists|archaeologists|archeologists
 archaeologist|archaeologist|archeologist
-archaeologist|archeologist
 archaeologized|archeologised
 archaeologizing|archeologising
 archaeology|archaeology|archeology
-archaeology|archeology
 archaeomagnetism|archaeomagnetism
 archaeozoic|archaeozoic
 archaeozoologists|archaeozoologists
@@ -1366,8 +1360,7 @@ blue-penciled|blue-pencilled
 blue-penciling|blue-pencilling
 bluing|blueing
 boatswains|bosuns|bo\ns|bouns|bos\ns
-boatswain|bosun|boun|bo\n|bos\n
-boatswain|bosun|boun|bos\n|bo\n
+bo\n|boatswain|bos\n|bosun|boun
 bobbysoxers|bobby-soxers
 bobbysoxer|bobby-soxer
 boccie|bocce|bocci
@@ -1386,8 +1379,7 @@ bonny|bonnie
 bony|boney
 boo-boos|booboos
 boo-boo|booboo
-boogeyman|bogeyman
-boogeyman|boogerman
+bogeyman|boogerman|boogeyman
 boomboxes|boom boxes
 boombox|boom box
 borage|bourage
@@ -1505,8 +1497,7 @@ burnettize|burnettise
 burnettizing|burnettising
 burnoosed|burnoused
 burnooses|burnouses
-burnoose|burnous
-burnouse|burnous
+burnoose|burnous|burnouse
 bused|bussed
 buses|busses
 busheled|bushelled
@@ -1916,8 +1907,7 @@ cenospecies|coenospecies
 cenospecifically|coenospecifically
 cenospecific|coenospecific
 cenozioc|cainozoic
-cenozoic|caenozoic
-cenozoic|coenozoic
+caenozoic|cenozoic|coenozoic
 center-backs|centre-backs
 center-back|centre-back
 center-half|centre-half
@@ -1935,7 +1925,6 @@ centerfolds|centrefolds
 centerfold|centrefold
 centerings|centrings
 centering|centreing|centring
-centering|centring
 centerlesser|centrelesser
 centerlessest|centrelessest
 centerless|centreless
@@ -2011,8 +2000,7 @@ chaldeans|chaldaeans
 chameleonizes|chameleonises
 chameleonize|chameleonise
 chamizal|chamisal
-chamois|shammy|chammy
-chamois|shammy|chammy|chamoix
+chammy|chamois|chamoix|shammy
 chamomiles|camomiles
 chamomile|camomile
 championizes|championises
@@ -2123,7 +2111,6 @@ chloroformization|chloroformisation
 chloroformizes|chloroformises
 chloroformize|chloroformise
 chlorophylls|chlorophyls
-chlorophyll|chlorophyl
 chlorophyl|chlorophyll
 chocoholics|chocaholics
 chocoholic|chocaholic
@@ -2180,8 +2167,6 @@ cicatrizing|cicatrising
 ciceronianizes|ciceronianises
 ciceronianize|ciceronianise
 cigarets|cigarettes
-cigarettes|cigarets
-cigarette|cigaret
 cigaret|cigarette
 cimicide|cimicidae
 cinchonizations|cinchonisations
@@ -3043,7 +3028,6 @@ czarinas|tsarinas|tzarinas
 czarina|tzarina|tsarina
 czarisms|tsarisms|tzarisms
 czarism|tsarism|tzarism
-czarism|tzarism|tsarism
 czarist|tzarist|tsarist
 czars|tzars|tsars
 czar|tzar|tsar
@@ -3279,8 +3263,7 @@ deflectionization|deflectionisation
 deflectionizes|deflectionises
 deflectionize|deflectionise
 deflections|deflections
-deflection|deflection
-deflexion|deflection
+deflection|deflection|deflexion
 deformalize|deformalise
 defunctionalizations|defunctionalisations
 defunctionalization|defunctionalisation
@@ -3303,8 +3286,7 @@ dehumanizing|dehumanising
 dehydrogenated|dehydrogenised
 dehydrogenates|dehydrogenises
 dehydrogenate|dehydrogenise|dehydrogenising
-dehydrogenation|dehydrogenisation
-dehydrogenization|dehydrogenisation
+dehydrogenation|dehydrogenisation|dehydrogenization
 dehydrogenized|dehydrogenised
 dehydrogenizer|dehydrogeniser
 dehydrogenize|dehydrogenise
@@ -3672,8 +3654,7 @@ desulfurizations|desulphurisations|desulphurizations
 desulfurization|desulphurisation|desulphurization
 desulfurized|desulphurised|desulphurized
 desulfurizers|desulphurisers
-desulfurizer|desulfuriser
-desulfurizer|desulfuriser|desulphuriser
+desulfuriser|desulfurizer|desulphuriser
 desulfurizes|desulphurises|desulphurizes
 desulfurize|desulphurise|desulphurize
 desulfurizing|desulphurising|desulphurizing
@@ -3885,8 +3866,7 @@ diphthongized|diphthongised
 diphthongizes|diphthongises
 diphthongize|diphthongise
 diphthongizing|diphthongising
-diple|diploe
-diploe|diploae
+diple|diploae|diploe
 diplomatized|diplomatised
 diplomatizes|diplomatises
 diplomatize|diplomatise
@@ -4236,7 +4216,6 @@ droughts|drouthes
 droughty|drouthy
 drought|drouth
 druggie|druggy
-druggy|druggie
 dryly|drily
 dualizations|dualisations
 dualization|dualisation
@@ -4652,8 +4631,7 @@ enterocele|enterocoele
 enterohaemorrhagic|enterohemorrhagic
 enterprise|enterprize
 enterprising|enterprizing
-enthralled|inthralled|enslave
-enthralling|inthralling|enslave
+enslave|enthralled|enthralling|inthralled|inthralling
 enthrallments|enthralments
 enthrallment|enthralment
 enthralls|enthrals|inthralls
@@ -4730,7 +4708,6 @@ epilogizes|epilogises
 epilogize|epilogise
 epilogizing|epilogising
 epilogs|epilogues
-epilogues|epilogs
 epilogue|epilog
 epiloguized|epiloguised
 epiloguizes|epiloguises
@@ -5465,8 +5442,7 @@ fluidize|fluidise
 fluidizing|fluidising
 fluky|flukey
 flunkies|flunkeys
-flunky|flunkey|flunkie
-flunky|flunkie|flunkey
+flunkey|flunkie|flunky
 fluoridizations|fluoridisations
 fluoridization|fluoridisation
 fluoridized|fluoridised
@@ -5885,8 +5861,7 @@ glacializes|glacialises
 glacialize|glacialise
 glamored|glamoured
 glamorizations|glamorisations
-glamorization|glamorisation
-glamorization|glamourization|glamorisation
+glamorisation|glamorization|glamourization
 glamorized|glamourized|glamorised|glamourised
 glamorizers|glamourizers|glamorisers
 glamorizer|glamourizer|glamoriser
@@ -6208,8 +6183,7 @@ haemodiafiltration|hemodiafiltration
 haemofiltrate|hemofiltrate
 haemofiltration|hemofiltration
 haemolymphangioma|hemolymphangioma
-haemolysed|hemolysed
-haemolysed|hemolyzed
+haemolysed|hemolysed|hemolyzed
 haemoperfusion|hemoperfusion
 haemopericardium|hemopericardium
 haemoperitoneum|hemoperitoneum
@@ -6376,8 +6350,7 @@ hemagglutination|haemagglutination
 hemagglutinative|haemagglutinative
 hemagglutinin|haemagglutinin
 hemagogs|haemagogues|hemagogues
-hemagogue|haemagogue
-hemagog|haemagogue
+haemagogue|hemagog|hemagogue
 hemal|haemal
 hemameba|hemamoeba
 hemangiomas|haemangiomas
@@ -6623,9 +6596,7 @@ hijacked|highjacked
 hijackers|highjackers
 hijacker|highjacker
 hijacking|highjacking
-hijacks|highjack
-hijacks|highjacks
-hijack|highjack
+highjack|highjacks|hijack|hijacks
 hilloed|hilloaed
 hinduized|hinduised
 hinduizes|hinduises
@@ -6721,7 +6692,6 @@ homeward|homewards
 homeynesses|hominesses
 homeyness|hominess
 homeys|homies
-homey|homie
 homey|homie|homy
 hominization|hominisation
 hominized|hominised
@@ -6741,8 +6711,6 @@ homologizes|homologises
 homologize|homologise
 homologizing|homologising
 homologs|homologues
-homologues|homologs
-homologue|homolog
 homolog|homologue
 honkies|honkeys
 honky|honkie|honkey
@@ -7022,8 +6990,7 @@ hyperoxygenizes|hyperoxygenises
 hyperoxygenize|hyperoxygenise
 hyperparasitizes|hyperparasitises
 hyperparasitize|hyperparasitise
-hyperphenylalaninaemia|hyperphenylalaninemia
-hyperphenylalanineaemia|hyperphenylalaninemia
+hyperphenylalaninaemia|hyperphenylalanineaemia|hyperphenylalaninemia
 hyperphosphataemia|hyperphosphatemia
 hyperphosphatasaemia|hyperphosphatasemia
 hyperpnea|hyperpnoea
@@ -7057,8 +7024,7 @@ hypervitalizes|hypervitalises
 hypervitalize|hypervitalise
 hypervolaemia|hypervolemia
 hypesthesias|hypaesthesias
-hypesthesia|hypaesthesia
-hypesthesia|hypaesthesia|hypoesthesia
+hypaesthesia|hypesthesia|hypoesthesia
 hypesthesic|hypaesthesic|hypoesthesic
 hypethral|hypaethral
 hyphaema|hyphema
@@ -7451,8 +7417,7 @@ inquire|enquire
 inquiries|enquiries
 inquiring|enquiring
 inquiry|enquiry
-insignia|insigne
-insignia|insignias|insignes|insigne
+insigne|insignes|insignia|insignias
 insolubilization|insolubilisation
 insolubilized|insolubilised
 insolubilizes|insolubilises
@@ -7743,8 +7708,7 @@ jimmied|jemmied
 jimmies|jemmies
 jimmmying|jemmying
 jimmy|jemmy
-jinni|jinn|djinni|djinn
-jinn|jinns|djinns|djinn
+djinn|djinni|djinns|jinn|jinni|jinns
 jinrikishas|jinrickshas|jinrikshas
 jinrikisha|jinricksha|jinriksha
 jokey|joky
@@ -7781,8 +7745,7 @@ judgment|judgement
 judicializes|judicialises
 judicialize|judicialise
 jujitsus|jujutsus|jiujitsus
-jujitsu|jiujitsu|jujutsu
-jujitsu|jujutsu|jiujitsu
+jiujitsu|jujitsu|jujutsu
 julide|julidae
 jumboization|jumboisation
 jumboized|jumboised
@@ -7805,8 +7768,7 @@ kaolinizes|kaolinises
 kaolinize|kaolinise
 kaolinizing|kaolinising
 kebabs|kabobs|kebobs
-kebab|kabob|kebob
-kebab|kebob|kabob
+kabob|kebab|kebob
 ked|kaed
 keizer|keiser
 kellia|koellia
@@ -7839,7 +7801,6 @@ ketonize|ketonise
 kickoffs|kick-offs
 kickoff|kick-off
 kiddie|kiddy
-kiddy|kiddie
 kidnaped|kidnapped
 kidnapers|kidnappers
 kidnaper|kidnapper
@@ -8348,7 +8309,6 @@ lupines|lupins
 lupine|lupin
 lustered|lustred
 lustering|lustreing|lustring
-lustering|lustring
 lusterlesser|lustrelesser
 lusterlessest|lustrelessest
 lusterless|lustreless
@@ -8518,9 +8478,7 @@ mantelpieces|mantlepieces
 mantelpiece|mantlepiece
 mantes|mantoes
 many-colored|many-coloured
-marabout|marabouts
-marabout|marbleize|marbleise
-marabou|marabout
+marabou|marabout|marabouts|marbleise|marbleize
 marbleized|marbleised
 marbleizes|marbleises
 marbleize|marbleise
@@ -8926,7 +8884,6 @@ microliters|microlitres
 microliter|microlitre
 micrometers|micrometres
 micrometer|micrometre
-micrometre|micrometre
 micromillimeters|micromillimetres
 micromillimeter|micromillimetre
 microminiaturizations|microminiaturisations
@@ -9825,8 +9782,7 @@ nonflammable|non-flammeable
 nonflavored|nonflavoured
 nonfreezing|non-freezing
 nonfulfillments|nonfulfilments
-nonfulfillment|nonfulfilment
-nonfulfillment|nonfulfilment|non-fulfilment
+non-fulfilment|nonfulfillment|nonfulfilment
 nonfunctional|non-functional
 nonfunctioning|non-functioning
 nongalvanizeds|nongalvaniseds
@@ -9946,8 +9902,7 @@ nonrealistic|non-realistic
 nonrealizations|nonrealisations
 nonrealization|nonrealisation
 nonrecognizeds|nonrecogniseds
-nonrecognized|nonrecognised
-nonrecognized|nonrecognised|non-recognised
+non-recognised|nonrecognised|nonrecognized
 nonrecognizing|non-recognising
 nonreflecting|non-reflecting
 nonrefundable|non-refundable
@@ -9967,8 +9922,7 @@ nonscientific|non-scientific
 nonsectarian|non-sectarian
 nonselective|non-selective
 nonsensitizeds|nonsensitiseds
-nonsensitized|nonsensitised
-nonsensitized|nonsensitised|non-sensitised
+non-sensitised|nonsensitised|nonsensitized
 nonsexist|non-sexist
 nonsingular|non-singular
 nonskid|non-skid
@@ -9981,8 +9935,7 @@ nonspecialized|nonspecialised
 nonspecifically|non-specifically
 nonspecific|non-specific
 nonstandardizeds|nonstandardiseds
-nonstandardized|nonstandardised
-nonstandardized|nonstandardised|non-standardised
+non-standardised|nonstandardised|nonstandardized
 nonstandard|non-standard
 nonstarters|non-starters
 nonstarter|non-starter
@@ -10075,7 +10028,6 @@ novelizes|novelises
 novelize|novelise
 novelizing|novelising
 novene|novenae
-novocaine|novocain
 novocain|novocaine
 nuclearizations|nuclearisations
 nuclearization|nuclearisation
@@ -10110,8 +10062,7 @@ oblivionizes|oblivionises
 oblivionize|oblivionise
 occidentalizations|occidentalisations
 occidentalization|occidentalisation
-occidentalized|occidentalised
-occidentalized|occidentalised|occidentalized
+occidentalised|occidentalized
 occidentalizes|occidentalises
 occidentalize|occidentalise
 occidentalizing|occidentalising
@@ -10125,9 +10076,7 @@ ocherous|ochreous
 ocherrer|ochrer
 ocherrest|ochrest
 ochers|ochres
-ochery|ochrey|ochry
-ocher|ochre
-ochry|ochre
+ocher|ochery|ochre|ochrey|ochry
 octets|octettes
 octet|octette
 ocyrrhoe|ocyrrhoae
@@ -10149,8 +10098,7 @@ odor|odour
 odourproof|odorproof
 oesophagectomy|esophagectomy
 oesophagobronchial|esophagobronchial
-oesophagocoele|esophagocele
-oesophagocoele|esophagocoele
+esophagocele|esophagocoele|oesophagocoele
 oesophagoduodenal|esophagoduodenal
 oesophagogastrectomy|esophagogastrectomy
 oesophagogastric|esophagogastric
@@ -10265,8 +10213,7 @@ orangizes|orangises
 orangize|orangise
 orangs|ourangs
 orangutans|orangutangs|orang-utans
-orangutan|orang-utan|orangutang
-orangutan|orangutang
+orang-utan|orangutan|orangutang
 orang|ourang
 oratorizes|oratorises
 oratorize|oratorise
@@ -10914,8 +10861,7 @@ parenthesize|parenthesise
 parenthesizing|parenthesising
 paresthesiae|paraesthesiae
 paresthesias|paraesthesias
-paresthesia|paraesthesia
-paresthesia|paraesthesia|paresthaesia
+paraesthesia|paresthaesia|paresthesia
 paresthesic|paresthaesic
 paresthetic|paraesthetic
 parfocalization|parfocalisation
@@ -11060,8 +11006,6 @@ peculiarize|peculiarise
 peculiarizing|peculiarising
 pedagogism|paedagogism|pedagoguism
 pedagogs|pedagogues
-pedagogues|pedagogs
-pedagogue|pedagog
 pedagog|pedagogue
 pedaled|pedalled
 pedalers|pedallers
@@ -11267,8 +11211,7 @@ perpended|prepended
 perpending|prepending
 perpend|prepend
 perperfect|preperfect
-perse|persae
-perse|prese
+persae|perse|prese
 persianizations|persianisations
 persianization|persianisation
 persianized|persianised
@@ -11950,8 +11893,7 @@ preemptively|pre-emptively
 preemptive|pre-emptive
 preemptors|pre-emptors
 preemptory|pre-emptory
-preemptor|preaemptor
-preemptor|preaemptor|pre-emptor
+pre-emptor|preaemptor|preemptor
 preempts|pre-empts
 preempt|pre-empt
 preesophageal|praeesophageal|preoesophageal
@@ -12091,8 +12033,7 @@ prescreens|pre-screens
 prescreen|pre-screen
 prescutum|praescutum
 preshrunk|pre-shrunk
-presidia|praesidia
-presidiums|presidia|praesidiums
+praesidia|praesidiums|presidia|presidiums
 presidium|praesidium
 presoaked|pre-soaked
 presoaking|pre-soaking
@@ -12270,7 +12211,6 @@ prologizes|prologises
 prologize|prologise
 prologizing|prologising
 prologs|prologues
-prologues|prologs
 prologue|prolog
 prologuized|prologuised
 prologuizers|prologuisers
@@ -13437,8 +13377,7 @@ rumorer|rumourer
 rumoring|rumouring
 rumormongering|rumour-mongering
 rumormongers|rumourmongers|rumour-mongers
-rumormonger|rumourmonger
-rumormonger|rumourmonger|rumour-monger
+rumormonger|rumour-monger|rumourmonger
 rumors|rumours
 rumor|rumour
 runarounds|run-arounds
@@ -13688,7 +13627,6 @@ schlemiel|shlemiel
 schlepped|shlepped
 schlepping|shlepping
 schleps|schlepps|shleps|shlepps
-schlep|schlepp|shlepp|shlep
 schlep|schlepp|shlep|shlepp
 schlock|schlocky|shlock|shlocky
 schmaltzes|schmalzes|shmaltzes
@@ -14048,8 +13986,7 @@ shrimp-colored|shrimp-coloured
 shriveled|shrivelled
 shriveling|shrivelling
 shticks|shtiks|schticks
-shtick|schtick|shtik
-shtick|shtik|schtick
+schtick|shtick|shtik
 sialorrhea|sialorrhoea
 siderealizes|siderealises
 siderealize|siderealise
@@ -14162,7 +14099,6 @@ skillfully|skilfully
 skillfulness|skilfulness
 skillful|skilful
 skulduggery|skullduggery
-skullduggery|skulduggery
 skydove|skydived
 skyers|skyres
 skyer|skyre
@@ -14747,8 +14683,7 @@ sulfas|sulphas
 sulfated|sulphated
 sulfates|sulphates
 sulfate|sulphate
-sulfathiazole|sulphathiazole
-sulfathiazol|sulphathiazole
+sulfathiazol|sulfathiazole|sulphathiazole
 sulfating|sulphating
 sulfation|sulphation
 sulfatizes|sulfatises
@@ -15397,7 +15332,6 @@ thermosiphons|thermosyphons
 thermosiphon|thermosyphon
 thesmothete|thesmothetae
 thiamines|thiamins
-thiamine|thiamin
 thiamin|thiamine
 thiosulfates|thiosulphates
 thiosulfate|thiosulphate
@@ -15456,8 +15390,7 @@ tokenizes|tokenises
 tokenize|tokenise
 tokenizing|tokenising
 tolstoyan|tolstoian|tolstoyian|tolstoïan|tolstoïian|tólstóyan|tólstóyian|t́olstóian|t́olstóyan
-tolstoy|tolstoi|tolstoï|tólstóy|tólstói\s|t́olstói|t́olstóy
-tolstoy|tolstoi|tolstoï|tólstóy|tólstói|t́olstóy
+tolstoi|tolstoy|tolstoï|tólstói|tólstói\s|tólstóy|t́olstói|t́olstóy
 toluenesulphonamide|toluenesulfonamide
 tonicizes|tonicises
 tonicize|tonicise
@@ -15535,18 +15468,15 @@ trammeling|trammelling
 tranquilities|tranquillities
 tranquility|tranquillity
 tranquilizations|tranquilisations|tranquillisations
-tranquilization|tranquilisation
-tranquilization|tranquilisation|tranquillisation
+tranquilisation|tranquilization|tranquillisation
 tranquilized|tranquillized|tranquillised|tranquilised
 tranquilizers|tranquillizers|tranquillisers|tranquilisers
-tranquilizer|tranquillizer|tranquilliser
-tranquilizer|tranquillizer|tranquilliser|tranquiliser
+tranquiliser|tranquilizer|tranquilliser|tranquillizer
 tranquilizes|tranquillizes|tranquillises|tranquilises
 tranquilize|tranquillize|tranquillise|tranquilise
 tranquilizingly|tranquilisingly
 tranquilizings|tranquillizings|tranquillisings
-tranquilizing|tranquillizing|tranquillising
-tranquilizing|tranquillizing|tranquillising|tranquilising
+tranquilising|tranquilizing|tranquillising|tranquillizing
 transcendentalization|transcendentalisation
 transcendentalized|transcendentalised
 transcendentalizes|transcendentalises
@@ -15585,8 +15515,6 @@ traveler|traveller
 travelings|travellings
 traveling|travelling
 travelogs|travelogues
-travelogues|travelogs
-travelogue|travelog
 travelog|travelogue
 trialed|trialled
 trialing|trialling
@@ -16490,8 +16418,7 @@ unravelers|unravellers
 unraveler|unraveller
 unraveling|unravelling
 unrealizables|unrealisables
-unrealizable|unrealisable
-unrealizable|unrealisable|unrealiseable
+unrealisable|unrealiseable|unrealizable
 unrealized|unrealised
 unrealizes|unrealises
 unrealize|unrealise
@@ -17268,13 +17195,9 @@ whiskey|whisky
 whitmanizes|whitmanises
 whitmanize|whitmanise
 whizzes|wizzes
-whiz|whizz
 whiz|whizz|wiz
-whodunits|whodunnits
-whodunit|whodunnit
-whodunit|whodunnits
-wigeon|widgeon
-wigeon|widgeons|wigeons|widgeon
+whodunit|whodunits|whodunnit|whodunnits
+widgeon|widgeons|wigeon|wigeons
 wilfullnesses|wilfulnesses
 willfuler|wilfuler
 willfulest|wilfulest
@@ -17325,8 +17248,7 @@ woolies|woollies
 woollier|woolier
 woolliest|wooliest
 woollies|woolies
-woolly|woolie|wooly
-woolly|wooly|woolie
+woolie|woolly|wooly
 wooly-bear|woolly-bear
 wooly-minded|woolly-minded
 wornil|wournil
@@ -17363,8 +17285,7 @@ zeroizing|zeroising
 zoeae|zooeae
 zoeal|zooeal
 zoeas|zooeas
-zoea|zoaea
-zoea|zoaea|zooea
+zoaea|zoea|zooea
 zoecia|zooecia
 zoecium|zooecium
 zombies|zombis

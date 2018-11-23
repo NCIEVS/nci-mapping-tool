@@ -4,8 +4,7 @@ appendiceal|appendix
 areolar|areola
 arterial|artery
 bronchial|bronchus
-calvarial|skull
-calvarium|skull
+calvarial|calvarium|skull
 cardiac|heart
 cerebellar|cerebellum
 cerebral|cerebrum
@@ -15,8 +14,7 @@ cholecystic|gallbladder
 classical|classic
 coccygeal|coccyx
 colonic|colon
-cranial|skull
-cranium|skull
+cranial|cranium|skull
 cutaneous|skin
 duodenal|duodenum
 facial|face
@@ -32,8 +30,7 @@ ischial|ischium
 jejunal|jejunum
 labial|lip
 laryngeal|larynx
-leukaemia|leukemic
-leukemic|leukemia
+leukaemia|leukemia|leukemic
 lingual|tongue
 meningeal|meninges
 muscular|muscle
@@ -43,13 +40,11 @@ neoplasm|neoplasms|tumoral
 ocular|eye
 omental|omentum
 orbit|orbital
-oropharyngeal|oropharynx
-orothroat|oropharynx
+oropharyngeal|oropharynx|orothroat
 ovarian|ovary
 palatal|palate
 pancreatic|pancreas
-patellar|kneecap
-patella|kneecap
+kneecap|patella|patellar
 pelvic|pelvis
 penile|penis
 pericardial|pericardium
@@ -67,8 +62,7 @@ spinal|spine
 splenic|spleen
 sternal|sternum
 subtongue|sublingual
-thoracic|chest
-thorax|chest
+chest|thoracic|thorax
 thymic|thymus
 tissues|tissue
 tracheal|trachea
