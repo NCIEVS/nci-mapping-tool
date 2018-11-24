@@ -652,6 +652,12 @@ public class MappingUtils {
 					if (term.compareToIgnoreCase(sourceTerm) != 0) w = mapTo(term);
 				}
 
+				if (w == null || w.size() == 0) {
+					String term = trim_unspecified_clause(sourceTerm);
+					if (term.compareToIgnoreCase(sourceTerm) != 0) w = mapTo(term);
+				}
+
+
 				if (w != null && w.size()>0) {
 
 					match_knt++;
@@ -766,6 +772,43 @@ public class MappingUtils {
 		}
 		return variantHashMap;
 	}
+
+    public static String toTabDelimited(Vector words, String tab) {
+		StringBuffer buf = new StringBuffer();
+		for (int k=0; k<words.size(); k++) {
+			String word = (String) words.elementAt(k);
+			buf.append(word).append(tab);
+		}
+		String t = buf.toString();
+		if (t.endsWith("|")) {
+			t = t.substring(0, t.length()-1);
+		}
+		return t;
+	}
+
+	public String trim_unspecified_clause(String line) {
+		line = substitute(line);
+		line = line.toLowerCase();
+		Vector w = new Vector();
+		Vector u =StringUtils.parseData(line, ',');
+		if (u.size() == 1) {
+			if (line.startsWith("unspecified")) {
+				int n = line.indexOf("unspecified");
+				return line.substring(n+"unspecified".length(), line.length()).trim();
+			}
+		}
+		for (int i=0; i<u.size(); i++) {
+			String segment = (String) u.elementAt(i);
+			segment = segment.trim();
+			int n = segment.indexOf("unspecified");
+			if (n != -1) {
+				segment = segment.substring(0, n);
+			}
+			w.add(segment);
+		}
+		return toTabDelimited(w, " ").trim();
+	}
+
 
     public static void main(String[] args) {
 		long ms = System.currentTimeMillis();

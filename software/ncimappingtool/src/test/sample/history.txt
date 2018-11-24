@@ -277,3 +277,7 @@ carcinoma&skin|skin squamous cell carcinoma
 lymphoblastic&lymphoma|Lymphoblastic Lymphoma
 examination|medical examination
 abnormal&finding|Abnormal Finding
+neoplasm&cell&lymphoid|hematopoietic and lymphoid Cell neoplasm
+condition&menstrual|menstrual disorder
+abnormal&findings|abnormal finding
+diseases&blood|hematologic and lymphocytic disorder

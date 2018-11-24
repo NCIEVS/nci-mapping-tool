@@ -478,8 +478,7 @@ anatomizing|anatomising
 anchinoe|anchinoae
 ancille|ancillae
 anematosis|anaematosis
-anemias|anaemias
-anemia|anaemia
+anemias|anaemias|anemia|anaemia
 anemically|anaemically
 anemicer|anaemicer
 anemicest|anaemicest
@@ -6188,6 +6187,7 @@ haemoperfusion|hemoperfusion
 haemopericardium|hemopericardium
 haemoperitoneum|hemoperitoneum
 haemopexin|hemopexin
+haemophagocytic|hemophagocytic
 haemophilus|hemophilus
 haemophthalmos|hemophthalmos
 haemopneumothorax|hemopneumothorax
@@ -11278,6 +11278,7 @@ phagocytized|phagocytised
 phagocytizes|phagocytises
 phagocytize|phagocytise
 phagocytizing|phagocytising
+phakomatoses|phakomatosis
 phalanxes|phalanges
 phantasized|phantasised
 phantasizes|phantasises

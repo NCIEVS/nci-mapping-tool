@@ -9,12 +9,12 @@ I i, if, in, into, is, it, its, itself, internal
 J just 
 M made, mainly, make, may, might, most, mostly, must 
 N nearly, neither, nor 
-O obtained, of, often, on, our, overall, other 
+O obtained, of, often, on, our, overall, other, or 
 P perhaps, pmid, parts, part 
 Q quite 
 R rather, really, regarding 
 S seem, seen, several, should, show, showed, shown, shows, significantly, since, so, some, such, specified, specification, site, sites, secondary 
 T than, that, the, their, theirs, them, then, there, therefore, these, they, this, those, through, thus, to 
-U upon, use, used, using, unspecified 
+U upon, use, used, using, unspecified
 V various, very 
 W was, we, were, what, when, which, while, with, within, without, would
