@@ -54,9 +54,32 @@ public class MappingUtils {
 	private Vector discarded_phrases = null;
 	private HashMap americanBritishSpellingHashMap = null;
 
+	private String data_directory = null;
+
 	public MappingUtils() {
-        initialize();
+		data_directory = System.getProperty("user.dir");
+		System.out.println("data_directory: " + data_directory);
+	}
+
+	public MappingUtils(String data_directory) {
+		this.data_directory = data_directory;
+        initialize(data_directory);
         //filler_set = this.mh.get_filler_set();
+	}
+
+	public void initialize(String data_directory) {
+		long ms0 = System.currentTimeMillis();
+		theStemmer = new PorterStemmer();
+		historyMap = load_history(data_directory + File.separator + Constants.HISTORY_FILE);
+		this.discarded_phrases = readFile(data_directory + File.separator + Constants.DISCARDED_PHRASE_FILE);
+		this.synonyms = readFile(data_directory + File.separator + Constants.SYNONYM_FILE);
+		filler_set = loadFillers(data_directory + File.separator + Constants.FILLER_FILE);
+		keyword_set = new HashSet();
+		variants = readFile(data_directory + File.separator + Constants.VARIANT_FILE);
+		variantHashMap = createVariantHashMap();
+		term_vec = readFile(data_directory + File.separator + Constants.TERMINOLOGY_FILE);
+		key2ConceptMap = createKey2ConceptMap(term_vec);
+		System.out.println("\nTotal initialization run time (ms): " + (System.currentTimeMillis() - ms0));
 	}
 
 	public boolean isFiller(String word) {
@@ -205,21 +228,6 @@ public class MappingUtils {
 		return hset;
 	}
 
-	public void initialize() {
-		long ms0 = System.currentTimeMillis();
-		theStemmer = new PorterStemmer();
-		historyMap = load_history(Constants.HISTORY_FILE);
-		this.discarded_phrases = readFile(Constants.DISCARDED_PHRASE_FILE);
-		this.synonyms = readFile(Constants.SYNONYM_FILE);
-		filler_set = loadFillers(Constants.FILLER_FILE);
-		keyword_set = new HashSet();
-		//americanBritishSpellingHashMap = createAmericanBritishSpellingHashmap(Constants.AMERICAN_BRITISH_SPELLING_FILE);
-		variants = readFile(Constants.VARIANT_FILE);
-		variantHashMap = createVariantHashMap();
-		term_vec = readFile(Constants.TERMINOLOGY_FILE);
-		key2ConceptMap = createKey2ConceptMap(term_vec);
-		System.out.println("\nTotal initialization run time (ms): " + (System.currentTimeMillis() - ms0));
-	}
 
 	public Vector get_term_vec() {
 		return this.term_vec;
@@ -234,7 +242,8 @@ public class MappingUtils {
 	public Vector tokenize(String t) {
 		if (t == null) return null;
 		t = t.toLowerCase();
-		t = t.replaceAll("[^a-zA-Z0-9]", " ");
+		//t = t.replaceAll("[^a-zA-Z0-9]", " ");
+		t = t.replaceAll("[^éa-zA-Z0-9]", " ");
 		StringTokenizer st = new StringTokenizer(t);
 		Vector words = new Vector();
 		while (st.hasMoreTokens()) {
@@ -251,7 +260,7 @@ public class MappingUtils {
 				 }
 			 }
 		}
-		words = new SortUtils().quickSort(words);
+		words = new gov.nih.nci.evs.mapping.util.SortUtils().quickSort(words);
 		return words;
 	}
 
@@ -556,7 +565,8 @@ public class MappingUtils {
 	public Vector tokenize_str(String t, boolean removeFillers) {
 		if (t == null) return null;
 		t = t.toLowerCase();
-		t = t.replaceAll("[^a-zA-Z0-9]", " ");
+		//t = t.replaceAll("[^a-zA-Z0-9]", " ");
+		t = t.replaceAll("[^éa-zA-Z0-9]", " ");
 
 		StringTokenizer st = new StringTokenizer(t);
 		Vector words = new Vector();
@@ -572,7 +582,7 @@ public class MappingUtils {
 				 }
 			 }
 		}
-		words = new SortUtils().quickSort(words);
+		words = new gov.nih.nci.evs.mapping.util.SortUtils().quickSort(words);
 		return words;
 	}
 
@@ -580,7 +590,8 @@ public class MappingUtils {
 	public Vector tokenize(String t, boolean removeFillers) {
 		if (t == null) return null;
 		t = t.toLowerCase();
-		t = t.replaceAll("[^a-zA-Z0-9]", " ");
+		//t = t.replaceAll("[^a-zA-Z0-9]", " ");
+		t = t.replaceAll("[^éa-zA-Z0-9]", " ");
 
 		StringTokenizer st = new StringTokenizer(t);
 		Vector words = new Vector();
@@ -596,88 +607,21 @@ public class MappingUtils {
 				 }
 			 }
 		}
-		words = new SortUtils().quickSort(words);
+		words = new gov.nih.nci.evs.mapping.util.SortUtils().quickSort(words);
 		return words;
 	}
 
-	public gov.nih.nci.evs.mapping.bean.Mapping run(String vbtfile) {
-		Vector v = readFile(vbtfile);
-		List entries = new ArrayList();
-		int match_knt = 0;
-		String outputfile = "mapping_" + vbtfile;
-        long ms = System.currentTimeMillis();
+	public void saveMappingToFile(String outputfile, gov.nih.nci.evs.mapping.bean.Mapping mapping) {
+        //long ms = System.currentTimeMillis();
 		PrintWriter pw = null;
 		int lcv = 0;
 		try {
 			pw = new PrintWriter(outputfile, "UTF-8");
-			for (int i=0; i<v.size(); i++) {
-				String line = (String) v.elementAt(i);
-     			String sourceCode = "NA";
-				String sourceTerm = line;
-				Vector u0 = parseData(line, '\t');
-				if (u0.size() == 2) {
-				    sourceCode = (String) u0.elementAt(0);
-				    sourceTerm = (String) u0.elementAt(1);
-				}
-
-				lcv++;
-				String line2 = sourceTerm;
-				line2 = line2.trim();
-				Vector w = mapTo(line2);
-
-				if (w == null || w.size() == 0) {
-					w = mapTo(search_history(sourceTerm));
-				}
-
-				if (w == null || w.size() == 0) {
-					String term = substitute(sourceTerm);
-					w = mapTo(term);
-				}
-
-				if (w == null || w.size() == 0) {
-					int n = sourceTerm.indexOf(",");
-					if (n != -1) {
-						String term = sourceTerm.substring(0, n);
-						w = mapTo(term);
-					}
-				}
-
-				if (w == null || w.size() == 0) {
-					String term = removeOpenBrackets(sourceTerm);
-					if (term.compareToIgnoreCase(sourceTerm) != 0) w = mapTo(term);
-				}
-
-				if (w == null || w.size() == 0) {
-					String term = removeCloseBrackets(sourceTerm);
-					if (term.compareToIgnoreCase(sourceTerm) != 0) w = mapTo(term);
-				}
-
-				if (w == null || w.size() == 0) {
-					String term = trim_unspecified_clause(sourceTerm);
-					if (term.compareToIgnoreCase(sourceTerm) != 0) w = mapTo(term);
-				}
-
-
-				if (w != null && w.size()>0) {
-
-					match_knt++;
-					for (int j=0; j<w.size(); j++) {
-						String t = (String) w.elementAt(j);
-						Vector u = parseData(t, '|');
-						String code = (String) u.elementAt(1);
-						String name = (String) u.elementAt(0);
-						gov.nih.nci.evs.mapping.bean.MappingEntry m = new gov.nih.nci.evs.mapping.bean.MappingEntry(sourceCode, sourceTerm, code, name);
-						entries.add(m);
-						pw.println(sourceCode + "|" + sourceTerm + "|" + code+ "|" + name);
-					}
-				} else {
-					pw.println(sourceCode + "|" + sourceTerm + "|No match|NA");
-				}
-				if (i/1000*1000 == i) {
-					System.out.println("Processing " + i + " of " + v.size() + " -- " + line);
-				}
+			List<gov.nih.nci.evs.mapping.bean.MappingEntry> entries = mapping.getEntries();
+			for (int i=0; i<entries.size(); i++) {
+				gov.nih.nci.evs.mapping.bean.MappingEntry entry = (gov.nih.nci.evs.mapping.bean.MappingEntry) entries.get(i);
+				pw.println(entry.getSourceCode() + "|" + entry.getSourceTerm() + "|" + entry.getTargetCode() + "|" + entry.getTargetLabel());
 			}
-			System.out.println("Done. Number of matches: " + match_knt + " (out of " + v.size() + ")");
 
 		} catch (Exception ex) {
 
@@ -689,9 +633,74 @@ public class MappingUtils {
 				ex.printStackTrace();
 			}
 		}
-		gov.nih.nci.evs.mapping.bean.Mapping mapping = new gov.nih.nci.evs.mapping.bean.Mapping(v.size(), match_knt, entries);
+	}
 
-		System.out.println("Total run time (ms): " + (System.currentTimeMillis() - ms));
+	public gov.nih.nci.evs.mapping.bean.Mapping run(String vbtfile) {
+		Vector v = readFile(vbtfile);
+		return run(v);
+	}
+
+	public gov.nih.nci.evs.mapping.bean.Mapping run(Vector v) {
+		List entries = new ArrayList();
+		int match_knt = 0;
+
+		for (int i=0; i<v.size(); i++) {
+			String line = (String) v.elementAt(i);
+			String sourceCode = "NA";
+			String sourceTerm = line;
+			Vector u0 = parseData(line, '\t');
+			if (u0.size() == 2) {
+				sourceCode = (String) u0.elementAt(0);
+				sourceTerm = (String) u0.elementAt(1);
+			}
+			String line2 = sourceTerm;
+			line2 = line2.trim();
+			Vector w = mapTo(line2);
+			if (w == null || w.size() == 0) {
+				w = mapTo(search_history(sourceTerm));
+			}
+
+			if (w == null || w.size() == 0) {
+				String term = substitute(sourceTerm);
+				w = mapTo(term);
+			}
+
+			if (w == null || w.size() == 0) {
+				int n = sourceTerm.indexOf(",");
+				if (n != -1) {
+					String term = sourceTerm.substring(0, n);
+					w = mapTo(term);
+				}
+			}
+
+			if (w == null || w.size() == 0) {
+				String term = removeOpenBrackets(sourceTerm);
+				if (term.compareToIgnoreCase(sourceTerm) != 0) w = mapTo(term);
+			}
+
+			if (w == null || w.size() == 0) {
+				String term = removeCloseBrackets(sourceTerm);
+				if (term.compareToIgnoreCase(sourceTerm) != 0) w = mapTo(term);
+			}
+
+			if (w == null || w.size() == 0) {
+				String term = trim_unspecified_clause(sourceTerm);
+				if (term.compareToIgnoreCase(sourceTerm) != 0) w = mapTo(term);
+			}
+
+			if (w != null && w.size()>0) {
+				match_knt++;
+				for (int j=0; j<w.size(); j++) {
+					String t = (String) w.elementAt(j);
+					Vector u = parseData(t, '|');
+					String code = (String) u.elementAt(1);
+					String name = (String) u.elementAt(0);
+					gov.nih.nci.evs.mapping.bean.MappingEntry m = new gov.nih.nci.evs.mapping.bean.MappingEntry(sourceCode, sourceTerm, code, name);
+					entries.add(m);
+				}
+			}
+		}
+		gov.nih.nci.evs.mapping.bean.Mapping mapping = new gov.nih.nci.evs.mapping.bean.Mapping(v.size(), match_knt, entries);
 		return mapping;
 	}
 
@@ -731,24 +740,7 @@ public class MappingUtils {
 		return t;
 	}
 
-	public void generateMapping(String vbtfile) {
-        String outputfile = "mapping_" + vbtfile;
-        int n = vbtfile.lastIndexOf(".");
-        String jsonfile = vbtfile.substring(0, n) + ".json";
-        String excelfile = vbtfile.substring(0, n) + ".xlsx";
-        Mapping mapping = run(vbtfile);
 
-        Vector w = new Vector();
-        w.add(mapping.toJson());
-        saveToFile(jsonfile, w);
-
-        List<MappingEntry> entries = loadMappingEntries(outputfile);
-        try{
-			ExcelWriter.write(entries, excelfile);
-		} catch (Exception ex) {
-			ex.printStackTrace();
-		}
-	}
 
 	public HashMap createVariantHashMap() {
 		HashMap variantHashMap = new HashMap();
@@ -809,12 +801,34 @@ public class MappingUtils {
 		return toTabDelimited(w, " ").trim();
 	}
 
+	public static String getCurrentWorkingDirectory() {
+		return System.getProperty("user.dir");
+	}
+
+	public void generateMapping(String vbtfile) {
+        String outputfile = "mapping_" + vbtfile;
+        int n = vbtfile.lastIndexOf(".");
+        String jsonfile = vbtfile.substring(0, n) + ".json";
+        String excelfile = vbtfile.substring(0, n) + ".xlsx";
+        Mapping mapping = run(vbtfile);
+        saveMappingToFile(outputfile, mapping);
+        Vector w = new Vector();
+        w.add(mapping.toJson());
+        saveToFile(jsonfile, w);
+
+        List<MappingEntry> entries = mapping.getEntries();//loadMappingEntries(outputfile);
+        try{
+			ExcelWriter.write(entries, excelfile);
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		}
+	}
 
     public static void main(String[] args) {
 		long ms = System.currentTimeMillis();
 		String vbtfile = args[0];
-
-		MappingUtils test = new MappingUtils();
+		String data_dir = MappingUtils.getCurrentWorkingDirectory();
+		MappingUtils test = new MappingUtils(data_dir);
 		test.generateMapping(vbtfile);
 	}
 

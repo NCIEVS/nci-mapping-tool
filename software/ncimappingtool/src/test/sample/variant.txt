@@ -2629,6 +2629,7 @@ connections|connexions
 connection|connexion
 connectors|connecters
 connector|connecter
+counseling|counselling
 conservatized|conservatised
 conservatizes|conservatises
 conservatize|conservatise
@@ -3909,6 +3910,7 @@ disdenominationalizes|disdenominationalises
 disdenominationalize|disdenominationalise
 disdiplomatizes|disdiplomatises
 disdiplomatize|disdiplomatise
+disease|diseases
 disemboweled|disembowelled
 disemboweling|disembowelling
 disenfranchized|disenfranchised
@@ -3990,6 +3992,7 @@ disnaturalized|disnaturalised
 disnaturalizes|disnaturalises
 disnaturalize|disnaturalise
 disnaturalizing|disnaturalising
+disorder|disorders
 disorganizations|disorganisations
 disorganization|disorganisation
 disorganized|disorganised
@@ -6175,6 +6178,7 @@ haematocolpos|hematocolpos
 haematohidrosis|hematohidrosis
 haematometra|hematometra
 haematomyelia|hematomyelia
+haematopoietic|hematopoietic
 haematosalpinx|hematosalpinx
 haematospermia|hematospermia
 haemoclips|hemoclips
