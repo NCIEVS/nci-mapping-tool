@@ -55,16 +55,40 @@ public class MappingUtils {
 	private HashMap americanBritishSpellingHashMap = null;
 
 	private String data_directory = null;
+	private Terminology terminology = null;
+	private String codingSchemeName = null;
+
+	public String vbtfile_nm = null;
+	public String source = null;
+
+	public String textfile = null;//output_file_prefix + "_" + date_str + ".txt";
+	public String jsonfile = null;//output_file_prefix + "_" + date_str + ".json";
+	public String excelfile = null;//output_file_prefix + "_" + date_str + ".xlsx";
+	public String htmlfile = null;//output_file_prefix + "_" + date_str + ".html";
+	public String htmltblfile = null;//output_file_prefix + "_table_" + date_str + ".html";
+	public String output_file_prefix = null;
 
 	public MappingUtils() {
 		data_directory = System.getProperty("user.dir");
-		System.out.println("data_directory: " + data_directory);
 	}
 
 	public MappingUtils(String data_directory) {
 		this.data_directory = data_directory;
         initialize(data_directory);
         //filler_set = this.mh.get_filler_set();
+	}
+
+	public MappingUtils(String data_directory, Terminology terminology) {
+		this.data_directory = data_directory;
+		this.terminology = terminology;
+		this.codingSchemeName = terminology.getCodingSchemeName();
+        initialize(data_directory, terminology);
+	}
+
+	public MappingUtils(String data_directory, String codingSchemeName) {
+		this.data_directory = data_directory;
+		this.codingSchemeName = codingSchemeName;
+        initialize(data_directory, codingSchemeName);
 	}
 
 	public void initialize(String data_directory) {
@@ -78,6 +102,36 @@ public class MappingUtils {
 		variants = readFile(data_directory + File.separator + Constants.VARIANT_FILE);
 		variantHashMap = createVariantHashMap();
 		term_vec = readFile(data_directory + File.separator + Constants.TERMINOLOGY_FILE);
+		key2ConceptMap = createKey2ConceptMap(term_vec);
+		System.out.println("\nTotal initialization run time (ms): " + (System.currentTimeMillis() - ms0));
+	}
+
+	public void initialize(String data_directory, String codingSchemeName) {
+		long ms0 = System.currentTimeMillis();
+		theStemmer = new PorterStemmer();
+		historyMap = load_history(data_directory + File.separator + Constants.HISTORY_FILE);
+		this.discarded_phrases = readFile(data_directory + File.separator + Constants.DISCARDED_PHRASE_FILE);
+		this.synonyms = readFile(data_directory + File.separator + Constants.SYNONYM_FILE);
+		filler_set = loadFillers(data_directory + File.separator + Constants.FILLER_FILE);
+		keyword_set = new HashSet();
+		variants = readFile(data_directory + File.separator + Constants.VARIANT_FILE);
+		variantHashMap = createVariantHashMap();
+		term_vec = readFile(data_directory + File.separator + codingSchemeName + ".txt");
+		key2ConceptMap = createKey2ConceptMap(term_vec);
+		System.out.println("\nTotal initialization run time (ms): " + (System.currentTimeMillis() - ms0));
+	}
+
+	public void initialize(String data_directory, Terminology terminology) {
+		long ms0 = System.currentTimeMillis();
+		theStemmer = new PorterStemmer();
+		historyMap = load_history(data_directory + File.separator + Constants.HISTORY_FILE);
+		this.discarded_phrases = readFile(data_directory + File.separator + Constants.DISCARDED_PHRASE_FILE);
+		this.synonyms = readFile(data_directory + File.separator + Constants.SYNONYM_FILE);
+		filler_set = loadFillers(data_directory + File.separator + Constants.FILLER_FILE);
+		keyword_set = new HashSet();
+		variants = readFile(data_directory + File.separator + Constants.VARIANT_FILE);
+		variantHashMap = createVariantHashMap();
+		term_vec = readFile(data_directory + File.separator + terminology.getFilename());
 		key2ConceptMap = createKey2ConceptMap(term_vec);
 		System.out.println("\nTotal initialization run time (ms): " + (System.currentTimeMillis() - ms0));
 	}
@@ -280,6 +334,7 @@ public class MappingUtils {
 
 	public String words2Key(Vector words, boolean stemming) {
 		if (words == null) return null;
+		words = new gov.nih.nci.evs.restapi.util.SortUtils().quickSort(words);
 		StringBuffer buf = new StringBuffer();
 		for (int i=0; i<words.size(); i++) {
 			 String token = (String) words.elementAt(i);
@@ -331,8 +386,10 @@ public class MappingUtils {
 			String code = (String) u.elementAt(0);
 			String pt = (String) u.elementAt(1);
 			String syn = (String) u.elementAt(2);
-			code2LabelMap.put(code, pt);
-		}
+			if (!code2LabelMap.containsKey(code)) {
+				code2LabelMap.put(code, pt);
+			}
+    	}
 		return code2LabelMap;
 	}
 
@@ -640,12 +697,90 @@ public class MappingUtils {
 		return run(v);
 	}
 
+
+    public Vector<gov.nih.nci.evs.mapping.bean.MappingEntry> mapTo(String sourceCode, String sourceTerm) {
+		Vector<gov.nih.nci.evs.mapping.bean.MappingEntry> v = new Vector();
+		String line2 = sourceTerm;
+		line2 = line2.trim();
+		Vector w = null;
+		String term = null;
+
+		Vector w1 = tokenize(line2, true);
+		if (w1.size() > 0) {
+			term = line2;
+			w = mapTo(term);
+			if (w == null || w.size() == 0) {
+				w = mapTo(search_history(sourceTerm));
+			}
+
+			if (w == null || w.size() == 0) {
+				term = substitute(sourceTerm);
+				w = mapTo(term);
+			}
+
+			if (w == null || w.size() == 0) {
+				int n = sourceTerm.indexOf(",");
+				if (n != -1) {
+					term = sourceTerm.substring(0, n);
+					w = mapTo(term);
+				}
+			}
+
+			if (w == null || w.size() == 0) {
+				term = removeOpenBrackets(sourceTerm);
+				if (term.compareToIgnoreCase(sourceTerm) != 0) w = mapTo(term);
+			}
+
+			if (w == null || w.size() == 0) {
+				term = removeCloseBrackets(sourceTerm);
+				if (term.compareToIgnoreCase(sourceTerm) != 0) w = mapTo(term);
+			}
+
+			if (w == null || w.size() == 0) {
+				term = trim_unspecified_clause(sourceTerm);
+				Vector w0 = tokenize(term, true);
+				if (w0.size() > 0) {
+					if (term.compareToIgnoreCase(sourceTerm) != 0) {
+						w = mapTo(term);
+					}
+				}
+			}
+		}
+
+		if (w != null && w.size()>0) {
+			for (int j=0; j<w.size(); j++) {
+				String t = (String) w.elementAt(j);
+				Vector u = parseData(t, '|');
+				String name = (String) u.elementAt(0);
+				String code = (String) u.elementAt(1);
+				name = getLabel(code);
+				gov.nih.nci.evs.mapping.bean.MappingEntry me = new gov.nih.nci.evs.mapping.bean.MappingEntry(sourceCode, sourceTerm, code, name);
+				v.add(me);
+			}
+		} else {
+			gov.nih.nci.evs.mapping.bean.MappingEntry me = new gov.nih.nci.evs.mapping.bean.MappingEntry(sourceCode, sourceTerm, "", "");
+			v.add(me);
+		}
+		return v;
+	}
+
 	public gov.nih.nci.evs.mapping.bean.Mapping run(Vector v) {
+		if (v == null) return null;
+		if (v.size() == 0) {
+			return new gov.nih.nci.evs.mapping.bean.Mapping(0, 0, new ArrayList());
+		}
+		String s1 = (String) v.elementAt(0);
+		if (s1.indexOf("|") != -1) {
+			v = bar2TabDelimited(v);
+		}
 		List entries = new ArrayList();
 		int match_knt = 0;
 
 		for (int i=0; i<v.size(); i++) {
 			String line = (String) v.elementAt(i);
+			if (line.endsWith("\n")) {
+				line = line.substring(0, line.length()-1);
+			}
 			String sourceCode = "NA";
 			String sourceTerm = line;
 			Vector u0 = parseData(line, '\t');
@@ -653,53 +788,22 @@ public class MappingUtils {
 				sourceCode = (String) u0.elementAt(0);
 				sourceTerm = (String) u0.elementAt(1);
 			}
-			String line2 = sourceTerm;
-			line2 = line2.trim();
-			Vector w = mapTo(line2);
-			if (w == null || w.size() == 0) {
-				w = mapTo(search_history(sourceTerm));
+			if (sourceTerm.endsWith("\r")) {
+				sourceTerm = sourceTerm.substring(0, sourceTerm.length()-1);
 			}
-
-			if (w == null || w.size() == 0) {
-				String term = substitute(sourceTerm);
-				w = mapTo(term);
-			}
-
-			if (w == null || w.size() == 0) {
-				int n = sourceTerm.indexOf(",");
-				if (n != -1) {
-					String term = sourceTerm.substring(0, n);
-					w = mapTo(term);
+			Vector<gov.nih.nci.evs.mapping.bean.MappingEntry> mapping_entry_vec = mapTo(sourceCode, sourceTerm);
+			if (mapping_entry_vec.size() > 0) {
+				for (int k=0; k<mapping_entry_vec.size(); k++) {
+					gov.nih.nci.evs.mapping.bean.MappingEntry me = (gov.nih.nci.evs.mapping.bean.MappingEntry) mapping_entry_vec.elementAt(k);
+					entries.add(me);
 				}
-			}
-
-			if (w == null || w.size() == 0) {
-				String term = removeOpenBrackets(sourceTerm);
-				if (term.compareToIgnoreCase(sourceTerm) != 0) w = mapTo(term);
-			}
-
-			if (w == null || w.size() == 0) {
-				String term = removeCloseBrackets(sourceTerm);
-				if (term.compareToIgnoreCase(sourceTerm) != 0) w = mapTo(term);
-			}
-
-			if (w == null || w.size() == 0) {
-				String term = trim_unspecified_clause(sourceTerm);
-				if (term.compareToIgnoreCase(sourceTerm) != 0) w = mapTo(term);
-			}
-
-			if (w != null && w.size()>0) {
-				match_knt++;
-				for (int j=0; j<w.size(); j++) {
-					String t = (String) w.elementAt(j);
-					Vector u = parseData(t, '|');
-					String code = (String) u.elementAt(1);
-					String name = (String) u.elementAt(0);
-					gov.nih.nci.evs.mapping.bean.MappingEntry m = new gov.nih.nci.evs.mapping.bean.MappingEntry(sourceCode, sourceTerm, code, name);
-					entries.add(m);
-				}
+				match_knt = match_knt + mapping_entry_vec.size();
+		    } else {
+				gov.nih.nci.evs.mapping.bean.MappingEntry m = new gov.nih.nci.evs.mapping.bean.MappingEntry(sourceCode, sourceTerm, "", "");
+				entries.add(m);
 			}
 		}
+
 		gov.nih.nci.evs.mapping.bean.Mapping mapping = new gov.nih.nci.evs.mapping.bean.Mapping(v.size(), match_knt, entries);
 		return mapping;
 	}
@@ -805,18 +909,67 @@ public class MappingUtils {
 		return System.getProperty("user.dir");
 	}
 
+	public static String getToday() {
+		return StringUtils.getToday();
+	}
+
+
+    public boolean set_output_files(String vbtfile) {
+		System.out.println("vbtfile: " + vbtfile);
+		int n = vbtfile.lastIndexOf(".");
+		if (n == -1) {
+			System.out.println("ERROR: invalid verbatim data file name (.txt).");
+			return false;
+		}
+
+		System.out.println("n: " + n);
+		vbtfile_nm = vbtfile.substring(0, n);
+		System.out.println("vbtfile_nm: " + vbtfile_nm);
+		int m = vbtfile_nm.indexOf("_");
+		System.out.println("m: " + m);
+		String prefix = vbtfile_nm.substring(0, m);
+		m = prefix.lastIndexOf("\\");
+		if (m == -1) {
+			m = prefix.lastIndexOf("/");
+		}
+		System.out.println("prefix: " + prefix);
+		source = prefix.substring(m+1, prefix.length());
+		System.out.println("source: " + source);
+
+		System.out.println("codingSchemeName: " + codingSchemeName);
+		output_file_prefix = prefix + "_to_" + codingSchemeName;
+		System.out.println("output_file_prefix: " + output_file_prefix);
+		String date_str = getToday();
+		System.out.println("date_str: " + date_str);
+
+		textfile = output_file_prefix + "_" + date_str + ".txt";
+		jsonfile = output_file_prefix + "_" + date_str + ".json";
+		excelfile = output_file_prefix + "_" + date_str + ".xlsx";
+		htmlfile = output_file_prefix + "_" + date_str + ".html";
+		htmltblfile = output_file_prefix + "_table_" + date_str + ".html";
+
+		System.out.println("textfile: " + textfile);
+		System.out.println("jsonfile: " + jsonfile);
+		System.out.println("excelfile: " + excelfile);
+		System.out.println("htmlfile: " + htmlfile);
+		System.out.println("htmltblfile: " + htmltblfile);
+
+		//htmltblfile: E:\EVSFocus\MAPPING\DEV\MappingTool\ICD10_to_NCI_Thesaurus_table_12-19-2018.html
+
+		return true;
+	}
+
 	public void generateMapping(String vbtfile) {
-        String outputfile = "mapping_" + vbtfile;
-        int n = vbtfile.lastIndexOf(".");
-        String jsonfile = vbtfile.substring(0, n) + ".json";
-        String excelfile = vbtfile.substring(0, n) + ".xlsx";
+		boolean bool_val = set_output_files(vbtfile);
+		if (!bool_val) return;
+
         Mapping mapping = run(vbtfile);
-        saveMappingToFile(outputfile, mapping);
+        saveMappingToFile(textfile, mapping);
         Vector w = new Vector();
         w.add(mapping.toJson());
         saveToFile(jsonfile, w);
 
-        List<MappingEntry> entries = mapping.getEntries();//loadMappingEntries(outputfile);
+        List<MappingEntry> entries = mapping.getEntries();
         try{
 			ExcelWriter.write(entries, excelfile);
 		} catch (Exception ex) {
@@ -824,12 +977,94 @@ public class MappingUtils {
 		}
 	}
 
+    public Vector bar2TabDelimited(Vector v) {
+		Vector w = new Vector();
+		for (int i=0; i<v.size(); i++) {
+			String line = (String) v.elementAt(i);
+			Vector u = StringUtils.parseData(line, '|');
+			String s1 = (String) u.elementAt(0);
+			String s2 = (String) u.elementAt(1);
+			w.add(s1 + "\t" + s2);
+		}
+		return w;
+	}
+
+    public static Mapping loadMapping(Vector v) {
+	    Mapping mapping = null;
+	    List<gov.nih.nci.evs.mapping.bean.MappingEntry> entries = new ArrayList<gov.nih.nci.evs.mapping.bean.MappingEntry>();
+	    int knt = 0;
+		for (int i=0; i<v.size(); i++) {
+			String line = (String) v.elementAt(i);
+			Vector u = gov.nih.nci.evs.restapi.util.StringUtils.parseData(line, '|');
+			String sourceCode = (String) u.elementAt(0);
+			String sourceTerm = (String) u.elementAt(1);
+			String targetCode = (String) u.elementAt(2);
+			String targetLabel = (String) u.elementAt(3);
+			gov.nih.nci.evs.mapping.bean.MappingEntry entry = new gov.nih.nci.evs.mapping.bean.MappingEntry(
+					sourceCode, sourceTerm, targetCode, targetLabel);
+				entries.add(entry);
+			if (targetCode.length()>0) knt++;
+		}
+		mapping = new Mapping(v.size(), knt, entries);
+		return mapping;
+	}
+
+	public static String get_mapping_source(String mapping_file) {
+		int n = mapping_file.indexOf("_");
+		return mapping_file.substring(0, n);
+	}
+
+	public static String get_mapping_target(String mapping_file) {
+		int n = mapping_file.indexOf("_");
+		int m = mapping_file.lastIndexOf("_");
+		return mapping_file.substring(n+"_to_".length(), m);
+	}
+
     public static void main(String[] args) {
 		long ms = System.currentTimeMillis();
-		String vbtfile = args[0];
-		String data_dir = MappingUtils.getCurrentWorkingDirectory();
-		MappingUtils test = new MappingUtils(data_dir);
+        String serviceUrl = args[0];
+        String data_directory = args[1];
+        String vbtfile = args[2];
+        String codingSchemeName = args[3];
+        System.out.println("serviceUrl: " + serviceUrl);
+        System.out.println("data_directory: " + data_directory);
+        System.out.println("vbtfile: " + vbtfile);
+        System.out.println("codingSchemeName: " + codingSchemeName);
+
+        MappingUtils test = new MappingUtils(data_directory, codingSchemeName);
 		test.generateMapping(vbtfile);
 	}
+
+/*
+    public static void main(String[] args) {
+		long ms = System.currentTimeMillis();
+
+		//String data_dir = MappingUtils.getCurrentWorkingDirectory();
+        String serviceUrl = args[0];
+        String data_directory = args[1];
+        String vbtfile = args[2];
+        System.out.println("serviceUrl: " + serviceUrl);
+        System.out.println("data_directory: " + data_directory);
+        System.out.println("vbtfile: " + vbtfile);
+
+        DataManager dm = new DataManager(serviceUrl, data_directory);
+        String codingSchemeName = "MEDDRA";
+        Terminology terminology = dm.getTerminologyByCodingSchemeName(codingSchemeName);
+        if (terminology == null) {
+			System.out.println("CodingSchemeName " + codingSchemeName + " not found.");
+		} else {
+			terminology = dm.populateTerminologyData(terminology);
+			System.out.println(terminology.getCodingSchemeName());
+			System.out.println("\t" + terminology.getCodingSchemeVersion());
+			System.out.println("\t" + terminology.getNamedGraph());
+			System.out.println("\t" + terminology.getFilename());
+			System.out.println("\t" + terminology.getData().size());
+			System.out.println("\t" + terminology.getKeywordSet().size());
+    	}
+
+		MappingUtils test = new MappingUtils(data_directory, terminology);
+		test.generateMapping(vbtfile);
+	}
+*/
 
 }

@@ -68,6 +68,8 @@ public class Constants {
 	public static String VARIANT_FILE = "variant.txt";
 	public static String SYNONYM_FILE = "synonym.txt";
     public static String DISCARDED_PHRASE_FILE = "discarded_phrases.txt";
+    public static String DEFAULT_MAPPPING_TOOL_URL = "http://localhost:8080/ncimappingtool/pages/search.jsf?ng=http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl&term=";
+    public static String LOCALHOST = "http://localhost:8080/";
 
     /**
      * Constructor

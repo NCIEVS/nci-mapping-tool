@@ -1,0 +1,711 @@
+00.91	Transplant from live related donor
+006.4	Amebic lung abscess
+070.54	Chronic hepatitis C without mention of hepatic coma
+126.9	Ancylostomiasis and necatoriasis, unspecified
+140	Malignant neoplasm of lip
+140.0	Malignant neoplasm of upper lip, vermilion border
+140.1	Malignant neoplasm of lower lip, vermilion border
+140.4	Malignant neoplasm of lower lip, inner aspect
+140.5	Malignant neoplasm of lip, unspecified, inner aspect
+140.9	Malignant neoplasm of lip, unspecified, vermilion border
+141	Malignant neoplasm of tongue
+141.0	Malignant neoplasm of base of tongue
+141.1	Malignant neoplasm of dorsal surface of tongue
+141.2	Malignant neoplasm of tip and lateral border of tongue
+141.3	Malignant neoplasm of ventral surface of tongue
+141.4	Malignant neoplasm of anterior two-thirds of tongue, part unspecified
+141.5	Malignant neoplasm of junctional zone of tongue
+141.6	Malignant neoplasm of lingual tonsil
+141.8	Malignant neoplasm of other sites of tongue
+141.9	Malignant neoplasm of tongue, unspecified
+142	Malignant neoplasm of major salivary glands
+142.0	Malignant neoplasm of parotid gland
+142.1	Malignant neoplasm of submandibular gland
+142.2	Malignant neoplasm of sublingual gland
+142.9	Malignant neoplasm of salivary gland, unspecified
+143	Malignant neoplasm of gum
+143.0	Malignant neoplasm of upper gum
+143.1	Malignant neoplasm of lower gum
+143.8	Malignant neoplasm of other sites of gum
+143.9	Malignant neoplasm of gum, unspecified
+144	Malignant neoplasm of floor of mouth
+144.0	Malignant neoplasm of anterior portion of floor of mouth
+144.1	Malignant neoplasm of lateral portion of floor of mouth
+144.8	Malignant neoplasm of other sites of floor of mouth
+144.9	Malignant neoplasm of floor of mouth, part unspecified
+145	Malignant neoplasm of other and unspecified parts of mouth
+145.0	Malignant neoplasm of cheek mucosa
+145.1	Malignant neoplasm of vestibule of mouth
+145.2	Malignant neoplasm of hard palate
+145.3	Malignant neoplasm of soft palate
+145.4	Malignant neoplasm of uvula
+145.5	Malignant neoplasm of palate, unspecified
+145.6	Malignant neoplasm of retromolar area
+145.8	Malignant neoplasm of other specified parts of mouth
+145.9	Malignant neoplasm of mouth, unspecified
+146	Malignant neoplasm of oropharynx
+146.0	Malignant neoplasm of tonsil
+146.1	Malignant neoplasm of tonsillar fossa
+146.2	Malignant neoplasm of tonsillar pillars (anterior) (posterior)
+146.3	Malignant neoplasm of vallecula
+146.4	Malignant neoplasm of anterior aspect of epiglottis
+146.5	Malignant neoplasm of junctional region of oropharynx
+146.7	Malignant neoplasm of posterior wall of oropharynx
+146.8	Malignant neoplasm of other specified sites of oropharynx
+146.9	Malignant neoplasm of oropharynx, unspecified
+147	Malignant neoplasm of nasopharynx
+147.0	Malignant neoplasm of superior wall of nasopharynx
+147.1	Malignant neoplasm of posterior wall of nasopharynx
+147.2	Malignant neoplasm of lateral wall of nasopharynx
+147.3	Malignant neoplasm of anterior wall of nasopharynx
+147.8	Malignant neoplasm of other specified sites of nasopharynx
+147.9	Malignant neoplasm of nasopharynx, unspecified
+148	Malignant neoplasm of hypopharynx
+148.0	Malignant neoplasm of postcricoid region of hypopharynx
+148.1	Malignant neoplasm of pyriform sinus
+148.2	Malignant neoplasm of aryepiglottic fold, hypopharyngeal aspect
+148.9	Malignant neoplasm of hypopharynx, unspecified
+149	Malignant neoplasm of other and ill-defined sites within the lip, oral cavity, and pharynx
+149.0	Malignant neoplasm of pharynx, unspecified
+149.1	Malignant neoplasm of waldeyer's ring
+149.8	Malignant neoplasm of other sites within the lip and oral cavity
+149.9	Malignant neoplasm of ill-defined sites within the lip and oral cavity
+150	Malignant neoplasm of esophagus
+150.0	Malignant neoplasm of cervical esophagus
+150.1	Malignant neoplasm of thoracic esophagus
+150.2	Malignant neoplasm of abdominal esophagus
+150.3	Malignant neoplasm of upper third of esophagus
+150.4	Malignant neoplasm of middle third of esophagus
+150.5	Malignant neoplasm of lower third of esophagus
+150.8	Malignant neoplasm of other specified part of esophagus
+150.9	Malignant neoplasm of esophagus, unspecified
+151	Malignant neoplasm of stomach
+151.0	Malignant neoplasm of cardia
+151.1	Malignant neoplasm of pylorus
+151.2	Malignant neoplasm of pyloric antrum
+151.4	Malignant neoplasm of body of stomach
+151.8	Malignant neoplasm of other specified sites of stomach
+151.9	Malignant neoplasm of stomach, unspecified
+152	Malignant neoplasm of small intestine, including duodenum
+152.0	Malignant neoplasm of duodenum
+152.1	Malignant neoplasm of jejunum
+152.2	Malignant neoplasm of ileum
+152.9	Malignant neoplasm of small intestine, unspecified
+153	Malignant neoplasm of colon
+153.0	Malignant neoplasm of hepatic flexure
+153.1	Malignant neoplasm of transverse colon
+153.2	Malignant neoplasm of descending colon
+153.3	Malignant neoplasm of sigmoid colon
+153.4	Malignant neoplasm of cecum
+153.5	Malignant neoplasm of appendix vermiformis
+153.6	Malignant neoplasm of ascending colon
+153.7	Malignant neoplasm of splenic flexure
+153.8	Malignant neoplasm of other specified sites of large intestine
+153.9	Malignant neoplasm of colon, unspecified
+154	Malignant neoplasm of rectum, rectosigmoid junction, and anus
+154.0	Malignant neoplasm of rectosigmoid junction
+154.1	Malignant neoplasm of rectum
+154.2	Malignant neoplasm of anal canal
+154.3	Malignant neoplasm of anus, unspecified
+154.8	Malignant neoplasm of other sites of rectum, rectosigmoid junction, and anus
+155	Malignant neoplasm of liver and intrahepatic bile ducts
+155.0	Malignant neoplasm of liver, primary
+155.1	Malignant neoplasm of intrahepatic bile ducts
+155.2	Malignant neoplasm of liver, not specified as primary or secondary
+156	Malignant neoplasm of gallbladder and extrahepatic bile ducts
+156.0	Malignant neoplasm of gallbladder
+156.1	Malignant neoplasm of extrahepatic bile ducts
+156.2	Malignant neoplasm of ampulla of Vater
+156.8	Malignant neoplasm of other specified sites of gallbladder and extrahepatic bile ducts
+156.9	Malignant neoplasm of biliary tract, part unspecified
+157	Malignant neoplasm of pancreas
+157.0	Malignant neoplasm of head of pancreas
+157.1	Malignant neoplasm of body of pancreas
+157.2	Malignant neoplasm of tail of pancreas
+157.3	Malignant neoplasm of pancreatic duct
+157.4	Malignant neoplasm of islets of Langerhans
+157.8	Malignant neoplasm of other specified sites of pancreas
+157.9	Malignant neoplasm of pancreas, part unspecified
+158	Malignant neoplasm of retroperitoneum and peritoneum
+158.0	Malignant neoplasm of retroperitoneum
+158.8	Malignant neoplasm of specified parts of peritoneum
+158.9	Malignant neoplasm of peritoneum, unspecified
+159	Malignant neoplasm of other and ill-defined sites within the digestive organs and peritoneum
+159.0	Malignant neoplasm of intestinal tract, part unspecified
+159.8	Malignant neoplasm of other sites of digestive system and intra-abdominal organs
+159.9	Malignant neoplasm of ill-defined sites within the digestive organs and peritoneum
+160	Malignant neoplasm of nasal cavities, middle ear, and accessory sinuses
+160.0	Malignant neoplasm of nasal cavities
+160.2	Malignant neoplasm of maxillary sinus
+160.3	Malignant neoplasm of ethmoidal sinus
+160.5	Malignant neoplasm of sphenoidal sinus
+161	Malignant neoplasm of larynx
+161.0	Malignant neoplasm of glottis
+161.1	Malignant neoplasm of supraglottis
+161.2	Malignant neoplasm of subglottis
+161.8	Malignant neoplasm of other specified sites of larynx
+161.9	Malignant neoplasm of larynx, unspecified
+162	Malignant neoplasm of trachea, bronchus, and lung
+162.0	Malignant neoplasm of trachea
+162.2	Malignant neoplasm of main bronchus
+162.3	Malignant neoplasm of upper lobe, bronchus or lung
+162.4	Malignant neoplasm of middle lobe, bronchus or lung
+162.5	Malignant neoplasm of lower lobe, bronchus or lung
+162.8	Malignant neoplasm of other parts of bronchus or lung
+162.9	Malignant neoplasm of bronchus and lung, unspecified
+163	Malignant neoplasm of pleura
+163.1	Malignant neoplasm of visceral pleura
+163.8	Malignant neoplasm of other specified sites of pleura
+163.9	Malignant neoplasm of pleura, unspecified
+164	Malignant neoplasm of thymus, heart, and mediastinum
+164.0	Malignant neoplasm of thymus
+164.1	Malignant neoplasm of heart
+164.2	Malignant neoplasm of anterior mediastinum
+164.9	Malignant neoplasm of mediastinum, part unspecified
+165	Malignant neoplasm of other and ill-defined sites within the respiratory system and intrathoracic organs
+165.0	Malignant neoplasm of upper respiratory tract, part unspecified
+165.8	Malignant neoplasm of other sites within the respiratory system and intrathoracic organs
+165.9	Malignant neoplasm of ill-defined sites within the respiratory system
+170	Malignant neoplasm of bone and articular cartilage
+170.0	Malignant neoplasm of bones of skull and face, except mandible
+170.1	Malignant neoplasm of mandible
+170.2	Malignant neoplasm of vertebral column, excluding sacrum and coccyx
+170.3	Malignant neoplasm of ribs, sternum, and clavicle
+170.4	Malignant neoplasm of scapula and long bones of upper limb
+170.5	Malignant neoplasm of short bones of upper limb
+170.6	Malignant neoplasm of pelvic bones, sacrum, and coccyx
+170.7	Malignant neoplasm of long bones of lower limb
+170.8	Malignant neoplasm of short bones of lower limb
+170.9	Malignant neoplasm of bone and articular cartilage, site unspecified
+171	Malignant neoplasm of connective and other soft tissue
+171.0	Malignant neoplasm of connective and other soft tissue of head, face, and neck
+171.2	Malignant neoplasm of connective and other soft tissue of upper limb, including shoulder
+171.3	Malignant neoplasm of connective and other soft tissue of lower limb, including hip
+171.4	Malignant neoplasm of connective and other soft tissue of thorax
+171.5	Malignant neoplasm of connective and other soft tissue of abdomen
+171.6	Malignant neoplasm of connective and other soft tissue of pelvis
+171.7	Malignant neoplasm of connective and other soft tissue of trunk, unspecified
+171.8	Malignant neoplasm of other specified sites of connective and other soft tissue
+171.9	Malignant neoplasm of connective and other soft tissue, site unspecified
+172	Malignant melanoma of skin
+172.0	Malignant melanoma of skin of lip
+172.1	Malignant melanoma of skin of eyelid, including canthus
+172.2	Malignant melanoma of skin of ear and external auditory canal
+172.3	Malignant melanoma of skin of other and unspecified parts of face
+172.4	Malignant melanoma of skin of scalp and neck
+172.5	Malignant melanoma of skin of trunk, except scrotum
+172.6	Malignant melanoma of skin of upper limb, including shoulder
+172.7	Malignant melanoma of skin of lower limb, including hip
+172.8	Malignant melanoma of other specified sites of skin
+172.9	Melanoma of skin, site unspecified
+173	Other and unspecified malignant neoplasm of skin
+173.0	Other malignant neoplasm of skin of lip
+173.00	Unspecified malignant neoplasm of skin of lip
+173.01	Basal cell carcinoma of skin of lip
+173.02	Squamous cell carcinoma of skin of lip
+173.1	Other and unspecified malignant neoplasm of skin of eyelid, including canthus
+173.10	Unspecified malignant neoplasm of eyelid, including canthus
+173.2	Other and unspecified malignant neoplasm of skin of ear and external auditory canal
+173.21	Basal cell carcinoma of skin of ear and external auditory canal
+173.22	Squamous cell carcinoma of skin of ear and external auditory canal
+173.3	Other and unspecified malignant neoplasm of skin of other and unspecified parts of face
+173.31	Basal cell carcinoma of skin of other and unspecified parts of face
+173.32	Squamous cell carcinoma of skin of other and unspecified parts of face
+173.4	Other and unspecified malignant neoplasm of scalp and skin of neck
+173.40	Unspecified malignant neoplasm of scalp and skin of neck
+173.42	Squamous cell carcinoma of scalp and skin of neck
+173.49	Other specified malignant neoplasm of scalp and skin of neck
+173.5	Other and unspecified malignant neoplasm of skin of trunk, except scrotum
+173.51	Basal cell carcinoma of skin of trunk, except scrotum
+173.6	Other and unspecified malignant neoplasm of skin of upper limb, including shoulder
+173.7	Other and unspecified malignant neoplasm of skin of lower limb, including hip
+173.9	Other and unspecified malignant neoplasm of skin, site unspecified
+173.90	Unspecified malignant neoplasm of skin, site unspecified
+173.91	Basal cell carcinoma of skin, site unspecified
+173.92	Squamous cell carcinoma of skin, site unspecified
+174	Malignant neoplasm of female breast
+174.0	Malignant neoplasm of nipple and areola of female breast
+174.1	Malignant neoplasm of central portion of female breast
+174.2	Malignant neoplasm of upper-inner quadrant of female breast
+174.3	Malignant neoplasm of lower-inner quadrant of female breast
+174.4	Malignant neoplasm of upper-outer quadrant of female breast
+174.5	Malignant neoplasm of lower-outer quadrant of female breast
+174.6	Malignant neoplasm of axillary tail of female breast
+174.8	Malignant neoplasm of other specified sites of female breast
+174.9	Malignant neoplasm of breast (female), unspecified
+175	Malignant neoplasm of male breast
+175.0	Malignant neoplasm of nipple and areola of male breast
+175.9	Malignant neoplasm of other and unspecified sites of male breast
+176	Kaposi's sarcoma
+176.0	Kaposi's sarcoma, skin
+176.2	Kaposi's sarcoma, palate
+176.3	Kaposi's sarcoma, gastrointestinal sites
+176.4	Kaposi's sarcoma, lung
+176.5	Kaposi's sarcoma, lymph nodes
+179	Malignant neoplasm of uterus, part unspecified
+180	Malignant neoplasm of cervix uteri
+180.0	Malignant neoplasm of endocervix
+180.1	Malignant neoplasm of exocervix
+180.8	Malignant neoplasm of other specified sites of cervix
+180.9	Malignant neoplasm of cervix uteri, unspecified
+181	Malignant neoplasm of placenta
+182	Malignant neoplasm of body of uterus
+182.0	Malignant neoplasm of corpus uteri, except isthmus
+182.1	Malignant neoplasm of isthmus
+182.8	Malignant neoplasm of other specified sites of body of uterus
+183	Malignant neoplasm of ovary and other uterine adnexa
+183.0	Malignant neoplasm of ovary
+183.2	Malignant neoplasm of fallopian tube
+183.5	Malignant neoplasm of round ligament of uterus
+183.9	Malignant neoplasm of uterine adnexa, unspecified
+184	Malignant neoplasm of other and unspecified female genital organs
+184.0	Malignant neoplasm of vagina
+184.1	Malignant neoplasm of labia majora
+184.4	Malignant neoplasm of vulva, unspecified
+184.9	Malignant neoplasm of female genital organ, site unspecified
+185	Malignant neoplasm of prostate
+186	Malignant neoplasm of testis
+186.0	Malignant neoplasm of undescended testis
+186.9	Malignant neoplasm of other and unspecified testis
+187	Malignant neoplasm of penis and other male genital organs
+187.2	Malignant neoplasm of glans penis
+187.3	Malignant neoplasm of body of penis
+187.4	Malignant neoplasm of penis, part unspecified
+187.6	Malignant neoplasm of spermatic cord
+187.7	Malignant neoplasm of scrotum
+187.8	Malignant neoplasm of other specified sites of male genital organs
+187.9	Malignant neoplasm of male genital organ, site unspecified
+188	Malignant neoplasm of bladder
+188.0	Malignant neoplasm of trigone of urinary bladder
+188.1	Malignant neoplasm of dome of urinary bladder
+188.2	Malignant neoplasm of lateral wall of urinary bladder
+188.3	Malignant neoplasm of anterior wall of urinary bladder
+188.4	Malignant neoplasm of posterior wall of urinary bladder
+188.5	Malignant neoplasm of bladder neck
+188.6	Malignant neoplasm of ureteric orifice
+188.7	Malignant neoplasm of urachus
+188.8	Malignant neoplasm of other specified sites of bladder
+188.9	Malignant neoplasm of bladder, part unspecified
+189	Malignant neoplasm of kidney and other and unspecified urinary organs
+189.0	Malignant neoplasm of kidney, except pelvis
+189.1	Malignant neoplasm of renal pelvis
+189.2	Malignant neoplasm of ureter
+189.3	Malignant neoplasm of urethra
+189.8	Malignant neoplasm of other specified sites of urinary organs
+189.9	Malignant neoplasm of urinary organ, site unspecified
+190	Malignant neoplasm of eye
+190.0	Malignant neoplasm of eyeball, except conjunctiva, cornea, retina, and choroid
+190.1	Malignant neoplasm of orbit
+190.4	Malignant neoplasm of cornea
+190.5	Malignant neoplasm of retina
+190.6	Malignant neoplasm of choroid
+190.7	Malignant neoplasm of lacrimal duct
+190.9	Malignant neoplasm of eye, part unspecified
+191	Malignant neoplasm of brain
+191.0	Malignant neoplasm of cerebrum, except lobes and ventricles
+191.1	Malignant neoplasm of frontal lobe
+191.2	Malignant neoplasm of temporal lobe
+191.3	Malignant neoplasm of parietal lobe
+191.4	Malignant neoplasm of occipital lobe
+191.5	Malignant neoplasm of ventricles
+191.6	Malignant neoplasm of cerebellum NOS
+191.7	Malignant neoplasm of brain stem
+191.8	Malignant neoplasm of other parts of brain
+191.9	Malignant neoplasm of brain, unspecified
+192	Malignant neoplasm of other and unspecified parts of nervous system
+192.0	Brain and Nervous System
+192.1	Malignant neoplasm of cerebral meninges
+192.2	Malignant neoplasm of spinal cord
+192.8	Malignant neoplasm of other specified sites of nervous system
+192.9	Malignant neoplasm of nervous system, part unspecified
+193	Malignant neoplasm of thyroid gland
+194	Malignant neoplasm of other endocrine glands and related structures
+194.0	Malignant neoplasm of adrenal gland
+194.3	Malignant neoplasm of pituitary gland and craniopharyngeal duct
+194.4	Malignant neoplasm of pineal gland
+194.6	Malignant neoplasm of aortic body and other paraganglia
+194.8	Malignant neoplasm of other endocrine glands and related structures
+194.9	Malignant neoplasm of endocrine gland, site unspecified
+195	Malignant neoplasm of other and ill-defined sites
+195.0	Malignant neoplasm of head, face, and neck
+195.1	Malignant neoplasm of thorax
+195.2	Malignant neoplasm of abdomen
+195.3	Malignant neoplasm of pelvis
+195.4	Malignant neoplasm of upper limb
+195.5	Malignant neoplasm of lower limb
+195.8	Malignant neoplasm of other specified sites
+196	Secondary and unspecified malignant neoplasm of lymph nodes
+196.0	Secondary and unspecified malignant neoplasm of lymph nodes of head, face, and neck
+196.5	Secondary and unspecified malignant neoplasm of lymph nodes of inguinal region and lower limb
+196.8	Secondary and unspecified malignant neoplasm of lymph nodes of multiple sites
+196.9	Secondary and unspecified malignant neoplasm of lymph nodes, site unspecified
+197	Secondary malignant neoplasm of respiratory and digestive systems
+197.0	Secondary malignant neoplasm of lung
+197.5	Secondary malignant neoplasm of large intestine and rectum
+197.6	Secondary malignant neoplasm of retroperitoneum and peritoneum
+197.7	Malignant neoplasm of liver, specified as secondary
+197.8	Secondary malignant neoplasm of other digestive organs and spleen
+198.1	Secondary malignant neoplasm of other urinary organs
+198.2	Secondary malignant neoplasm of skin
+198.3	Secondary malignant neoplasm of brain and spinal cord
+198.4	Secondary malignant neoplasm of other parts of nervous system
+198.5	Secondary malignant neoplasm of bone and bone marrow
+198.6	Secondary malignant neoplasm of ovary
+198.81	Secondary malignant neoplasm of breast
+198.89	Secondary malignant neoplasm of other specified sites
+199	Malignant neoplasm without specification of site
+199.0	Disseminated malignant neoplasm
+199.1	Other malignant neoplasm of unspecified site
+200	Lymphosarcoma and reticulosarcoma and other specified malignant tumors of lymphatic tissue
+200.0	Reticulosarcoma
+200.00	Reticulosarcoma, unspecified site, extranodal and solid organ sites
+200.01	Reticulosarcoma involving lymph nodes of head, face, and neck
+200.02	Reticulosarcoma involving intrathoracic lymph nodes
+200.03	Reticulosarcoma involving intra-abdominal lymph nodes
+200.04	Reticulosarcoma involving lymph nodes of axilla and upper limb
+200.05	Reticulosarcoma involving lymph nodes of inguinal region and lower limb
+200.08	Reticulosarcoma involving lymph nodes of multiple sites
+200.1	Lymphosarcoma
+200.10	Lymphosarcoma, unspecified site, extranodal and solid organ sites
+200.12	Lymphosarcoma involving intrathoracic lymph nodes
+200.18	Lymphosarcoma involving lymph nodes of multiple sites
+200.2	Burkitt's tumor or lymphoma
+200.21	Burkitt's tumor or lymphoma involving lymph nodes of head, face, and neck
+200.23	Burkitt's tumor or lymphoma involving intra-abdominal lymph nodes
+200.24	Burkitt's tumor or lymphoma involving lymph nodes of axilla and upper limb
+200.3	Marginal zone lymphoma
+200.30	Marginal zone lymphoma, unspecified site, extranodal and solid organ sites
+200.35	Marginal zone lymphoma involving lymph nodes of inguinal region and lower limb
+200.4	Mantle cell lymphoma
+200.40	Mantle cell lymphoma, unspecified site, extranodal and solid organ sites
+200.5	Primary central nervous system lymphoma
+200.6	Anaplastic large cell lymphoma
+200.60	Anaplastic large cell lymphoma, unspecified site, extranodal and solid organ sites
+200.61	Anaplastic large cell lymphoma involving lymph nodes of head, face, and neck
+200.68	Anaplastic large cell lymphoma involving lymph nodes of multiple sites
+200.7	Large cell lymphoma
+200.70	Large cell lymphoma, unspecified site, extranodal and solid organ sites
+200.72	Large cell lymphoma involving intrathoracic lymph nodes
+200.73	Large cell lymphoma involving intra-abdominal lymph nodes
+200.75	Large cell lymphoma involving lymph nodes of inguinal region and lower limb
+200.78	Large cell lymphoma involving lymph nodes of multiple sites
+200.8	Other named variants of lymphosarcoma and reticulosarcoma
+200.80	Other named variants of lymphosarcoma and reticulosarcoma, unspecified site
+201	Hodgkin's disease
+201.0	Hodgkin's paragranuloma
+201.00	Hodgkin's paragranuloma, unspecified site, extranodal and solid organ sites
+201.1	Hodgkin's granuloma
+201.2	Hodgkin's sarcoma
+201.23	Hodgkin's sarcoma involving intra-abdominal lymph nodes
+201.4	Hodgkin's disease, lymphocytic-histiocytic predominance
+201.40	Hodgkin's disease, lymphocytic-histiocytic predominance, unspecified site, extranodal and solid organ sites
+201.41	Hodgkin's disease, lymphocytic-histiocytic predominance involving lymph nodes of head, face, and neck
+201.44	Hodgkin's disease, lymphocytic-histiocytic predominance involving lymph nodes of axilla and upper limb
+201.45	Hodgkin's disease, lymphocytic-histiocytic predominance involving lymph nodes of inguinal region and lower limb
+201.48	Hodgkin's disease, lymphocytic-histiocytic predominance involving lymph nodes of multiple sites
+201.5	Hodgkin's disease, nodular sclerosis
+201.50	Hodgkin's disease, nodular sclerosis, unspecified site, extranodal and solid organ sites
+201.51	Hodgkin's disease, nodular sclerosis, involving lymph nodes of head, face, and neck
+201.52	Hodgkin's disease, nodular sclerosis, involving intrathoracic lymph nodes
+201.54	Hodgkin's disease, nodular sclerosis, involving lymph nodes of axilla and upper limb
+201.55	Hodgkin's disease, nodular sclerosis, involving lymph nodes of inguinal region and lower limb
+201.58	Hodgkin's disease, nodular sclerosis, involving lymph nodes of multiple sites
+201.6	Hodgkin's disease, mixed cellularity
+201.61	Hodgkin's disease, mixed cellularity, involving lymph nodes of head, face, and neck
+201.68	Hodgkin's disease, mixed cellularity, involving lymph nodes of multiple sites
+201.7	Hodgkin's disease, lymphocytic depletion
+201.9	Hodgkin's disease, unspecified type
+201.90	Hodgkin's disease, unspecified type, unspecified site, extranodal and solid organ sites
+201.91	Hodgkin's disease, unspecified type, involving lymph nodes of head, face, and neck
+201.92	Hodgkin's disease, unspecified type, involving intrathoracic lymph nodes
+201.93	Hodgkin's disease, unspecified type, involving intra-abdominal lymph nodes
+201.96	Hodgkin's disease, unspecified type, involving intrapelvic lymph nodes
+201.98	Hodgkin's disease, unspecified type, involving lymph nodes of multiple sites
+202	Other malignant neoplasms of lymphoid and histiocytic tissue
+202.0	Nodular lymphoma
+202.00	Nodular lymphoma, unspecified site, extranodal and solid organ sites
+202.01	Nodular lymphoma involving lymph nodes of head, face, and neck
+202.03	Nodular lymphoma involving intra-abdominal lymph nodes
+202.08	Nodular lymphoma involving lymph nodes of multiple sites
+202.1	Mycosis fungoides
+202.10	Mycosis fungoides, unspecified site, extranodal and solid organ sites
+202.18	Mycosis fungoides involving lymph nodes of multiple sites
+202.3	Malignant histiocytosis
+202.4	Leukemic reticuloendotheliosis
+202.5	Letterer-Siwe disease
+202.6	Malignant mast cell tumors
+202.7	Peripheral T-cell lymphoma
+202.70	Peripheral T-cell lymphoma, unspecified site, extranodal and solid organ sites
+202.75	Peripheral T-cell lymphoma involving lymph nodes of inguinal region and lower limb
+202.78	Peripheral T-cell lymphoma involving lymph nodes of multiple sites
+202.8	Other malignant lymphomas
+202.80	Other malignant lymphomas, unspecified site, extranodal and solid organ sites
+202.81	Other malignant lymphomas involving lymph nodes of head, face, and neck
+202.82	Other malignant lymphomas involving intrathoracic lymph nodes
+202.83	Other malignant lymphomas involving intra-abdominal lymph nodes
+202.85	Other malignant lymphomas involving lymph nodes of inguinal region and lower limb
+202.88	Other malignant lymphomas involving lymph nodes of multiple sites
+202.9	Other and unspecified malignant neoplasms of lymphoid and histiocytic tissue
+202.90	Other and unspecified malignant neoplasms of lymphoid and histiocytic tissue, unspecified site, extranodal and solid organ sites
+202.93	Other and unspecified malignant neoplasms of lymphoid and histiocytic tissue involving intra-abdominal lymph nodes
+203	Multiple myeloma and immunoproliferative neoplasms
+203.0	Multiple myeloma
+203.00	Multiple myeloma without mention of having achieved remission
+203.01	Multiple myeloma in remission
+203.02	Multiple myeloma in relapse
+203.1	Plasma cell leukemia
+203.8	Other immunoproliferative neoplasms
+204	Lymphoid leukemia
+204.0	Lymphoid leukemia, acute
+204.00	Acute lymphoid leukemia without mention of having achieved remission
+204.01	Acute lymphoid leukemia in remission
+204.02	Lymphoid leukemia, acute in relapse
+204.1	Lymphoid leukemia, chronic
+204.10	Chronic lymphoid leukemia without mention of having achieved remission
+204.11	Chronic lymphoid leukemia in remission
+204.2	Lymphoid leukemia, subacute
+204.8	Other lymphoid leukemia
+204.80	Other lymphoid leukemia without mention of having achieved remission
+204.9	Unspecified lymphoid leukemia
+204.90	Unspecified lymphoid leukemia without mention of having achieved remission
+205	Myeloid leukemia
+205.0	Myeloid leukemia, acute
+205.00	Acute myeloid leukemia without mention of having achieved remission
+205.01	Acute myeloid leukemia in remission
+205.02	Myeloid leukemia, acute in relapse
+205.1	Myeloid leukemia, chronic
+205.10	Chronic myeloid leukemia without mention of having achieved remission
+205.11	Chronic myeloid leukemia in remission
+205.2	Myeloid leukemia, subacute
+205.20	Subacute myeloid leukemia without mention of having achieved remission
+205.3	Myeloid sarcoma
+205.30	Myeloid sarcoma without mention of having achieved remission
+205.8	Other myeloid leukemia
+205.80	Other myeloid leukemia without mention of having achieved remission
+205.9	Unspecified myeloid leukemia
+205.90	Unspecified myeloid leukemia without mention of having achieved remission
+206	Monocytic leukemia
+206.0	Monocytic leukemia, acute
+206.00	Acute monocytic leukemia without mention of having achieved remission
+206.1	Monocytic leukemia, chronic
+206.10	Chronic monocytic leukemia without mention of having achieved remission
+206.8	Other monocytic leukemia
+206.80	Other monocytic leukemia without mention of having achieved remission
+206.9	Unspecified monocytic leukemia
+207	Other specified leukemia
+207.0	Acute erythremia and erythroleukemia
+207.00	Acute erythremia and erythroleukemia without mention of having achieved remission
+207.2	Megakaryocytic leukemia
+207.8	Other specified leukemia
+208	Leukemia of unspecified cell type
+208.0	Leukemia of unspecified cell type, acute
+208.00	Acute leukemia of unspecified cell type without mention of having achieved remission
+208.02	Leukemia of unspecified cell type, acute in relapse
+208.1	Leukemia of unspecified cell type, chronic
+208.10	Chronic leukemia of unspecified cell type without mention of having achieved remission
+208.8	Other leukemia of unspecified cell type
+208.80	Other leukemia of unspecified cell type without mention of having achieved remission
+208.9	Unspecified leukemia
+208.90	Unspecified leukemia without mention of having achieved remission
+209	Neuroendocrine tumors
+209.0	Malignant carcinoid tumors of the small intestine
+209.01	Malignant carcinoid tumor of the duodenum
+209.03	Malignant carcinoid tumor of the ileum
+209.11	Malignant carcinoid tumor of the appendix
+209.13	Malignant carcinoid tumor of the ascending colon
+209.16	Malignant carcinoid tumor of the sigmoid colon
+209.17	Malignant carcinoid tumor of the rectum
+209.2	Malignant carcinoid tumors of other and unspecified sites
+209.20	Malignant carcinoid tumor of unknown primary site
+209.21	Malignant carcinoid tumor of the bronchus and lung
+209.29	Malignant carcinoid tumors of other sites
+209.3	Malignant poorly differentiated neuroendocrine tumors
+209.30	Malignant poorly differentiated neuroendocrine carcinoma, any site
+209.36	Merkel cell carcinoma of other sites
+209.60	Benign carcinoid tumor of unknown primary site
+209.61	Benign carcinoid tumor of the bronchus and lung
+209.7	Secondary neuroendocrine tumors
+209.70	Secondary neuroendocrine tumor, unspecified site
+209.72	Secondary neuroendocrine tumor of liver
+209.79	Secondary neuroendocrine tumor of other sites
+210.1	Benign neoplasm of tongue
+210.9	Benign neoplasm of pharynx, unspecified
+211.2	Benign neoplasm of duodenum, jejunum, and ileum
+211.3	Benign neoplasm of colon
+211.4	Benign neoplasm of rectum and anal canal
+211.5	Benign neoplasm of liver and biliary passages
+211.6	Benign neoplasm of pancreas, except islets of Langerhans
+212.1	Benign neoplasm of larynx
+212.3	Benign neoplasm of bronchus and lung
+212.6	Benign neoplasm of thymus
+213.1	Benign neoplasm of lower jaw bone
+213.8	Benign neoplasm of short bones of lower limb
+214.8	Lipoma of other specified sites
+215.5	Other benign neoplasm of connective and other soft tissue of abdomen
+215.9	Other benign neoplasm of connective and other soft tissue, site unspecified
+216.1	Benign neoplasm of eyelid, including canthus
+216.9	Benign neoplasm of skin, site unspecified
+217	Benign neoplasm of breast
+218.0	Submucous leiomyoma of uterus
+218.9	Leiomyoma of uterus, unspecified
+220	Benign neoplasm of ovary
+223.0	Benign neoplasm of kidney, except pelvis
+223.3	Benign neoplasm of bladder
+225.0	Benign neoplasm of brain
+225.1	Benign neoplasm of cranial nerves
+225.2	Benign neoplasm of cerebral meninges
+226	Benign neoplasm of thyroid glands
+227.3	Benign neoplasm of pituitary gland and craniopharyngeal duct (pouch)
+229	Benign neoplasm of other and unspecified sites
+230	Carcinoma in situ of digestive organs
+230.0	Carcinoma in situ of lip, oral cavity, and pharynx
+230.2	Carcinoma in situ of stomach
+230.3	Carcinoma in situ of colon
+230.4	Carcinoma in situ of rectum
+230.8	Carcinoma in situ of liver and biliary system
+231.1	Carcinoma in situ of trachea
+231.2	Carcinoma in situ of bronchus and lung
+232.3	Carcinoma in situ of skin of other and unspecified parts of face
+232.9	Carcinoma in situ of skin, site unspecified
+233	Carcinoma in situ of breast and genitourinary system
+233.0	Carcinoma in situ of breast
+233.1	Carcinoma in situ of cervix uteri
+233.4	Carcinoma in situ of prostate
+234.9	Carcinoma in situ, site unspecified
+235.1	Neoplasm of uncertain behavior of lip, oral cavity, and pharynx
+235.2	Neoplasm of uncertain behavior of stomach, intestines, and rectum
+235.3	Neoplasm of uncertain behavior of liver and biliary passages
+235.7	Neoplasm of uncertain behavior of trachea, bronchus, and lung
+235.8	Neoplasm of uncertain behavior of pleura, thymus, and mediastinum
+236.0	Neoplasm of uncertain behavior of uterus
+236.2	Neoplasm of uncertain behavior of ovary
+236.5	Neoplasm of uncertain behavior of prostate
+236.7	Neoplasm of uncertain behavior of bladder
+237	Neoplasm of uncertain behavior of endocrine glands and nervous system
+237.5	Neoplasm of uncertain behavior of brain and spinal cord
+237.6	Neoplasm of uncertain behavior of meninges
+237.72	Neurofibromatosis, type 2 [acoustic neurofibromatosis]
+237.73	Schwannomatosis
+238	Neoplasm of uncertain behavior of other and unspecified sites and tissues
+238.0	Neoplasm of uncertain behavior of bone and articular cartilage
+238.1	Neoplasm of uncertain behavior of connective and other soft tissue
+238.2	Neoplasm of uncertain behavior of skin
+238.3	Neoplasm of uncertain behavior of breast
+238.4	Polycythemia vera
+238.6	Neoplasm of uncertain behavior of plasma cells
+238.7	Neoplasm of uncertain behavior of other lymphatic and hematopoietic tissues
+238.71	Essential thrombocythemia
+238.72	Low grade myelodysplastic syndrome lesions
+238.73	High grade myelodysplastic syndrome lesions
+238.74	Myelodysplastic syndrome with 5q deletion
+238.75	Myelodysplastic syndrome, unspecified
+238.76	Myelofibrosis with myeloid metaplasia
+238.79	Other lymphatic and hematopoietic tissues
+238.8	Neoplasm of uncertain behavior of other specified sites
+238.9	Neoplasm of uncertain behavior, site unspecified
+239	Neoplasms of unspecified nature
+239.0	Neoplasm of unspecified nature of digestive system
+239.1	Neoplasm of unspecified nature of respiratory system
+239.3	Neoplasm of unspecified nature of breast
+239.4	Neoplasm of unspecified nature of bladder
+239.5	Neoplasm of unspecified nature of other genitourinary organs
+239.6	Neoplasm of unspecified nature of brain
+239.9	Neoplasm of unspecified nature, site unspecified
+273.1	Monoclonal paraproteinemia
+275.01	Hereditary hemochromatosis
+279.52	Chronic graft-versus-host disease
+284.9	Aplastic anemia, unspecified
+288.01	Congenital neutropenia
+288.60	Leukocytosis, unspecified
+289.59	Other diseases of spleen
+289.83	Myelofibrosis
+340	Multiple sclerosis
+348.9	Unspecified condition of brain
+41.00	Bone marrow transplant, not otherwise specified
+41.98	Other operations on bone marrow
+474.9	Unspecified chronic disease of tonsils and adenoids
+478.20	Unspecified disease of pharynx
+478.29	Other diseases of pharynx or nasopharynx
+478.70	Unspecified disease of larynx
+478.79	Other diseases of larynx, not elsewhere classified
+48.29	Other diagnostic procedures on rectum, rectosigmoid and perirectal tissue
+511.9	Unspecified pleural effusion
+518.89	Other diseases of lung, not elsewhere classified
+526.4	Inflammatory conditions of jaw
+528.5	Diseases of lips
+528.9	Other and unspecified diseases of the oral soft tissues
+529.9	Unspecified condition of the tongue
+530.84	Tracheoesophageal fistula
+543.9	Other and unspecified diseases of appendix
+573.9	Unspecified disorder of liver
+574.60	Calculus of gallbladder and bile duct with acute cholecystitis, without mention of obstruction
+577.2	Cyst and pseudocyst of pancreas
+577.9	Unspecified disease of pancreas
+593.2	Cyst of kidney, acquired
+593.9	Unspecified disorder of kidney and ureter
+596.0	Bladder neck obstruction
+596.6	Rupture of bladder, nontraumatic
+60.5	Radical prostatectomy
+602.9	Unspecified disorder of prostate
+611.9	Unspecified breast disorder
+620.2	Other and unspecified ovarian cyst
+621.0	Polyp of corpus uteri
+621.8	Other specified disorders of uterus, not elsewhere classified
+714.9	Unspecified inflammatory polyarthropathy
+733.00	Osteoporosis, unspecified
+733.49	Aseptic necrosis of other bone sites
+733.82	Nonunion of fracture
+742.9	Unspecified congenital anomaly of brain, spinal cord, and nervous system
+756.9	Other and unspecified congenital anomalies of musculoskeletal system
+780.39	Other convulsions
+780.52	Insomnia, unspecified
+782.2	Localized superficial swelling, mass, or lump
+784.2	Swelling, mass, or lump in head and neck
+785.6	Enlargement of lymph nodes
+786.6	Swelling, mass, or lump in chest
+789.30	Abdominal or pelvic swelling, mass, or lump, unspecified site
+790.93	Elevated prostate specific antigen [PSA]
+793.11	Solitary pulmonary nodule
+793.19	Other nonspecific abnormal finding of lung field
+799.9	Other unknown and unspecified cause of morbidity or mortality
+85.19	Other diagnostic procedures on breast
+861.20	Unspecified injury of lung without open wound into thorax
+866.00	Unspecified injury to kidney without mention of open wound into cavity
+933.0	Foreign body in pharynx
+934.9	Foreign body in respiratory tree, unspecified
+V02.60	Viral hepatitis carrier, unspecified
+V10.04	Personal history of malignant neoplasm of stomach
+V10.11	Personal history of malignant neoplasm of bronchus and lung
+V10.46	Personal history of malignant neoplasm of prostate
+V10.60	Personal history of unspecified leukemia
+V10.61	Personal history of lymphoid leukemia
+V10.62	Personal history of myeloid leukemia
+V10.79	Personal history of other lymphatic and hematopoietic neoplasms
+V10.81	Personal history of malignant neoplasm of bone
+V10.82	Personal history of malignant melanoma of skin
+NA	Disease not specified
+V16.0	Family history of malignant neoplasm of gastrointestinal tract
+V16.2	Family history of malignant neoplasm of other respiratory and intrathoracic organs
+V16.3	Family history of malignant neoplasm of breast
+V16.40	Family history of malignant neoplasm of unspecified genital organ
+V16.41	Family history of malignant neoplasm of ovary
+V16.42	Family history of malignant neoplasm of prostate
+V16.43	Family history of malignant neoplasm of testis
+V16.49	Family history of malignant neoplasm of other genital organ
+V16.51	Family history of malignant neoplasm of kidney
+V16.59	Family history of malignant neoplasm of other urinary organs
+V16.6	Family history of leukemia
+V16.7	Family history of other lymphatic and hematopoietic neoplasms
+V16.9	Family history of unspecified malignant neoplasm
+V58.89	Encounter for other specified aftercare
+V59.02	Stem cell donor
+V59.09	Other blood donor
+V61.49	Other health problems within the family
+V65.0	Healthy person accompanying sick person
+V65.3	Dietary surveillance and counseling
+V70.7	Examination of participant in clinical trial for normal comparison or control in clinical research
+V76.10	Breast screening, unspecified
+V76.11	Screening mammogram for high-risk patient
+V76.44	Screening for malignant neoplasms of prostate
+V84.01	Genetic susceptibility to malignant neoplasm of breast
+V99	Healthy volunteer
