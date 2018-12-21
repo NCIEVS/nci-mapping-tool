@@ -19,7 +19,17 @@ L--%>
  
 <%
 String _mode_of_operation = DataUtils.getModeOfOperation();
+
+if (_mode_of_operation == null) {
+    System.out.println("_mode_of_operation == null");
+}
+
+
 if (_mode_of_operation != null && _mode_of_operation.compareTo(NCImtBrowserProperties.INTERACTIVE_MODE_OF_OPERATION) == 0) {
+
+System.out.println("INTERACTIVE_MODE_OF_OPERATION -- forwarding to home.jsf");
+
+
 %>
   <jsp:forward page="/pages/home.jsf" />
 <%  
