@@ -361,16 +361,29 @@ a.hideLink
 
 .bluebar
 {
- width: 743px;
  background-image: url(../images/quicklinks.gif);
  background-repeat: repeat-x;
  height: 32px;
 }
 
+.redbar
+{
+ background-image: url(../images/quicklinksRed.gif);
+ background-repeat: repeat-x;
+ height: 32px;
+}
+
+/* ------------ Quick links ------------ */
+#ontologyholder
+{
+ margin-left: 10px;
+ padding-top: 7px;
+}
+
 /* ------------ Quick links ------------ */
 #quicklinksholder
 {
- margin-left: 570px;
+ margin-left: 600px;  /*225px*/
  padding-top: 7px;
 }
 
@@ -691,3 +704,82 @@ a.hideLink
   border-right:1px solid #5C5C5C; /* constant: dark gray */
   border-bottom:1px solid #5C5C5C; /* constant: dark gray */
 }  
+
+
+
+/************************** increase window width ***********************************/
+
+.center-page_960
+{
+ width: 945px;
+ margin-top: 0;
+ margin-right: auto;
+ margin-bottom: 0;
+ margin-left: auto;
+ padding: 0;
+ text-align: left;
+}
+
+
+.termstable_960
+{
+ font-size: 11px;
+ width: 100%;
+}
+
+
+.search-globalnav_960
+{
+ width: 357px;
+ height: 82px;
+ background-color: #dde3ec;
+ margin-left: 583px;
+ border-color: red;
+ border-width: 0px;
+ border-style: solid;
+}
+
+
+#main-area_960
+{
+ border-left-color: #adadc2;
+ border-left-width: 1px;
+ border-left-style: solid;
+ border-right-color: #adadc2;
+ border-right-width: 1px;
+ border-right-style: solid;
+ width: 945px;
+}
+
+
+.bannerarea_960
+{
+ width: 943px;
+ height: 117px;
+ background-color: #dde3ec;
+}
+
+
+.datatable_960
+{
+ table-layout: fixed;
+ width: 900px;
+ word-wrap: break-word;
+ font-size: 11px;
+}
+
+.datatableValueSet_960
+{
+ table-layout: fixed;
+ width: 880px;
+ word-wrap: break-word;
+ font-size: 11px;
+}
+
+.bluebar_960
+{
+ width: 945px;
+ background-image: url(../images/quicklinks.gif);
+ background-repeat: repeat-x;
+ height: 32px;
+}
