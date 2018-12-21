@@ -26,6 +26,7 @@ L--%>
 <%@ page import="gov.nih.nci.evs.browser.bean.*" %>
 <%@ page import="gov.nih.nci.evs.browser.utils.*" %>
 <%@ page import="gov.nih.nci.evs.browser.properties.*" %>
+<%@ page import="org.LexGrid.LexBIG.LexBIGService.LexBIGService"%>
 
 <%
   String ncit_build_info = new DataUtils().getNCITBuildInfo();
@@ -138,10 +139,10 @@ Iterator it = mapping_hmap.keySet().iterator();
     <a href="#evs-content" class="hideLink" accesskey="1" title="Skip repetitive navigation links">skip navigation links</A>
   <!-- End Skip Top Navigation -->
   <%@ include file="/pages/templates/header.jsp" %>
-  <div class="center-page">
+  <div class="center-page_960">
     <%@ include file="/pages/templates/sub-header.jsp" %>
     <!-- Main box -->
-    <div id="main-area">
+    <div id="main-area_960">
       <%@ include file="/pages/templates/content-header.jsp" %>
       <!-- Page content -->
       <div class="pagecontent">
@@ -210,8 +211,9 @@ Iterator it = mapping_hmap.keySet().iterator();
 
 		<%     
 		if (input_option.compareTo("Name") == 0) {
-			       MappingUtils util = new MappingUtils();
-			       Vector algorithms = util.getSupportedSearchTechniqueNames();
+		            LexBIGService lbSvc = RemoteServerUtil.createLexBIGService();
+			    MappingToolUtils util = new MappingToolUtils(lbSvc);
+			    Vector algorithms = util.getSupportedSearchTechniqueNames();		
 		%>    
 
 
@@ -250,12 +252,12 @@ Iterator it = mapping_hmap.keySet().iterator();
 
 <HR></HR>
 
-      <table class="datatable">
+      <table class="datatable_960">
 
   <tr><td>
   
 	<h:commandButton id="save_all" value="save_all" action="#{mappingBean.saveAllMappingAction}"
-	image="#{basePath}/images/save.gif"
+	image="/images/save.gif"
 	alt="Save"
 	tabindex="3">
 	</h:commandButton>  
@@ -319,7 +321,7 @@ Iterator it = mapping_hmap.keySet().iterator();
 
 				
 					<h:commandButton id="remove" value="remove" action="#{mappingBean.removeMappingAction}"
-					image="#{basePath}/images/trash_16x16.gif" 
+					image="/images/trash_16x16.gif" 
 					alt="Remove"
 					tabindex="2">
 					</h:commandButton>				
@@ -353,40 +355,40 @@ Iterator it = mapping_hmap.keySet().iterator();
 		 %>     
 			   <tr><td>
 
-			   <table class="datatable">
+			   <table class="datatable_960">
 
-				   <th class="dataTableHeader" scope="col" align="left">
+				   <th class="datatable_960Header" scope="col" align="left">
 					  &nbsp;
 				   </th>
 
-				   <th class="dataTableHeader" width="60px" scope="col" align="left">Source</th>
+				   <th class="datatable_960Header" width="60px" scope="col" align="left">Source</th>
 
 
-				   <th class="dataTableHeader" scope="col" align="left">
+				   <th class="datatable_960Header" scope="col" align="left">
 					  Source Code
 				   </th>
 
-				   <th class="dataTableHeader" scope="col" align="left">
+				   <th class="datatable_960Header" scope="col" align="left">
 					  Source Name
 				   </th>
 
 
-				   <th class="dataTableHeader" width="30px" scope="col" align="left">
+				   <th class="datatable_960Header" width="40px" scope="col" align="left">
 					  REL
 				   </th>
 				   
-				   <th class="dataTableHeader" width="35px" scope="col" align="left">
+				   <th class="datatable_960Header" width="35px" scope="col" align="left">
 					  Map Rank
 				   </th>
 
 
-				   <th class="dataTableHeader" width="60px" scope="col" align="left">Target</th>
+				   <th class="datatable_960Header" width="50px" scope="col" align="left">Target</th>
 
-				   <th class="dataTableHeader" scope="col" align="left">
+				   <th class="datatable_960Header" scope="col" align="left">
 					  Target Code
 				   </th>
 
-				   <th class="dataTableHeader" scope="col" align="left">
+				   <th class="datatable_960Header" scope="col" align="left">
 					  Target Name
 				   </th>
 
@@ -543,7 +545,7 @@ Iterator it = mapping_hmap.keySet().iterator();
   <tr><td>
   
 	<h:commandButton id="save" value="save" action="#{mappingBean.saveAllMappingAction}"
-	image="#{basePath}/images/save.gif"
+	image="/images/save.gif"
 	alt="Save"
 	tabindex="3">
 	</h:commandButton>  
@@ -581,7 +583,7 @@ Iterator it = mapping_hmap.keySet().iterator();
       </div>
       <!-- end Page content -->
     </div>
-    <div class="mainbox-bottom"><img src="<%=basePath%>/images/mainbox-bottom.gif" width="745" height="5" alt="Mainbox Bottom" /></div>
+    <div class="mainbox-bottom"><img src="<%=request.getContextPath()%>/images/mainbox-bottom.gif" width="945" height="5" alt="Mainbox Bottom" /></div>
     <!-- end Main box -->
   </div>
 </f:view>

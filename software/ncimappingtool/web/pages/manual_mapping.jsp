@@ -27,6 +27,7 @@ L--%>
 <%@ page import="org.LexGrid.concepts.Definition" %>
 <%@ page import="org.LexGrid.commonTypes.Source" %>
 <%@ page import="org.LexGrid.commonTypes.Property" %>
+<%@ page import="org.LexGrid.LexBIG.LexBIGService.LexBIGService"%>
 
 
 
@@ -73,8 +74,8 @@ L--%>
     <div id="popupContainer">
       <!-- nci popup banner -->
       <div class="ncipopupbanner">
-        <a href="http://www.cancer.gov" target="_blank" alt="National Cancer Institute"><img src="<%=basePath%>/images/nci-banner-1.gif" width="440" height="39" border="0" alt="National Cancer Institute" /></a>
-        <a href="http://www.cancer.gov" target="_blank" alt="National Cancer Institute"><img src="<%=basePath%>/images/spacer.gif" width="48" height="39" border="0" alt="National Cancer Institute" class="print-header" /></a>
+        <a href="http://www.cancer.gov" target="_blank" alt="National Cancer Institute"><img src="<%=request.getContextPath()%>/images/nci-banner-1.gif" width="440" height="39" border="0" alt="National Cancer Institute" /></a>
+        <a href="http://www.cancer.gov" target="_blank" alt="National Cancer Institute"><img src="<%=request.getContextPath()%>/images/spacer.gif" width="48" height="39" border="0" alt="National Cancer Institute" class="print-header" /></a>
       </div>
       <!-- end nci popup banner -->
       <div id="popupMainArea">
@@ -84,16 +85,20 @@ L--%>
         <tr>
           <td valign="top">
             <a href="http://evs.nci.nih.gov/" target="_blank" alt="Enterprise Vocabulary Services">
-              <img src="<%=basePath%>/images/evs-popup-logo.gif" width="213" height="26" alt="EVS: Enterprise Vocabulary Services" title="EVS: Enterprise Vocabulary Services" border="0" />
+              <img src="<%=request.getContextPath()%>/images/evs-popup-logo.gif" width="213" height="26" alt="EVS: Enterprise Vocabulary Services" title="EVS: Enterprise Vocabulary Services" border="0" />
             </a>
           </td>
           <td valign="top"><div id="closeWindow"><a href="javascript:window.close();" onclick="window.opener.location.reload(true);" >
-              <img src="<%=basePath%>/images/thesaurus_close_icon.gif" width="10" height="10" border="0" alt="Close Window" />&nbsp;CLOSE WINDOW</a></div></td>
+              <img src="<%=request.getContextPath()%>/images/thesaurus_close_icon.gif" width="10" height="10" border="0" alt="Close Window" />&nbsp;CLOSE WINDOW</a></div></td>
         </tr>
         </table>
 
 
 <%
+LexBIGService lbSvc = RemoteServerUtil.createLexBIGService();
+TreeUtils treeUtils = new TreeUtils(lbSvc);
+MappingToolUtils mappingUtils = new MappingToolUtils(lbSvc);
+
 HashMap mapping_hmap = (HashMap) request.getSession().getAttribute("mapping_hmap");
 if (mapping_hmap == null) {
     mapping_hmap = new HashMap();
@@ -104,8 +109,6 @@ if (mapping_hmap == null) {
 List list = (ArrayList) request.getSession().getAttribute("data");
 String type = (String) request.getSession().getAttribute("type");
 
-System.out.println("manual_mapping type: " + type);
-
 String idx1_str = request.getParameter("idx1");
 if (!DataUtils.isNull(idx1_str)) {
     request.getSession().setAttribute("idx1_str", idx1_str);
@@ -113,8 +116,6 @@ if (!DataUtils.isNull(idx1_str)) {
     idx1_str = (String) request.getSession().getAttribute("idx1_str");
 }
 
-
-System.out.println("manual_mapping idx1_str: " + idx1_str);
 
 int idx1 = Integer.parseInt(idx1_str);
 String data_value = (String) list.get(idx1);
@@ -157,7 +158,6 @@ String target_cs = null;
 String associationName = "mapsTo";
 
 target_code = (String) request.getParameter("target_code");
-//System.out.println("(*) new target_code: " + target_code);
 
 
 String ncim_version = null;
@@ -204,12 +204,12 @@ ArrayList src_superconceptList = new ArrayList();
 ArrayList src_subconceptList = new ArrayList();
 ArrayList target_subconceptList = new ArrayList();
 
-
+/*
 System.out.println("source_scheme: " + source_scheme);
 System.out.println("source_version: " + source_version);
 System.out.println("target_scheme: " + target_scheme);
 System.out.println("target_version: " + target_version);
-
+*/
 
 Entity src_concept = null;
 String source_concept_name = null;
@@ -224,11 +224,11 @@ HashMap hmap_super = null;
 
 if (!DataUtils.isNull(source_scheme) && source_scheme.compareTo("LOCAL DATA") != 0) {
 
-   src_concept = MappingUtils.getConceptByCode(source_scheme, source_version, null, source_code);
+   src_concept = mappingUtils.getConceptByCode(source_scheme, source_version, null, source_code);
    source_concept_name = src_concept.getEntityDescription().getContent();
    sourceCodeNamespace = src_concept.getEntityCodeNamespace();
 
-	hmap_super = TreeUtils.getSuperconcepts(source_scheme, source_version, source_code);
+	hmap_super = treeUtils.getSuperconcepts(source_scheme, source_version, source_code);
 	if (hmap_super != null) {
 		TreeItem ti = (TreeItem) hmap_super.get(source_code);
 		if (ti != null) {
@@ -242,15 +242,15 @@ if (!DataUtils.isNull(source_scheme) && source_scheme.compareTo("LOCAL DATA") !=
 			}
 		}
 	}
-	SortUtils.quickSort(src_superconceptList);
+	new SortUtils().quickSort(src_superconceptList);
 
 	src_presentations = src_concept.getPresentation();
 	src_definitions = src_concept.getDefinition();
 	src_properties = src_concept.getProperty();
 
 	src_subconceptList =
-	   TreeUtils.getSubconceptNamesAndCodes(source_scheme, source_version, source_code);
-	SortUtils.quickSort(src_subconceptList);
+	   treeUtils.getSubconceptNamesAndCodes(source_scheme, source_version, source_code);
+	new SortUtils().quickSort(src_subconceptList);
 
 }
 
@@ -262,7 +262,7 @@ if (DataUtils.isNull(target_code)) {
     target_code = "";
 } else {
 
-    target_concept = MappingUtils.getConceptByCode(target_scheme, target_version, null, target_code);
+    target_concept = mappingUtils.getConceptByCode(target_scheme, target_version, null, target_code);
     target_concept_name = target_concept.getEntityDescription().getContent();
     
     target_presentations = target_concept.getPresentation();
@@ -272,7 +272,7 @@ if (DataUtils.isNull(target_code)) {
     targetCodeNamespace = target_concept.getEntityCodeNamespace();
 
 	target_superconceptList = new ArrayList();
-	hmap_super = TreeUtils.getSuperconcepts(target_scheme, target_version, target_code);
+	hmap_super = treeUtils.getSuperconcepts(target_scheme, target_version, target_code);
 	if (hmap_super != null) {
 		TreeItem ti = (TreeItem) hmap_super.get(target_code);
 		if (ti != null) {
@@ -286,7 +286,7 @@ if (DataUtils.isNull(target_code)) {
 			}
 		}
 	}
-	SortUtils.quickSort(target_superconceptList);	
+	new SortUtils().quickSort(target_superconceptList);	
 
 }
 
@@ -319,7 +319,7 @@ if (data_value.indexOf("|") != -1) {
 <tr valign="top" align="left">
            <td align="left" class="textbody" >      
 <h:commandButton id="refresh" value="refresh" action="#{mappingBean.manualMappingAction}"
-image="#{basePath}/images/refresh.png"
+image="/images/refresh.png"
 alt="Refresh"
 tabindex="2">
 </h:commandButton>
@@ -392,7 +392,7 @@ if (target_code.compareTo("") != 0) {
 
 
 		    <h:commandButton id="save" value="save" action="#{mappingBean.saveManualMappingAction}"
-		      image="#{basePath}/images/save.gif"
+		      image="/images/save.gif"
 		      alt="Save"
 		      tabindex="2">
 		    </h:commandButton>
@@ -441,17 +441,17 @@ if (!DataUtils.isNull(source_scheme) && source_scheme.compareTo("LOCAL DATA") !=
           </table>
 
 
-          <table class="datatable">
+          <table class="datatable_960">
                <tr>
                  <td>
 
-		   <table class="datatable">
+		   <table class="datatable_960">
 
-		   <th class="dataTableHeader" scope="col" align="left">
+		   <th class="datatable_960Header" scope="col" align="left">
 			  Synonyms:
 		   </th>
 
-		   <th class="dataTableHeader" scope="col" align="left">
+		   <th class="datatable_960Header" scope="col" align="left">
 			  &nbsp;
 		   </th>
 <%		   
@@ -481,14 +481,14 @@ if (!DataUtils.isNull(source_scheme) && source_scheme.compareTo("LOCAL DATA") !=
                <tr>
                  <td>
 
-		   <table class="datatable">
+		   <table class="datatable_960">
 
 
-		   <th class="dataTableHeader" scope="col" align="left">
+		   <th class="datatable_960Header" scope="col" align="left">
 			  Definitions:
 		   </th>
 
-		   <th class="dataTableHeader" scope="col" align="left">
+		   <th class="datatable_960Header" scope="col" align="left">
 			  &nbsp;
 		   </th>
 <%		   
@@ -544,13 +544,13 @@ if (!DataUtils.isNull(source_scheme) && source_scheme.compareTo("LOCAL DATA") !=
                <tr>
                  <td>
 
-		   <table class="datatable">
+		   <table class="datatable_960">
 
-		   <th class="dataTableHeader" scope="col" align="left">
+		   <th class="datatable_960Header" scope="col" align="left">
 			  Other Properties:
 		   </th>
 
-		   <th class="dataTableHeader" scope="col" align="left">
+		   <th class="datatable_960Header" scope="col" align="left">
 			  &nbsp;
 		   </th>
         
@@ -599,9 +599,9 @@ if (!DataUtils.isNull(source_scheme) && source_scheme.compareTo("LOCAL DATA") !=
                <tr>
                  <td>
 
-		   <table class="datatable">
+		   <table class="datatable_960">
 
-		   <th class="dataTableHeader" scope="col" align="left">
+		   <th class="datatable_960Header" scope="col" align="left">
 			  Parents:
 		   </th>
 
@@ -636,9 +636,9 @@ if (!DataUtils.isNull(source_scheme) && source_scheme.compareTo("LOCAL DATA") !=
                <tr>
                  <td>
 
-		   <table class="datatable">
+		   <table class="datatable_960">
 
-		   <th class="dataTableHeader" scope="col" align="left">
+		   <th class="datatable_960Header" scope="col" align="left">
 			  Children:
 		   </th>
 
@@ -690,8 +690,8 @@ if (!DataUtils.isNull(source_scheme) && source_scheme.compareTo("LOCAL DATA") !=
  <%
  if (target_code.compareTo("") != 0) {
  target_subconceptList =
-    TreeUtils.getSubconceptNamesAndCodes(target_scheme, target_version, target_code);
- SortUtils.quickSort(target_subconceptList);
+    treeUtils.getSubconceptNamesAndCodes(target_scheme, target_version, target_code);
+ new SortUtils().quickSort(target_subconceptList);
 
 
  %>         
@@ -719,17 +719,17 @@ if (!DataUtils.isNull(source_scheme) && source_scheme.compareTo("LOCAL DATA") !=
           </table>
 
 
-          <table class="datatable">
+          <table class="datatable_960">
                <tr>
                  <td>
 
-		   <table class="datatable">
+		   <table class="datatable_960">
 
-		   <th class="dataTableHeader" scope="col" align="left">
+		   <th class="datatable_960Header" scope="col" align="left">
 			  Synonyms:
 		   </th>
 
-		   <th class="dataTableHeader" scope="col" align="left">
+		   <th class="datatable_960Header" scope="col" align="left">
 			  &nbsp;
 		   </th>
 <%	
@@ -762,14 +762,14 @@ if (!DataUtils.isNull(source_scheme) && source_scheme.compareTo("LOCAL DATA") !=
                <tr>
                  <td>
 
-		   <table class="datatable">
+		   <table class="datatable_960">
 
 
-		   <th class="dataTableHeader" scope="col" align="left">
+		   <th class="datatable_960Header" scope="col" align="left">
 			  Definitions:
 		   </th>
 
-		   <th class="dataTableHeader" scope="col" align="left">
+		   <th class="datatable_960Header" scope="col" align="left">
 			  &nbsp;
 		   </th>
 <%		
@@ -817,13 +817,13 @@ if (!DataUtils.isNull(source_scheme) && source_scheme.compareTo("LOCAL DATA") !=
                <tr>
                  <td>
 
-		   <table class="datatable">
+		   <table class="datatable_960">
 
-		   <th class="dataTableHeader" scope="col" align="left">
+		   <th class="datatable_960Header" scope="col" align="left">
 			  Other Properties:
 		   </th>
 
-		   <th class="dataTableHeader" scope="col" align="left">
+		   <th class="datatable_960Header" scope="col" align="left">
 			  &nbsp;
 		   </th>
         
@@ -876,10 +876,10 @@ if (!DataUtils.isNull(source_scheme) && source_scheme.compareTo("LOCAL DATA") !=
                <tr>
                  <td>
 
-		   <table class="datatable">
+		   <table class="datatable_960">
 
 
-		   <th class="dataTableHeader" scope="col" align="left">
+		   <th class="datatable_960Header" scope="col" align="left">
 			  Parents:
 		   </th>
 
@@ -918,10 +918,10 @@ if (!DataUtils.isNull(source_scheme) && source_scheme.compareTo("LOCAL DATA") !=
                 <tr>
                   <td>
  
- 		   <table class="datatable">
+ 		   <table class="datatable_960">
  
  
- 		   <th class="dataTableHeader" scope="col" align="left">
+ 		   <th class="datatable_960Header" scope="col" align="left">
  			  Children:
  		   </th>
  

@@ -21,6 +21,7 @@ L--%>
 
 <%@ page import="org.apache.log4j.*" %>
 <%@ page import="javax.faces.model.*" %>
+<%@ page import="org.LexGrid.LexBIG.LexBIGService.LexBIGService"%>
 
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
@@ -151,10 +152,10 @@ L--%>
     <a href="#evs-content" class="hideLink" accesskey="1" title="Skip repetitive navigation links">skip navigation links</A>
   <!-- End Skip Top Navigation -->
   <%@ include file="/pages/templates/header.jsp" %>
-  <div class="center-page">
+  <div class="center-page_960">
     <%@ include file="/pages/templates/sub-header.jsp" %>
     <!-- Main box -->
-    <div id="main-area">
+    <div id="main-area_960">
       <%@ include file="/pages/templates/content-header.jsp" %>
       <!-- Page content -->
       <div class="pagecontent">
@@ -165,6 +166,9 @@ L--%>
 
 
 <%
+LexBIGService lbSvc = RemoteServerUtil.createLexBIGService();
+MappingToolUtils mappingUtils = new MappingToolUtils(lbSvc);
+
     String basePath = request.getContextPath(); 
 
 
@@ -177,8 +181,6 @@ L--%>
     if (type == null) {
     	type = (String) request.getSession().getAttribute("type"); 
     }
-    
-    System.out.println("(***) AddComponent.jsp type: " + type);
     
     
     String adv_search_vocabulary = request.getParameter("dictionary");
@@ -257,9 +259,6 @@ transitivity_checkbox = (String) request.getSession().getAttribute("preview_tran
     } 
     
 	    if (refresh_page) {
-	    
-	    
-System.out.println("********************** REFRESH PAGE");
 
                 type = (String) request.getParameter("type");
                 action = (String) request.getParameter("action");
@@ -282,7 +281,6 @@ System.out.println("********************** REFRESH PAGE");
 
 	    } 
 
-System.out.println("------------ addComponent.jsp type: " + type);
 
 
 
@@ -290,9 +288,6 @@ System.out.println("------------ addComponent.jsp type: " + type);
 		subsetType = "Property";
 	    }
 
-
-
-System.out.println("------------ addComponent.jsp subsetType: " + subsetType);
 
 
 
@@ -416,9 +411,6 @@ if (adv_search_vocabulary == null) {
      }
 
 
-System.out.println("subsetType: " + subsetType);
-
-
      if (subsetType.equals("ValueSetReference")) {
      
 %>
@@ -437,11 +429,7 @@ System.out.println("subsetType: " + subsetType);
  	     Vector item_vec = DataUtils.getValueSetDefinitions();
  	     String vsdURI = (String) request.getAttribute("vsdURI");
 
-if (item_vec == null) {
-System.out.println("item_vec == null???");
-} else if (item_vec.size() == 0) {
-System.out.println("item_vec.size() == 0???");
-}
+
  	     
  	     if (vsdURI == null && item_vec.size() > 0) {
  		      SelectItem item = (SelectItem) item_vec.elementAt(0);
@@ -473,13 +461,9 @@ System.out.println("item_vec.size() == 0???");
 
 
      } else if (subsetType.equals("Property")) {
-     
-     
-    
-	    MappingUtils util = new MappingUtils();
 	    Vector algorithms = new Vector();
 	    try {
-		algorithms = util.getSupportedSearchTechniqueNames();
+		algorithms = mappingUtils.getSupportedSearchTechniqueNames();
 	    } catch (Exception ex) {
 		ex.printStackTrace();
 	    }
@@ -617,8 +601,6 @@ String blank_str = "";
 
                           <%
 
-System.out.println("addComponent.jsp OntologyBean.getSupportedAssociationNames  adv_search_vocabulary: " + adv_search_vocabulary);
-System.out.println("addComponent.jsp OntologyBean.getSupportedAssociationNames  version: " + adv_search_version);
 
                           
                             Vector association_vec = OntologyBean.getSupportedAssociationNames(adv_search_vocabulary, adv_search_version);
@@ -807,7 +789,7 @@ if (transitivity_checkbox != null && transitivity_checkbox.compareTo("true") == 
       </div>
       <!-- end Page content -->
     </div>
-    <div class="mainbox-bottom"><img src="<%=basePath%>/images/mainbox-bottom.gif" width="745" height="5" alt="Mainbox Bottom" /></div>
+    <div class="mainbox-bottom"><img src="<%= request.getContextPath() %>/images/mainbox-bottom.gif" width="945" height="5" alt="Mainbox Bottom" /></div>
     <!-- end Main box -->
   </div>
 </f:view>

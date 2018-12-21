@@ -61,11 +61,11 @@ L--%>
    
 <f:view>
     <%@ include file="/pages/include/header.jsp" %>
-    <div class="center-page">
+    <div class="center-page_960">
         <%@ include file="/pages/include/subHeader.jsp" %>
 
-        <div class="mainbox-top"><img src="<%= request.getContextPath() %>/images/mainbox-top.gif" width="745" height="5" alt="Mainbox Top" /></div>
-	<div id="main-area">
+        <div class="mainbox-top"><img src="<%= request.getContextPath() %>/images/mainbox-top.gif" width="945" height="5" alt="Mainbox Top" /></div>
+	<div id="main-area_960">
 	          <%@ include file="/pages/include/applicationBanner.jsp" %>
 	          <%@ include file="/pages/include/quickLinks.jsp" %>
 		  <div class="pagecontent">
@@ -76,8 +76,6 @@ L--%>
 <%
 
 String requestContextPath = request.getContextPath();
-
-System.out.println("requestContextPath: " + requestContextPath);
 
 String message = (String) request.getSession().getAttribute("message");  
 request.getSession().removeAttribute("message");  
@@ -94,22 +92,14 @@ request.getSession().removeAttribute("message");
 	String check_false = "";
 	
 	String vsd_uri = null;
-	
-	if (vsb == null) {
-	    System.out.println("ValueSetBean == null???");
-	} else {
-	    System.out.println("ValueSetBean != null");
-	}
+
 	
 	
 vsd_uri = vsb.getUri();
-System.out.println("vsd_uri " + vsd_uri);
 
 if (vsd_uri == null) {
     vsd_uri = (String) request.getAttribute("uri");
 }
-
-System.out.println("vsd_uri " + vsd_uri);
 
 ValueSetObject vs_obj = vsb.getValueSet(vsd_uri);
 Vector codingSchemeName_vec = vsb.findParticipatingCodingSchemes(vs_obj);
@@ -126,10 +116,6 @@ if (codingSchemeName_vec != null) {
 }
 
 Vector coding_scheme_ref_vec = DataUtils.getCodingSchemeReferencesInValueSetDefinition(codingSchemeName_vec);
-
-
-System.out.println("coding_scheme_references.jsp coding_scheme_ref_vec.size() " + coding_scheme_ref_vec.size()) ;
-
 
 String checked = "";
 String prev_cs_urn = "";
@@ -162,11 +148,11 @@ String prev_cs_urn = "";
 
  <h:form id="resolveValueSetForm" styleClass="search-form">            
               
-              <table class="dataTable" summary="" cellpadding="3" cellspacing="0" border="0" width="100%">
-                <th class="dataTableHeader" scope="col" align="left">&nbsp;</th>
-                <th class="dataTableHeader" scope="col" align="left">Coding Scheme</th>
-                <th class="dataTableHeader" scope="col" align="left">Version</th>
-                <th class="dataTableHeader" scope="col" align="left">Tag</th>
+              <table class="datatable_960" summary="" cellpadding="3" cellspacing="0" border="0" width="100%">
+                <th class="datatable_960Header" scope="col" align="left">&nbsp;</th>
+                <th class="datatable_960Header" scope="col" align="left">Coding Scheme</th>
+                <th class="datatable_960Header" scope="col" align="left">Version</th>
+                <th class="datatable_960Header" scope="col" align="left">Tag</th>
 <%
 if (coding_scheme_ref_vec != null) {
 int k = -1;
@@ -175,8 +161,7 @@ int k = -1;
             
 		    String coding_scheme_ref_str = (String) coding_scheme_ref_vec.elementAt(i);
 int lcv = i+1;		    
-System.out.println("(" + lcv + ")" + coding_scheme_ref_str);		    
-		    
+	    
 		    
 		    String coding_scheme_name_version = coding_scheme_ref_str;
 		    
@@ -189,9 +174,6 @@ System.out.println("(" + lcv + ")" + coding_scheme_ref_str);
 		    
 		    String cs_version = (String) u.elementAt(1);
 		    
-System.out.println("coding_scheme_references.jsp cs_name: " + cs_name);
-
-System.out.println("coding_scheme_references.jsp cs_version: " + cs_version);
 		    
 		    String cs_tag = DataUtils.getVocabularyVersionTag(cs_name, cs_version);
 		    if (cs_tag == null) cs_tag = "";
@@ -299,7 +281,7 @@ System.out.println("coding_scheme_references.jsp cs_version: " + cs_version);
 		      <%@ include file="/pages/include/footer.jsp" %>
 		  </div>
 	</div>
-        <div class="mainbox-bottom"><img src="<%= request.getContextPath() %>/images/mainbox-bottom.gif" width="745" height="5" alt="Mainbox Bottom" /></div>
+        <div class="mainbox-bottom"><img src="<%= request.getContextPath() %>/images/mainbox-bottom.gif" width="945" height="5" alt="Mainbox Bottom" /></div>
     </div>
    <br/> 
 </f:view>    

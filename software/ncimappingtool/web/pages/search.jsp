@@ -13,6 +13,7 @@ L--%>
 <%@ page import="org.LexGrid.concepts.Entity" %>
 <%@ page import="gov.nih.nci.evs.browser.utils.*" %>
 <%@ page import="gov.nih.nci.evs.browser.bean.*" %>
+<%@ page import="org.LexGrid.LexBIG.LexBIGService.LexBIGService"%>
 
 <%
   String ncit_build_info = new DataUtils().getNCITBuildInfo();
@@ -43,6 +44,9 @@ L--%>
   <script type="text/javascript" src="<%= request.getContextPath() %>/js/tip_followscroll.js"></script>
 
 <%
+LexBIGService lbSvc = RemoteServerUtil.createLexBIGService();
+MappingToolUtils util = new MappingToolUtils(lbSvc);
+
 String basePath = request.getContextPath(); 
 String message = (String) request.getSession().getAttribute("message");
 
@@ -157,7 +161,7 @@ String source_concept_name = null;
 
 
 if (!DataUtils.isNull(source_scheme) && source_scheme.compareTo("LOCAL DATA") != 0) {
-	src_concept = MappingUtils.getConceptByCode(source_scheme, source_version, null, source_code);
+	src_concept = mappingUtils.getConceptByCode(source_scheme, source_version, null, source_code);
 	source_concept_name = src_concept.getEntityDescription().getContent();
 }
 
@@ -178,10 +182,10 @@ Vector target_properties = OntologyBean.getSupportedPropertyNames(target_scheme,
     <a href="#evs-content" class="hideLink" accesskey="1" title="Skip repetitive navigation links">skip navigation links</A>
   <!-- End Skip Top Navigation -->
   <%@ include file="/pages/templates/header.jsp" %>
-  <div class="center-page">
+  <div class="center-page_960">
     <%@ include file="/pages/templates/sub-header.jsp" %>
     <!-- Main box -->
-    <div id="main-area">
+    <div id="main-area_960">
       <%@ include file="/pages/templates/content-header.jsp" %>
       <!-- Page content -->
       <div class="pagecontent">
@@ -211,7 +215,6 @@ Vector target_properties = OntologyBean.getSupportedPropertyNames(target_scheme,
     
      <table>
 <%     
-    MappingUtils util = new MappingUtils();
     Vector algorithms = util.getSupportedSearchTechniqueNames();
     String algorithm = (String) request.getSession().getAttribute("algorithm");
     String target_property = "";
@@ -292,7 +295,7 @@ Vector target_properties = OntologyBean.getSupportedPropertyNames(target_scheme,
   	<h:commandButton
   		id="SubmitForm"
   		value="SubmitForm"
-  		image="#{basePath}/images/search.gif"
+  		image="/images/search.gif"
   		action="#{mappingBean.searchAction}" 
   		alt="Submit Batch" >
   	</h:commandButton>
@@ -348,7 +351,7 @@ if (action != null) {
       </div>
       <!-- end Page content -->
     </div>
-    <div class="mainbox-bottom"><img src="<%=basePath%>/images/mainbox-bottom.gif" width="745" height="5" alt="Mainbox Bottom" /></div>
+    <div class="mainbox-bottom"><img src="<%=request.getContextPath()%>/images/mainbox-bottom.gif" width="945" height="5" alt="Mainbox Bottom" /></div>
     <!-- end Main box -->
   </div>
 </f:view>

@@ -28,10 +28,13 @@ L--%>
 <%@ page import="gov.nih.nci.evs.browser.bean.*" %>
 <%@ page import="gov.nih.nci.evs.browser.utils.*" %>
 <%@ page import="gov.nih.nci.evs.browser.properties.*" %>
+<%@ page import="org.LexGrid.LexBIG.LexBIGService.LexBIGService"%>
 
 
 
 <%
+  System.out.println("\n(*) batch_mapping_form...");
+  
   HashMap display_name_hmap = new HashMap();
   String ncit_build_info = new DataUtils().getNCITBuildInfo();
   String application_version = new DataUtils().getApplicationVersion();
@@ -163,6 +166,10 @@ L--%>
 <%
     boolean hasAnchor = false;
     String anchor = (String) request.getSession().getAttribute("anchor");
+    
+System.out.println("(*) anchor: " + anchor);    
+    
+    
     if (DataUtils.isNull(anchor)) {
         anchor = (String) request.getParameter("idx");
     } else {
@@ -292,8 +299,19 @@ if (mode != null && mode.compareTo("readonly") == 0) {
 }
 
 String action = (String) request.getParameter("action");
-String id = (String) request.getParameter("id");
 
+System.out.println("(*) batch_mapping_form...action " + action);
+
+
+String id = (String) request.getParameter("id");
+System.out.println("(*) batch_mapping_form...id " + id);
+
+HashSet expanded_hset = (HashSet) request.getSession().getAttribute("expanded_hset");
+if (expanded_hset == null) {
+    expanded_hset = new HashSet();
+    request.getSession().setAttribute("expanded_hset", expanded_hset);
+} 
+System.out.println("(*) expanded_hset.." + expanded_hset.size());
 
 identifier = (String) request.getSession().getAttribute("identifier");
 mapping_version = (String) request.getSession().getAttribute("mapping_version");
@@ -327,7 +345,6 @@ if (id != null) {
 	if (obj == null) {
 	    System.out.println("obj with id not found??? " + id);
 	} else {
-	    //System.out.println("obj with id found: " + id);
 		identifier = obj.getName();
 		request.getSession().setAttribute("identifier", identifier);
 		mapping_version = obj.getVersion();
@@ -434,6 +451,7 @@ if (id != null) {
 } else if (type.compareTo("codingscheme") == 0) {
 
 	source_cs = (String) request.getSession().getAttribute("source_cs");
+	
 	target_cs = (String) request.getSession().getAttribute("target_cs");	
 
 	source_scheme = DataUtils.key2CodingSchemeName(source_cs);
@@ -466,17 +484,13 @@ input_option_label = input_option_label.toLowerCase();
 List list = (ArrayList) request.getSession().getAttribute("data");
 
 if (type.compareTo("codingscheme") == 0  && input_option.compareTo("Code") == 0) {
+
     status_map = DataUtils.getPropertyValuesInBatch(source_scheme, source_version, "Concept_Status", list);
 }
 
 
 boolean show_rank_column = true;
 
-HashSet expanded_hset = (HashSet) request.getSession().getAttribute("expanded_hset");
-if (expanded_hset == null) {
-    expanded_hset = new HashSet();
-    request.getSession().setAttribute("expanded_hset", expanded_hset);
-} 
 
 
 mapping_hmap = (HashMap) request.getSession().getAttribute("mapping_hmap");
@@ -489,12 +503,10 @@ if (mapping_hmap == null) {
 
 
 String entire_source = (String) request.getSession().getAttribute("entire_source");
-//System.out.println("entire_source: " + entire_source);
-
 
 if (list != null && list.size() > 0) {
     if (input_option.compareToIgnoreCase("Code") == 0) {
-	    if (source_scheme != null && source_scheme.compareTo("") != 0 && source_scheme.compareTo("Constants.LOCAL_DATA") != 0) {
+	    if (source_scheme != null && source_scheme.compareTo("") != 0 && source_scheme.compareTo("LOCAL DATA") != 0) {
 		    if (DataUtils.isNull(entire_source)) {
 		        code2name_hmap = DataUtils.code2Name(source_scheme, source_version, list);
 		        request.getSession().setAttribute("code2name_hmap", code2name_hmap);
@@ -585,7 +597,6 @@ if(!hasContent) {
 
 String record_idx = null;
 
-
 HashMap status_hmap = (HashMap) request.getSession().getAttribute("status_hmap");
 if (status_hmap == null) {
 	status_hmap = new HashMap();
@@ -604,10 +615,17 @@ if (action != null && action.compareTo("expand") == 0) {
     String expand_idx  = (String) request.getParameter("idx");
     expanded_hset.add(expand_idx);
     request.getSession().setAttribute("expanded_hset", expanded_hset);
+    
+    
 } else if (action != null && action.compareTo("collapse") == 0) {
+
+System.out.println("(*) action " + action);
     String expand_idx  = (String) request.getParameter("idx");
+System.out.println("(*) expand_idx " + expand_idx);    
+System.out.println("(*) expanded_hset BEFORE " + expanded_hset.size());    
     expanded_hset.remove(expand_idx);
     request.getSession().setAttribute("expanded_hset", expanded_hset);
+System.out.println("(*) expanded_hset AFTER " + expanded_hset.size());      
 }
 
 
@@ -628,10 +646,10 @@ Iterator it = mapping_hmap.keySet().iterator();
     <a href="#evs-content" class="hideLink" accesskey="1" title="Skip repetitive navigation links">skip navigation links</A>
   <!-- End Skip Top Navigation -->
   <%@ include file="/pages/templates/header.jsp" %>
-  <div class="center-page">
+  <div class="center-page_960">
     <%@ include file="/pages/templates/sub-header.jsp" %>
     <!-- Main box -->
-    <div id="main-area">
+    <div id="main-area_960">
       <%@ include file="/pages/templates/content-header.jsp" %>
       <!-- Page content -->
       <div class="pagecontent">
@@ -699,6 +717,7 @@ Iterator it = mapping_hmap.keySet().iterator();
                  
           <%        
           }  else if (type.compareTo("codingscheme") == 0) {
+          
           %>
                   
                 <tr>
@@ -746,10 +765,11 @@ Iterator it = mapping_hmap.keySet().iterator();
           }
           %>
 
-
-
 		<%     
-			       Vector algorithms = MappingUtils.getAllSupportedSearchTechniqueNames();
+LexBIGService lbSvc = RemoteServerUtil.createLexBIGService();
+MappingToolUtils mappingUtils = new MappingToolUtils(lbSvc);
+		
+			       Vector algorithms = mappingUtils.getAllSupportedSearchTechniqueNames();
 		%>    
 
 				<tr>
@@ -784,7 +804,7 @@ if (!readonly && !show_refresh_button) {
   	<h:commandButton
   		id="Submit_Form"
   		value="Submit_Form"
-  		image="#{basePath}/images/submit.gif"
+  		image="/images/submit.gif"
   		action="#{mappingBean.submitBatchAction}" 
   		alt="Submit Batch" >
   	</h:commandButton>
@@ -800,8 +820,9 @@ if (!readonly && !show_refresh_button) {
 				    
 <%
 
+if (type.compareTo("codingscheme") == 0 && !show_refresh_button && source_scheme.compareTo("LOCAL DATA") != 0) {				    
 
-if (type.compareTo("codingscheme") == 0& !show_refresh_button &&  source_scheme.compareTo(Constants.LOCAL_DATA) != 0) {				    
+
 %>				    
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 				    <td align="right" class="textbody10">
@@ -834,7 +855,7 @@ if (type.compareTo("codingscheme") == 0& !show_refresh_button &&  source_scheme.
 
 <HR></HR>
 
-      <table class="datatable">
+      <table class="datatable_960">
         
 <%
 if (show_refresh_button) {
@@ -843,7 +864,7 @@ if (show_refresh_button) {
   	<h:commandButton
   		id="Refresh_Form"
   		value="Refresh_Form"
-  		image="#{basePath}/images/refresh.png"
+  		image="/images/refresh.png"
   		action="#{mappingBean.refreshFormAction}" 
   		alt="Refresh" >
   	</h:commandButton>
@@ -851,6 +872,8 @@ if (show_refresh_button) {
   &nbsp;
 <%  
 } else {
+
+
 %>  
         <tr><td class="textbody" valign="top" >
 	<%
@@ -920,7 +943,7 @@ if (!readonly) {
         &nbsp;&nbsp;
   	
 	<h:commandButton id="save_all" value="save_all" action="#{mappingBean.saveAllMappingAction}"
-	image="#{basePath}/images/save.gif"
+	image="/images/save.gif"
 	alt="Save"
 	tabindex="3">
 	</h:commandButton>  
@@ -934,6 +957,8 @@ if (!readonly) {
 
 	<%
 	if (!(collapse_all || expanded_hset.isEmpty())) {
+	
+	
 	%>
 	
 &nbsp;&nbsp;
@@ -952,11 +977,6 @@ if (!readonly) {
             selected_hide_options = new String[1];
             selected_hide_options[0] = DataUtils.get_default_hide_option();
         } 
-        
-        //for (int k=0; k<selected_hide_options.length; k++) {
-        //    System.out.println("\tselected_hide_option: " + selected_hide_options[k]);
-        //}
-        
         
         List selected_hide_option_list = Arrays.asList(selected_hide_options);
 				    
@@ -985,7 +1005,7 @@ if (!readonly) {
 	<h:commandButton
 		id="ExportMapping"
 		value="ExportMapping"
-		image="#{basePath}/images/export.gif"
+		image="/images/export.gif"
 		action="#{mappingBean.exportAction}" 
 		onclick="javascript:cursor_wait();"
 		alt="Export" >
@@ -1009,7 +1029,7 @@ if (!show_refresh_button) {
 
 <HR></HR>
 
-      <table class="datatable">
+      <table class="datatable_960">
         <tr><td class="textbody">
         
 
@@ -1022,16 +1042,20 @@ if (!show_refresh_button) {
   String item_label = null;
   String input_data = null;
   int lcv=0;
-  
 
-
-
-  
 if (hasAnchor) {
-    int anchor_index = Integer.parseInt(anchor);
-    String anchor_label = new Integer(anchor_index).toString();
-    if (!expanded_hset.contains(anchor_label)) {
-        expanded_hset.add(anchor_label);
+    if (action == null) {
+	    int anchor_index = Integer.parseInt(anchor);
+	    String anchor_label = new Integer(anchor_index).toString();
+	    if (!expanded_hset.contains(anchor_label)) {
+		expanded_hset.add(anchor_label);
+	    }    
+    } else if (action.compareTo("collapse") != 0 && action.compareTo("expand") != 0) {
+	    int anchor_index = Integer.parseInt(anchor);
+	    String anchor_label = new Integer(anchor_index).toString();
+	    if (!expanded_hset.contains(anchor_label)) {
+		expanded_hset.add(anchor_label);
+	    }
     }
 }
   
@@ -1081,6 +1105,7 @@ if (input_data.indexOf("|") != -1) {
 		
 			<tr> 
 <%
+
 
 boolean show_status = false;
 if (input_option.compareToIgnoreCase("Code") == 0) {
@@ -1196,6 +1221,9 @@ if (!readonly) {
          
 <%
 if (type.compareTo("codingscheme") == 0) {
+
+
+
 %>
 
 
@@ -1245,7 +1273,7 @@ if (!readonly) {
   	<h:commandButton
   		id="remove_mapping"
   		value="remove_mapping"
-  		image="#{basePath}/images/trash_16x16.gif"
+  		image="/images/trash_16x16.gif"
   		action="#{mappingBean.removeMappingAction}" 
   		alt="Remove" >
   	</h:commandButton>
@@ -1257,7 +1285,13 @@ if (!readonly) {
 				
 
                                       <% 
+                                     
+                                      
                                       if (!expanded_hset.contains(item_label)) {
+                                      
+                                
+                                      
+                                      
                                       %>
                                       &nbsp;	
 				      <a href="<%=request.getContextPath()%>/pages/batch_mapping_form.jsf?action=expand&idx=<%=k%>&mode=<%=mode%>">
@@ -1302,40 +1336,40 @@ if (!readonly) {
 		 %>     
 			   <tr><td>
 
-			   <table class="datatable">
+			   <table class="datatable_960">
 
-				   <th class="dataTableHeader" scope="col" align="left">
+				   <th class="datatable_960Header" scope="col" align="left">
 					  &nbsp;
 				   </th>
 
-				   <th class="dataTableHeader" width="60px" scope="col" align="left">Source</th>
+				   <th class="datatable_960Header" width="60px" scope="col" align="left">Source</th>
 
 
-				   <th class="dataTableHeader" scope="col" align="left">
+				   <th class="datatable_960Header" scope="col" align="left">
 					  Source Code
 				   </th>
 
-				   <th class="dataTableHeader" scope="col" align="left">
+				   <th class="datatable_960Header" scope="col" align="left">
 					  Source Name
 				   </th>
 
 
-				   <th class="dataTableHeader" width="30px" scope="col" align="left">
+				   <th class="datatable_960Header" width="40px" scope="col" align="left">
 					  REL
 				   </th>
 				   
-				   <th class="dataTableHeader" width="35px" scope="col" align="left">
+				   <th class="datatable_960Header" width="35px" scope="col" align="left">
 					  Map Rank
 				   </th>
 
 
-				   <th class="dataTableHeader" width="60px" scope="col" align="left">Target</th>
+				   <th class="datatable_960Header" width="50px" scope="col" align="left">Target</th>
 
-				   <th class="dataTableHeader" scope="col" align="left">
+				   <th class="datatable_960Header" scope="col" align="left">
 					  Target Code
 				   </th>
 
-				   <th class="dataTableHeader" scope="col" align="left">
+				   <th class="datatable_960Header" scope="col" align="left">
 					  Target Name
 				   </th>
 
@@ -1356,8 +1390,6 @@ if (!readonly) {
 		   for (int lcv2=0; lcv2<selected_matches.size(); lcv2++) {
 		   
 		         String rel_id = "rel" + "_" + lcv + "_" + lcv2;
-		         
-//System.out.println("rel_id: " + rel_id);
 		         
 		         String score_id = "score" + "_" + lcv + "_" + lcv2;
 		         
@@ -1560,14 +1592,19 @@ if (!readonly) {
 <%	
 }
 
-
-
+String s1 = input_data;
+String s2 = input_data;
+if (input_data.indexOf("|") != -1) {
+   Vector v = DataUtils.parseData(input_data);
+   s1 = (String) v.elementAt(0);
+   s2 = (String) v.elementAt(1);
+} 
 %>
 
 
 
       
-      <a href="#" onclick="javascript:window.open('<%=request.getContextPath() %>/pages/concept_info.jsf?target_scheme=<%=target_codingscheme%>&target_version=<%=target_codingschemeversion%>&src_cd=<%=input_data%>&target_cd=<%=target_code%>',
+      <a href="#" onclick="javascript:window.open('<%=request.getContextPath() %>/pages/concept_info.jsf?target_scheme=<%=target_codingscheme%>&target_version=<%=target_codingschemeversion%>&src_cd=<%=s1%>&src_nm=<%=s2%>&target_cd=<%=target_code%>',
         '_blank','top=100, left=100, height=740, width=780, status=no, menubar=no, resizable=yes, scrollbars=yes, toolbar=no, location=no, directories=no'); return false;" tabindex="13">
         <img src="<%= request.getContextPath() %>/images/Info.gif" style="border: none">
       </a>       
@@ -1596,18 +1633,17 @@ if (!readonly) {
 		 %>
 
 
-
-
 <%    
 }
 %>
 		 
-		 
-		 
-		 
 
 		        <% 
+		        
+		        
 		        if (expanded_hset.contains(item_label)) {
+		        
+		        
 		        %>
 
 			<tr>
@@ -1651,7 +1687,7 @@ if (show_refresh_button) {
   	<h:commandButton
   		id="RefreshForm"
   		value="RefreshForm"
-  		image="#{basePath}/images/refresh.png"
+  		image="/images/refresh.png"
   		action="#{mappingBean.refreshFormAction}" 
   		alt="Refresh" >
   	</h:commandButton>
@@ -1708,14 +1744,14 @@ if (!readonly) {
   	<h:commandButton
   		id="SubmitForm"
   		value="SubmitForm"
-  		image="#{basePath}/images/submit.gif"
+  		image="/images/submit.gif"
   		action="#{mappingBean.submitBatchAction}" 
   		alt="Submit Batch" >
   	</h:commandButton>
   	&nbsp;
   	
 	<h:commandButton id="save" value="save" action="#{mappingBean.saveAllMappingAction}"
-	image="#{basePath}/images/save.gif"
+	image="/images/save.gif"
 	alt="Save"
 	tabindex="3">
 	</h:commandButton>  
@@ -1731,7 +1767,7 @@ if (!readonly) {
 	<h:commandButton
 		id="Export"
 		value="Export"
-		image="#{basePath}/images/export.gif"
+		image="/images/export.gif"
 		action="#{mappingBean.exportAction}" 
 		onclick="javascript:cursor_wait();"
 		alt="Export" >
@@ -1808,7 +1844,7 @@ if (type.compareTo("ncimeta") == 0) {
       </div>
       <!-- end Page content -->
     </div>
-    <div class="mainbox-bottom"><img src="<%=basePath%>/images/mainbox-bottom.gif" width="745" height="5" alt="Mainbox Bottom" /></div>
+    <div class="mainbox-bottom"><img src="<%=request.getContextPath()%>/images/mainbox-bottom.gif" width="945" height="5" alt="Mainbox Bottom" /></div>
     <!-- end Main box -->
   </div>
 </f:view>

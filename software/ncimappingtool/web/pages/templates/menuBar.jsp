@@ -11,8 +11,7 @@ L--%>
     <td align="right">
       <a href="<%= request.getContextPath() %>/pages/home.jsf" >Home</a>
 |
-      <a href="<%= request.getContextPath() %>/pages/help.jsf" >Help</a>
+      <a href="<%= request.getContextPath() %>/pages/help.jsf" >Help</a>&nbsp;&nbsp;&nbsp;
     </td>
-    <td width="12"></td>
   </tr>
 </table>

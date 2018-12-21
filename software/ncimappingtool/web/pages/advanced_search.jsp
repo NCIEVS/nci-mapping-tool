@@ -13,6 +13,8 @@ L--%>
 <%@ page import="org.LexGrid.concepts.Entity" %>
 <%@ page import="gov.nih.nci.evs.browser.utils.*" %>
 <%@ page import="gov.nih.nci.evs.browser.bean.*" %>
+<%@ page import="org.LexGrid.LexBIG.LexBIGService.LexBIGService"%>
+
 
 <%
   String ncit_build_info = new DataUtils().getNCITBuildInfo();
@@ -119,10 +121,10 @@ if (target_property != null && target_property.compareTo("null") == 0) {
     <a href="#evs-content" class="hideLink" accesskey="1" title="Skip repetitive navigation links">skip navigation links</A>
   <!-- End Skip Top Navigation -->
   <%@ include file="/pages/templates/header.jsp" %>
-  <div class="center-page">
+  <div class="center-page_960">
     <%@ include file="/pages/templates/sub-header.jsp" %>
     <!-- Main box -->
-    <div id="main-area">
+    <div id="main-area_960">
       <%@ include file="/pages/templates/content-header.jsp" %>
       <!-- Page content -->
       <div class="pagecontent">
@@ -190,8 +192,9 @@ if (target_property != null && target_property.compareTo("null") == 0) {
     
      <table>
 <%     
-    MappingUtils util = new MappingUtils();
-    Vector algorithms = util.getSupportedSearchTechniqueNames();
+LexBIGService lbSvc = RemoteServerUtil.createLexBIGService();
+MappingToolUtils mappingUtils = new MappingToolUtils(lbSvc);
+    Vector algorithms = mappingUtils.getSupportedSearchTechniqueNames();
     String left_trim = "";
     String right_trim = "";
     String prefix = "";
@@ -370,7 +373,7 @@ if (input_option.compareToIgnoreCase("Property") == 0) {
   	<h:commandButton
   		id="SubmitForm"
   		value="SubmitForm"
-  		image="#{basePath}/images/submit.gif"
+  		image="/images/submit.gif"
   		action="#{mappingBean.submitBatchAction}" 
   		alt="Submit Batch" >
   	</h:commandButton>
@@ -420,7 +423,7 @@ if (input_option.compareToIgnoreCase("Property") == 0) {
       </div>
       <!-- end Page content -->
     </div>
-    <div class="mainbox-bottom"><img src="<%=basePath%>/images/mainbox-bottom.gif" width="745" height="5" alt="Mainbox Bottom" /></div>
+    <div class="mainbox-bottom"><img src="<%= request.getContextPath() %>/images/mainbox-bottom.gif" width="945" height="5" alt="Mainbox Bottom" /></div>
     <!-- end Main box -->
   </div>
 </f:view>

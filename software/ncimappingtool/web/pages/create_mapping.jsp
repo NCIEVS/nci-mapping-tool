@@ -60,10 +60,10 @@ request.getSession().removeAttribute("message");
   
   
   <%@ include file="/pages/templates/header.jsp" %>
-  <div class="center-page">
+  <div class="center-page_960">
     <%@ include file="/pages/templates/sub-header.jsp" %>
     <!-- Main box -->
-    <div id="main-area">
+    <div id="main-area_960">
       <%@ include file="/pages/templates/content-header.jsp" %>
       <!-- Page content -->
       <div class="pagecontent">
@@ -103,7 +103,7 @@ request.getSession().removeAttribute("message");
 	
                   <tr><td>
                     <h:commandButton id="continue" value="continue" action="#{mappingBean.createMappingAction}"
-                      image="#{basePath}/images/continue.gif"
+                      image="/images/continue.gif"
                       alt="Resolve"
                       tabindex="2">
                     </h:commandButton>
@@ -119,7 +119,7 @@ request.getSession().removeAttribute("message");
       </div>
       <!-- end Page content -->
     </div>
-    <div class="mainbox-bottom"><img src="<%=basePath%>/images/mainbox-bottom.gif" width="745" height="5" alt="Mainbox Bottom" /></div>
+    <div class="mainbox-bottom"><img src="<%=request.getContextPath()%>/images/mainbox-bottom.gif" width="945" height="5" alt="Mainbox Bottom" /></div>
     <!-- end Main box -->
   </div>
 </f:view>

@@ -7,13 +7,19 @@ L--%>
 
 <%@ taglib uri="http://java.sun.com/jsf/html" prefix="h" %>
 <%@ taglib uri="http://java.sun.com/jsf/core" prefix="f" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
+
 <%@ page import="gov.nih.nci.evs.browser.utils.*" %>
 <%@ page import="gov.nih.nci.evs.browser.beans.*" %>
 
 <%@ page import="java.util.*" %>
 
 
-<% String contextPath = request.getContextPath(); %>
+<% 
+String contextPath = request.getContextPath(); 
+System.out.println("mapping.jsp contextPath: " + contextPath);
+%>
 
 	<table>
 	
@@ -43,26 +49,26 @@ L--%>
 				
 				      <h:commandButton
 					 value="create_mapping" action="#{mappingBean.createMappingAction}"
-					 image="#{contextPath}/images/new.gif" alt="Create a new mapping" />
+					 image="/images/new.gif" alt="Create a new mapping" />
 					&#xA0;&#xA0;
 
 				      <h:commandButton
 					 value="create_mapping" action="#{mappingBean.uploadMappingAction}"
-					 image="#{contextPath}/images/upload.gif" alt="Upload a mapping" />
+					 image="/images/upload.gif" alt="Upload a mapping" />
 					&#xA0;&#xA0;
 					
 				      <h:commandButton
 					value="clone_mapping" action="#{mappingBean.cloneMappingAction}"
 					onclick="javascript:cursor_wait();"
 					rendered="#{mappingBean.isNotEmpty}"
-					image="#{contextPath}/images/clone.gif" alt="Clone a mapping" />
+					image="/images/clone.gif" alt="Clone a mapping" />
 
 					&#xA0;&#xA0;
 				      <h:commandButton
 					value="delete_mapping" action="#{mappingBean.deleteMappingAction}"
 					onclick="return confirm('Are you sure you want to delete?')"
 					rendered="#{mappingBean.isNotEmpty}"
-					image="#{contextPath}/images/delete.gif" alt="Delete a mapping" />
+					image="/images/delete.gif" alt="Delete a mapping" />
 					
 				</td>
 			</tr>

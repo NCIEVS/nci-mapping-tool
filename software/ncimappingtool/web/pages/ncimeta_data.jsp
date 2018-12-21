@@ -16,6 +16,7 @@ L--%>
 
 <%@ page import="org.LexGrid.LexBIG.Utility.Iterators.ResolvedConceptReferencesIterator" %>
 <%@ page import="org.LexGrid.LexBIG.DataModel.Core.ResolvedConceptReference" %>
+<%@ page import="org.LexGrid.LexBIG.LexBIGService.LexBIGService"%>
 
 <%
   String ncit_build_info = new DataUtils().getNCITBuildInfo();
@@ -46,6 +47,8 @@ L--%>
   <script type="text/javascript" src="<%= request.getContextPath() %>/js/tip_followscroll.js"></script>
 
 <%
+LexBIGService lbSvc = RemoteServerUtil.createLexBIGService();
+
 String basePath = request.getContextPath(); 
 String message = (String) request.getSession().getAttribute("message");
 
@@ -137,10 +140,10 @@ else {
     <a href="#evs-content" class="hideLink" accesskey="1" title="Skip repetitive navigation links">skip navigation links</A>
   <!-- End Skip Top Navigation -->
   <%@ include file="/pages/templates/header.jsp" %>
-  <div class="center-page">
+  <div class="center-page_960">
     <%@ include file="/pages/templates/sub-header.jsp" %>
     <!-- Main box -->
-    <div id="main-area">
+    <div id="main-area_960">
       <%@ include file="/pages/templates/content-header.jsp" %>
       <!-- Page content -->
       <div class="pagecontent">
@@ -209,7 +212,7 @@ else {
      <table>
 <%     
 if (input_option.compareTo("Name") == 0) {
-    MappingUtils util = new MappingUtils();
+    MappingToolUtils util = new MappingToolUtils(lbSvc);
     Vector algorithms = util.getSupportedSearchTechniqueNames();
 %>    
                 <tr>
@@ -277,7 +280,7 @@ if (input_option.compareTo("Name") == 0) {
  		         <table>
  			    <tr><td>
  			    <h:commandButton id="upload" value="upload" action="#{mappingBean.uploadDataAction}"
- 			      image="#{basePath}/images/upload.gif"
+ 			      image="/images/upload.gif"
  			      alt="Upload from a File"
  			      tabindex="2">
  			    </h:commandButton> 
@@ -295,7 +298,7 @@ if (input_option.compareTo("Name") == 0) {
 	
                   <tr><td>
                     <h:commandButton id="generate" value="generate" action="#{mappingBean.showBatchFormAction}"
-                      image="#{basePath}/images/continue.gif"
+                      image="/images/continue.gif"
                       alt="Continue"
                       tabindex="2">
                     </h:commandButton>
@@ -325,7 +328,7 @@ if (input_option.compareTo("Name") == 0) {
       </div>
       <!-- end Page content -->
     </div>
-    <div class="mainbox-bottom"><img src="<%=basePath%>/images/mainbox-bottom.gif" width="745" height="5" alt="Mainbox Bottom" /></div>
+    <div class="mainbox-bottom"><img src="<%=request.getContextPath()%>/images/mainbox-bottom.gif" width="945" height="5" alt="Mainbox Bottom" /></div>
     <!-- end Main box -->
   </div>
 </f:view>

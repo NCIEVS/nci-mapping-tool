@@ -40,16 +40,16 @@ L--%>
     <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
     <title><%=content_title%></title>
     <link rel="stylesheet" type="text/css" href="<%=cssPath%>/styleSheet.css" />
-    <link rel="shortcut icon" href="<%=basePath%>/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="<%=request.getContextPath()%>/favicon.ico" type="image/x-icon" />
   </head>
   <body>
     <jsp:include page="/pages/templates/header.jsp" />
     <div class="center-page">
       <jsp:include page="/pages/templates/sub_header.jsp" />
       <div class="mainbox-top"><img src="<%=imagesPath%>/mainbox-top.gif"
-        width="745" height="5" alt="Mainbox Top" /></div>
+        width="945" height="5" alt="Mainbox Top" /></div>
       <div id="main-area">
-        <div class="bannerarea">
+        <div class="bannerarea_960">
           <a href="<%=logoUrl%>"><img src="<%=imagesPath%>/banner.gif"
             alt="NCI Mapping Tool Logo" border="0"/></a>
         </div>
@@ -64,7 +64,7 @@ L--%>
         </div>
       </div>
       <div class="mainbox-bottom"><img src="<%=imagesPath%>/mainbox-bottom.gif"
-        width="745" height="5" alt="Mainbox Bottom" /></div>
+        width="945" height="5" alt="Mainbox Bottom" /></div>
     </div>
   </body>
   <br>

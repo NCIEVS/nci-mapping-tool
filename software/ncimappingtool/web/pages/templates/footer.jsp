@@ -9,6 +9,8 @@ L--%>
 <%
   String imagesPath = FormUtils.getImagesPath(request);
   String pagesPath = FormUtils.getPagesPath(request);
+  
+  System.out.println("footer.jsp");
 %>
 <div class="footer">
   <ul>

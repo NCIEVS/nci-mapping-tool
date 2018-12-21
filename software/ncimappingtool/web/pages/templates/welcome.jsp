@@ -79,7 +79,7 @@ String option_3 = "Map from one terminology to an existing value set on the serv
 	
                   <tr><td>
                     <h:commandButton id="continue" value="continue" action="#{mappingBean.createMappingAction}"
-                      image="#{basePath}/images/continue.gif"
+                      image="/images/continue.gif"
                       alt="Resolve"
                       tabindex="2">
                     </h:commandButton>

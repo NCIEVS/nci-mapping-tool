@@ -27,6 +27,7 @@ L--%>
 <%@ page import="org.LexGrid.concepts.Definition" %>
 <%@ page import="org.LexGrid.commonTypes.Source" %>
 <%@ page import="org.LexGrid.commonTypes.Property" %>
+<%@ page import="org.LexGrid.LexBIG.LexBIGService.LexBIGService"%>
 
 
 
@@ -68,8 +69,8 @@ L--%>
     <div id="popupContainer">
       <!-- nci popup banner -->
       <div class="ncipopupbanner">
-        <a href="http://www.cancer.gov" target="_blank" alt="National Cancer Institute"><img src="<%=basePath%>/images/nci-banner-1.gif" width="440" height="39" border="0" alt="National Cancer Institute" /></a>
-        <a href="http://www.cancer.gov" target="_blank" alt="National Cancer Institute"><img src="<%=basePath%>/images/spacer.gif" width="48" height="39" border="0" alt="National Cancer Institute" class="print-header" /></a>
+        <a href="http://www.cancer.gov" target="_blank" alt="National Cancer Institute"><img src="<%=request.getContextPath()%>/images/nci-banner-1.gif" width="440" height="39" border="0" alt="National Cancer Institute" /></a>
+        <a href="http://www.cancer.gov" target="_blank" alt="National Cancer Institute"><img src="<%=request.getContextPath()%>/images/spacer.gif" width="48" height="39" border="0" alt="National Cancer Institute" class="print-header" /></a>
       </div>
       <!-- end nci popup banner -->
       <div id="popupMainArea">
@@ -79,10 +80,10 @@ L--%>
         <tr>
           <td valign="top">
             <a href="http://evs.nci.nih.gov/" target="_blank" alt="Enterprise Vocabulary Services">
-              <img src="<%=basePath%>/images/evs-popup-logo.gif" width="213" height="26" alt="EVS: Enterprise Vocabulary Services" title="EVS: Enterprise Vocabulary Services" border="0" />
+              <img src="<%=request.getContextPath()%>/images/evs-popup-logo.gif" width="213" height="26" alt="EVS: Enterprise Vocabulary Services" title="EVS: Enterprise Vocabulary Services" border="0" />
             </a>
           </td>
-          <td valign="top"><div id="closeWindow"><a href="javascript:window.close();"><img src="<%=basePath%>/images/thesaurus_close_icon.gif" width="10" height="10" border="0" alt="Close Window" />&nbsp;CLOSE WINDOW</a></div></td>
+          <td valign="top"><div id="closeWindow"><a href="javascript:window.close();"><img src="<%=request.getContextPath()%>/images/thesaurus_close_icon.gif" width="10" height="10" border="0" alt="Close Window" />&nbsp;CLOSE WINDOW</a></div></td>
         </tr>
         </table>
 
@@ -120,8 +121,11 @@ String target_version = DataUtils.getVocabularyVersionByTag(target_scheme, null)
 
 
 String message = (String) request.getSession().getAttribute("message"); 
+LexBIGService lbSvc = RemoteServerUtil.createLexBIGService();
+TreeUtils treeUtils = new TreeUtils(lbSvc);
+MappingToolUtils mappingUtils = new MappingToolUtils(lbSvc);
 
-Entity src_concept = MappingUtils.getConceptByCode(source_scheme, source_version, null, source_code);
+Entity src_concept = mappingUtils.getConceptByCode(source_scheme, source_version, null, source_code);
 String source_concept_name = src_concept.getEntityDescription().getContent();
 Entity target_concept = null;
 String target_concept_name = null;
@@ -132,7 +136,7 @@ ArrayList target_superconceptList = null;
 ArrayList src_superconceptList = new ArrayList();
 ArrayList src_subconceptList = new ArrayList();
 
-HashMap hmap_super = TreeUtils.getSuperconcepts(source_scheme, source_version, source_code);
+HashMap hmap_super = treeUtils.getSuperconcepts(source_scheme, source_version, source_code);
 if (hmap_super != null) {
 	TreeItem ti = (TreeItem) hmap_super.get(source_code);
 	if (ti != null) {
@@ -146,15 +150,15 @@ if (hmap_super != null) {
 		}
 	}
 }
-SortUtils.quickSort(src_superconceptList);
+new SortUtils().quickSort(src_superconceptList);
 
 
 /*
 	subconceptList =
-		TreeUtils.getSubconceptNamesAndCodes(scheme, version, code);
+		treeUtils.getSubconceptNamesAndCodes(scheme, version, code);
 	//KLO
 	//Collections.sort(subconceptList);
-	SortUtils.quickSort(subconceptList);
+	new SortUtils().quickSort(subconceptList);
 				
 */
 
@@ -162,7 +166,8 @@ String target_code = (String) request.getSession().getAttribute("target_code");
 if (DataUtils.isNull(target_code)) {
     target_code = "";
 } else {
-    target_concept = MappingUtils.getConceptByCode(target_scheme, target_version, null, target_code);
+
+    target_concept = mappingUtils.getConceptByCode(target_scheme, target_version, null, target_code);
     target_concept_name = target_concept.getEntityDescription().getContent();
     
     target_presentations = target_concept.getPresentation();
@@ -170,7 +175,7 @@ if (DataUtils.isNull(target_code)) {
     target_properties = target_concept.getProperty();
 
 	target_superconceptList = new ArrayList();
-	hmap_super = TreeUtils.getSuperconcepts(target_scheme, target_version, target_code);
+	hmap_super = treeUtils.getSuperconcepts(target_scheme, target_version, target_code);
 	if (hmap_super != null) {
 		TreeItem ti = (TreeItem) hmap_super.get(target_code);
 		if (ti != null) {
@@ -184,7 +189,7 @@ if (DataUtils.isNull(target_code)) {
 			}
 		}
 	}
-	SortUtils.quickSort(target_superconceptList);	
+	new SortUtils().quickSort(target_superconceptList);	
 
 }
 
@@ -256,7 +261,7 @@ Property[] src_properties = src_concept.getProperty();
 <tr><td>
 
 		    <h:commandButton id="refresh" value="refresh" action="#{mappingBean.manualMappingAction}"
-		      image="#{basePath}/images/refresh.png"
+		      image="/images/refresh.png"
 		      alt="Refresh"
 		      tabindex="2">
 		    </h:commandButton>
@@ -265,7 +270,7 @@ Property[] src_properties = src_concept.getProperty();
 
 
 		    <h:commandButton id="save" value="save" action="#{mappingBean.saveManualMappingAction}"
-		      image="#{basePath}/images/save.gif"
+		      image="/images/save.gif"
 		      alt="Refresh"
 		      tabindex="2">
 		    </h:commandButton>
@@ -296,17 +301,17 @@ Property[] src_properties = src_concept.getProperty();
           </table>
 
 
-          <table class="datatable">
+          <table class="datatable_960">
                <tr>
                  <td>
 
-		   <table class="datatable">
+		   <table class="datatable_960">
 
-		   <th class="dataTableHeader" scope="col" align="left">
+		   <th class="datatable_960Header" scope="col" align="left">
 			  Synonyms:
 		   </th>
 
-		   <th class="dataTableHeader" scope="col" align="left">
+		   <th class="datatable_960Header" scope="col" align="left">
 			  &nbsp;
 		   </th>
 <%		   
@@ -336,14 +341,14 @@ Property[] src_properties = src_concept.getProperty();
                <tr>
                  <td>
 
-		   <table class="datatable">
+		   <table class="datatable_960">
 
 
-		   <th class="dataTableHeader" scope="col" align="left">
+		   <th class="datatable_960Header" scope="col" align="left">
 			  Definitions:
 		   </th>
 
-		   <th class="dataTableHeader" scope="col" align="left">
+		   <th class="datatable_960Header" scope="col" align="left">
 			  &nbsp;
 		   </th>
 <%		   
@@ -393,13 +398,13 @@ Property[] src_properties = src_concept.getProperty();
                <tr>
                  <td>
 
-		   <table class="datatable">
+		   <table class="datatable_960">
 
-		   <th class="dataTableHeader" scope="col" align="left">
+		   <th class="datatable_960Header" scope="col" align="left">
 			  Other Properties:
 		   </th>
 
-		   <th class="dataTableHeader" scope="col" align="left">
+		   <th class="datatable_960Header" scope="col" align="left">
 			  &nbsp;
 		   </th>
         
@@ -448,9 +453,9 @@ Property[] src_properties = src_concept.getProperty();
                <tr>
                  <td>
 
-		   <table class="datatable">
+		   <table class="datatable_960">
 
-		   <th class="dataTableHeader" scope="col" align="left">
+		   <th class="datatable_960Header" scope="col" align="left">
 			  Parents:
 		   </th>
 
@@ -512,17 +517,17 @@ Property[] src_properties = src_concept.getProperty();
           </table>
 
 
-          <table class="datatable">
+          <table class="datatable_960">
                <tr>
                  <td>
 
-		   <table class="datatable">
+		   <table class="datatable_960">
 
-		   <th class="dataTableHeader" scope="col" align="left">
+		   <th class="datatable_960Header" scope="col" align="left">
 			  Synonyms:
 		   </th>
 
-		   <th class="dataTableHeader" scope="col" align="left">
+		   <th class="datatable_960Header" scope="col" align="left">
 			  &nbsp;
 		   </th>
 <%	
@@ -555,14 +560,14 @@ Property[] src_properties = src_concept.getProperty();
                <tr>
                  <td>
 
-		   <table class="datatable">
+		   <table class="datatable_960">
 
 
-		   <th class="dataTableHeader" scope="col" align="left">
+		   <th class="datatable_960Header" scope="col" align="left">
 			  Definitions:
 		   </th>
 
-		   <th class="dataTableHeader" scope="col" align="left">
+		   <th class="datatable_960Header" scope="col" align="left">
 			  &nbsp;
 		   </th>
 <%		
@@ -610,13 +615,13 @@ Property[] src_properties = src_concept.getProperty();
                <tr>
                  <td>
 
-		   <table class="datatable">
+		   <table class="datatable_960">
 
-		   <th class="dataTableHeader" scope="col" align="left">
+		   <th class="datatable_960Header" scope="col" align="left">
 			  Other Properties:
 		   </th>
 
-		   <th class="dataTableHeader" scope="col" align="left">
+		   <th class="datatable_960Header" scope="col" align="left">
 			  &nbsp;
 		   </th>
         
@@ -669,10 +674,10 @@ Property[] src_properties = src_concept.getProperty();
                <tr>
                  <td>
 
-		   <table class="datatable">
+		   <table class="datatable_960">
 
 
-		   <th class="dataTableHeader" scope="col" align="left">
+		   <th class="datatable_960Header" scope="col" align="left">
 			  Parents:
 		   </th>
 

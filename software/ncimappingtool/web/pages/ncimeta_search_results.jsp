@@ -27,6 +27,9 @@ L--%>
 <%@ page import="gov.nih.nci.evs.browser.utils.*" %>
 <%@ page import="gov.nih.nci.evs.browser.properties.*" %>
 
+<%@ page import="org.LexGrid.LexBIG.LexBIGService.LexBIGService"%>
+
+
 <%
   String ncit_build_info = new DataUtils().getNCITBuildInfo();
   String application_version = new DataUtils().getApplicationVersion();
@@ -57,6 +60,9 @@ L--%>
 
 
 <%
+LexBIGService lbSvc = RemoteServerUtil.createLexBIGService();
+MappingToolUtils util = new MappingToolUtils(lbSvc);
+
 String basePath = request.getContextPath(); 
 String message = (String) request.getSession().getAttribute("message");
 
@@ -142,10 +148,10 @@ System.out.println("data: " + data);
     <a href="#evs-content" class="hideLink" accesskey="1" title="Skip repetitive navigation links">skip navigation links</A>
   <!-- End Skip Top Navigation -->
   <%@ include file="/pages/templates/header.jsp" %>
-  <div class="center-page">
+  <div class="center-page_960">
     <%@ include file="/pages/templates/sub-header.jsp" %>
     <!-- Main box -->
-    <div id="main-area">
+    <div id="main-area_960">
       <%@ include file="/pages/templates/content-header.jsp" %>
       <!-- Page content -->
       <div class="pagecontent">
@@ -203,14 +209,8 @@ System.out.println("data: " + data);
                 <tr>
                 <td></td><td></td>
                 </tr>
-                
-              
-
-
-
 		<%     
 		if (input_option.compareTo("Name") == 0) {
-			       MappingUtils util = new MappingUtils();
 			       Vector algorithms = util.getSupportedSearchTechniqueNames();
 		%>    
 
@@ -247,7 +247,7 @@ System.out.println("data: " + data);
 
 
 				    <h:commandButton id="generate" value="generate" action="#{mappingBean.ncimetaSearchAction}"
-				      image="#{basePath}/images/search16.png"
+				      image="/images/search16.png"
 				      alt="search"
 				      tabindex="2">
 				    </h:commandButton>
@@ -274,7 +274,7 @@ System.out.println("data: " + data);
 <%
 
       
-      List list = MappingUtils.process_ncimeta_mapping(ncim_version,
+      List list = utils.process_ncimeta_mapping(ncim_version,
                                         source_abbrev,
                                         target_abbrev,
                                         input_option,
@@ -284,27 +284,27 @@ System.out.println("data: " + data);
       request.getSession().setAttribute("data_value", data);
       
 %>
-          <table class="datatable">
+          <table class="datatable_960">
 
-          <th class="dataTableHeader" scope="col" align="left">
+          <th class="datatable_960Header" scope="col" align="left">
                  &nbsp;
           </th>
           
 
-          <th class="dataTableHeader" scope="col" align="left">
+          <th class="datatable_960Header" scope="col" align="left">
                  Source Code
           </th>
 
-          <th class="dataTableHeader" scope="col" align="left">
+          <th class="datatable_960Header" scope="col" align="left">
                  Source Name
           </th>
 
 
-          <th class="dataTableHeader" scope="col" align="left">
+          <th class="datatable_960Header" scope="col" align="left">
                  Target Code
           </th>
 
-          <th class="dataTableHeader" scope="col" align="left">
+          <th class="datatable_960Header" scope="col" align="left">
                  Target Name
           </th>
 
@@ -417,7 +417,7 @@ if (list != null && list.size() > 1) {
 
                   
 <h:commandButton id="save" value="save" action="#{mappingBean.saveMappingAction}"
-image="#{basePath}/images/save.gif"
+image="/images/save.gif"
 alt="Save"
 tabindex="3">
 </h:commandButton>
@@ -446,7 +446,7 @@ tabindex="3">
       </div>
       <!-- end Page content -->
     </div>
-    <div class="mainbox-bottom"><img src="<%=basePath%>/images/mainbox-bottom.gif" width="745" height="5" alt="Mainbox Bottom" /></div>
+    <div class="mainbox-bottom"><img src="<%=request.getContextPath()%>/images/mainbox-bottom.gif" width="945" height="5" alt="Mainbox Bottom" /></div>
     <!-- end Main box -->
   </div>
 </f:view>

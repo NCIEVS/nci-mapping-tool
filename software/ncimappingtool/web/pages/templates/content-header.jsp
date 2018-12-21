@@ -12,18 +12,15 @@ L--%>
 
 
 <% String ch_basePath = request.getContextPath(); 
-    
     String mapping_tool_label = "NCI Mapping Tool";
-
-
 %>
 
-<div class="bannerarea">
+<div class="bannerarea_960">
 
         <div class="banner">
           <a href="<%=ch_basePath%>/index.jsp"><img src="<%=ch_basePath%>/images/evs_mapping_tool_logo.gif" width="383" height="117" alt="EVS Mapping Tool Logo" border="0" /></a>
         </div>
-      
+
 	<div>
 	<%@ include file="menuBar.jsp" %>
 	</div>

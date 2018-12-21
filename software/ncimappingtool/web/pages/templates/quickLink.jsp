@@ -47,46 +47,48 @@ L--%>
         term_suggestion_application_url2 = DataUtils.getMetadataValue(quicklink_dictionary, "term_suggestion_application_url");    
         dictionary_encoded2 = DataUtils.replaceAll(quicklink_dictionary, " ", "%20");
     }
+    String quicklink_ContextPath = request.getContextPath(); 
+    
 %>
 
-
+<div>&nbsp;&nbsp;</div>
 <div class="bluebar">
-  <div id="quicklinksholder">
-      <ul id="quicklinks"
-        onmouseover="document.quicklinksimg.src='<%=ql_basePath%>/images/quicklinks-active.gif';"
-        onmouseout="document.quicklinksimg.src='<%=ql_basePath%>/images/quicklinks-inactive.gif';">
-        <li>
-          <a href="#" tabindex="20"><img src="<%=ql_basePath%>/images/quicklinks-inactive.gif" width="162"
-            height="18" border="0" name="quicklinksimg" alt="Quick Links" />
-          </a>
-          <ul>
-            <li><a href="http://evs.nci.nih.gov/" target="_blank"
-              alt="Enterprise Vocabulary Services">EVS Home</a></li>
-            <li><a href="<%=ncim_url%>" target="_blank"
-              alt="NCI Metathesaurus">NCI Metathesaurus Browser</a></li>
+	  <div id="quicklinksholder">
+	      <ul id="quicklinks"
+			onmouseover="document.quicklinksimg.src='<%=quicklink_ContextPath%>/images/quicklinks-active.gif';"
+			onmouseout="document.quicklinksimg.src='<%=quicklink_ContextPath%>/images/quicklinks-inactive.gif';">
+			<li>
+			  <a href="#" tabindex="20"><img src="<%=quicklink_ContextPath%>/images/quicklinks-inactive.gif" width="162"
+			    height="18" border="0" name="quicklinksimg" alt="Quick Links" />
+			  </a>
+			  <ul>
+			    <li><a href="http://evs.nci.nih.gov/" target="_blank"
+			      alt="Enterprise Vocabulary Services">EVS Home</a></li>
+			    <li><a href="<%=ncim_url%>" target="_blank"
+			      alt="NCI Metathesaurus">NCI Metathesaurus Browser</a></li>
 
-            <%
-            if (quicklink_dictionary == null || quicklink_dictionary.compareTo("NCI Thesaurus") != 0) {
-            %>
+			    <%
+			    if (quicklink_dictionary == null || quicklink_dictionary.compareTo("NCI Thesaurus") != 0) {
+			    %>
 
-            <li><a href="<%= request.getContextPath() %>/index.jsp"
-              alt="NCI Thesaurus Browser">NCI Thesaurus Browser</a></li>
+			    <li><a href="<%= request.getContextPath() %>/index.jsp"
+			      alt="NCI Thesaurus Browser">NCI Thesaurus Browser</a></li>
 
-            <%
-            }
-            %>
+			    <%
+			    }
+			    %>
 
 
-            <li><a href="<%= request.getContextPath() %>/start.jsf"
-              alt="NCI Term Browser">NCI Term Browser</a></li>
-            <li><a href="http://www.cancer.gov/cancertopics/terminologyresources" target="_blank"
-              alt="NCI Terminology Resources">NCI Terminology Resources</a></li>
-            <% if (term_suggestion_application_url2 != null && term_suggestion_application_url2.length() > 0) { %>
-              <li><a href="<%=term_suggestion_application_url2%>?dictionary=<%=dictionary_encoded2%>" target="_blank" alt="Term Suggestion">Term Suggestion</a></li>
-            <% } %>
+			    <li><a href="<%= request.getContextPath() %>/start.jsf"
+			      alt="NCI Term Browser">NCI Term Browser</a></li>
+			    <li><a href="http://www.cancer.gov/cancertopics/terminologyresources" target="_blank"
+			      alt="NCI Terminology Resources">NCI Terminology Resources</a></li>
+			    <% if (term_suggestion_application_url2 != null && term_suggestion_application_url2.length() > 0) { %>
+			      <li><a href="<%=term_suggestion_application_url2%>?dictionary=<%=dictionary_encoded2%>" target="_blank" alt="Term Suggestion">Term Suggestion</a></li>
+			    <% } %>
 
-          </ul>
-        </li>
-      </ul>
-  </div>
+			  </ul>
+			</li>
+	      </ul>
+	  </div>
 </div>

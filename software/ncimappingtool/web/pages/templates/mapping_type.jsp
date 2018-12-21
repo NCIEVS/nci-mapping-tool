@@ -76,7 +76,7 @@ String option_3 = "Mapping from a terminology to a value set";
 	
                   <tr><td>
                     <h:commandButton id="continue" value="continue" action="#{mappingBean.createMappingAction}"
-                      image="#{basePath}/images/continue.gif"
+                      image="/images/continue.gif"
                       alt="Resolve"
                       tabindex="2">
                     </h:commandButton>

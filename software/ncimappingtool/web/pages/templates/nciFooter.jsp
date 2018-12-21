@@ -1,47 +1,29 @@
-<%--L
-  Copyright Northrop Grumman Information Technology.
-
-  Distributed under the OSI-approved BSD 3-Clause License.
-  See http://ncip.github.com/nci-mapping-tool/LICENSE.txt for details.
-L--%>
-
 <!-- footer -->
 
-
-<% String footer_basePath = request.getContextPath(); %>
-
-
-
-<div class="footer" style="width:720px">
-  <ul>
+<div class="footer" style="width:920px">
+  <ul class="textbody">
     <li><a href="http://www.cancer.gov" target="_blank" alt="National Cancer Institute">NCI Home</a> |</li>
-    <li><a href="<%= request.getContextPath() %>/pages/contact_us.jsf">Contact Us</a> |</li>
+    <li><a href="<%= request.getContextPath() %>/pages/contact_us.jsf>Contact Us</a> |</li>
     <li><a href="http://www.cancer.gov/policies" target="_blank" alt="National Cancer Institute Policies">Policies</a> |</li>
     <li><a href="http://www.cancer.gov/policies/page3" target="_blank" alt="National Cancer Institute Accessibility">Accessibility</a> |</li>
     <li><a href="http://www.cancer.gov/policies/page6" target="_blank" alt="National Cancer Institute FOIA">FOIA</a></li>
   </ul>
-  <p>
-    A Service of the National Cancer Institute
-    <br/>
-    
-    <img src="<%=footer_basePath%>/images/external-footer-logos.gif"
-      alt="External Footer Logos" width="238" height="34" border="0"
-      usemap="#external-footer" />
-      
-  </p>
-  <map id="external-footer" name="external-footer">
-    <area shape="rect" coords="0,0,46,34"
-      href="http://www.cancer.gov" target="_blank"
-      alt="National Cancer Institute" />
-    <area shape="rect" coords="55,1,99,32"
-      href="http://www.hhs.gov/" target="_blank"
-      alt="U.S. Health &amp; Human Services" />
-    <area shape="rect" coords="103,1,147,31"
-      href="http://www.nih.gov/" target="_blank"
-      alt="National Institutes of Health" />
-    <area shape="rect" coords="148,1,235,33"
-      href="http://www.usa.gov/" target="_blank"
-      alt="USA.gov" />
-  </map>
+<center>
+<a href="http://www.hhs.gov/" alt="U.S. Department of Health and Human Services">
+U.S. Department of Health and Human Services
+</a>
+&nbsp;|&nbsp;
+<a href="https://www.nih.gov/about-nih" alt="National Institutes of Health">
+National Institutes of Health
+</a>
+&nbsp;|&nbsp;
+<a href="http://www.cancer.gov/" alt="National Cancer Institute">
+National Cancer Institute
+</a>
+&nbsp;|&nbsp;
+<a href="https://www.usa.gov/" alt="USA.gov">
+USA.gov
+</a>
+</center>
 </div>
 <!-- end footer -->

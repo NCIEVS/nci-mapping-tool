@@ -18,6 +18,7 @@ L--%>
 
 <%@ page import="org.LexGrid.LexBIG.Utility.Iterators.ResolvedConceptReferencesIterator" %>
 <%@ page import="org.LexGrid.LexBIG.DataModel.Core.ResolvedConceptReference" %>
+<%@ page import="org.LexGrid.LexBIG.LexBIGService.LexBIGService"%>
 
 
 <%
@@ -57,7 +58,7 @@ L--%>
 String basePath = request.getContextPath(); 
 String message = (String) request.getSession().getAttribute("message");
 
-String LOCAL_DATA = Constants.LOCAL_DATA;
+String LOCAL_DATA = MTConstants.LOCAL_DATA;
 
  
 request.getSession().removeAttribute("message");
@@ -79,7 +80,7 @@ if (mapping_version != null && mapping_version.compareTo("null") == 0) {
 String source_cs = (String) request.getSession().getAttribute("source_cs");
 
 boolean local_source = false;
-if (source_cs.compareTo(Constants.LOCAL_DATA) == 0) {
+if (source_cs.compareTo(MTConstants.LOCAL_DATA) == 0) {
     local_source = true;
 }
 
@@ -173,10 +174,10 @@ else {
     <a href="#evs-content" class="hideLink" accesskey="1" title="Skip repetitive navigation links">skip navigation links</A>
   <!-- End Skip Top Navigation -->
   <%@ include file="/pages/templates/header.jsp" %>
-  <div class="center-page">
+  <div class="center-page_960">
     <%@ include file="/pages/templates/sub-header.jsp" %>
     <!-- Main box -->
-    <div id="main-area">
+    <div id="main-area_960">
       <%@ include file="/pages/templates/content-header.jsp" %>
       <!-- Page content -->
       <div class="pagecontent">
@@ -240,10 +241,11 @@ else {
     
      <table>
 <%     
-    MappingUtils util = new MappingUtils();
+LexBIGService lbSvc = RemoteServerUtil.createLexBIGService();
+MappingToolUtils mappingUtils = new MappingToolUtils(lbSvc);
     Vector algorithms = new Vector();
     try {
-    	algorithms = util.getSupportedSearchTechniqueNames();
+    	algorithms = mappingUtils.getSupportedSearchTechniqueNames();
     } catch (Exception ex) {
     	ex.printStackTrace();
     }
@@ -419,14 +421,14 @@ if (input_option.compareToIgnoreCase("Property") == 0) {
 		         <table>
 		            <tr><td>
 			    <h:commandButton id="import" value="import" action="#{mappingBean.importDataAction}"
-			      image="#{basePath}/images/import.gif"
+			      image="/images/import.gif"
 			      alt="Import from the Terminology Server"
 			      tabindex="2">
 			    </h:commandButton> 
 			    </td></tr>
 			    <tr><td>
 			    <h:commandButton id="upload" value="upload" action="#{mappingBean.uploadDataAction}"
-			      image="#{basePath}/images/upload.gif"
+			      image="/images/upload.gif"
 			      alt="Upload from a File"
 			      tabindex="2">
 			    </h:commandButton> 
@@ -448,7 +450,7 @@ if (message == null) {
 
                   
                     <h:commandButton id="continue" value="continue" action="#{mappingBean.showBatchFormAction}"
-                      image="#{basePath}/images/continue.gif"
+                      image="/images/continue.gif"
                       alt="Continue"
                       tabindex="2">
                     </h:commandButton>
@@ -480,11 +482,6 @@ if (message == null) {
      
      <input type="hidden" name="source_cs" id="source_cs" value="<%=source_cs%>">
      <input type="hidden" name="target_cs" id="target_cs" value="<%=target_cs%>">
-     
-     
-     
-     
-     
      
      <input type="hidden" name="source_scheme" id="source_scheme" value="<%=source_scheme%>">
      <input type="hidden" name="source_version" id="source_version" value="<%=source_version%>">
@@ -521,7 +518,7 @@ if (message == null) {
       </div>
       <!-- end Page content -->
     </div>
-    <div class="mainbox-bottom"><img src="<%=basePath%>/images/mainbox-bottom.gif" width="745" height="5" alt="Mainbox Bottom" /></div>
+    <div class="mainbox-bottom"><img src="<%=request.getContextPath()%>/images/mainbox-bottom.gif" width="945" height="5" alt="Mainbox Bottom" /></div>
     <!-- end Main box -->
   </div>
 </f:view>

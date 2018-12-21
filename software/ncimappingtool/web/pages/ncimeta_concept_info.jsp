@@ -27,6 +27,7 @@ L--%>
 <%@ page import="org.LexGrid.concepts.Definition" %>
 <%@ page import="org.LexGrid.commonTypes.Source" %>
 <%@ page import="org.LexGrid.commonTypes.Property" %>
+<%@ page import="org.LexGrid.LexBIG.LexBIGService.LexBIGService"%>
 
 
 
@@ -68,26 +69,33 @@ L--%>
     <div id="popupContainer">
       <!-- nci popup banner -->
       <div class="ncipopupbanner">
-        <a href="http://www.cancer.gov" target="_blank" alt="National Cancer Institute"><img src="<%=basePath%>/images/nci-banner-1.gif" width="440" height="39" border="0" alt="National Cancer Institute" /></a>
-        <a href="http://www.cancer.gov" target="_blank" alt="National Cancer Institute"><img src="<%=basePath%>/images/spacer.gif" width="48" height="39" border="0" alt="National Cancer Institute" class="print-header" /></a>
+        <a href="http://www.cancer.gov" target="_blank" alt="National Cancer Institute"><img src="<%=request.getContextPath()%>/images/nci-banner-1.gif" width="440" height="39" border="0" alt="National Cancer Institute" /></a>
+        <a href="http://www.cancer.gov" target="_blank" alt="National Cancer Institute"><img src="<%=request.getContextPath()%>/images/spacer.gif" width="48" height="39" border="0" alt="National Cancer Institute" class="print-header" /></a>
       </div>
       <!-- end nci popup banner -->
+      <!--
       <div id="popupMainArea">
+      -->
+      <div class="center-page_960">
       
         <a name="evs-content" id="evs-content"></a>
         <table class="evsLogoBg" cellspacing="0" cellpadding="0" border="0">
         <tr>
           <td valign="top">
             <a href="http://evs.nci.nih.gov/" target="_blank" alt="Enterprise Vocabulary Services">
-              <img src="<%=basePath%>/images/evs-popup-logo.gif" width="213" height="26" alt="EVS: Enterprise Vocabulary Services" title="EVS: Enterprise Vocabulary Services" border="0" />
+              <img src="<%=request.getContextPath()%>/images/evs-popup-logo.gif" width="213" height="26" alt="EVS: Enterprise Vocabulary Services" title="EVS: Enterprise Vocabulary Services" border="0" />
             </a>
           </td>
-          <td valign="top"><div id="closeWindow"><a href="javascript:window.close();"><img src="<%=basePath%>/images/thesaurus_close_icon.gif" width="10" height="10" border="0" alt="Close Window" />&nbsp;CLOSE WINDOW</a></div></td>
+          <td valign="top"><div id="closeWindow"><a href="javascript:window.close();"><img src="<%=request.getContextPath()%>/images/thesaurus_close_icon.gif" width="10" height="10" border="0" alt="Close Window" />&nbsp;CLOSE WINDOW</a></div></td>
         </tr>
         </table>
 
 
 <%
+LexBIGService lbSvc = RemoteServerUtil.createLexBIGService();
+TreeUtils treeUtils = new TreeUtils(lbSvc);
+MappingToolUtils mappingUtils = new MappingToolUtils(lbSvc);
+
 String source_code = request.getParameter("src_cd");
 String target_code = request.getParameter("target_cd");
 
@@ -108,8 +116,8 @@ String source_version = DataUtils.getVocabularyVersionByTag(source_scheme, null)
 String target_scheme = DataUtils.getFormalName(target_abbrev);
 String target_version = DataUtils.getVocabularyVersionByTag(target_scheme, null);
 
-Entity src_concept    = MappingUtils.getConceptByCode(source_scheme, source_version, null, source_code);
-Entity target_concept = MappingUtils.getConceptByCode(target_scheme, target_version, null, target_code);
+Entity src_concept    = mappingUtils.getConceptByCode(source_scheme, source_version, null, source_code);
+Entity target_concept = mappingUtils.getConceptByCode(target_scheme, target_version, null, target_code);
 
 String source_concept_name = src_concept.getEntityDescription().getContent();
 String target_concept_name = target_concept.getEntityDescription().getContent();
@@ -134,7 +142,7 @@ Property[] target_properties = target_concept.getProperty();
 
 
 ArrayList src_superconceptList = new ArrayList();
-HashMap hmap_super = TreeUtils.getSuperconcepts(source_scheme, source_version, source_code);
+HashMap hmap_super = treeUtils.getSuperconcepts(source_scheme, source_version, source_code);
 if (hmap_super != null) {
 	TreeItem ti = (TreeItem) hmap_super.get(source_code);
 	if (ti != null) {
@@ -148,11 +156,11 @@ if (hmap_super != null) {
 		}
 	}
 }
-SortUtils.quickSort(src_superconceptList);
+new SortUtils().quickSort(src_superconceptList);
 				
 				
 ArrayList target_superconceptList = new ArrayList();
-hmap_super = TreeUtils.getSuperconcepts(target_scheme, target_version, target_code);
+hmap_super = treeUtils.getSuperconcepts(target_scheme, target_version, target_code);
 if (hmap_super != null) {
 	TreeItem ti = (TreeItem) hmap_super.get(target_code);
 	if (ti != null) {
@@ -166,13 +174,13 @@ if (hmap_super != null) {
 		}
 	}
 }
-SortUtils.quickSort(target_superconceptList);				
+new SortUtils().quickSort(target_superconceptList);				
   
 %>
 
         <div id="popupContentArea">
         
-          <table width="580px" cellpadding="3" cellspacing="0" border="0">
+          <table width="960px" cellpadding="3" cellspacing="0" border="0">
                   
                 <tr>
 		  <td align="left" class="textbody">
@@ -193,17 +201,17 @@ SortUtils.quickSort(target_superconceptList);
           </table>
 
 
-          <table class="datatable">
+          <table class="datatable_960">
                <tr>
                  <td>
 
-		   <table class="datatable">
+		   <table class="datatable_960">
 
-		   <th class="dataTableHeader" scope="col" align="left">
+		   <th class="datatable_960Header" scope="col" align="left">
 			  Synonyms:
 		   </th>
 
-		   <th class="dataTableHeader" scope="col" align="left">
+		   <th class="datatable_960Header" scope="col" align="left">
 			  &nbsp;
 		   </th>
 <%		   
@@ -233,14 +241,14 @@ SortUtils.quickSort(target_superconceptList);
                <tr>
                  <td>
 
-		   <table class="datatable">
+		   <table class="datatable_960">
 
 
-		   <th class="dataTableHeader" scope="col" align="left">
+		   <th class="datatable_960Header" scope="col" align="left">
 			  Definitions:
 		   </th>
 
-		   <th class="dataTableHeader" scope="col" align="left">
+		   <th class="datatable_960Header" scope="col" align="left">
 			  &nbsp;
 		   </th>
 <%		   
@@ -290,13 +298,13 @@ SortUtils.quickSort(target_superconceptList);
                <tr>
                  <td>
 
-		   <table class="datatable">
+		   <table class="datatable_960">
 
-		   <th class="dataTableHeader" scope="col" align="left">
+		   <th class="datatable_960Header" scope="col" align="left">
 			  Other Properties:
 		   </th>
 
-		   <th class="dataTableHeader" scope="col" align="left">
+		   <th class="datatable_960Header" scope="col" align="left">
 			  &nbsp;
 		   </th>
         
@@ -345,9 +353,9 @@ SortUtils.quickSort(target_superconceptList);
                <tr>
                  <td>
 
-		   <table class="datatable">
+		   <table class="datatable_960">
 
-		   <th class="dataTableHeader" scope="col" align="left">
+		   <th class="datatable_960Header" scope="col" align="left">
 			  Parents:
 		   </th>
 
@@ -386,7 +394,7 @@ SortUtils.quickSort(target_superconceptList);
           <hr></hr>
           
           
-          <table width="580px" cellpadding="3" cellspacing="0" border="0">
+          <table width="960px" cellpadding="3" cellspacing="0" border="0">
                   
                 <tr>
 		  <td align="left" class="textbody">
@@ -407,17 +415,17 @@ SortUtils.quickSort(target_superconceptList);
           </table>
 
 
-          <table class="datatable">
+          <table class="datatable_960">
                <tr>
                  <td>
 
-		   <table class="datatable">
+		   <table class="datatable_960">
 
-		   <th class="dataTableHeader" scope="col" align="left">
+		   <th class="datatable_960Header" scope="col" align="left">
 			  Synonyms:
 		   </th>
 
-		   <th class="dataTableHeader" scope="col" align="left">
+		   <th class="datatable_960Header" scope="col" align="left">
 			  &nbsp;
 		   </th>
 <%		   
@@ -448,14 +456,14 @@ SortUtils.quickSort(target_superconceptList);
                <tr>
                  <td>
 
-		   <table class="datatable">
+		   <table class="datatable_960">
 
 
-		   <th class="dataTableHeader" scope="col" align="left">
+		   <th class="datatable_960Header" scope="col" align="left">
 			  Definitions:
 		   </th>
 
-		   <th class="dataTableHeader" scope="col" align="left">
+		   <th class="datatable_960Header" scope="col" align="left">
 			  &nbsp;
 		   </th>
 <%		   
@@ -501,13 +509,13 @@ SortUtils.quickSort(target_superconceptList);
                <tr>
                  <td>
 
-		   <table class="datatable">
+		   <table class="datatable_960">
 
-		   <th class="dataTableHeader" scope="col" align="left">
+		   <th class="datatable_960Header" scope="col" align="left">
 			  Other Properties:
 		   </th>
 
-		   <th class="dataTableHeader" scope="col" align="left">
+		   <th class="datatable_960Header" scope="col" align="left">
 			  &nbsp;
 		   </th>
         
@@ -556,10 +564,10 @@ SortUtils.quickSort(target_superconceptList);
                <tr>
                  <td>
 
-		   <table class="datatable">
+		   <table class="datatable_960">
 
 
-		   <th class="dataTableHeader" scope="col" align="left">
+		   <th class="datatable_960Header" scope="col" align="left">
 			  Parents:
 		   </th>
 

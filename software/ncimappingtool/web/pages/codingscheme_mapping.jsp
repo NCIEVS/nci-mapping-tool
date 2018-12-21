@@ -116,7 +116,7 @@ if (property != null && property.compareTo("null") == 0) {
     property = "";
 }
 
-String LOCAL_DATA = Constants.LOCAL_DATA;
+String LOCAL_DATA = MTConstants.LOCAL_DATA;
 
                 Vector cs_label_vec = new Vector();
                 
@@ -133,7 +133,7 @@ String LOCAL_DATA = Constants.LOCAL_DATA;
 		           cs_label_vec.add(label);
 		       }
 		}
-		cs_label_vec = SortUtils.quickSort(cs_label_vec);
+		cs_label_vec = new SortUtils().quickSort(cs_label_vec);
 
 if ((DataUtils.isNull(source_cs) || source_cs.compareTo("") == 0) && cs_label_vec.size() > 0) {
     source_cs = (String) cs_label_vec.elementAt(0);
@@ -148,10 +148,10 @@ if ((DataUtils.isNull(target_cs) || target_cs.compareTo("") == 0) && cs_label_ve
     <a href="#evs-content" class="hideLink" accesskey="1" title="Skip repetitive navigation links">skip navigation links</A>
   <!-- End Skip Top Navigation -->
   <%@ include file="/pages/templates/header.jsp" %>
-  <div class="center-page">
+  <div class="center-page_960">
     <%@ include file="/pages/templates/sub-header.jsp" %>
     <!-- Main box -->
-    <div id="main-area">
+    <div id="main-area_960">
       <%@ include file="/pages/templates/content-header.jsp" %>
       <!-- Page content -->
       <div class="pagecontent">
@@ -287,7 +287,7 @@ if ((DataUtils.isNull(target_cs) || target_cs.compareTo("") == 0) && cs_label_ve
 	
                   <tr><td>
                     <h:commandButton id="continue" value="continue" action="#{mappingBean.submitMetadataAction}"
-                      image="#{basePath}/images/continue.gif"
+                      image="/images/continue.gif"
                       alt="Submit"
                       tabindex="2">
                     </h:commandButton>
@@ -308,7 +308,7 @@ if ((DataUtils.isNull(target_cs) || target_cs.compareTo("") == 0) && cs_label_ve
       </div>
       <!-- end Page content -->
     </div>
-    <div class="mainbox-bottom"><img src="<%=basePath%>/images/mainbox-bottom.gif" width="745" height="5" alt="Mainbox Bottom" /></div>
+    <div class="mainbox-bottom"><img src="<%=request.getContextPath()%>/images/mainbox-bottom.gif" width="945" height="5" alt="Mainbox Bottom" /></div>
     <!-- end Main box -->
   </div>
 </f:view>

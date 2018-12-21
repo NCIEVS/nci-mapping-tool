@@ -59,8 +59,8 @@ L--%>
     <div id="popupContainer">
       <!-- nci popup banner -->
       <div class="ncipopupbanner">
-        <a href="http://www.cancer.gov" target="_blank" alt="National Cancer Institute"><img src="<%=basePath%>/images/nci-banner-1.gif" width="440" height="39" border="0" alt="National Cancer Institute" /></a>
-        <a href="http://www.cancer.gov" target="_blank" alt="National Cancer Institute"><img src="<%=basePath%>/images/spacer.gif" width="48" height="39" border="0" alt="National Cancer Institute" class="print-header" /></a>
+        <a href="http://www.cancer.gov" target="_blank" alt="National Cancer Institute"><img src="<%=request.getContextPath()%>/images/nci-banner-1.gif" width="440" height="39" border="0" alt="National Cancer Institute" /></a>
+        <a href="http://www.cancer.gov" target="_blank" alt="National Cancer Institute"><img src="<%=request.getContextPath()%>/images/spacer.gif" width="48" height="39" border="0" alt="National Cancer Institute" class="print-header" /></a>
       </div>
       <!-- end nci popup banner -->
       <div id="popupMainArea">
@@ -70,10 +70,10 @@ L--%>
         <tr>
           <td valign="top">
             <a href="http://evs.nci.nih.gov/" target="_blank" alt="Enterprise Vocabulary Services">
-              <img src="<%=basePath%>/images/evs-popup-logo.gif" width="213" height="26" alt="EVS: Enterprise Vocabulary Services" title="EVS: Enterprise Vocabulary Services" border="0" />
+              <img src="<%=request.getContextPath()%>/images/evs-popup-logo.gif" width="213" height="26" alt="EVS: Enterprise Vocabulary Services" title="EVS: Enterprise Vocabulary Services" border="0" />
             </a>
           </td>
-          <td valign="top"><div id="closeWindow"><a href="javascript:window.close();"><img src="<%=basePath%>/images/thesaurus_close_icon.gif" width="10" height="10" border="0" alt="Close Window" />&nbsp;CLOSE WINDOW</a></div></td>
+          <td valign="top"><div id="closeWindow"><a href="javascript:window.close();"><img src="<%=request.getContextPath()%>/images/thesaurus_close_icon.gif" width="10" height="10" border="0" alt="Close Window" />&nbsp;CLOSE WINDOW</a></div></td>
         </tr>
         </table>
 
@@ -129,7 +129,7 @@ target_scheme = DataUtils.getFormalName(target_scheme);
 
 String message = (String) request.getSession().getAttribute("message"); 
 request.getSession().removeAttribute("message"); 
-
+/*
 System.out.println("idx1_str: " + idx1_str);
 System.out.println("idx2_str: " + idx2_str);
 System.out.println("data_value: " + data_value);
@@ -141,7 +141,7 @@ System.out.println("source_scheme: " + source_scheme);
 System.out.println("source_version: " + source_version);
 System.out.println("target_scheme: " + target_scheme);
 System.out.println("target_version: " + target_version);
-
+*/
             
 %>
 
@@ -195,7 +195,7 @@ System.out.println("target_version: " + target_version);
 
         
           <p></p>
-          <p class="dataTableHeader" >
+          <p class="datatable_960Header" >
           Add Comment:
           </p>
           
@@ -212,7 +212,7 @@ System.out.println("target_version: " + target_version);
 				      <b>Comments</b>:
                                      </td>
 				     <td>  
-					 <textarea name="comment" cols="50" rows=10 tabindex="3"><%=comment%></textarea>
+					 <textarea name="comment" cols="40" rows=10 tabindex="3"><%=comment%></textarea>
 				     </td>
 				</tr>
                           
@@ -222,7 +222,7 @@ System.out.println("target_version: " + target_version);
 			  <tr>
 			   <td>
 			    <h:commandButton id="save" value="save" action="#{mappingBean.saveCommentAction}"
-			      image="#{basePath}/images/save.gif"
+			      image="/images/save.gif"
 			      alt="Save"
 			      tabindex="2">
 			    </h:commandButton>

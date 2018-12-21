@@ -54,10 +54,10 @@ String type = (String) request.getAttribute("type");
     <a href="#evs-content" class="hideLink" accesskey="1" title="Skip repetitive navigation links">skip navigation links</A>
   <!-- End Skip Top Navigation -->
   <%@ include file="/pages/templates/header.jsp" %>
-  <div class="center-page">
+  <div class="center-page_960">
     <%@ include file="/pages/templates/sub-header.jsp" %>
     <!-- Main box -->
-    <div id="main-area">
+    <div id="main-area_960">
       <%@ include file="/pages/templates/content-header.jsp" %>
       <!-- Page content -->
       <div class="pagecontent">
@@ -98,7 +98,7 @@ LexGrid XML format.
 <center>
 
                     <h:commandButton id="continue" value="continue" action="#{mappingBean.mappingDataAction}"
-                      image="#{basePath}/images/continue.gif"
+                      image="/images/continue.gif"
                       alt="Submit"
                       tabindex="2">
                     </h:commandButton>
@@ -106,7 +106,7 @@ LexGrid XML format.
                     &#xA0;&#xA0;
 					
                     <h:commandButton id="close" value="close" action="#{mappingBean.returnToHomeAction}"
-                      image="#{basePath}/images/close.gif"
+                      image="/images/close.gif"
                       alt="Close"
                       tabindex="2">
                     </h:commandButton>
@@ -126,7 +126,7 @@ LexGrid XML format.
       </div>
       <!-- end Page content -->
     </div>
-    <div class="mainbox-bottom"><img src="<%=hm_basePath%>/images/mainbox-bottom.gif" width="745" height="5" alt="Mainbox Bottom" /></div>
+    <div class="mainbox-bottom"><img src="<%=request.getContextPath()%>/images/mainbox-bottom.gif" width="945" height="5" alt="Mainbox Bottom" /></div>
     <!-- end Main box -->
   </div>
 </f:view>
