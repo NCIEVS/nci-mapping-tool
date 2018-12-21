@@ -19,7 +19,7 @@ import org.xml.sax.*;
 import gov.nih.nci.evs.browser.bean.*;
 
 /**
- * 
+ *
  */
 
 /**
@@ -102,9 +102,18 @@ public class PropertyFileParser {
     }
 
     private void parseXmlFile(String xmlfile) {
+		System.out.println("xmlfile: " + xmlfile);
         DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+        if (dbf == null) {
+			System.out.println("ERROR: dbf == null???" + xmlfile);
+		}
+
         try {
             DocumentBuilder db = dbf.newDocumentBuilder();
+            if (db == null) {
+				System.out.println("ERROR: db == null???" + xmlfile);
+			}
+			System.out.println("calling db.parse: " + xmlfile);
             _dom = db.parse(xmlfile);
         } catch (ParserConfigurationException pce) {
             pce.printStackTrace();

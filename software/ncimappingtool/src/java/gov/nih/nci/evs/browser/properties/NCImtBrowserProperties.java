@@ -12,7 +12,7 @@ import java.util.*;
 import org.apache.log4j.*;
 
 /**
- * 
+ *
  */
 
 /**
@@ -112,6 +112,7 @@ public class NCImtBrowserProperties {
     static {
 		try {
 			_browserProperties = new NCImtBrowserProperties();
+			System.out.println("NCImtBrowserProperties loadProperties ...");
 			loadProperties();
 
 			_debugOn = Boolean.parseBoolean(getProperty(DEBUG_ON));
@@ -360,7 +361,8 @@ public class NCImtBrowserProperties {
 
     private static void loadProperties() throws Exception {
         String propertyFile =
-            System.getProperty("NCImtProperties");
+            //System.getProperty("NCImtProperties");
+            System.getProperty("gov.nih.nci.evs.browser.NCIMappingToolProperties");
         _logger.info("NCImtBrowserProperties File Location= " + propertyFile);
 
 System.out.println("propertyFile: " + propertyFile);
