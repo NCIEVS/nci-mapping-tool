@@ -400,8 +400,9 @@ L-->
                  <key>MODE_OF_OPERATION</key>
                  <!--
                  <value>@mode.of.operation@</value>
-                 -->
                  <value>interactive</value>
+                 -->
+                 <value>sparql</value>
         </ConfigurableItem>
         
         <ConfigurableItem>
@@ -531,6 +532,17 @@ L-->
             <value><![CDATA[@standard.ftp.report.info.3@]]></value>
         </ConfigurableItem>
 
+
+        <ConfigurableItem>
+             <key>SPARQL_SERVICE</key>
+             <value>@sparql_service@</value>
+        </ConfigurableItem>  
+        
+         <ConfigurableItem>
+             <key>DATA_DIRECTORY</key>
+             <value>@data_directory@</value>
+        </ConfigurableItem>
+        
         <!-- Standard FTP Report List (End) ================================ -->
 
     </ConfigurableItems>

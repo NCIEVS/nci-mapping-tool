@@ -9,6 +9,7 @@ package gov.nih.nci.evs.browser.servlet;
 
 import org.json.*;
 import gov.nih.nci.evs.browser.utils.*;
+import gov.nih.nci.evs.browser.properties.*;
 import gov.nih.nci.evs.browser.bean.MappingObject;
 
 import java.io.*;
@@ -26,7 +27,7 @@ import gov.nih.nci.evs.mapping.*;
 
 
 /**
- * 
+ *
  */
 
 /**
@@ -126,6 +127,7 @@ public final class UploadServlet extends HttpServlet {
             throws IOException, ServletException {
         // Determine request by attributes
         String action = (String) request.getParameter("action");
+        System.out.println("action: " + action);
         String type = (String) request.getParameter("type");
 
 
@@ -145,6 +147,10 @@ System.out.println("(*) UploadServlet ...action " + action);
 		//fileItemFactory.setRepository(tmpDir);
 
 		ServletFileUpload uploadHandler = new ServletFileUpload(fileItemFactory);
+		String mode = NCImtBrowserProperties.getModeOfOperation();
+
+		System.out.println("(*) mode: " + mode);
+
 		try {
 			/*
 			 * Parse the request
@@ -174,21 +180,29 @@ System.out.println("(*) UploadServlet ...action " + action);
 
 					request.getSession().setAttribute("action", action);
 
-					if (action.compareTo("upload_data") == 0) {
-						request.getSession().setAttribute("codes", s);
-					} else {
-						Mapping mapping = new Mapping().toMapping(s);
+                    if (mode.compareTo("batch") == 0 || mode.compareTo("interactive") == 0) {
+						if (action.compareTo("upload_data") == 0) {
+							request.getSession().setAttribute("codes", s);
+						} else {
+							Mapping mapping = new Mapping().toMapping(s);
 
-						System.out.println("Mapping " + mapping.getMappingName() + " uploaded.");
-						System.out.println("Mapping version: " + mapping.getMappingVersion());
+							System.out.println("Mapping " + mapping.getMappingName() + " uploaded.");
+							System.out.println("Mapping version: " + mapping.getMappingVersion());
 
-						MappingObject obj = mapping.toMappingObject();
-						HashMap mappings = (HashMap) request.getSession().getAttribute("mappings");
-						if (mappings == null) {
-							mappings = new HashMap();
+							MappingObject obj = mapping.toMappingObject();
+							HashMap mappings = (HashMap) request.getSession().getAttribute("mappings");
+							if (mappings == null) {
+								mappings = new HashMap();
+							}
+							mappings.put(obj.getKey(), obj);
+							request.getSession().setAttribute("mappings", mappings);
 						}
-						mappings.put(obj.getKey(), obj);
-						request.getSession().setAttribute("mappings", mappings);
+				    } else {
+						if (action.compareTo("upload_data") == 0) {
+							request.getSession().setAttribute("data", s);
+						} else {
+							request.getSession().setAttribute("mapping_data", s);
+						}
 					}
 				}
 			}
@@ -198,21 +212,26 @@ System.out.println("(*) UploadServlet ...action " + action);
 			log("Error encountered while uploading file",ex);
 		}
 
+        if (mode.compareTo("batch") == 0 || mode.compareTo("interactive") == 0) {
+			if (action.compareTo("upload_data") == 0) {
+				if (type.compareTo("codingscheme") == 0) {
+					response.sendRedirect(response.encodeRedirectURL(request.getContextPath() + "/pages/codingscheme_data.jsf"));
+				} else if (type.compareTo("ncimeta") == 0) {
+					response.sendRedirect(response.encodeRedirectURL(request.getContextPath() + "/pages/ncimeta_data.jsf"));
+				} else if (type.compareTo("valueset") == 0) {
+					response.sendRedirect(response.encodeRedirectURL(request.getContextPath() + "/pages/valueset_data.jsf"));
+				}		} else {
+				response.sendRedirect(response.encodeRedirectURL(request.getContextPath() + "/pages/home.jsf"));
+			}
+		} else {
+			if (action.compareTo("upload_data") == 0) {
+				System.out.println("*** redirect to enter_mapping_data.jsf");
+				response.sendRedirect(response.encodeRedirectURL(request.getContextPath() + "/pages/enter_mapping_data.jsf"));
 
-        //long ms = System.currentTimeMillis();
-
-        if (action.compareTo("upload_data") == 0) {
-			if (type.compareTo("codingscheme") == 0) {
-        		response.sendRedirect(response.encodeRedirectURL(request.getContextPath() + "/pages/codingscheme_data.jsf"));
-			} else if (type.compareTo("ncimeta") == 0) {
-				response.sendRedirect(response.encodeRedirectURL(request.getContextPath() + "/pages/ncimeta_data.jsf"));
-			} else if (type.compareTo("valueset") == 0) {
-				response.sendRedirect(response.encodeRedirectURL(request.getContextPath() + "/pages/valueset_data.jsf"));
-			}		} else {
-			response.sendRedirect(response.encodeRedirectURL(request.getContextPath() + "/pages/home.jsf"));
+			} else {
+				System.out.println("*** redirect to auto_mapping_results.jsf");
+				response.sendRedirect(response.encodeRedirectURL(request.getContextPath() + "/pages/auto_mapping_results.jsf"));
+			}
 		}
-
     }
-
-
 }

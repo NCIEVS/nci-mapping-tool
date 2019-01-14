@@ -280,7 +280,7 @@ a.hideLink
 
 .datacelltext
 {
- white-space: nowrap;
+ word-wrap: break-word;
  font-size: 11px;
  color: #444444;
 }
@@ -782,4 +782,65 @@ a.hideLink
  background-image: url(../images/quicklinks.gif);
  background-repeat: repeat-x;
  height: 32px;
+}
+
+.vocabularynamebanner_ncit
+{
+ float: left;
+ width: 382px;
+ height: 117px;
+ background-image: url(../images/thesaurus_browser_logo.jpg);
+ background-repeat: no-repeat;
+ text-decoration: none;
+ cursor: pointer;
+}
+
+.vocabularynamebanner
+{
+ float: left;
+ width: 382px;
+ height: 117px;
+ background-image: url(../images/evs_browser_other_term_logo.gif);
+ background-repeat: no-repeat;
+ text-decoration: none;
+ cursor: pointer;
+}
+
+.vocabularynameshort
+{
+ position: relative;
+ left: 22px;
+ bottom: -10px;
+ width: 355px;
+ font-family: Arial, Verdana, Helvetica, sans-serif;
+ font-size: 30px;
+ font-weight: bold;
+ color: #2F2F5F;
+ white-space: wrap;
+}
+
+.vocabularynamelong
+{
+ position: relative;
+ left: 24px;
+ bottom: -5px;
+ width: 336px;
+ font-family: Arial, Verdana, Helvetica, sans-serif;
+ font-size: 10px;
+ font-weight: bold;
+ color: #2F2F5F;
+ white-space: wrap;
+ padding-top: 10px;
+}
+
+.vocabularynamelong_ncit
+{
+ position: relative;
+ left: 27px;
+ top: 90px;
+ width: 336px;
+ font-family: Arial, Verdana, Helvetica, sans-serif;
+ font-size: 10px;
+ font-weight: bold;
+ color: #2F2F5F;
 }

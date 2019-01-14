@@ -24,6 +24,133 @@ L-->
     <!-- Navigation: General =============================================== -->
 
 
+    <navigation-rule>
+         <from-view-id>/pages/home_alt.jsp</from-view-id>
+       
+         <navigation-case>
+             <from-action>#{mappingSessionBean.createMappingAction}</from-action>
+             <from-outcome>new</from-outcome>
+             <to-view-id>/pages/new_mapping.jsp</to-view-id>
+         </navigation-case>
+         
+          <navigation-case>
+             <from-action>#{mappingSessionBean.deleteMappingAction}</from-action>
+             <from-outcome>delete</from-outcome>
+             <to-view-id>/pages/home_alt.jsp</to-view-id>
+         </navigation-case>
+         
+          <navigation-case>
+             <from-action>#{mappingSessionBean.cloneMappingAction}</from-action>
+             <from-outcome>clone</from-outcome>
+             <to-view-id>/pages/home_alt.jsp</to-view-id>
+         </navigation-case>   
+
+          <navigation-case>
+             <from-action>#{mappingSessionBean.cloneMappingAction}</from-action>
+             <from-outcome>message</from-outcome>
+             <to-view-id>/pages/home_alt.jsp</to-view-id>
+         </navigation-case>  
+         
+          <navigation-case>
+             <from-action>#{mappingSessionBean.uploadMappingAction}</from-action>
+             <from-outcome>upload</from-outcome>
+             <to-view-id>/pages/upload_mapping.jsp</to-view-id>
+         </navigation-case>  
+
+          <navigation-case>
+             <from-action>#{mappingSessionBean.selectTerminologyAction}</from-action>
+             <from-outcome>data</from-outcome>
+             <to-view-id>/pages/enter_mapping_data.jsp</to-view-id>
+         </navigation-case> 
+    </navigation-rule>
+        
+
+     <navigation-rule>
+         <from-view-id>/pages/enter_mapping_data.jsp</from-view-id>
+         <navigation-case>
+             <from-action>#{mappingSessionBean.mappingAction}</from-action>
+             <from-outcome>mapping_results</from-outcome>
+             <to-view-id>/pages/auto_mapping_results.jsp</to-view-id>
+         </navigation-case> 
+         <navigation-case>
+             <from-action>#{mappingSessionBean.resetAction}</from-action>
+             <from-outcome>reset</from-outcome>
+             <to-view-id>/pages/enter_mapping_data.jsp</to-view-id>
+         </navigation-case>         
+         <navigation-case>
+             <from-action>#{mappingSessionBean.mappingAction}</from-action>
+             <from-outcome>warning</from-outcome>
+             <to-view-id>/pages/enter_mapping_data.jsp</to-view-id>
+         </navigation-case>
+         
+         <navigation-case>
+             <from-action>#{mappingSessionBean.uploadDataAction}</from-action>
+             <from-outcome>upload</from-outcome>
+             <to-view-id>/pages/upload_data.jsp</to-view-id>
+         </navigation-case>         
+     </navigation-rule>    
+
+
+     <navigation-rule>
+         <from-view-id>/pages/auto_mapping_results.jsp</from-view-id>
+         <navigation-case>
+             <from-action>#{mappingSessionBean.manualMappingAction}</from-action>
+             <from-outcome>manual_mapping</from-outcome>
+             <to-view-id>/pages/sparql_manual_mapping.jsp</to-view-id>
+         </navigation-case> 
+         
+         <navigation-case>
+             <from-action>#{mappingSessionBean.deleteAction}</from-action>
+             <from-outcome>mapping_results</from-outcome>
+             <to-view-id>/pages/auto_mapping_results.jsp</to-view-id>
+         </navigation-case>         
+
+          <navigation-case>
+             <from-action>#{mappingSessionBean.deleteAction}</from-action>
+             <from-outcome>warning</from-outcome>
+             <to-view-id>/pages/auto_mapping_results.jsp</to-view-id>
+         </navigation-case>
+
+          <navigation-case>
+             <from-action>#{mappingSessionBean.uploadMappingAction}</from-action>
+             <from-outcome>upload</from-outcome>
+             <to-view-id>/pages/upload_mapping.jsp</to-view-id>
+         </navigation-case>
+         
+     </navigation-rule> 
+     
+     
+      <navigation-rule>
+          <from-view-id>/pages/sparql_search.jsp</from-view-id>
+          <navigation-case>
+              <from-action>#{mappingSessionBean.searchAction}</from-action>
+              <from-outcome>search</from-outcome>
+              <to-view-id>/pages/sparql_search.jsp</to-view-id>
+          </navigation-case> 
+           <navigation-case>
+              <from-action>#{mappingSessionBean.searchAction}</from-action>
+              <from-outcome>warning</from-outcome>
+              <to-view-id>/pages/sparql_search.jsp</to-view-id>
+          </navigation-case>          
+          
+          <navigation-case>
+              <from-action>#{mappingSessionBean.saveAction}</from-action>
+              <from-outcome>search</from-outcome>
+              <to-view-id>/pages/sparql_search.jsp</to-view-id>
+          </navigation-case>   
+           <navigation-case>
+              <from-action>#{mappingSessionBean.saveAction}</from-action>
+              <from-outcome>warning</from-outcome>
+              <to-view-id>/pages/sparql_search.jsp</to-view-id>
+          </navigation-case>            
+
+           <navigation-case>
+              <from-action>#{mappingSessionBean.saveAction}</from-action>
+              <from-outcome>mapping_results</from-outcome>
+              <to-view-id>/pages/auto_mapping_results.jsp</to-view-id>
+          </navigation-case> 
+     </navigation-rule> 
+     
 
      <navigation-rule>
          <from-view-id>/pages/home.jsp</from-view-id>
@@ -642,7 +769,7 @@ L-->
      </navigation-rule>     
 
 
-     <navigation-rule>
+      <navigation-rule>
          <from-view-id>/pages/search.jsp</from-view-id>
        
          <navigation-case>
@@ -791,6 +918,11 @@ L-->
         <managed-bean-scope>session</managed-bean-scope>
     </managed-bean>
 
+    <managed-bean>
+        <managed-bean-name>mappingSessionBean</managed-bean-name>
+        <managed-bean-class>gov.nih.nci.evs.browser.bean.MappingSessionBean</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
    
     <managed-bean>
         <managed-bean-name>ValueSetBean</managed-bean-name>

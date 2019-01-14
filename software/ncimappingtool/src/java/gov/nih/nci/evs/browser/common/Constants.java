@@ -8,7 +8,7 @@
 package gov.nih.nci.evs.browser.common;
 
 /**
- * 
+ *
  */
 
 /**
@@ -82,6 +82,8 @@ public class Constants {
     public static final int  TERMINOLOGY_VIEW = 2;
 
     public static final long MILLISECONDS_PER_MINUTE = 60L * 1000;
+
+    public static final String NCIT_NG = "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl";
 
     /**
      * Constructor

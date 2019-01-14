@@ -7,8 +7,15 @@
 
 package gov.nih.nci.evs.browser.properties;
 
-import java.util.*;
+import gov.nih.nci.evs.restapi.util.*;
+import gov.nih.nci.evs.restapi.bean.*;
+import gov.nih.nci.evs.restapi.common.*;
 
+import gov.nih.nci.evs.restapi.meta.util.*;
+import gov.nih.nci.evs.restapi.meta.bean.*;
+
+import java.io.*;
+import java.util.*;
 import org.apache.log4j.*;
 
 /**
@@ -26,6 +33,7 @@ import org.apache.log4j.*;
 public class NCImtBrowserProperties {
     private static Logger _logger =
         Logger.getLogger(NCImtBrowserProperties.class);
+    public static String SPARQL_SERVICE = "SPARQL_SERVICE";
     private static List _displayItemList;
     private static List _metadataElementList;
     private static List _defSourceMappingList;
@@ -79,7 +87,7 @@ public class NCImtBrowserProperties {
     private static boolean _debugOn = false;
     private static int _maxToReturn = 1000;
     private static int _maxTreeLevel = 1000;
-    private static String _service_url = null;
+    //private static String _service_url = null;
     private static String _lg_config_file = null;
     private static String _mapping_dir = null;
     private static String _mode_of_operation = null;
@@ -101,6 +109,47 @@ public class NCImtBrowserProperties {
     private static Vector<StandardFtpReportInfo> _standard_ftp_report_info_list =
         new Vector<StandardFtpReportInfo>();
 
+    public static Vector _PARENT_CHILDREN = null;
+    public static HashMap code2NameMap = null;
+
+    public static String _PARTONOMY_ROLE_NAME = "Anatomic_Structure_Is_Physical_Part_Of";
+    public static Vector _PARTONOMY_DATA = null;
+    public static String _PARTONOMY_ROOT_STRING = null;
+
+    private static HashSet _partonomy_root_set = null;
+    private static HashSet _partonomy_leaf_set = null;
+
+    private static int _totalNumberOfTriples = -1;
+
+    private static gov.nih.nci.evs.restapi.util.HierarchyHelper hh = null;
+    public static gov.nih.nci.evs.restapi.util.HierarchyHelper vs_hh = null;
+
+    public static String ncit_version = null;
+
+    public static HashMap nameVersion2NamedGraphMap = null;
+    public static HashMap basePrefixUIDHashMap = null;
+    public static Vector cs_data = null;
+    public static String default_named_graph = null;
+    public static String default_flat_ncit_named_graph = null;
+    public static gov.nih.nci.evs.restapi.bean.TreeItem VALUE_SET_TREE = null;
+
+    public static TTLQueryUtilsRunner runner = null;//new TTLQueryUtilsRunner(serviceUrl);
+    //public static TTLQueryUtils ttlQueryUtils = null;//new TTLQueryUtilsRunner(serviceUrl);
+
+    public static HashMap namedGraph2SchemeMap = null;
+    public static gov.nih.nci.evs.restapi.meta.util.VIHUtils ttl_vihUtils = null;//new gov.nih.nci.evs.restapi.meta.util.VIHUtils(SparqlProperties.get_SPARQL_SERVICE());
+
+    //public static NCImtBrowserProperties _browserProperties = null;
+
+    public static String _data_directory = null;
+    public static String _sparql_service_url = null;
+    public static String _service_url = null;
+
+    public static String DATA_DIRECTORY = "DATA_DIRECTORY";
+
+    public static String NCIT_NG = "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl";
+
+
     /**
      * Private constructor for singleton pattern.
      */
@@ -112,8 +161,18 @@ public class NCImtBrowserProperties {
     static {
 		try {
 			_browserProperties = new NCImtBrowserProperties();
+			//gov.nih.nci.evs.browser.NCImBrowserProperties=c:/apps/evs/ncim/conf/NCImBrowserProperties.xml
 			System.out.println("NCImtBrowserProperties loadProperties ...");
 			loadProperties();
+
+			_data_directory =
+				_browserProperties
+					.getProperty(_browserProperties.DATA_DIRECTORY);
+
+			if (_data_directory == null || _data_directory.length() == 0 || _data_directory.compareTo("null") == 0) {
+				_data_directory = get_application_configuration_directory();
+			}
+			System.out.println(_data_directory);
 
 			_debugOn = Boolean.parseBoolean(getProperty(DEBUG_ON));
 
@@ -131,6 +190,8 @@ public class NCImtBrowserProperties {
 				_browserProperties
 					.getProperty(_browserProperties.EVS_SERVICE_URL);
 			// _logger.info("EVS_SERVICE_URL: " + service_url);
+			System.out.println("_service_url: " + _service_url);
+
 
 			_lg_config_file =
 				_browserProperties
@@ -169,6 +230,15 @@ public class NCImtBrowserProperties {
 			_mode_of_operation =
 				_browserProperties
 					.getProperty(_browserProperties.MODE_OF_OPERATION);
+
+			_sparql_service_url =
+			_browserProperties
+				.getProperty(_browserProperties.SPARQL_SERVICE);
+
+System.out.println("_sparql_service_url: " + _sparql_service_url);
+
+
+			runner = new TTLQueryUtilsRunner(_sparql_service_url);
 
 			String pagination_time_out_str =
 				_browserProperties
@@ -359,14 +429,20 @@ public class NCImtBrowserProperties {
         return _securityTokenHashMap;
     }
 
+    public static String get_application_configuration_directory() {
+        String propertyFile =
+            System.getProperty("gov.nih.nci.evs.browser.NCIMappingToolProperties");
+        return new File(propertyFile).getParent();
+	}
+
     private static void loadProperties() throws Exception {
         String propertyFile =
             //System.getProperty("NCImtProperties");
             System.getProperty("gov.nih.nci.evs.browser.NCIMappingToolProperties");
         _logger.info("NCImtBrowserProperties File Location= " + propertyFile);
 
-System.out.println("propertyFile: " + propertyFile);
-
+		System.out.println("propertyFile: " + propertyFile);
+		System.out.println("application_configuration_directory: " + get_application_configuration_directory());
 
         PropertyFileParser parser = new PropertyFileParser(propertyFile);
         parser.run();
@@ -402,6 +478,10 @@ System.out.println("propertyFile: " + propertyFile);
         return _mode_of_operation;
     }
 
+    public static void setModeOfOperation(String mode) {
+        _mode_of_operation = mode;
+    }
+
     public static int getPaginationTimeOut() {
         return _pagination_time_out;
     }
@@ -421,4 +501,36 @@ System.out.println("propertyFile: " + propertyFile);
     public static Vector<StandardFtpReportInfo> getStandardFtpReportInfoList() {
         return _standard_ftp_report_info_list;
     }
+
+    public static String get_default_named_graph() {
+		return NCIT_NG;
+	}
+
+    public static TTLQueryUtilsRunner getTTLQueryUtilsRunner() {
+		return runner;
+	}
+
+
+    public static String getPrefixes() {
+		StringBuffer buf = new StringBuffer();
+		buf.append("PREFIX :<http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#>").append("|");
+		buf.append("PREFIX base:<http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl>").append("|");
+		buf.append("PREFIX Thesaurus:<http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#>").append("|");
+		buf.append("PREFIX xml:<http://www.w3.org/XML/1998/namespace>").append("|");
+		buf.append("PREFIX rdf:<http://www.w3.org/1999/02/22-rdf-syntax-ns#>").append("|");
+		buf.append("PREFIX owl:<http://www.w3.org/2002/07/owl#>").append("|");
+		buf.append("PREFIX owl2xml:<http://www.w3.org/2006/12/owl2-xml#>").append("|");
+		buf.append("PREFIX protege:<http://protege.stanford.edu/plugins/owl/protege#>").append("|");
+		buf.append("PREFIX xsd:<http://www.w3.org/2001/XMLSchema#>").append("|");
+		buf.append("PREFIX rdfs:<http://www.w3.org/2000/01/rdf-schema#>").append("|");
+		buf.append("PREFIX ncicp:<http://ncicb.nci.nih.gov/xml/owl/EVS/ComplexProperties.xsd#>").append("|");
+		buf.append("PREFIX dc:<http://purl.org/dc/elements/1.1/>");
+		return buf.toString();
+	}
+
+    public static boolean isNCIt(String named_graph) {
+		if (named_graph == null) return true;
+		if (named_graph.indexOf("NCIt") != -1 || named_graph.indexOf("Thesaurus") != -1) return true;
+		return false;
+	}
 }

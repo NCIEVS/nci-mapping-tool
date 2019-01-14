@@ -19,23 +19,38 @@ L--%>
  
 <%
 String _mode_of_operation = DataUtils.getModeOfOperation();
-
+String mode = (String) request.getParameter("mode");
+if (mode != null) {
+        NCImtBrowserProperties.setModeOfOperation(mode);
+    	if (mode != null && mode.compareTo(NCImtBrowserProperties.INTERACTIVE_MODE_OF_OPERATION) == 0) {
+	%>
+	  <jsp:forward page="/pages/home.jsf" />
+	<%  
+	} else if (_mode_of_operation != null && _mode_of_operation.compareTo(NCImtBrowserProperties.BATCH_MODE_OF_OPERATION) == 0) {
+	%>
+	  <jsp:forward page="/pages/start.jsf" />
+	<% 
+	} else {
+	%>
+	  <jsp:forward page="/pages/home_alt.jsf" />
+	<% 
+	}
+}
 if (_mode_of_operation == null) {
     System.out.println("_mode_of_operation == null");
 }
-
-
 if (_mode_of_operation != null && _mode_of_operation.compareTo(NCImtBrowserProperties.INTERACTIVE_MODE_OF_OPERATION) == 0) {
-
-System.out.println("INTERACTIVE_MODE_OF_OPERATION -- forwarding to home.jsf");
-
-
 %>
   <jsp:forward page="/pages/home.jsf" />
 <%  
-} else {
+} else if (_mode_of_operation != null && _mode_of_operation.compareTo(NCImtBrowserProperties.BATCH_MODE_OF_OPERATION) == 0) {
+
 %>
   <jsp:forward page="/pages/start.jsf" />
+<% 
+} else {
+%>
+  <jsp:forward page="/pages/home_alt.jsf" />
 <% 
 }
 %>  

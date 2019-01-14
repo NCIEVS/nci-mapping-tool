@@ -1,0 +1,284 @@
+b&cell&lymphoma|b&cell non-hodgkin lymphoma
+benign&neoplasm&bone|benign bone neoplasm
+benign&neoplasm&bronchus|benign respiratory tract neoplasm
+carcinoid&tumor|atypical carcinoid tumor
+carcinoma&situ|carcinoma in situ
+history&cancer|individual cancer history
+history&leukaemia|individual cancer history
+history&lymphomas|individual cancer history
+history&lymphoma|individual cancer history
+history&neoplasm|individual cancer history
+history&tumor|individual cancer history
+kaposi&sarcoma|kaposi sarcoma
+leukaemias|leukaemia
+malignant&melanoma|melanoma
+monocytic&leukaemia|acute monocytic leukemia
+neoplasm&accessory&urethral&gland|malignant accessory urethral gland neoplasm
+neoplasm&adrenal&cortex|malignant adrenal cortex neoplasm
+neoplasm&adrenal&gland|malignant adrenal gland neoplasm
+neoplasm&adrenal&medulla|malignant adrenal medulla neoplasm
+neoplasm&adrenal|malignant adrenal gland neoplasm
+neoplasm&adult&brain|malignant adult brain neoplasm
+neoplasm&brain|neoplasm of unspecified behavior of brain
+neoplasm&ampulla&vater|malignant ampulla of vater neoplasm
+neoplasm&anal|malignant anal neoplasm
+neoplasm&anterior&tongue|malignant anterior tongue neoplasm
+neoplasm&aortic|malignant aortic neoplasm
+neoplasm&apocrine|malignant apocrine neoplasm
+neoplasm&appendix|malignant appendix neoplasm
+neoplasm&basal&cell|malignant basal cell neoplasm
+neoplasm&bladder|malignant bladder neoplasm
+neoplasm&blood&vessel|malignant blood vessel neoplasm
+neoplasm&bone&marrow|malignant bone marrow neoplasm
+neoplasm&bones|malignant bone neoplasm
+neoplasm&bone|malignant bone neoplasm
+neoplasm&brain&stem|malignant brain stem neoplasm
+neoplasm&brain|malignant brain neoplasm
+neoplasm&breast|female breast carcinoma
+neoplasm&breast|malignant breast neoplasm
+neoplasm&bronchus|malignant respiratory tract neoplasm
+neoplasm&buccal&mucosa|malignant buccal mucosa neoplasm
+neoplasm&caecum|malignant cecum neoplasm
+neoplasm&carcinoid|malignant carcinoid neoplasm
+neoplasm&cardiac|malignant cardiac neoplasm
+neoplasm&cardiovascular|malignant cardiovascular neoplasm
+neoplasm&cecum|malignant cecum neoplasm
+neoplasm&central&nervous&system&mesenchymal,&non-meningothelial|malignant central nervous system mesenchymal, non-meningothelial neoplasm
+neoplasm&central&nervous&system|malignant central nervous system neoplasm
+neoplasm&cerebellar|malignant cerebellar neoplasm
+neoplasm&cerebral|malignant cerebral neoplasm
+neoplasm&cervical&mixed&epithelial&mesenchymal|malignant cervical mixed epithelial and mesenchymal neoplasm
+neoplasm&cervical&soft&tissue|malignant cervical soft tissue neoplasm
+neoplasm&cervical|malignant cervical neoplasm
+neoplasm&chest&wall&bone|malignant chest wall bone neoplasm
+neoplasm&chest&wall|malignant chest wall neoplasm
+neoplasm&childhood&central&nervous&system|malignant childhood central nervous system neoplasm
+neoplasm&choroid&plexus|malignant choroid plexus neoplasm
+neoplasm&choroid|malignant choroid neoplasm
+neoplasm&ciliary&body|malignant ciliary body neoplasm
+neoplasm&clitoral|malignant clitoral neoplasm
+neoplasm&coccygeal&body|malignant coccygeal body neoplasm
+neoplasm&colon|malignant colon neoplasm
+neoplasm&colorectal|malignant colorectal neoplasm
+neoplasm&conjunctival|malignant conjunctival neoplasm
+neoplasm&corneal|malignant corneal neoplasm
+neoplasm&cranial&nerve|malignant cranial nerve neoplasm
+neoplasm&cutaneous&vascular|malignant cutaneous vascular neoplasm
+neoplasm&dermal|malignant dermal neoplasm
+neoplasm&diencephalic|malignant diencephalic neoplasm
+neoplasm&digestive&system|malignant digestive system neoplasm
+neoplasm&duodenal|malignant duodenal neoplasm
+neoplasm&ear|malignant external ear neoplasm
+neoplasm&eccrine|malignant eccrine neoplasm
+neoplasm&endocardial|malignant endocardial neoplasm
+neoplasm&endocervical|malignant endocervical neoplasm
+neoplasm&endocrine|malignant endocrine neoplasm
+neoplasm&endometrial|malignant endometrial neoplasm
+neoplasm&epicardial|malignant epicardial neoplasm
+neoplasm&epididymal|malignant epididymal neoplasm
+neoplasm&epiglottis|malignant epiglottis neoplasm
+neoplasm&esophageal|malignant esophageal neoplasm
+neoplasm&ethmoid&sinus|malignant ethmoid sinus neoplasm
+neoplasm&exocervical|malignant exocervical neoplasm
+neoplasm&exocrine&pancreas|malignant exocrine pancreas neoplasm
+neoplasm&extrahepatic&bile&duct|malignant extrahepatic bile duct neoplasm
+neoplasm&extraskeletal&cartilaginous&osseous|malignant extraskeletal cartilaginous and osseous neoplasm
+neoplasm&eyelid|malignant eyelid neoplasm
+neoplasm&eye|malignant eye neoplasm
+neoplasm&fallopian&tube|malignant fallopian tube neoplasm
+neoplasm&female&reproductive&system|malignant female reproductive system neoplasm
+neoplasm&fibrohistiocytic|malignant fibrohistiocytic neoplasm
+neoplasm&floor&mouth|malignant floor of the mouth neoplasm
+neoplasm&frontal&sinus|malignant frontal sinus neoplasm
+neoplasm&gallbladder|malignant gallbladder neoplasm
+neoplasm&gastric&soft&tissue|malignant gastric soft tissue neoplasm
+neoplasm&gastric|malignant gastric neoplasm
+neoplasm&germinative&follicular&epithelium|malignant germinative follicular epithelium neoplasm
+neoplasm&giant&cell|malignant giant cell neoplasm
+neoplasm&gingival|malignant gingival neoplasm
+neoplasm&glottis|malignant glottis neoplasm
+neoplasm&great&vessel|malignant great vessel neoplasm
+neoplasm&hair&follicle|malignant hair follicle neoplasm
+neoplasm&hard&palate|malignant hard palate neoplasm
+neoplasm&head&neck|malignant head and neck neoplasm
+neoplasm&hepatic flexure|malignant colon neoplasm
+neoplasm&hepatobiliary|malignant hepatobiliary neoplasm
+neoplasm&hypopharyngeal|malignant hypopharyngeal neoplasm
+neoplasm&ileum|malignant small intestinal neoplasm
+neoplasm&inferior&vena&cava|malignant inferior vena cava neoplasm
+neoplasm&infratentorial|malignant infratentorial neoplasm
+neoplasm&intestinal|malignant intestinal neoplasm
+neoplasm&intracranial|malignant intracranial neoplasm
+neoplasm&iris|malignant iris neoplasm
+neoplasm&kidney|malignant kidney neoplasm
+neoplasm&labia&majora|malignant labia majora neoplasm
+neoplasm&labia&minora|malignant labia minora neoplasm
+neoplasm&lacrimal&duct|malignant lacrimal duct neoplasm
+neoplasm&lacrimal&gland|malignant lacrimal gland neoplasm
+neoplasm&laryngeal|malignant laryngeal neoplasm
+neoplasm&leptomeningeal|malignant leptomeningeal neoplasm
+neoplasm&lipomatous|malignant lipomatous neoplasm
+neoplasm&lip|malignant lip neoplasm
+neoplasm&liver|liver angiosarcoma
+neoplasm&lung&hilum|malignant lung hilum neoplasm
+neoplasm&lung&pleural|malignant lung and pleural neoplasm
+neoplasm&lung|malignant lung neoplasm
+neoplasm&lymph&node|malignant lymph node neoplasm
+neoplasm&major&salivary&gland|malignant major salivary gland neoplasm
+neoplasm&male&reproductive&system|malignant male reproductive system neoplasm
+neoplasm&maxillary&sinus|malignant maxillary sinus neoplasm
+neoplasm&mediastinal&soft&tissue|malignant mediastinal soft tissue neoplasm
+neoplasm&mediastinal|malignant mediastinal neoplasm
+neoplasm&mediastinum|malignant mediastinal neoplasm
+neoplasm&melanoma|melanoma
+neoplasm&middle&ear|malignant middle ear neoplasm
+neoplasm&minor&salivary&gland|malignant minor salivary gland neoplasm
+neoplasm&mixed&breast|malignant mixed breast neoplasm
+neoplasm&mixed|malignant mixed neoplasm
+neoplasm&mouse&bladder|malignant mouse bladder neoplasm
+neoplasm&mouse&cervical|malignant mouse cervical neoplasm
+neoplasm&mouse&endocervical|malignant mouse endocervical neoplasm
+neoplasm&mouse&exocervical|malignant mouse exocervical neoplasm
+neoplasm&mouse&extrahepatic&bile&duct|malignant mouse extrahepatic bile duct neoplasm
+neoplasm&mouse&fallopian&tube|malignant mouse fallopian tube neoplasm
+neoplasm&mouse&gallbladder|malignant mouse gallbladder neoplasm
+neoplasm&mouse&gastric&cardio-esophageal&junction|malignant mouse gastric cardio-esophageal junction neoplasm
+neoplasm&mouse&gastric&germ&cell|malignant mouse gastric germ cell neoplasm
+neoplasm&mouse&gastric|malignant mouse gastric neoplasm
+neoplasm&mouse&lipomatous|malignant mouse lipomatous neoplasm
+neoplasm&mouse&muscle|malignant mouse muscle neoplasm
+neoplasm&mouse&pancreatic|malignant mouse pancreatic neoplasm
+neoplasm&mouse&placental|malignant mouse placental neoplasm
+neoplasm&mouse&skeletal&muscle|malignant mouse skeletal muscle neoplasm
+neoplasm&mouse&smooth&muscle|malignant mouse smooth muscle neoplasm
+neoplasm&mouse&thyroid|malignant mouse thyroid neoplasm
+neoplasm&mouse&uterine&corpus&mixed|malignant mouse uterine corpus mixed neoplasm
+neoplasm&mouse&uterine&corpus|malignant mouse uterine corpus neoplasm
+neoplasm&mouth|malignant oral cavity neoplasm
+neoplasm&mucosa|malignant buccal mucosa neoplasm
+neoplasm&muscle|malignant muscle neoplasm
+neoplasm&myocardial|malignant myocardial neoplasm
+neoplasm&nasal&cavity|malignant nasal cavity neoplasm
+neoplasm&nasopharyngeal|malignant nasopharyngeal neoplasm
+neoplasm&neck|malignant neck neoplasm
+neoplasm&nervous&system|malignant nervous system neoplasm
+neoplasm&nipple|malignant nipple neoplasm
+neoplasm&oculomotor&nerve|malignant oculomotor nerve neoplasm
+neoplasm&odontogenic|malignant odontogenic neoplasm
+neoplasm&oesophagus|malignant esophageal neoplasm
+neoplasm&olfactory&nerve|malignant olfactory nerve neoplasm
+neoplasm&oral&cavity|malignant oral cavity neoplasm
+neoplasm&oral|malignant oral neoplasm
+neoplasm&orbit|malignant orbit neoplasm
+neoplasm&oropharyngeal|malignant oropharyngeal neoplasm
+neoplasm&oropharynx|malignant oropharyngeal neoplasm
+neoplasm&outer&hair&sheath&infundibulum|malignant outer hair sheath and infundibulum neoplasm
+neoplasm&ovarian|malignant ovarian neoplasm
+neoplasm&ovary|malignant ovarian neoplasm
+neoplasm&palate|malignant palate neoplasm
+neoplasm&pancreas|malignant pancreatic neoplasm
+neoplasm&pancreatic|malignant pancreatic neoplasm
+neoplasm&paraganglia|malignant paraganglioma
+neoplasm&paranasal&sinus|malignant paranasal sinus neoplasm
+neoplasm&parathyroid&gland|malignant parathyroid gland neoplasm
+neoplasm&parotid&gland|malignant parotid gland neoplasm
+neoplasm&penile|malignant penile neoplasm
+neoplasm&pericardial|malignant pericardial neoplasm
+neoplasm&pericytic|malignant pericytic neoplasm
+neoplasm&peripheral&nervous&system|malignant peripheral nervous system neoplasm
+neoplasm&peritoneal|malignant peritoneal neoplasm
+neoplasm&pharyngeal|malignant pharyngeal neoplasm
+neoplasm&pineal&region|malignant pineal region neoplasm
+neoplasm&pituitary&gland|malignant pituitary gland neoplasm
+neoplasm&placental|malignant placental neoplasm
+neoplasm&pleural|malignant pleural neoplasm
+neoplasm&postcricoid|malignant postcricoid neoplasm
+neoplasm&posterior&tongue|malignant posterior tongue neoplasm
+neoplasm&primary&brain|malignant primary brain neoplasm
+neoplasm&prostate|malignant prostate neoplasm
+neoplasm&pulmonary&artery|malignant pulmonary artery neoplasm
+neoplasm&pulmonary&vein|malignant pulmonary vein neoplasm
+neoplasm&pyriform&fossa|malignant pyriform fossa neoplasm
+neoplasm&rectal|malignant rectal neoplasm
+neoplasm&rectosigmoid|malignant rectosigmoid neoplasm
+neoplasm&renal&pelvis|malignant renal pelvis neoplasm
+neoplasm&reproductive&system|malignant reproductive system neoplasm
+neoplasm&respiratory&tract|malignant respiratory tract neoplasm
+neoplasm&retinal|malignant retinal neoplasm
+neoplasm&retina|malignant retinal neoplasm
+neoplasm&retroperitoneal|malignant retroperitoneal neoplasm
+neoplasm&salivary&gland|malignant salivary gland neoplasm
+neoplasm&scrotal|malignant scrotal neoplasm
+neoplasm&sebaceous|malignant sebaceous neoplasm
+neoplasm&skeletal&muscle|malignant skeletal muscle neoplasm
+neoplasm&skin&appendage|malignant skin appendage neoplasm
+neoplasm&skin|malignant skin neoplasm
+neoplasm&skull&base|malignant skull base neoplasm
+neoplasm&skull|malignant skull neoplasm
+neoplasm&small&intestinal|malignant small intestinal neoplasm
+neoplasm&smooth&muscle|malignant smooth muscle neoplasm
+neoplasm&soft&palate|malignant soft palate neoplasm
+neoplasm&soft&tissue|malignant soft tissue neoplasm
+neoplasm&solid|malignant solid neoplasm
+neoplasm&spermatic&cord|malignant spermatic cord neoplasm
+neoplasm&sphenoid&sinus|malignant sphenoid sinus neoplasm
+neoplasm&spinal&cord|malignant spinal cord neoplasm
+neoplasm&spindle&cell|malignant spindle cell neoplasm
+neoplasm&splenic flexure|malignant colon neoplasm
+neoplasm&splenic&soft&tissue|malignant splenic soft tissue neoplasm
+neoplasm&splenic|malignant splenic neoplasm
+neoplasm&squamous&cell|malignant squamous cell neoplasm
+neoplasm&sternal|malignant sternal neoplasm
+neoplasm&stomach|malignant gastric neoplasm
+neoplasm&subglottis|malignant subglottis neoplasm
+neoplasm&sublingual&gland|malignant sublingual gland neoplasm
+neoplasm&submandibular&gland|malignant submandibular gland neoplasm
+neoplasm&superior&sulcus|malignant superior sulcus neoplasm
+neoplasm&superior&vena&cava|malignant superior vena cava neoplasm
+neoplasm&supraglottis|malignant supraglottis neoplasm
+neoplasm&supratentorial|malignant supratentorial neoplasm
+neoplasm&sweat&gland|malignant sweat gland neoplasm
+neoplasm&synovial|malignant synovial neoplasm
+neoplasm&testicular|malignant testicular neoplasm
+neoplasm&testis|malignant testicular neoplasm
+neoplasm&thalamic|malignant thalamic neoplasm
+neoplasm&thoracic|malignant thoracic neoplasm
+neoplasm&thymus|malignant thymus neoplasm
+neoplasm&thyroid&gland|malignant thyroid gland neoplasm
+neoplasm&tissue|malignant soft tissue neoplasm
+neoplasm&tongue|malignant tongue neoplasm
+neoplasm&tonsillar|malignant tonsillar neoplasm
+neoplasm&tonsil|malignant tonsillar neoplasm
+neoplasm&tracheal|malignant tracheal neoplasm
+neoplasm&ureter|malignant ureter neoplasm
+neoplasm&urethral|malignant urethral neoplasm
+neoplasm&urinary&system|malignant urinary system neoplasm
+neoplasm&uterine&corpus&mixed&epithelial&mesenchymal|malignant uterine corpus mixed epithelial and mesenchymal neoplasm
+neoplasm&uterine&corpus|malignant uterine corpus neoplasm
+neoplasm&uterine&ligament|malignant uterine ligament neoplasm
+neoplasm&uterine|malignant uterine neoplasm
+neoplasm&uveal|malignant uveal neoplasm
+neoplasm&uvula|malignant uvula neoplasm
+neoplasm&vaginal&mixed&epithelial&mesenchymal|malignant vaginal mixed epithelial and mesenchymal neoplasm
+neoplasm&vaginal|malignant vaginal neoplasm
+neoplasm&vascular|malignant vascular neoplasm
+neoplasm&vestibulocochlear&nerve|malignant vestibulocochlear nerve neoplasm
+neoplasm&vulvar&sweat&gland|malignant vulvar sweat gland neoplasm
+neoplasm&vulvar|malignant vulvar neoplasm
+neoplasm&hypopharynx|Malignant Hypopharyngeal Neoplasm
+neuroendocrine&tumors|metastatic digestive system neuroendocrine tumor g1
+non-hodgkin&lymphoma|non-hodgkin lymphoma
+skin&basal&cell&carcinoma|skin basal cell carcinoma
+t&cell&lymphoma|mature t-cell and nk-cell non-hodgkin lymphoma
+screening&neoplasms|cancer screening
+screening&neoplasm|cancer screening
+screening|disease screening
+carcinoma&lip|lip squamous cell carcinoma
+carcinoma&skin|skin squamous cell carcinoma
+lymphoblastic&lymphoma|Lymphoblastic Lymphoma
+examination|medical examination
+abnormal&finding|Abnormal Finding
+neoplasm&cell&lymphoid|hematopoietic and lymphoid Cell neoplasm
+condition&menstrual|menstrual disorder
+abnormal&findings|abnormal finding
+diseases&blood|hematologic and lymphocytic disorder

@@ -1,0 +1,236 @@
+, unspecified type, 	 
+, unspecified site, 	  
+, not specified as primary or secondary	 
+, not elsewhere classified 	
+, not otherwise specified 	
+, part unspecified	 
+, site unspecified	 
+, unspecified site	 
+, unspecified type	 
+, unspecified	 
+, nontraumatic	 
+, including	 
+without specification of site 	 
+.*carinoma in situ(:)?.*	carcinoma in situ
+other and ill-defined sites within the	 
+other and ill-defined sites 	 
+ill-defined sites within the	 
+other sites within the 	 
+other specified sites of	
+other classical	classical	 
+other unknown	 
+other nonspecific	 
+of unspecified nature	 
+of unknown primary site	 
+of other and unspecified parts of 	 
+of other and unspecified sites 	 
+of other specified sites of 	 
+of other specified sites 	 
+of uncertain behavior of	 
+of other sites of 	 
+of multiple sites	 
+of unspecified site	 
+of other	 
+specified parts of	 
+specified part of	 
+specified	 
+and other	 
+not otherwise specified	 
+Other and unspecified	 
+and unspecified	 
+other	 
+not specified	 
+Unspecified	 
+nonspecfic	 
+specific	 
+nature	 
+sites	 
+site	 
+in relapse	 in remission
+Malignant melanoma	melanoma
+melanoma of .*	melanoma
+Malignant neoplasm:	malignant neoplasm of
+benign neoplasm:	benign neoplasm of
+salivary glands	salivary gland
+(transverse|descending) colon	Colon
+malignant.*pituitary gland and craniopharyngeal.*	Malignant Pituitary Gland Neoplasm
+benign.*pituitary gland and craniopharyngeal.*	Benign Pituitary Gland Neoplasm
+malignant.*aortic body.*paraganglia.*	Malignant Paraganglioma
+malignant.*corpus uteri, except isthmus.*	Endometrial Carcinoma
+malignant.*endocervix.*	Endocervical Carcinoma
+malignant.*undescended testis.*	Malignant Testicular Neoplasm
+malignant.*spermatic cord.*	Malignant Spermatic Cord Neoplasm
+malignant.*(trigone|dome) of urinary bladder.*	Malignant Bladder Neoplasm
+.*(frontal|temporal|parietal|occipital) lobe.*	malignant cerebral neoplasm
+.*endocervix.*	Malignant Endovercial Neoplasm
+.*corpus uteri, except isthmus.*	Malignant Uterine Corpus Neoplasm
+(localized(,)? superficial)?()?swelling, mass, or lump	 Mass
+.*congenital anomalies of musculoskeletal system.*	Congenital Musculoskeletal Defect
+.*central portion of female breast.*	Female Breast Carcinoma
+.*upper-inner quadrant of female breast.*	Female Breast Carcinoma
+.*lower-inner.*	Female Breast Carcinoma
+.*upper-outer.*	Female Breast Carcinoma
+.*lower-outer.*	Female Breast Carcinoma
+.*axillary tail.*	Female Breast Carcinoma
+.*erythema and erythroleukemia.*	Acute Erythroid Leukemia
+.*malignant lymphomas.*	Lymphoma
+.*nipple and areola of female breast	Female Malignant Nipple Neoplasm
+malignant.*nipple and areola of male breast.*	Male Breast Carcinoma
+brain and nervous system	nervous system
+Personal history of.*(carcinoma|malignant neoplasm|cancer).*	Individual Cancer History
+(lymphosarcoma and reticulosarcoma)	Non-Hodgkin Lymphoma
+Large cell lymphoma involving.*	Non-Hodgkin Lymphoma
+Neoplasm of uncertain behavior of ovary.*	Ovarian Neoplasm
+(Pharynx|Pharyngeal|Larynx|Laryngeal)	Throat(lymphosarcoma and reticulosarcoma)
+anterior mediastinum	Mediastinum
+bone (and|of).*	bone
+pelvis bones, scarum and coccyx	bone
+melanoma of.*	melanoma
+scapula and long bones of upper limb	bone
+pelvic bones, sacrum, and coccyx	bone
+connective tissue.*soft tissue of	soft tissue
+Hereditary hemochromatosis.*	Hemochromatosis
+Inflammatory conditions of the jaw	Craniomandibular Disorder
+Foreign body in.*	Foreign Body
+Viral hepatitis carrier	Viral Hepatitis
+Family history of.*	Family Cancer History
+Genetic susceptibility to malignant neoplasm of breast	Risk Assessment for Hereditary Breast Cancer
+skin of ear and external auditory canal	skin
+skin of eyelid	skin
+carcinoma of duodenum	malignant neoplasm of small intestine
+pyloric (antrum)?	gastric pylorus
+middle third of esophagus	Middle Third of the Esophagus
+lower third of esophagus	lower third of the esophagus
+((, )?(gastrointestinal)( sites)?)	Stomach and Intestines
+Intestinal	Intestine, Intestines
+jejunum	Small Intestinal
+((upper|middle|lower)?(lobe))?(,)?(respiratory system|trachea, bronchus, and lung|bronchus or lung|bronchus and lung|bronchus)	respiratory tract
+Lipoma of.*	Lipoma
+Submucous.*	Uterine Corpus Leiomyoma
+Abdominal	Abdomen
+Adrenocortical	Adrenal Cortex
+Anal	Anus
+Anus Canal	Anal Canal
+Vermiform Appendix	Appendix
+Appendix Veriformis	Appendix
+Appendiceal	Appendix
+Areolar	Areola
+Humeral	Arm (upper)
+Radial	Arm (lower)
+Ulnar	Arm (lower)
+Arterial	Artery
+Gastric	Stomach
+Vascular	Blood Vessel
+Bronchial	Bronchus
+Cerebral	Cerebrum
+Cerebellar	Cerebellum
+Thorax	 Chest
+Thoracic	 Chest
+Coccygeal	Coccyx
+Colonic	Colon
+Colorectal	Colon and Rectum
+connective and soft tissue	soft tissue
+Duodenal	Duodenum
+Ocular	Eye
+Facial	Face
+Tubal	Fallopian Tube
+Salpinx	Fallopian Tube
+Salpinges	Fallopian Tube
+Cholecystic	Gallbladder
+Glandular	Gland
+Glottic	Glottis
+Cardiac	Heart
+Hodgkin's sarcoma.*	Lymphocyte-Depleted Classical Hodgkin Lymphoma
+Ileum	Small Intestine
+Ileal	Ileum
+Ilial	Ilium
+Ischial	Ischium
+Jejunal	Jejunum
+kaposi('s)? sarcoma.*	kaposi sarcoma
+Renal	 Kidney
+Patella	Kneecap
+Patellar	Kneecap
+Laryngeal	Larynx
+Femoral	Leg (upper)
+Tibial	Leg (lower)
+Fibular	Leg (lower)
+Labial	Lip
+Hepatic	  Liver
+Basal cell carcinoma of skin of.*	basal cell carcinoma of skin
+Liver flexure	colon
+Spleen flexure	colon
+Leukemic	Leukemia
+Pulmonary	Lung
+Lymphatic	Lymph Node
+Lymphosarcoma	Non-Hodgkin Lymphoma
+Meningeal	Meninges
+Oral Cavity	Mouth
+Muscular	Muscle
+Cervical	Neck
+Nasal	Nose
+Omental	Omentum
+Oropharyngeal	Oropharynx
+Ovarian	Ovary
+Palatal	Palate
+Tonsillar	Palatine Tonsil
+waldeyer's ring	waldeyer's tonsillar ring
+Pancreatic	Pancreas
+Penile	Penis
+Pelvic	Pelvis
+Pericardial	Pericardium
+peritoneum	Peritoneal
+Pharyngeal	Pharynx
+Pleural	Pleura
+Prostatic	Prostate
+Pubic	Pubis
+(Rectal|rectum)	Rectal
+Liver cell	hepatocellular
+Retroperitoneum	Retroperitoneal
+Reticulosarcoma	Non-Hodgkin Lymphoma
+Burkitt's tumor( or lymphoma)?	Burkitt Lymphoma
+Sacral	Sacrum
+Cutaneous	Skin
+Cranium	Skull
+Cranial	Skull
+Calvarium	Skull
+Calvarial	Skull
+Spinal Cord	Spine
+Spinal	Spine
+Splenic	Spleen
+Sternal	Sternum
+Thymic	Thymus
+Lingual	Tongue
+Glossal	Tongue
+Tracheal	Trachea
+Urethral	Urethra
+Vesical	Urinary Bladder
+Adnexal	Uterine Adnexa
+Cervix Uteri	Uterine Cervix
+Cervical	 Uterine Cervix
+Corpus Uteri	Uterus
+Ureteral	Ureter
+Vaginal	 Vagina
+Vertebral	Vertebra
+Vulvar	 Vulva
+Neoplastic	Neoplasm
+Secondary neuroendocrine.*	Metastatic Digestive System Neuroendocrine Tumor G1
+tissues	tissue
+.*neuroendocrine.*	Metastatic Digestive System Neuroendocrine Tumor G1
+lymphoma involving lymph nodes.*	lymphoma
+Nasothroat	Nasopharyngeal
+Hypothroat	Hypopharyngeal
+Tumoral	Neoplasm
+Tumor	Neoplasm
+Metastatic Digestive System Neuroendocrine neoplasm G1	Metastatic Digestive System Neuroendocrine Tumor G1
+malignant carcinoid.*	Atypical Carcinoid Tumor
+orothroat	Oropharynx
+subtongue	sublingual
+cheek	 Buccal
+(external|base of|anterior floor|surface|overlapping lesion|main|right|left|overlapping)	 
+whether descended or undescended	 
+orbit	orbital
+malignant neoplasm of melanoma	melanoma
+^(primary|secondary)	metastatic
+( un )	 
+( of+of )	of
+( )+	 

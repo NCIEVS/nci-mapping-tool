@@ -74,7 +74,7 @@ import org.LexGrid.LexBIG.caCore.interfaces.LexEVSApplicationService;
 import org.lexevs.property.PropertyExtension;
 
 /**
- * 
+ *
  */
 
 /**
@@ -260,22 +260,29 @@ public class DataUtils {
         // setCodingSchemeMap();
     }
 
+    public static final String BATCH_MODE_OF_OPERATION = "batch";
+    public static final String INTERACTIVE_MODE_OF_OPERATION = "interactive";
+
 
     static {
-		setCodingSchemeMap();
 
-		if (_valueSetDefinitionMetadata == null) {
-			_valueSetDefinitionMetadata = getValueSetDefinitionMetadata();
-        }
+		//if (NCImtBrowserProperties.getModeOfOperation().compareTo(NCImtBrowserProperties.INTERACTIVE_MODE_OF_OPERATION) == 0 &&
+		//    NCImtBrowserProperties.getModeOfOperation().compareTo(NCImtBrowserProperties.BATCH_MODE_OF_OPERATION) == 0) {
 
-        if (_namespace2CodingScheme == null) {
-            _namespace2CodingScheme = getNamespaceId2CodingSchemeFormalNameMapping();
-		}
+			setCodingSchemeMap();
 
-		if (_defaultOntologiesToSearchOnStr == null) {
-            _defaultOntologiesToSearchOnStr = getDefaultOntologiesToSearchOnStr();
-		}
+			if (_valueSetDefinitionMetadata == null) {
+				_valueSetDefinitionMetadata = getValueSetDefinitionMetadata();
+			}
 
+			if (_namespace2CodingScheme == null) {
+				_namespace2CodingScheme = getNamespaceId2CodingSchemeFormalNameMapping();
+			}
+
+			if (_defaultOntologiesToSearchOnStr == null) {
+				_defaultOntologiesToSearchOnStr = getDefaultOntologiesToSearchOnStr();
+			}
+	    //}
 	}
 
 	public static HashMap get_mapping_namespace_hmap() {
@@ -5492,10 +5499,17 @@ System.out.println("(*) getMatchedMetathesaurusCUIs code: " + code);
 
 
 	public static String getModeOfOperation() {
-	    if (_mode_of_operation != null) return _mode_of_operation;
+
+		System.out.println("getModeOfOperation _mode_of_operation: " + _mode_of_operation);
+	    if (_mode_of_operation != null) {
+			return _mode_of_operation;
+		}
         try {
             NCImtBrowserProperties properties = NCImtBrowserProperties.getInstance();
             _mode_of_operation = properties.getProperty(NCImtBrowserProperties.MODE_OF_OPERATION);
+
+            System.out.println("_mode_of_operation: " + _mode_of_operation);
+
 	    } catch (Exception ex) {
 	        ex.printStackTrace();
 	    }

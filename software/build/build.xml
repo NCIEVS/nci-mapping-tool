@@ -165,6 +165,16 @@
               flatten="true" includeEmptyDirs="no" filtering="false">
             <resources>
                 <file file="${bda.conf.dir}/ehcache.xml"/>
+                
+                
+		<file file="${bda.conf.dir}/discarded_phrases.txt"/>
+		<file file="${bda.conf.dir}/filler.txt"/>
+		<file file="${bda.conf.dir}/history.txt"/>
+		<file file="${bda.conf.dir}/synonym.txt"/>
+		<file file="${bda.conf.dir}/variant.txt"/>
+                
+                
+     
             </resources>
         </copy>
         
@@ -196,6 +206,9 @@
                 <filter token="ncbo_api_key" value="${ncbo_api_key}"/>
                 <filter token="ncbo_widget_info" value="${ncbo_widget_info}"/>
                 <filter token="owl_role_quantifiers" value="${owl_role_quantifiers}"/>
+                <filter token="data_directory" value="${data_directory}"/>
+                <filter token="sparql_service" value="${sparql_service}"/>
+                
             </filterset>
             <resources>
                 <file file="${bda.conf.dir}/${webapp.prop.file}"/>
@@ -208,6 +221,15 @@
              flatten="true" includeEmptyDirs="no" filtering="false">
             <resources>
                 <file file="${bda.conf.dir}/application-config-client.xml"/>
+                
+                <file file="${bda.conf.dir}/discarded_phrases.txt"/>
+                <file file="${bda.conf.dir}/filler.txt"/>
+                <file file="${bda.conf.dir}/history.txt"/>
+                <file file="${bda.conf.dir}/synonym.txt"/>
+                <file file="${bda.conf.dir}/variant.txt"/>
+               
+                
+                
             </resources>
         </copy>
 
@@ -222,6 +244,13 @@
             </filterset>
             <resources>
                 <file file="${bda.conf.dir}/${project.short.name}-log4j.xml"/>
+                
+                <file file="${bda.conf.dir}/discarded_phrases.txt"/>
+                <file file="${bda.conf.dir}/filler.txt"/>
+                <file file="${bda.conf.dir}/history.txt"/>
+                <file file="${bda.conf.dir}/synonym.txt"/>
+                <file file="${bda.conf.dir}/variant.txt"/>
+                
             </resources>
         </copy>
 
@@ -298,6 +327,17 @@
             </filterset>
             <resources>
                 <file file="${exploded.dir}/deploy/ehcache.xml"/>
+                
+                
+                <file file="${exploded.dir}/deploy/discarded_phrases.txt"/>
+                <file file="${exploded.dir}/deploy/filler.txt"/>
+                <file file="${exploded.dir}/deploy/history.txt"/>
+                <file file="${exploded.dir}/deploy/synonym.txt"/>
+                <file file="${exploded.dir}/deploy/variant.txt"/>
+                
+                
+                
+                
             </resources>
         </copy>
 
@@ -446,6 +486,13 @@
                 <file file="${exploded.dir}/install/log4j.dtd"/>
                 <file file="${exploded.dir}/install/${ehcache.xml.file}"/>
                 
+                
+ 		<file file="${exploded.dir}/install/discarded_phrases.txt"/>
+		<file file="${exploded.dir}/install/filler.txt"/>
+		<file file="${exploded.dir}/install/history.txt"/>
+		<file file="${exploded.dir}/install/synonym.txt"/>
+		<file file="${exploded.dir}/install/variant.txt"/>
+               
             </resources>
         </copy>
         <copy
