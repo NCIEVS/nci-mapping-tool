@@ -68,8 +68,9 @@ public class DataManager {
 	private HashMap namedGraph2TerminologyHashmap = null;
 	private HashMap codingSchemeName2TerminologyHashmap = null;
 
-	private String NCI_THESAURUS = "NCI_Thesaurus";
-	private String NCI_Thesaurus_RDF_Graph = "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.rdf";
+	public static String NCI_THESAURUS = "NCI_Thesaurus";
+	public static String NCI_Thesaurus_RDF_Graph = "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.rdf";
+	public static String NCI_Thesaurus_OWL_Graph = "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl";
 
 	HTTPUtils httpUtils = null;
 

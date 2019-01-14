@@ -58,6 +58,11 @@ public class MappingSessionBean {
 
 	private static int NULL_STRING_HASH_CODE = NULL_STRING.hashCode();
 
+	private static String NCI_THESASURUS = "NCI_Thesaurus";
+
+	public static String NCI_Thesaurus_OWL_Graph = "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl";
+
+
 	//private HashMap<String, ComponentObject> _restrictions = null;
 
     private static String _mode_of_operation = null;
@@ -118,10 +123,13 @@ public class MappingSessionBean {
 
         request.getSession().removeAttribute("msg");
         String ng = (String) request.getParameter("ng");
-        System.out.println(ng);
+        System.out.println("ng: " + ng);
 
         if (ng == null) {
 			ng = (String) request.getSession().getAttribute("ng");
+		}
+		if (ng == null) {
+			ng = DataManager.NCI_Thesaurus_OWL_Graph;
 		}
         request.getSession().setAttribute("ng", ng);
 
@@ -148,15 +156,25 @@ public class MappingSessionBean {
 			String filePathString = data_directory + File.separator + codingSchemeName + ".txt";
 			File f = new File(filePathString);
 			Vector term_vec = null;
+			System.out.println("Checking if " + filePathString + " exists...");
 			if(f.exists() && !f.isDirectory()) {
-				//term_vec = readFile(filePathString);
+				System.out.println(filePathString + " exists.");
+				if (terminology.getData() == null) {
+				    term_vec = gov.nih.nci.evs.restapi.util.Utils.readFile(filePathString);
+				    terminology.setData(term_vec);
+				    HashSet keywordSet = new MappingUtils().create_keyword_set(term_vec);
+				    terminology.setKeywordSet(keywordSet);
+				}
 			} else {
-				if (codingSchemeName.compareTo("NCI_Thesaurus") == 0) {
+				System.out.println(filePathString + " DOES not exist. -- Regenerating...");
+				if (codingSchemeName.compareTo(NCI_THESASURUS) == 0) {
 					term_vec = dm.get_terms(ng, null);
 				} else {
 					term_vec = dm.get_names(ng);
 				}
+				System.out.println("term_vec size: " + term_vec.size());
 				Utils.saveToFile(filePathString, term_vec);
+				terminology.setData(term_vec);
 				HashSet keywordSet = new MappingUtils().create_keyword_set(term_vec);
 				terminology.setKeywordSet(keywordSet);
 			}
