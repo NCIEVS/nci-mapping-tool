@@ -266,8 +266,8 @@ public class DataUtils {
 
     static {
 
-		//if (NCImtBrowserProperties.getModeOfOperation().compareTo(NCImtBrowserProperties.INTERACTIVE_MODE_OF_OPERATION) == 0 &&
-		//    NCImtBrowserProperties.getModeOfOperation().compareTo(NCImtBrowserProperties.BATCH_MODE_OF_OPERATION) == 0) {
+		if (NCImtBrowserProperties.getModeOfOperation().compareTo(NCImtBrowserProperties.INTERACTIVE_MODE_OF_OPERATION) == 0 &&
+		    NCImtBrowserProperties.getModeOfOperation().compareTo(NCImtBrowserProperties.BATCH_MODE_OF_OPERATION) == 0) {
 
 			setCodingSchemeMap();
 
@@ -282,7 +282,7 @@ public class DataUtils {
 			if (_defaultOntologiesToSearchOnStr == null) {
 				_defaultOntologiesToSearchOnStr = getDefaultOntologiesToSearchOnStr();
 			}
-	    //}
+	    }
 	}
 
 	public static HashMap get_mapping_namespace_hmap() {
