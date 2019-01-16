@@ -265,12 +265,14 @@ public class DataUtils {
 
 
     static {
-
+        System.out.println("NCImtBrowserProperties.getModeOfOperation(): " + NCImtBrowserProperties.getModeOfOperation());
 		if (NCImtBrowserProperties.getModeOfOperation().compareTo(NCImtBrowserProperties.INTERACTIVE_MODE_OF_OPERATION) == 0 &&
 		    NCImtBrowserProperties.getModeOfOperation().compareTo(NCImtBrowserProperties.BATCH_MODE_OF_OPERATION) == 0) {
 
-			setCodingSchemeMap();
 
+System.out.println("setCodingSchemeMap...");
+			setCodingSchemeMap();
+System.out.println("Done setCodingSchemeMap");
 			if (_valueSetDefinitionMetadata == null) {
 				_valueSetDefinitionMetadata = getValueSetDefinitionMetadata();
 			}
@@ -283,6 +285,8 @@ public class DataUtils {
 				_defaultOntologiesToSearchOnStr = getDefaultOntologiesToSearchOnStr();
 			}
 	    }
+
+	    System.out.println("exiting static DataUtils...");
 	}
 
 	public static HashMap get_mapping_namespace_hmap() {

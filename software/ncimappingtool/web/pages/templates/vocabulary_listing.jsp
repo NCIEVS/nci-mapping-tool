@@ -4,6 +4,8 @@ or press the <b>Upload</b> button to load an existing mapping file.
 
 <table border="0" cellpadding="0" cellspacing="0" role='presentation'>
 <%
+System.out.println("vocabulary_listing.jsp...");
+/*
 dm = (DataManager) request.getSession().getAttribute("dm");
 if (dm == null) {
 	String serviceUrl = NCImtProperties._service_url;
@@ -22,15 +24,17 @@ if (dm == null) {
 	request.getSession().setAttribute("cs_data", cs_data);
 	request.getSession().setAttribute("dm", dm);
 }
+*/
 
 String codingSchemeName = (String) request.getSession().getAttribute("codingSchemeName");
 if (codingSchemeName == null) {
     codingSchemeName = "NCI_Thesaurus";
 }
+request.getSession().setAttribute("codingSchemeName", codingSchemeName);
+
 
 String indent = "&nbsp;&nbsp;";
 cs_data = (Vector) request.getSession().getAttribute("cs_data");
-cs_data = new gov.nih.nci.evs.restapi.util.SortUtils().quickSort(cs_data);
 
   HashSet hset = new HashSet();
   for (int j=0; j<cs_data.size(); j++) {

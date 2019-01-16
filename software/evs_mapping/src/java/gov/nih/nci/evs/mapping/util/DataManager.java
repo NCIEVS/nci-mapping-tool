@@ -87,37 +87,41 @@ public class DataManager {
 		this.terminologies = new Vector();
 		this.namedGraph2TerminologyHashmap = new HashMap();
 		this.codingSchemeName2TerminologyHashmap = new HashMap();
+		System.out.println("getTerminologyMetadata ...");
 		Vector cs_data = getTerminologyMetadata(serviceUrl);
-
+        System.out.println("Number of terminologies: " + cs_data.size());
 		for (int i=0; i<cs_data.size(); i++) {
 			String line = (String) cs_data.elementAt(i);
+			System.out.println(line);
 			Vector u = StringUtils.parseData(line, '|');
 			String codingSchemeName = (String) u.elementAt(0);
 			String codingSchemeVersion = (String) u.elementAt(1);
 			String namedGraph = (String) u.elementAt(2);
 			String filename = codingSchemeName + ".txt";
-			if (namedGraph.compareTo(NCI_Thesaurus_RDF_Graph) != 0) {
-				String filePathString = data_directory + File.separator + filename;
-				File f = new File(filePathString);
-				Vector data = null;
-				HashSet keywordSet = null;
-				if(f.exists() && !f.isDirectory()) {
-				    data = Utils.readFile(filePathString);
-				    keywordSet = new MappingUtils().create_keyword_set(data);
+		//if (namedGraph.compareTo(NCI_Thesaurus_RDF_Graph) != 0 && namedGraph.compareTo(NCI_Thesaurus_OWL_Graph) != 0) {
+			String filePathString = data_directory + File.separator + filename;
+			File f = new File(filePathString);
+			Vector data = null;
+			HashSet keywordSet = null;
+			if(f.exists() && !f.isDirectory()) {
+				System.out.println("File " + filePathString + " exists.");
+				data = Utils.readFile(filePathString);
+				keywordSet = new MappingUtils().create_keyword_set(data);
+			} else {
+				System.out.println("File " + filePathString + " does not exist.");
+				if (codingSchemeName.compareTo(NCI_THESAURUS) == 0) {
+					data = get_terms(namedGraph, null);
 				} else {
-					if (codingSchemeName.compareTo(NCI_THESAURUS) == 0) {
-						data = get_terms(namedGraph, null);
-					} else {
-						data = get_names(namedGraph);
-					}
-					Utils.saveToFile(filePathString, data);
-					keywordSet = new MappingUtils().create_keyword_set(data);
+					data = get_names(namedGraph);
 				}
-				Terminology terminology = new Terminology(namedGraph, codingSchemeName, codingSchemeVersion, filename, data, keywordSet);
-				terminologies.add(terminology);
-				namedGraph2TerminologyHashmap.put(namedGraph, terminology);
-				codingSchemeName2TerminologyHashmap.put(codingSchemeName, terminology);
-		    }
+				Utils.saveToFile(filePathString, data);
+				keywordSet = new MappingUtils().create_keyword_set(data);
+			}
+			Terminology terminology = new Terminology(namedGraph, codingSchemeName, codingSchemeVersion, filename, data, keywordSet);
+			terminologies.add(terminology);
+			namedGraph2TerminologyHashmap.put(namedGraph, terminology);
+			codingSchemeName2TerminologyHashmap.put(codingSchemeName, terminology);
+		    //}
 		}
 	}
 
