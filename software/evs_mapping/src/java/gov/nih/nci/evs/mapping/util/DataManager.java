@@ -496,6 +496,27 @@ public class DataManager {
 		}
     }
 
+    public void setNamedGraph2TerminologyHashmap(String ng, Terminology terminology) {
+        this.namedGraph2TerminologyHashmap.put(ng, terminology);
+	}
+
+
+    public void createTerminologyData(String serviceUrl, String data_directory) {
+		Vector data = new Vector();
+		Vector terminologies = getTerminologies();
+		for (int i=0; i<terminologies.size(); i++) {
+			Terminology terminology = (Terminology) terminologies.elementAt(i);
+			String codingSchemeName = terminology.getCodingSchemeName();
+			String namedGraph = terminology.getNamedGraph();
+			if (codingSchemeName.compareTo(NCI_THESAURUS) == 0) {
+				data = get_terms(namedGraph, null);
+			} else {
+				data = get_names(namedGraph);
+			}
+			Utils.saveToFile(data_directory + File.separator + codingSchemeName + ".txt", data);
+		}
+    }
+
 
     public static void main(String[] args) {
 		long ms = System.currentTimeMillis();

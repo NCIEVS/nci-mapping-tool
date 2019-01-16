@@ -122,17 +122,6 @@ public class MappingSessionBean {
                 .getExternalContext().getResponse();
 
         request.getSession().removeAttribute("msg");
-        String ng = (String) request.getParameter("ng");
-        System.out.println("ng: " + ng);
-
-        if (ng == null) {
-			ng = (String) request.getSession().getAttribute("ng");
-		}
-		if (ng == null) {
-			ng = DataManager.NCI_Thesaurus_OWL_Graph;
-		}
-        request.getSession().setAttribute("ng", ng);
-
         String data = (String) request.getParameter("data");
         if (data == null || data.length() == 0) {
 			String msg = "No mapping data is entered.";
@@ -140,55 +129,69 @@ public class MappingSessionBean {
 			return "warning";
 		}
 
-        DataManager dm = (DataManager) request.getSession().getAttribute("dm");
-        if (dm == null) {
-			String serviceUrl = NCImtProperties._service_url;
-			dm = (DataManager) request.getSession().getAttribute("dm");
- 			request.getSession().setAttribute("dm", dm);
-		}
-		String data_directory = NCImtProperties._data_directory;
-
-        //dm.createTerminologyDataAsNeeded(ng);
-        Terminology terminology = (Terminology) dm.getTerminologyByNamedGraph(ng);
-        request.getSession().setAttribute("codingSchemeName", terminology.getCodingSchemeName());
-        if (terminology.getData() == null) {
-            String codingSchemeName = terminology.getCodingSchemeName();
-			String filePathString = data_directory + File.separator + codingSchemeName + ".txt";
-			File f = new File(filePathString);
-			Vector term_vec = null;
-			System.out.println("Checking if " + filePathString + " exists...");
-			if(f.exists() && !f.isDirectory()) {
-				System.out.println(filePathString + " exists.");
-				if (terminology.getData() == null) {
-				    term_vec = gov.nih.nci.evs.restapi.util.Utils.readFile(filePathString);
-				    terminology.setData(term_vec);
-				    HashSet keywordSet = new MappingUtils().create_keyword_set(term_vec);
-				    terminology.setKeywordSet(keywordSet);
-				}
-			} else {
-				System.out.println(filePathString + " DOES not exist. -- Regenerating...");
-				if (codingSchemeName.compareTo(NCI_THESASURUS) == 0) {
-					term_vec = dm.get_terms(ng, null);
-				} else {
-					term_vec = dm.get_names(ng);
-				}
-				System.out.println("term_vec size: " + term_vec.size());
-				Utils.saveToFile(filePathString, term_vec);
-				terminology.setData(term_vec);
-				HashSet keywordSet = new MappingUtils().create_keyword_set(term_vec);
-				terminology.setKeywordSet(keywordSet);
-			}
-		}
-
         Vector vbt_vec = StringUtils.parseData(data, '\n');
         Vector w = tab2BarDelimited(vbt_vec);
-
         request.getSession().setAttribute("vbt_vec", w);
-        MappingUtils mappingUtils = (MappingUtils) request.getSession().getAttribute("mappingUtils");
-        if (mappingUtils == null) {
-			mappingUtils = new MappingUtils(data_directory, terminology);
-	    }
 
+		String prev_ng = (String) request.getSession().getAttribute("prev_ng");
+        String ng = (String) request.getParameter("ng");
+
+        if (ng == null) {
+			ng = (String) request.getSession().getAttribute("ng");
+		}
+		if (ng == null) {
+			ng = DataManager.NCI_Thesaurus_OWL_Graph;
+		}
+		System.out.println("ng: " + ng);
+
+		DataManager dm = (DataManager) request.getSession().getAttribute("dm");
+		if (dm == null) {
+			String serviceUrl = NCImtProperties._service_url;
+			dm = (DataManager) request.getSession().getAttribute("dm");
+			request.getSession().setAttribute("dm", dm);
+		}
+		Terminology terminology = (Terminology) dm.getTerminologyByNamedGraph(ng);
+
+		String data_directory = NCImtProperties._data_directory;
+		MappingUtils mappingUtils = (MappingUtils) request.getSession().getAttribute("mappingUtils");
+        request.getSession().setAttribute("codingSchemeName", terminology.getCodingSchemeName());
+
+		if (mappingUtils == null || (prev_ng != null && ng.compareTo(prev_ng) != 0)) {
+			if (terminology.getData() == null) {
+				String codingSchemeName = terminology.getCodingSchemeName();
+				String filePathString = data_directory + File.separator + codingSchemeName + ".txt";
+				File f = new File(filePathString);
+				Vector term_vec = null;
+				System.out.println("Checking if " + filePathString + " exists...");
+				if(f.exists() && !f.isDirectory()) {
+					System.out.println(filePathString + " exists.");
+					if (terminology.getData() == null) {
+						term_vec = gov.nih.nci.evs.restapi.util.Utils.readFile(filePathString);
+						terminology.setData(term_vec);
+						HashSet keywordSet = new MappingUtils().create_keyword_set(term_vec);
+						terminology.setKeywordSet(keywordSet);
+					}
+				} else {
+					System.out.println(filePathString + " DOES not exist. -- Regenerating...");
+					if (codingSchemeName.compareTo(NCI_THESASURUS) == 0) {
+						term_vec = dm.get_terms(ng, null);
+					} else {
+						term_vec = dm.get_names(ng);
+					}
+					System.out.println("term_vec size: " + term_vec.size());
+					Utils.saveToFile(filePathString, term_vec);
+					terminology.setData(term_vec);
+					HashSet keywordSet = new MappingUtils().create_keyword_set(term_vec);
+					terminology.setKeywordSet(keywordSet);
+					dm.setNamedGraph2TerminologyHashmap(ng, terminology);
+				}
+			}
+			mappingUtils = new MappingUtils(data_directory, terminology);
+			request.getSession().setAttribute("mappingUtils", mappingUtils);
+		}
+		mappingUtils = (MappingUtils) request.getSession().getAttribute("mappingUtils");
+        request.getSession().setAttribute("prev_ng", ng);
+        request.getSession().setAttribute("ng", ng);
 		Mapping mapping = mappingUtils.run(vbt_vec);
         request.getSession().setAttribute("mapping", mapping);
         return "mapping_results";
