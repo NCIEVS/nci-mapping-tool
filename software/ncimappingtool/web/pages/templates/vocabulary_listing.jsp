@@ -5,26 +5,6 @@ or press the <b>Upload</b> button to load an existing mapping file.
 <table border="0" cellpadding="0" cellspacing="0" role='presentation'>
 <%
 System.out.println("vocabulary_listing.jsp...");
-/*
-dm = (DataManager) request.getSession().getAttribute("dm");
-if (dm == null) {
-	String serviceUrl = NCImtProperties._service_url;
-	System.out.println("vocabulary_listing serviceUrl: " + serviceUrl);
-	
-	String data_directory = NCImtProperties._data_directory;
-	System.out.println("vocabulary_listing _data_directory: " + data_directory);
-	
-	dm = new DataManager(serviceUrl, data_directory);
-	Vector terminologies = dm.getTerminologies();
-	for (int i=0; i<terminologies.size(); i++) {
-	    Terminology terminology = (Terminology) terminologies.elementAt(i);
-	    cs_data.add(terminology.getCodingSchemeName() + "|" + terminology.getCodingSchemeVersion() + "|" + terminology.getNamedGraph());
-	}
-	cs_data = new gov.nih.nci.evs.restapi.util.SortUtils().quickSort(cs_data);
-	request.getSession().setAttribute("cs_data", cs_data);
-	request.getSession().setAttribute("dm", dm);
-}
-*/
 
 String codingSchemeName = (String) request.getSession().getAttribute("codingSchemeName");
 if (codingSchemeName == null) {
@@ -32,9 +12,8 @@ if (codingSchemeName == null) {
 }
 request.getSession().setAttribute("codingSchemeName", codingSchemeName);
 
-
 String indent = "&nbsp;&nbsp;";
-cs_data = (Vector) request.getSession().getAttribute("cs_data");
+cs_data = DataUtils.get_cs_data();
 
   HashSet hset = new HashSet();
   for (int j=0; j<cs_data.size(); j++) {

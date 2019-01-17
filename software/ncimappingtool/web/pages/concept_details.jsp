@@ -12,6 +12,7 @@
 <%@ page import="java.util.Iterator"%>
 <%@ page import="gov.nih.nci.evs.restapi.util.*"%>
 <%@ page import="gov.nih.nci.evs.browser.properties.*"%>
+<%@ page import="gov.nih.nci.evs.browser.utils.*"%>
 <%@ page import="gov.nih.nci.evs.mapping.util.*"%>
 <%@ page import="gov.nih.nci.evs.mapping.bean.*"%>
 <%@ page import="gov.nih.nci.evs.restapi.bean.*"%>
@@ -23,9 +24,11 @@
 <head>
 <%
 String serviceUrl = NCImtProperties._service_url;
-DataManager dm = (DataManager) request.getSession().getAttribute("dm");
+//DataManager dm = (DataManager) request.getSession().getAttribute("dm");
+//DataManager dm = gov.nih.nci.evs.browser.utils.DataUtils.getDataManager();
+
 String ng = (String) request.getParameter("ng");
-Terminology terminology = dm.getTerminologyByNamedGraph(ng);
+Terminology terminology = gov.nih.nci.evs.browser.utils.DataUtils.getTerminologyByNamedGraph(ng);
 String prop_dictionary = terminology.getCodingSchemeName();
 
 System.out.println("concept_details.jsp " + prop_dictionary);

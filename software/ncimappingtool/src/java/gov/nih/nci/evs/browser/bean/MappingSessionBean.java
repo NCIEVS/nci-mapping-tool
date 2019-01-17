@@ -9,6 +9,11 @@ package gov.nih.nci.evs.browser.bean;
 import gov.nih.nci.evs.browser.properties.*;
 import gov.nih.nci.evs.restapi.util.*;
 
+import gov.nih.nci.evs.mapping.util.*;
+import gov.nih.nci.evs.mapping.bean.*;
+
+import gov.nih.nci.evs.browser.utils.*;
+
 
 import java.util.*;
 import java.net.URI;
@@ -129,7 +134,7 @@ public class MappingSessionBean {
 			return "warning";
 		}
 
-        Vector vbt_vec = StringUtils.parseData(data, '\n');
+        Vector vbt_vec = gov.nih.nci.evs.restapi.util.StringUtils.parseData(data, '\n');
         Vector w = tab2BarDelimited(vbt_vec);
         request.getSession().setAttribute("vbt_vec", w);
 
@@ -143,20 +148,22 @@ public class MappingSessionBean {
 			ng = DataManager.NCI_Thesaurus_OWL_Graph;
 		}
 		System.out.println("ng: " + ng);
-
+/*
 		DataManager dm = (DataManager) request.getSession().getAttribute("dm");
 		if (dm == null) {
 			String serviceUrl = NCImtProperties._service_url;
 			dm = (DataManager) request.getSession().getAttribute("dm");
 			request.getSession().setAttribute("dm", dm);
 		}
-		Terminology terminology = (Terminology) dm.getTerminologyByNamedGraph(ng);
+*/
+		Terminology terminology = gov.nih.nci.evs.browser.utils.DataUtils.getTerminologyByNamedGraph(ng);
 
 		String data_directory = NCImtProperties._data_directory;
-		MappingUtils mappingUtils = (MappingUtils) request.getSession().getAttribute("mappingUtils");
+		gov.nih.nci.evs.mapping.util.MappingUtils mappingUtils = (gov.nih.nci.evs.mapping.util.MappingUtils) request.getSession().getAttribute("mappingUtils");
         request.getSession().setAttribute("codingSchemeName", terminology.getCodingSchemeName());
 
 		if (mappingUtils == null || (prev_ng != null && ng.compareTo(prev_ng) != 0)) {
+			/*
 			if (terminology.getData() == null) {
 				String codingSchemeName = terminology.getCodingSchemeName();
 				String filePathString = data_directory + File.separator + codingSchemeName + ".txt";
@@ -168,7 +175,7 @@ public class MappingSessionBean {
 					if (terminology.getData() == null) {
 						term_vec = gov.nih.nci.evs.restapi.util.Utils.readFile(filePathString);
 						terminology.setData(term_vec);
-						HashSet keywordSet = new MappingUtils().create_keyword_set(term_vec);
+						HashSet keywordSet = new gov.nih.nci.evs.mapping.util.MappingUtils().create_keyword_set(term_vec);
 						terminology.setKeywordSet(keywordSet);
 					}
 				} else {
@@ -183,17 +190,20 @@ public class MappingSessionBean {
 					terminology.setData(term_vec);
 					HashSet keywordSet = new MappingUtils().create_keyword_set(term_vec);
 					terminology.setKeywordSet(keywordSet);
-					dm.setNamedGraph2TerminologyHashmap(ng, terminology);
+					DataUtils.setNamedGraph2TerminologyHashmap(ng, terminology);
 				}
 			}
-			mappingUtils = new MappingUtils(data_directory, terminology);
+			*/
+			mappingUtils = new gov.nih.nci.evs.mapping.util.MappingUtils(data_directory, terminology);
 			request.getSession().setAttribute("mappingUtils", mappingUtils);
 		}
-		mappingUtils = (MappingUtils) request.getSession().getAttribute("mappingUtils");
+		mappingUtils = (gov.nih.nci.evs.mapping.util.MappingUtils) request.getSession().getAttribute("mappingUtils");
         request.getSession().setAttribute("prev_ng", ng);
         request.getSession().setAttribute("ng", ng);
 		Mapping mapping = mappingUtils.run(vbt_vec);
         request.getSession().setAttribute("mapping", mapping);
+
+        System.out.println("Redirect to mapping_results...");
         return "mapping_results";
 	}
 
@@ -364,11 +374,11 @@ public class MappingSessionBean {
 		request.getSession().setAttribute("named_graph", named_graph);
 		request.getSession().setAttribute("ng", named_graph);
 
-        DataUtils dataUtils = (DataUtils) request.getSession().getAttribute("dataUtils");
+        gov.nih.nci.evs.mapping.util.DataUtils dataUtils = (gov.nih.nci.evs.mapping.util.DataUtils) request.getSession().getAttribute("dataUtils");
         if (dataUtils == null) {
 			String serviceUrl = NCImtProperties._service_url;
 			String data_directory = NCImtProperties._data_directory;
-			dataUtils = new DataUtils(serviceUrl, data_directory);
+			dataUtils = new gov.nih.nci.evs.mapping.util.DataUtils(serviceUrl, data_directory);
 			request.getSession().setAttribute("dataUtils", dataUtils);
 		}
 
@@ -386,7 +396,7 @@ public class MappingSessionBean {
 		HashMap code2LabelHashMap = new HashMap();
 		for (int i=0; i<v.size(); i++) {
 			String line = (String) v.elementAt(i);
-			Vector u = StringUtils.parseData(line, '|');
+			Vector u = gov.nih.nci.evs.restapi.util.StringUtils.parseData(line, '|');
 			String code = (String) u.elementAt(0);
 			String label = (String) u.elementAt(1);
 			code2LabelHashMap.put(code, label);

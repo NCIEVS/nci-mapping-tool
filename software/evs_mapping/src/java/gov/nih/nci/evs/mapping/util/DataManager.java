@@ -74,11 +74,16 @@ public class DataManager {
 
 	HTTPUtils httpUtils = null;
 
+
+
+
 	public DataManager() {
 		data_directory = System.getProperty("user.dir");
 	}
 
-
+	public HashMap getCodingSchemeName2TerminologyHashmap() {
+		return this.codingSchemeName2TerminologyHashmap;
+	}
 
 	public DataManager(String serviceUrl, String data_directory) {
         this.data_directory = data_directory;
@@ -360,6 +365,10 @@ public class DataManager {
 			}
 		}
 		return w;
+	}
+
+	public HashMap getNamedGraph2TerminologyHashmap() {
+		return this.namedGraph2TerminologyHashmap;
 	}
 
     public Terminology getTerminologyByNamedGraph(String namedGraph) {

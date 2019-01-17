@@ -7,6 +7,9 @@
 
 package gov.nih.nci.evs.browser.utils;
 
+import gov.nih.nci.evs.mapping.util.*;
+import gov.nih.nci.evs.mapping.bean.*;
+
 import java.io.*;
 import java.net.URI;
 
@@ -263,12 +266,16 @@ public class DataUtils {
     public static final String BATCH_MODE_OF_OPERATION = "batch";
     public static final String INTERACTIVE_MODE_OF_OPERATION = "interactive";
 
+    public static Vector cs_data = null;
+    public static HashMap codingSchemeName2TerminologyHashmap = null;
+    public static HashMap namedGraph2TerminologyHashmap = null;
+
+    public static DataManager dm = null;
 
     static {
         System.out.println("NCImtBrowserProperties.getModeOfOperation(): " + NCImtBrowserProperties.getModeOfOperation());
 		if (NCImtBrowserProperties.getModeOfOperation().compareTo(NCImtBrowserProperties.INTERACTIVE_MODE_OF_OPERATION) == 0 &&
 		    NCImtBrowserProperties.getModeOfOperation().compareTo(NCImtBrowserProperties.BATCH_MODE_OF_OPERATION) == 0) {
-
 
 System.out.println("setCodingSchemeMap...");
 			setCodingSchemeMap();
@@ -284,9 +291,45 @@ System.out.println("Done setCodingSchemeMap");
 			if (_defaultOntologiesToSearchOnStr == null) {
 				_defaultOntologiesToSearchOnStr = getDefaultOntologiesToSearchOnStr();
 			}
-	    }
+	    } else {
+            cs_data = new Vector();
+			String serviceUrl = NCImtProperties._service_url;
+			System.out.println("serviceUrl : " + serviceUrl);
+			String data_directory = NCImtProperties._data_directory;
+			System.out.println("data_directory : " + data_directory);
+			System.out.println("Instantiating DataManager...");
+			dm = new DataManager(serviceUrl, data_directory);
+			System.out.println("DataManager instantiated.");
 
-	    System.out.println("exiting static DataUtils...");
+			Vector terminologies = dm.getTerminologies();
+			for (int i=0; i<terminologies.size(); i++) {
+				Terminology terminology = (Terminology) terminologies.elementAt(i);
+				cs_data.add(terminology.getCodingSchemeName() + "|" + terminology.getCodingSchemeVersion() + "|" + terminology.getNamedGraph());
+				System.out.println(terminology.getCodingSchemeName());
+			}
+			cs_data = new gov.nih.nci.evs.restapi.util.SortUtils().quickSort(cs_data);
+			codingSchemeName2TerminologyHashmap = dm.getCodingSchemeName2TerminologyHashmap();
+			namedGraph2TerminologyHashmap = dm.getNamedGraph2TerminologyHashmap();
+		}
+	    System.out.println("exiting DataUtils static method.");
+
+	}
+
+	public static DataManager getDataManager() {
+		return dm;
+	}
+
+
+	public static Vector get_cs_data() {
+		return cs_data;
+	}
+
+    public static Terminology getTerminologyByCodingSchemeName(String codingSchemeName) {
+		return (Terminology) codingSchemeName2TerminologyHashmap.get(codingSchemeName);
+	}
+
+    public static Terminology getTerminologyByNamedGraph(String namedGraph) {
+		return (Terminology) namedGraph2TerminologyHashmap.get(namedGraph);
 	}
 
 	public static HashMap get_mapping_namespace_hmap() {

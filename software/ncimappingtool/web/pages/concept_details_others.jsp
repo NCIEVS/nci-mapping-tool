@@ -25,7 +25,8 @@
 String serviceUrl = NCImtProperties._service_url;
 DataManager dm = (DataManager) request.getSession().getAttribute("dm");
 String ng = (String) request.getParameter("ng");
-Terminology terminology = dm.getTerminologyByNamedGraph(ng);
+//Terminology terminology = dm.getTerminologyByNamedGraph(ng);
+Terminology terminology = gov.nih.nci.evs.browser.utils.DataUtils.getTerminologyByNamedGraph(ng);
 String prop_dictionary = terminology.getCodingSchemeName();
 
 System.out.println("concept_details.jsp " + prop_dictionary);
