@@ -274,7 +274,10 @@ public class DataUtils {
 
     static {
         System.out.println("NCImtBrowserProperties.getModeOfOperation(): " + NCImtBrowserProperties.getModeOfOperation());
-		if (NCImtBrowserProperties.getModeOfOperation().compareTo(NCImtBrowserProperties.INTERACTIVE_MODE_OF_OPERATION) == 0 &&
+
+ System.out.println("NCImtBrowserProperties.getModeOfOperation()..." + NCImtBrowserProperties.getModeOfOperation());
+
+		if (NCImtBrowserProperties.getModeOfOperation().compareTo(NCImtBrowserProperties.INTERACTIVE_MODE_OF_OPERATION) == 0 ||
 		    NCImtBrowserProperties.getModeOfOperation().compareTo(NCImtBrowserProperties.BATCH_MODE_OF_OPERATION) == 0) {
 
 System.out.println("setCodingSchemeMap...");
