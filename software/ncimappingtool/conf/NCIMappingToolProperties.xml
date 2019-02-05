@@ -535,12 +535,12 @@ L-->
 
         <ConfigurableItem>
              <key>SPARQL_SERVICE</key>
-             <value>@sparql_service@</value>
+             <value>@sparql.service@</value>
         </ConfigurableItem>  
         
          <ConfigurableItem>
              <key>DATA_DIRECTORY</key>
-             <value>@data_directory@</value>
+             <value>@data.directory@</value>
         </ConfigurableItem>
         
         <!-- Standard FTP Report List (End) ================================ -->

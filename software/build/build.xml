@@ -206,8 +206,8 @@
                 <filter token="ncbo_api_key" value="${ncbo_api_key}"/>
                 <filter token="ncbo_widget_info" value="${ncbo_widget_info}"/>
                 <filter token="owl_role_quantifiers" value="${owl_role_quantifiers}"/>
-                <filter token="data_directory" value="${data_directory}"/>
-                <filter token="sparql_service" value="${sparql_service}"/>
+                <filter token="data.directory" value="${data.directory}"/>
+                <filter token="sparql.service" value="${sparql.service}"/>
                 
             </filterset>
             <resources>
