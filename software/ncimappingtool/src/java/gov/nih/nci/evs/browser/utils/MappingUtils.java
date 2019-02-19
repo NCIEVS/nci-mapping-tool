@@ -6,7 +6,7 @@
  */
 
 package gov.nih.nci.evs.browser.utils;
-
+import gov.nih.nci.evs.browser.properties.*;
 import java.util.*;
 import java.io.*;
 import org.LexGrid.relations.Relations;
@@ -184,8 +184,18 @@ public class MappingUtils {
 		filler_vec.add("were");
 		filler_vec.add("will");
 		filler_vec.add("with");
-	}
 
+		if (NCImtBrowserProperties.getModeOfOperation().compareTo(NCImtBrowserProperties.INTERACTIVE_MODE_OF_OPERATION) == 0 ||
+		    NCImtBrowserProperties.getModeOfOperation().compareTo(NCImtBrowserProperties.BATCH_MODE_OF_OPERATION) == 0) {
+			supportedSearchTechniqueNames = new Vector();
+			Vector<ModuleDescription> v = getAllSupportedSearchTechniques();
+			for (int i=0; i<v.size(); i++) {
+				ModuleDescription md = (ModuleDescription) v.elementAt(i);
+				supportedSearchTechniqueNames.add(md.getName());
+			}
+			supportedSearchTechniqueNames = SortUtils.quickSort(supportedSearchTechniqueNames);
+	    }
+	}
 
 /*
     private void initializeTestCases(File inputfile) {
@@ -1188,15 +1198,6 @@ System.out.println("algorithm: " + algorithm);
 		return u;
 	}
 
-	static {
-		supportedSearchTechniqueNames = new Vector();
-		Vector<ModuleDescription> v = getAllSupportedSearchTechniques();
-		for (int i=0; i<v.size(); i++) {
-			ModuleDescription md = (ModuleDescription) v.elementAt(i);
-			supportedSearchTechniqueNames.add(md.getName());
-		}
-		supportedSearchTechniqueNames = SortUtils.quickSort(supportedSearchTechniqueNames);
-	}
 
 
 

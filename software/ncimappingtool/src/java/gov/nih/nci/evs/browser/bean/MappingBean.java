@@ -63,7 +63,7 @@ import org.LexGrid.LexBIG.DataModel.Collections.ResolvedConceptReferenceList;
 
 
 /**
- * 
+ *
  */
 
 public class MappingBean {
@@ -301,9 +301,7 @@ public class MappingBean {
 	}
 
 
-    static {
-		_mode_of_operation = NCImtBrowserProperties.getModeOfOperation();
-	}
+
 
 
     public String returnToHomeAction() {
