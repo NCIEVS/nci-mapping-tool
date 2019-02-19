@@ -6,6 +6,7 @@
  */
 
 package gov.nih.nci.evs.browser.utils;
+import gov.nih.nci.evs.browser.properties.*;
 
 import java.util.*;
 
@@ -25,7 +26,7 @@ import org.apache.log4j.*;
 
 
 /**
- * 
+ *
  */
 
 /**
@@ -66,13 +67,17 @@ public class CacheController {
 
 
     static {
-		String cacheName = "treeCache";
-		_cacheManager = getCacheManager();
-        if (!_cacheManager.cacheExists(cacheName)) {
-            _cacheManager.addCache(cacheName);
-			_logger.debug("cache added");
-        }
-        _cache = _cacheManager.getCache(cacheName);
+
+		if (NCImtBrowserProperties.getModeOfOperation().compareTo(NCImtBrowserProperties.INTERACTIVE_MODE_OF_OPERATION) == 0 ||
+		    NCImtBrowserProperties.getModeOfOperation().compareTo(NCImtBrowserProperties.BATCH_MODE_OF_OPERATION) == 0) {
+			String cacheName = "treeCache";
+			_cacheManager = getCacheManager();
+			if (!_cacheManager.cacheExists(cacheName)) {
+				_cacheManager.addCache(cacheName);
+				_logger.debug("cache added");
+			}
+			_cache = _cacheManager.getCache(cacheName);
+	    }
     }
 
      public static CacheController getInstance() {

@@ -6,7 +6,7 @@
  */
 
 package gov.nih.nci.evs.browser.utils;
-
+import gov.nih.nci.evs.browser.properties.*;
 import gov.nih.nci.system.client.ApplicationServiceProvider;
 
 import org.LexGrid.LexBIG.DataModel.Collections.AbsoluteCodingSchemeVersionReferenceList;
@@ -94,7 +94,7 @@ public class ValueSetHierarchy {
     public static final LocalNameList _noopList = Constructors.createLocalNameList("_noop_");
     //public static String SOURCE_SCHEME = "Terminology Value Set";
     public static final String SOURCE_SCHEME = "Terminology_Value_Set.owl";
-    public static final String SOURCE_VERSION;// = null;
+    public static final String SOURCE_VERSION = null;
     public static final String ONTOLOGY_NODE_ID = "ontology_node_id";
     public static final String ONTOLOGY_NODE_NAME = "ontology_node_name";
     public static final String ONTOLOGY_NODE_PARENT_ASSOC = "ontology_node_parent_assoc";
@@ -123,66 +123,53 @@ public class ValueSetHierarchy {
     //public static Vector  _valueSetDefinitionSourceListing = null;
 
 
-    public ValueSetHierarchy() {
-		/*
-        SOURCE_VERSION = DataUtils.getVocabularyVersionByTag(SOURCE_SCHEME, "PRODUCTION");
-        System.out.println("SOURCE_VERSION: " + SOURCE_VERSION);
-        if (_valueSetDefinitionURI2VSD_map == null) {
-        	_valueSetDefinitionURI2VSD_map = getValueSetDefinitionURI2VSD_map();
-	    }
-	    */
-    }
 
 
 
     static {
 
-		if (vsdURI2CodingSchemeURNs == null) {
-			vsdURI2CodingSchemeURNs = getVsdURI2CodingSchemeURNs();
-		}
+		if (NCImtBrowserProperties.getModeOfOperation().compareTo(NCImtBrowserProperties.INTERACTIVE_MODE_OF_OPERATION) == 0 ||
+		    NCImtBrowserProperties.getModeOfOperation().compareTo(NCImtBrowserProperties.BATCH_MODE_OF_OPERATION) == 0) {
 
-		SOURCE_VERSION = DataUtils.getVocabularyVersionByTag(SOURCE_SCHEME, "PRODUCTION");
 
-		_valueSetDefinitionSourceCode2Name_map = getCodeHashMap(SOURCE_SCHEME, SOURCE_VERSION);
+			if (vsdURI2CodingSchemeURNs == null) {
+				vsdURI2CodingSchemeURNs = getVsdURI2CodingSchemeURNs();
+			}
 
-		//System.out.println("SOURCE_VERSION: " + SOURCE_VERSION);
-        if (_valueSetDefinitionURI2VSD_map == null) {
-        	_valueSetDefinitionURI2VSD_map = getValueSetDefinitionURI2VSD_map();
+			//SOURCE_VERSION = DataUtils.getVocabularyVersionByTag(SOURCE_SCHEME, "PRODUCTION");
+
+			_valueSetDefinitionSourceCode2Name_map = getCodeHashMap(SOURCE_SCHEME, SOURCE_VERSION);
+
+			//System.out.println("SOURCE_VERSION: " + SOURCE_VERSION);
+			if (_valueSetDefinitionURI2VSD_map == null) {
+				_valueSetDefinitionURI2VSD_map = getValueSetDefinitionURI2VSD_map();
+			}
+
+			if (_availableValueSetDefinitionSources == null) {
+				_availableValueSetDefinitionSources = findAvailableValueSetDefinitionSources();
+			}
+
+			if (_source_hierarchy == null) {
+				_source_hierarchy = getValueSetSourceHierarchy(SOURCE_SCHEME, SOURCE_VERSION);
+			}
+
+			if (_vsd_source_to_vsds_map == null) {
+				_vsd_source_to_vsds_map = createVSDSource2VSDsMap();
+			}
+
+			if (_subValueSet_hmap == null) {
+				_subValueSet_hmap = getSubValueSetsFromSourceCodingScheme();
+			}
+
 	    }
-
-	    if (_availableValueSetDefinitionSources == null) {
-	        _availableValueSetDefinitionSources = findAvailableValueSetDefinitionSources();
-		}
-
-		if (_source_hierarchy == null) {
-			_source_hierarchy = getValueSetSourceHierarchy(SOURCE_SCHEME, SOURCE_VERSION);
-		}
-
-		if (_vsd_source_to_vsds_map == null) {
-		    _vsd_source_to_vsds_map = createVSDSource2VSDsMap();
-		}
-
-		if (_subValueSet_hmap == null) {
-			_subValueSet_hmap = getSubValueSetsFromSourceCodingScheme();
-		}
-
-/*
-	    if (_valueSetParticipationHashSet == null) {
-	    	_valueSetParticipationHashSet = getValueSetParticipationHashSet();
-		}
-*/
-        /*
-        preprocessSourceHierarchyData();
-        */
-
-/*
-        if (_csVersionList == null) {
-			_csVersionList = getAbsoluteCodingSchemeVersionReferenceList();
-		}
-*/
 
 	}
 
+/*
+    public ValueSetHierarchy() {
+
+    }
+*/
 
     public static HashMap get_valueSetDefinitionSourceCode2Name_map() {
 		return _valueSetDefinitionSourceCode2Name_map;
