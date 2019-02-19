@@ -294,12 +294,35 @@ System.out.println("Done setCodingSchemeMap");
 			if (_defaultOntologiesToSearchOnStr == null) {
 				_defaultOntologiesToSearchOnStr = getDefaultOntologiesToSearchOnStr();
 			}
+
+			_availableValueSetDefinitionSources = new Vector();
+			HashSet hset = new HashSet();
+			LexEVSValueSetDefinitionServices vsd_service = RemoteServerUtil.getLexEVSValueSetDefinitionServices();
+			List list = vsd_service.listValueSetDefinitionURIs();
+			if (list != null) {
+				for (int i=0; i<list.size(); i++) {
+					String uri = (String) list.get(i);
+					ValueSetDefinition vsd = findValueSetDefinitionByURI(uri);
+					java.util.Enumeration<? extends Source> sourceEnum = vsd.enumerateSource();
+
+					while (sourceEnum.hasMoreElements()) {
+						Source src = (Source) sourceEnum.nextElement();
+						String src_str = src.getContent();
+						if (!hset.contains(src_str)) {
+							hset.add(src_str);
+							_availableValueSetDefinitionSources.add(src_str);
+						}
+					}
+				}
+				SortUtils.quickSort(_availableValueSetDefinitionSources);
+			}
+
 	    } else {
             cs_data = new Vector();
 			String serviceUrl = NCImtProperties._service_url;
 			System.out.println("serviceUrl : " + serviceUrl);
 			String data_directory = NCImtProperties._data_directory;
-			System.out.println("data_directory : " + data_directory);
+			System.out.println("data_directory: " + data_directory);
 			System.out.println("Instantiating DataManager...");
 			dm = new DataManager(serviceUrl, data_directory);
 			System.out.println("DataManager instantiated.");
@@ -4673,29 +4696,7 @@ System.out.println("vsd_str " + vsd_str);
 		return v;
 	}
 
-    static {
-		_availableValueSetDefinitionSources = new Vector();
-		HashSet hset = new HashSet();
-		LexEVSValueSetDefinitionServices vsd_service = RemoteServerUtil.getLexEVSValueSetDefinitionServices();
-        List list = vsd_service.listValueSetDefinitionURIs();
-        if (list != null) {
-			for (int i=0; i<list.size(); i++) {
-				String uri = (String) list.get(i);
-				ValueSetDefinition vsd = findValueSetDefinitionByURI(uri);
-				java.util.Enumeration<? extends Source> sourceEnum = vsd.enumerateSource();
 
-				while (sourceEnum.hasMoreElements()) {
-					Source src = (Source) sourceEnum.nextElement();
-					String src_str = src.getContent();
-					if (!hset.contains(src_str)) {
-						hset.add(src_str);
-						_availableValueSetDefinitionSources.add(src_str);
-					}
-				}
-			}
-			SortUtils.quickSort(_availableValueSetDefinitionSources);
-	    }
-	}
 
     public static Vector getAvailableValueSetDefinitionSources() {
 		/*
