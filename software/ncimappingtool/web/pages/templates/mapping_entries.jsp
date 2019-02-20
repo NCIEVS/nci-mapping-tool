@@ -117,7 +117,7 @@ for (int i=0; i<entries.size(); i++) {
 	      alt="Delete"
 	      tabindex="1">
 	    </h:commandButton>
-	    
+<!--	    
 	    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 	    
 	    <h:commandButton id="upload" value="upload" action="#{mappingSessionBean.uploadMappingAction}"
@@ -125,7 +125,7 @@ for (int i=0; i<entries.size(); i++) {
 	      alt="Upload mapping results from a file"
 	      tabindex="2">
 	    </h:commandButton> 	  
-	    		    
+-->	    		    
 	    
 	  </td>
 	  </tr>	    

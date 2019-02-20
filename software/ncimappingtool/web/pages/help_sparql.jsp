@@ -70,8 +70,12 @@ String hm_basePath = request.getContextPath();
               <br/>
               <a href="#sourceTerms">Enter Source Terms</a>
               <br/> 
-              <a href="#mappingResults">Mapping Results</a>
-              <br/>              
+              <a href="#matchedConcepts">Matched Concepts</a>
+              <br/>  
+              <a href="#unmatchedTerms">Unmatched Terms</a>
+              <br/> 
+              <a href="#search">Search for Matched Concepts</a>
+              <br/>               
 <!--              
               <a href="#terminologies">Terminologies Tab</a>
               <br/>
@@ -119,7 +123,7 @@ String hm_basePath = request.getContextPath();
          </div>
 
 
-<%-- -------------------------------------------------------------- --%>
+<%------------------------------------------------------------------%>
 <table>
 <tr><td>
 <div class="textbody">
@@ -140,7 +144,7 @@ String hm_basePath = request.getContextPath();
   </p>
 </div>
 </td></tr>
-<%-- -------------------------------------------------------------- --%>  
+<%------------------------------------------------------------------%>  
 <tr><td>
 <div class="textbody">
   <br/>
@@ -163,7 +167,7 @@ String hm_basePath = request.getContextPath();
   </p>
 </div>
 </td></tr>
-<%-- -------------------------------------------------------------- --%> 
+<%------------------------------------------------------------------%> 
 <tr><td>
 <div class="textbody">
   <br/>
@@ -171,17 +175,49 @@ String hm_basePath = request.getContextPath();
     <tr>
       <td>
         <h2>
-          <a name="mappingResults">Mapping Results</a>
+          <a name="matchedConcepts">Matched Concepts</a>
         </h2>
       </td>
     </tr>
   </table>
   <p>
-
+The matched concept page contains a list of mapping entries. )
+Each mapping entry contains source code (if available), source label (i.e., source term), target code, and target label (i.e., the "preferred name" of the target
+cocept) if a match is found by the mapping tool.
+Otherwise, the corresponding row will only contain the source code and source label.
+You may remove some mapping entries by first checking the checkboxes corresponding to each mapping entry (i.e., row) 
+and then press the <b>Delete</b> button.
+Click on the <b>Continue</b> button to find out terms that have not been mapped to any concept in the target terminology.
+You may export the mapping results to a CSV formatted file by clicking on the <b>Export Excel</b> link.
   </p>
 </div>
 </td></tr>
-<%-- -------------------------------------------------------------- --%> 
+<%------------------------------------------------------------------%> 
+<tr><td>
+<div class="textbody">
+  <br/>
+  <table width="920px" cellpadding="0" cellspacing="0" border="0" role='presentation'>
+    <tr>
+      <td>
+        <h2>
+          <a name="unmatchedTerms">Unmatched Terms</a>
+        </h2>
+      </td>
+    </tr>
+  </table>
+  <p>
+The matched concept page contains a list of mapping entries. )
+Each mapping entry contains source code (if available), source label (i.e., source term), target code, and target label (i.e., the "preferred name" of the target
+cocept) if a match is found by the mapping tool.
+Otherwise, the corresponding row will only contain the source code and source label.
+You may remove some mapping entries by first checking the checkboxes corresponding to each mapping entry (i.e., row) 
+and then press the <b>Delete</b> button.
+Click on the <b>Continue</b> button to find out terms that have not been mapped to any concept in the target terminology.
+You may export the mapping results to a CSV formatted file by clicking on the <b>Export Excel</b> link.
+  </p>
+</div>
+</td></tr>
+<%------------------------------------------------------------------%> 
 </table>
         
         <%@ include file="/pages/templates/nciFooter.jsp" %>

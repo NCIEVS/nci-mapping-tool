@@ -414,7 +414,6 @@ public class MappingSessionBean {
         if (term == null) {
 			term = (String) request.getSession().getAttribute("term");
 		}
-
         String[] codes = (String[]) request.getParameterValues("concepts");
         Vector code_vec = new Vector();
         if (codes != null && codes.length > 0) {
@@ -430,12 +429,12 @@ public class MappingSessionBean {
 		Vector v = (Vector) request.getSession().getAttribute("partial_matches");
 		HashMap Code2LabelHashMap = createCode2LabelHashMap(v);
 	    Mapping mapping = (Mapping) request.getSession().getAttribute("mapping");
+
+
 		System.out.println("mapping total count: " + mapping.getTotalCount());
 		System.out.println("mapping match count: " + mapping.getMatchCount());
 
 	    List<gov.nih.nci.evs.mapping.bean.MappingEntry> entries = mapping.getEntries();
-	    System.out.println("mapping entries: " + entries.size());
-
 	    List<gov.nih.nci.evs.mapping.bean.MappingEntry> new_entries = new ArrayList<gov.nih.nci.evs.mapping.bean.MappingEntry>();
 	    int knt = 0;
 
@@ -461,7 +460,6 @@ public class MappingSessionBean {
 		}
 		Mapping new_mapping = new Mapping(mapping.getTotalCount(), mapping.getMatchCount() + knt, new_entries);
 		//saved_data.add(new_mapping.toJson());
-
 		System.out.println("new_mapping total count: " + new_mapping.getTotalCount());
 		System.out.println("new_mapping match count: " + new_mapping.getMatchCount());
 
@@ -469,7 +467,6 @@ public class MappingSessionBean {
         request.getSession().removeAttribute("partial_matches");
         request.getSession().removeAttribute("msg");
         request.getSession().removeAttribute("searchstring");
-
         //Utils.saveToFile(NCImtBrowserProperties._data_directory + File.separator + "debug_11302018.txt", saved_data);
 
 		return "mapping_results";
@@ -549,7 +546,7 @@ public class MappingSessionBean {
         request.getSession().removeAttribute("msg");
 	    Mapping mapping = (Mapping) request.getSession().getAttribute("mapping");
 	    List<gov.nih.nci.evs.mapping.bean.MappingEntry> entries = mapping.getEntries();
-        request.getSession().setAttribute("mapping", entries);
+        request.getSession().setAttribute("mapping", mapping);
 		return "mapping_results";
 	}
 
