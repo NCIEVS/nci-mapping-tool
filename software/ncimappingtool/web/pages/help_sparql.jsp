@@ -131,6 +131,25 @@ String hm_basePath = request.getContextPath();
     <tr>
       <td>
         <h2>
+          <a name="introuction">Introduction</a>
+        </h2>
+      </td>
+    </tr>
+  </table>
+  <p>
+    The NCI Mapping Tool is developed for supporting the development of mappings from 
+    a collection of source terms to a target terminology using SPARQL queries and heuristic rules.
+  </p>
+</div>
+</td></tr>
+<tr><td>&nbsp;</td></tr>
+<%------------------------------------------------------------------%>  
+<tr><td>
+<div class="textbody">
+  <table width="920px" cellpadding="0" cellspacing="0" border="0" role='presentation'>
+    <tr>
+      <td>
+        <h2>
           <a name="homePage">NCI Mapping Tool Home Page</a>
         </h2>
       </td>
@@ -143,6 +162,7 @@ String hm_basePath = request.getContextPath();
   </p>
 </div>
 </td></tr>
+<tr><td>&nbsp;</td></tr>
 <%------------------------------------------------------------------%>  
 <tr><td>
 <div class="textbody">
@@ -165,6 +185,7 @@ String hm_basePath = request.getContextPath();
   </p>
 </div>
 </td></tr>
+<tr><td>&nbsp;</td></tr>
 <%------------------------------------------------------------------%> 
 <tr><td>
 <div class="textbody">
@@ -185,10 +206,11 @@ Otherwise, the corresponding row will only contain the source code and source la
 You may remove some mapping entries by first checking the checkboxes corresponding to each mapping entry (i.e., row) 
 and then press the <b>Delete</b> button.
 Click on the <b>Continue</b> button to find out terms that have not been mapped to any concept in the target terminology.
-You may export the mapping results to a CSV formatted file by clicking on the <b>Export Excel</b> link.
+You may export the mapping results to a CSV formatted file by clicking on the <i>Export Excel</i> link.
   </p>
 </div>
 </td></tr>
+<tr><td>&nbsp;</td></tr>
 <%------------------------------------------------------------------%> 
 <tr><td>
 <div class="textbody">
@@ -205,10 +227,11 @@ You may export the mapping results to a CSV formatted file by clicking on the <b
 The Unmatched Terms page contains a table showing the list of terms that have not been mapped to any concept in the target terminology.
 Each row in the table contains a source code (if available), and a source label.
 You may click on the label of any unmatched term to search for matched concepts manually. 
-You may export the unmatched terms to a CSV formatted file by clicking on the <b>Export Excel</b> link.
+You may export the unmatched terms to a CSV formatted file by clicking on the <i>Export Excel</i> link.
   </p>
 </div>
 </td></tr>
+<tr><td>&nbsp;</td></tr>
 <%------------------------------------------------------------------%> 
 <tr><td>
 <div class="textbody">
