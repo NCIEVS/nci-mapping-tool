@@ -25,7 +25,7 @@ import org.lexgrid.valuesets.impl.LexEVSValueSetDefinitionServicesImpl;
 
 
 /**
- * 
+ *
  */
 
 /**
@@ -47,14 +47,12 @@ public class RemoteServerUtil {
     }
 
     public static LexBIGService createLexBIGService() {
-        String url = "http://ncias-d488-v.nci.nih.gov:29080/lexevsapi60";
-
-        url = "http://localhost:8080/lexevsapi60";
-
+		System.out.println("Calling createLexBIGService ...");
+        //String url = "http://ncias-d488-v.nci.nih.gov:29080/lexevsapi60";
         NCImtBrowserProperties properties = null;
         try {
             properties = NCImtBrowserProperties.getInstance();
-            url = properties.getProperty(NCImtBrowserProperties.EVS_SERVICE_URL);
+            String url = properties.getProperty(NCImtBrowserProperties.EVS_SERVICE_URL);
             return createLexBIGService(url);
         } catch (Exception ex) {
             // Do nothing

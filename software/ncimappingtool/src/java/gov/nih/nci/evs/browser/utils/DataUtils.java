@@ -315,6 +315,15 @@ System.out.println("Done setCodingSchemeMap");
 					}
 				}
 				SortUtils.quickSort(_availableValueSetDefinitionSources);
+
+				for (int i=0; i<list.size(); i++) {
+					String uri = (String) list.get(i);
+					ValueSetDefinition vsd = findValueSetDefinitionByURI(uri);
+					String metadata = getValueSetDefinitionMetadata(vsd);
+					_valueSetDefinitionMetadata.add(metadata);
+				}
+				SortUtils.quickSort(_valueSetDefinitionMetadata);
+
 			}
 
 	    } else {
@@ -4747,21 +4756,7 @@ System.out.println("vsd_str " + vsd_str);
 		}
 	}
 
-    static {
-		_valueSetDefinitionMetadata = new Vector();
-		LexEVSValueSetDefinitionServices vsd_service = RemoteServerUtil.getLexEVSValueSetDefinitionServices();
-        List list = vsd_service.listValueSetDefinitionURIs();
-        if (list != null) {
-			for (int i=0; i<list.size(); i++) {
-				String uri = (String) list.get(i);
-				ValueSetDefinition vsd = findValueSetDefinitionByURI(uri);
-				String metadata = getValueSetDefinitionMetadata(vsd);
-				_valueSetDefinitionMetadata.add(metadata);
-			}
-			SortUtils.quickSort(_valueSetDefinitionMetadata);
-	    }
 
-	}
 
 	public static Vector getValueSetDefinitionMetadata() {
 		/*
