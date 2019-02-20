@@ -159,7 +159,7 @@ String hm_basePath = request.getContextPath();
     You can enter source term data by clicking on the <b>Upload</b> button.
     The input file can be a list of terms with each line containin a term, or 
     it can be a list of code and term pairs with each pair of code and term seperated by a tab character.
-    Alternatively, you can enter soure term data directly to the text field using cut and paste.
+    Alternatively, you can enter soure term data directly to the text area using cut and paste.
     Press the <b>Continue</b> button to start the automated mapping of your terms to the target terminology.
     Use the <b>Reset</b> button to reset the text field.
   </p>
