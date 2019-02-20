@@ -74,7 +74,7 @@ String hm_basePath = request.getContextPath();
               <br/>  
               <a href="#unmatchedTerms">Unmatched Terms</a>
               <br/> 
-              <a href="#search">Search for Matched Concepts</a>
+              <a href="#manualMapping">Manual Mapping</a>
               <br/>               
 <!--              
               <a href="#terminologies">Terminologies Tab</a>
@@ -127,7 +127,6 @@ String hm_basePath = request.getContextPath();
 <table>
 <tr><td>
 <div class="textbody">
-  <br/>
   <table width="920px" cellpadding="0" cellspacing="0" border="0" role='presentation'>
     <tr>
       <td>
@@ -147,7 +146,6 @@ String hm_basePath = request.getContextPath();
 <%------------------------------------------------------------------%>  
 <tr><td>
 <div class="textbody">
-  <br/>
   <table width="920px" cellpadding="0" cellspacing="0" border="0" role='presentation'>
     <tr>
       <td>
@@ -170,7 +168,6 @@ String hm_basePath = request.getContextPath();
 <%------------------------------------------------------------------%> 
 <tr><td>
 <div class="textbody">
-  <br/>
   <table width="920px" cellpadding="0" cellspacing="0" border="0" role='presentation'>
     <tr>
       <td>
@@ -181,7 +178,7 @@ String hm_basePath = request.getContextPath();
     </tr>
   </table>
   <p>
-The matched concept page contains a list of mapping entries. )
+The Matched Concepts page contains a list of mapping entries. )
 Each mapping entry contains source code (if available), source label (i.e., source term), target code, and target label (i.e., the "preferred name" of the target
 cocept) if a match is found by the mapping tool.
 Otherwise, the corresponding row will only contain the source code and source label.
@@ -195,7 +192,6 @@ You may export the mapping results to a CSV formatted file by clicking on the <b
 <%------------------------------------------------------------------%> 
 <tr><td>
 <div class="textbody">
-  <br/>
   <table width="920px" cellpadding="0" cellspacing="0" border="0" role='presentation'>
     <tr>
       <td>
@@ -206,14 +202,31 @@ You may export the mapping results to a CSV formatted file by clicking on the <b
     </tr>
   </table>
   <p>
-The matched concept page contains a list of mapping entries. )
-Each mapping entry contains source code (if available), source label (i.e., source term), target code, and target label (i.e., the "preferred name" of the target
-cocept) if a match is found by the mapping tool.
-Otherwise, the corresponding row will only contain the source code and source label.
-You may remove some mapping entries by first checking the checkboxes corresponding to each mapping entry (i.e., row) 
-and then press the <b>Delete</b> button.
-Click on the <b>Continue</b> button to find out terms that have not been mapped to any concept in the target terminology.
-You may export the mapping results to a CSV formatted file by clicking on the <b>Export Excel</b> link.
+The Unmatched Terms page contains a table showing the list of terms that have not been mapped to any concept in the target terminology.
+Each row in the table contains a source code (if available), and a source label.
+You may click on the label of any unmatched term to search for matched concepts manually. 
+You may export the unmatched terms to a CSV formatted file by clicking on the <b>Export Excel</b> link.
+  </p>
+</div>
+</td></tr>
+<%------------------------------------------------------------------%> 
+<tr><td>
+<div class="textbody">
+  <table width="920px" cellpadding="0" cellspacing="0" border="0" role='presentation'>
+    <tr>
+      <td>
+        <h2>
+          <a name="manualMapping">Manual Mapping</a>
+        </h2>
+      </td>
+    </tr>
+  </table>
+  <p>
+The Manual Mapping page provides an interface for you to search for possible concepts in the target terminology that
+match with the specific term.
+Enter words in the text field and press <b>Search</b> to perform the search.
+Check the checkboxes corresponding to the concepts that match well with the source term and press 
+<b>Save</b> to update the mapping results.
   </p>
 </div>
 </td></tr>
