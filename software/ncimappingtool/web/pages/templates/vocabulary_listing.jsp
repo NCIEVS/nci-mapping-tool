@@ -72,14 +72,15 @@ cs_data = DataUtils.get_cs_data();
 	      alt="Submit"
 	      tabindex="2">
 	    </h:commandButton>
+<!--	    
             &nbsp;
-  
   	    <h:commandButton id="upload" value="upload" action="#{mappingSessionBean.uploadMappingAction}"
   	      image="/images/upload.gif"
   	      alt="Upload mapping results from a file"
   	      tabindex="2">
-	    </h:commandButton> 	  
-
+	    </h:commandButton> 	
+-->	    
+	    
 	  </td>
 	  </tr>	    
 </table>
