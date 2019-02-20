@@ -9,9 +9,9 @@ L--%>
   <tr valign="bottom">
   
     <td align="right">
-      <a href="<%= request.getContextPath() %>/pages/home.jsf" >Home</a>
+      <a href="<%= request.getContextPath() %>/pages/home_alt.jsf" >Home</a>
 |
-      <a href="<%= request.getContextPath() %>/pages/help.jsf" >Help</a>&nbsp;&nbsp;&nbsp;
+      <a href="<%= request.getContextPath() %>/pages/help_sparql.jsf" >Help</a>&nbsp;&nbsp;&nbsp;
     </td>
   </tr>
 </table>

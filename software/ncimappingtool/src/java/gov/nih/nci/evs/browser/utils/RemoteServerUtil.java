@@ -47,7 +47,7 @@ public class RemoteServerUtil {
     }
 
     public static LexBIGService createLexBIGService() {
-		System.out.println("Calling createLexBIGService ...");
+		//System.out.println("Calling createLexBIGService ...");
         //String url = "http://ncias-d488-v.nci.nih.gov:29080/lexevsapi60";
         NCImtBrowserProperties properties = null;
         try {

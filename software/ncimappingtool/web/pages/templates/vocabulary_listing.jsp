@@ -1,7 +1,8 @@
 <h:form>  
-Please select a terminology, then press the <b>New</b> to start, 
+Please select a terminology, then press <b>New</b> to start constructing a mapping.
+<!--
 or press the <b>Upload</b> button to load an existing mapping file.
-
+-->
 <table border="0" cellpadding="0" cellspacing="0" role='presentation'>
 <%
 System.out.println("vocabulary_listing.jsp...");
