@@ -326,6 +326,36 @@ System.out.println("Done setCodingSchemeMap");
 
 			}
 
+			_valueset_item_vec = new Vector();
+			valueSetDefinitionOnServer_uri_vec = new Vector();
+			Vector key_vec = new Vector();
+
+			HashMap hmap = new HashMap();
+			//LexEVSValueSetDefinitionServices vsd_service = RemoteServerUtil.getLexEVSValueSetDefinitionServices();
+			//List list = vsd_service.listValueSetDefinitionURIs();
+			for (int i=0; i<list.size(); i++) {
+				String t = (String) list.get(i);
+				ValueSetDefinition vsd = findValueSetDefinitionByURI(t);
+				if (vsd != null) {
+					String name = vsd.getValueSetDefinitionName();
+					String uri = vsd.getValueSetDefinitionURI();
+					if (name == null) {
+						name = "<NOT ASSIGNED>";
+					}
+					hmap.put(name, vsd);
+					valueSetDefinitionOnServer_uri_vec.add(uri);
+					key_vec.add(name);
+				}
+			}
+
+			key_vec = SortUtils.quickSort(key_vec);
+			for (int i=0; i<key_vec.size(); i++) {
+				String key = (String) key_vec.elementAt(i);
+				ValueSetDefinition vsd = (ValueSetDefinition) hmap.get(key);
+				_valueset_item_vec.add(new SelectItem(vsd.getValueSetDefinitionURI(), key)); // value, label
+			}
+
+
 	    } else {
             cs_data = new Vector();
 			String serviceUrl = NCImtProperties._service_url;
@@ -346,6 +376,9 @@ System.out.println("Done setCodingSchemeMap");
 			codingSchemeName2TerminologyHashmap = dm.getCodingSchemeName2TerminologyHashmap();
 			namedGraph2TerminologyHashmap = dm.getNamedGraph2TerminologyHashmap();
 		}
+
+
+
 	    System.out.println("exiting DataUtils static method.");
 
 	}
@@ -5419,40 +5452,6 @@ System.out.println("(*) getMatchedMetathesaurusCUIs code: " + code);
 		*/
 		return null;
 	}
-
-
-    static {
-		_valueset_item_vec = new Vector();
-		valueSetDefinitionOnServer_uri_vec = new Vector();
-		Vector key_vec = new Vector();
-
-		HashMap hmap = new HashMap();
-		LexEVSValueSetDefinitionServices vsd_service = RemoteServerUtil.getLexEVSValueSetDefinitionServices();
-        List list = vsd_service.listValueSetDefinitionURIs();
-        for (int i=0; i<list.size(); i++) {
-			String t = (String) list.get(i);
-			ValueSetDefinition vsd = findValueSetDefinitionByURI(t);
-			if (vsd != null) {
-				String name = vsd.getValueSetDefinitionName();
-				String uri = vsd.getValueSetDefinitionURI();
-				if (name == null) {
-					name = "<NOT ASSIGNED>";
-				}
-				hmap.put(name, vsd);
-			    valueSetDefinitionOnServer_uri_vec.add(uri);
-			    key_vec.add(name);
-		    }
-		}
-
-		key_vec = SortUtils.quickSort(key_vec);
-		for (int i=0; i<key_vec.size(); i++) {
-			String key = (String) key_vec.elementAt(i);
-			ValueSetDefinition vsd = (ValueSetDefinition) hmap.get(key);
-			_valueset_item_vec.add(new SelectItem(vsd.getValueSetDefinitionURI(), key)); // value, label
-		}
-
-	}
-
 
 	public static Vector getValueSetDefinitions() {
 		/*
