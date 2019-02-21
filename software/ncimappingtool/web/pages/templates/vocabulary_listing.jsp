@@ -1,8 +1,6 @@
 <h:form>  
-Please select a terminology, then press <b>New</b> to start constructing a mapping.
-<!--
-or press the <b>Upload</b> button to load an existing mapping file.
--->
+Please select a terminology then press <b>New</b> to start constructing a new mapping,
+or press <b>Upload</b> to load an existing mapping file.
 <table border="0" cellpadding="0" cellspacing="0" role='presentation'>
 <%
 System.out.println("vocabulary_listing.jsp...");
@@ -73,15 +71,12 @@ cs_data = DataUtils.get_cs_data();
 	      alt="Submit"
 	      tabindex="2">
 	    </h:commandButton>
-<!--	    
             &nbsp;
   	    <h:commandButton id="upload" value="upload" action="#{mappingSessionBean.uploadMappingAction}"
   	      image="/images/upload.gif"
   	      alt="Upload mapping results from a file"
   	      tabindex="2">
 	    </h:commandButton> 	
--->	    
-	    
 	  </td>
 	  </tr>	    
 </table>

@@ -148,14 +148,6 @@ public class MappingSessionBean {
 			ng = DataManager.NCI_Thesaurus_OWL_Graph;
 		}
 		System.out.println("ng: " + ng);
-/*
-		DataManager dm = (DataManager) request.getSession().getAttribute("dm");
-		if (dm == null) {
-			String serviceUrl = NCImtProperties._service_url;
-			dm = (DataManager) request.getSession().getAttribute("dm");
-			request.getSession().setAttribute("dm", dm);
-		}
-*/
 		Terminology terminology = gov.nih.nci.evs.browser.utils.DataUtils.getTerminologyByNamedGraph(ng);
 
 		String data_directory = NCImtProperties._data_directory;
@@ -163,37 +155,6 @@ public class MappingSessionBean {
         request.getSession().setAttribute("codingSchemeName", terminology.getCodingSchemeName());
 
 		if (mappingUtils == null || (prev_ng != null && ng.compareTo(prev_ng) != 0)) {
-			/*
-			if (terminology.getData() == null) {
-				String codingSchemeName = terminology.getCodingSchemeName();
-				String filePathString = data_directory + File.separator + codingSchemeName + ".txt";
-				File f = new File(filePathString);
-				Vector term_vec = null;
-				System.out.println("Checking if " + filePathString + " exists...");
-				if(f.exists() && !f.isDirectory()) {
-					System.out.println(filePathString + " exists.");
-					if (terminology.getData() == null) {
-						term_vec = gov.nih.nci.evs.restapi.util.Utils.readFile(filePathString);
-						terminology.setData(term_vec);
-						HashSet keywordSet = new gov.nih.nci.evs.mapping.util.MappingUtils().create_keyword_set(term_vec);
-						terminology.setKeywordSet(keywordSet);
-					}
-				} else {
-					System.out.println(filePathString + " DOES not exist. -- Regenerating...");
-					if (codingSchemeName.compareTo(NCI_THESASURUS) == 0) {
-						term_vec = dm.get_terms(ng, null);
-					} else {
-						term_vec = dm.get_names(ng);
-					}
-					System.out.println("term_vec size: " + term_vec.size());
-					Utils.saveToFile(filePathString, term_vec);
-					terminology.setData(term_vec);
-					HashSet keywordSet = new MappingUtils().create_keyword_set(term_vec);
-					terminology.setKeywordSet(keywordSet);
-					DataUtils.setNamedGraph2TerminologyHashmap(ng, terminology);
-				}
-			}
-			*/
 			mappingUtils = new gov.nih.nci.evs.mapping.util.MappingUtils(data_directory, terminology);
 			request.getSession().setAttribute("mappingUtils", mappingUtils);
 		}
@@ -555,8 +516,8 @@ public class MappingSessionBean {
             (HttpServletRequest) FacesContext.getCurrentInstance()
                 .getExternalContext().getRequest();
 
-		//String type = (String) request.getParameter("type");
         request.getSession().setAttribute("action", "upload_mapping");
+        /*
 		//request.getSession().setAttribute("type", type);
         Vector cs_data = new Vector();
 		DataManager dm = (DataManager) request.getSession().getAttribute("dm");
@@ -574,6 +535,7 @@ public class MappingSessionBean {
 			request.getSession().setAttribute("dm", dm);
 		}
         //request.getSession().setAttribute("type", type);
+        */
 		return "upload";
 	}
 
@@ -581,24 +543,7 @@ public class MappingSessionBean {
         HttpServletRequest request =
             (HttpServletRequest) FacesContext.getCurrentInstance()
                 .getExternalContext().getRequest();
-/*
-		String type = (String) request.getParameter("type");
-		String source_scheme = (String) request.getParameter("source_scheme");
-		String source_version = (String) request.getParameter("source_version");
-		request.getSession().setAttribute("dictionary", source_scheme);
-		request.getSession().setAttribute("version", source_version);
-
-		if (type.compareTo("valueset") == 0) {
-			String vsdURI = (String) request.getParameter("vsdURI");
-			//String valueSetDefinitionName = (String) request.getParameter("valueSetDefinitionName");
-			request.getSession().setAttribute("vsdURI", vsdURI);
-			request.getSession().setAttribute("valueSetDefinitionName", "valueSetDefinitionName");
-		}
-
-		request.getSession().setAttribute("action", "upload_data");
-		request.getSession().setAttribute("type", type);
-		return type;
-*/
+        request.getSession().setAttribute("action", "upload_data");
         return "upload";
 	}
 

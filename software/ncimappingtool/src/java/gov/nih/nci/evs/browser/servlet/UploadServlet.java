@@ -123,15 +123,36 @@ public final class UploadServlet extends HttpServlet {
      * @exception ServletException if a servlet exception occurs
      */
 
+    public static Vector parseData(String line, char delimiter) {
+		if(line == null) return null;
+		Vector w = new Vector();
+		StringBuffer buf = new StringBuffer();
+		for (int i=0; i<line.length(); i++) {
+			char c = line.charAt(i);
+			if (c == delimiter) {
+				w.add(buf.toString());
+				buf = new StringBuffer();
+			} else {
+				buf.append(c);
+			}
+		}
+		w.add(buf.toString());
+		return w;
+	}
+
+    public Vector<String> parseData(String line) {
+		if (line == null) return null;
+        char tab = '|';
+        return parseData(line, tab);
+    }
+
+
     public void execute(HttpServletRequest request, HttpServletResponse response)
             throws IOException, ServletException {
         // Determine request by attributes
         String action = (String) request.getParameter("action");
         System.out.println("action: " + action);
         String type = (String) request.getParameter("type");
-
-
-System.out.println("(*) UploadServlet ...action " + action);
         if (action == null) {
 			action = "upload_data";
 		}
@@ -151,6 +172,7 @@ System.out.println("(*) UploadServlet ...action " + action);
 
 		System.out.println("(*) mode: " + mode);
 
+        String s = null;
 		try {
 			/*
 			 * Parse the request
@@ -164,9 +186,6 @@ System.out.println("(*) UploadServlet ...action " + action);
 				 */
 				if(item.isFormField()) {
 					System.out.println("File Name = "+item.getFieldName()+", Value = "+item.getString());
-					//String s = convertStreamToString(item.getInputStream(), item.getSize());
-					//System.out.println(s);
-
 
 				} else {
 					//Handle Uploaded files.
@@ -175,9 +194,7 @@ System.out.println("(*) UploadServlet ...action " + action);
 						", Content type = "+item.getContentType()+
 						", File Size = "+item.getSize());
 
-					String s = convertStreamToString(item.getInputStream(), item.getSize());
-					//System.out.println(s);
-
+					s = convertStreamToString(item.getInputStream(), item.getSize());
 					request.getSession().setAttribute("action", action);
 
                     if (mode.compareTo("batch") == 0 || mode.compareTo("interactive") == 0) {
@@ -229,9 +246,44 @@ System.out.println("(*) UploadServlet ...action " + action);
 				response.sendRedirect(response.encodeRedirectURL(request.getContextPath() + "/pages/enter_mapping_data.jsf"));
 
 			} else {
-				System.out.println("*** redirect to auto_mapping_results.jsf");
+				Vector<String> v = parseData(s, '\n');
+				List entries = new ArrayList();
+				int match_knt = 0;
+				int size = 0;
+				for (int i=1; i<v.size(); i++) {
+					String t = (String) v.elementAt(i);
+					System.out.println(t);
+					if (t.length() > 0) {
+						size++;
+						List<String> values = Arrays.asList(t.split("\\s*,\\s*"));
+						String source_code = values.get(0);
+						source_code = source_code.substring(1, source_code.length()-1);
+
+						String source_term = values.get(1);
+						source_term = source_term.substring(1, source_term.length()-1);
+
+						String target_code = values.get(2);
+						target_code = target_code.substring(1, target_code.length()-1);
+
+						String target_term = values.get(3);
+						target_term = target_term.substring(1, target_term.length()-1);
+
+						gov.nih.nci.evs.mapping.bean.MappingEntry m = new gov.nih.nci.evs.mapping.bean.MappingEntry(source_code, source_term, target_code, target_term);
+						if (target_code != null && target_code.length() > 0) {
+							match_knt++;
+						}
+						entries.add(m);
+					}
+				}
+
+				gov.nih.nci.evs.mapping.bean.Mapping mapping = new gov.nih.nci.evs.mapping.bean.Mapping(size, match_knt, entries);
+				request.getSession().removeAttribute("mapping_data");
+				request.getSession().setAttribute("mapping", mapping);
+
 				response.sendRedirect(response.encodeRedirectURL(request.getContextPath() + "/pages/auto_mapping_results.jsf"));
+
 			}
 		}
+
     }
 }

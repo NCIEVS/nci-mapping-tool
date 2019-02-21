@@ -197,27 +197,6 @@ public class MappingUtils {
 	    }
 	}
 
-/*
-    private void initializeTestCases(File inputfile) {
-		searchText_vec = new Vector();
-		File in = inputfile;
-		try{
-			BufferedReader buff= new BufferedReader(new FileReader(in));
-			String line=buff.readLine();
-			while(line != null){
-				if (!line.startsWith("#")) {
-                	searchText_vec.add(line);
-			    }
-			    line=buff.readLine();
-			}
-			buff.close();
-		}
-		catch(Exception e){
-			e.printStackTrace();
-		}
-    }
-*/
-
     public static String removeFillers(String str) {
 		String delim = getDelimiters();
 		return removeFillers(str, delim);

@@ -65,6 +65,7 @@ if (mapping_data != null) {
     request.getSession().removeAttribute("mapping_data");
     request.getSession().setAttribute("mapping", mapping);  
 } else {
+System.out.println("get mapping from session.");
     mapping = (gov.nih.nci.evs.mapping.bean.Mapping) request.getSession().getAttribute("mapping");    
 }
 
