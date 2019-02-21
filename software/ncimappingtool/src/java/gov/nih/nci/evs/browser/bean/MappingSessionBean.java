@@ -505,9 +505,11 @@ public class MappingSessionBean {
                 .getExternalContext().getRequest();
 
         request.getSession().removeAttribute("msg");
+        /*
 	    Mapping mapping = (Mapping) request.getSession().getAttribute("mapping");
 	    List<gov.nih.nci.evs.mapping.bean.MappingEntry> entries = mapping.getEntries();
         request.getSession().setAttribute("mapping", mapping);
+        */
 		return "mapping_results";
 	}
 

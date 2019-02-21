@@ -255,7 +255,8 @@ The Manual Mapping page provides an interface that allows you to search for poss
 Enter keywords in the text field and press <b>Search</b> to perform the search.
 Select all checkboxes corresponding to the concepts that you feel match well with the corresponding source concept and press 
 <b>Save</b> to update the mapping results.
-This will bring you back to the Matched Concepts page. 
+This will take you back to the Matched Concepts page. 
+You may click on the <b>Back</b> button to return to the Matched Concepts page.
   </p>
 </div>
 </td></tr>

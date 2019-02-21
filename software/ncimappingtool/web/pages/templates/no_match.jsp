@@ -82,7 +82,7 @@ for (int i=0; i<nomatch_vec.size(); i++) {
 </table>
 <p></p>
 
-<!--
+
 <table>
 <tr>
          <td>
@@ -94,6 +94,6 @@ for (int i=0; i<nomatch_vec.size(); i++) {
 	 </td>         
 </tr>
 </table>
--->
+
 
 </h:form>   
