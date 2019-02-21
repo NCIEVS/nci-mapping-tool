@@ -159,6 +159,9 @@ String hm_basePath = request.getContextPath();
     The Home page shows a list of supported terminologies. Select a target terminology for mapping by
     clicking on the radio button to the left of the corresponding terminoloy label and click on the <b>New</b> button to 
     start the process for constructing a mapping using the selected target terminology.
+    This willl take you to the Enter Source Terms page.
+    You may also upload an existing CSV formatted mapping that is under construction by pressing the <b>Upload</b> button.
+    After the file is uploaded successfully, the Matched Concepts page will appear.
   </p>
 </div>
 </td></tr>
