@@ -138,7 +138,7 @@ String hm_basePath = request.getContextPath();
   </table>
   <p>
     The NCI Mapping Tool is developed for supporting the development of mappings from 
-    a collection of source terms to a target terminology using SPARQL queries and heuristic rules.
+    a collection of user specified source terms to a target terminology using SPARQL queries and a set of heuristic rules.
   </p>
 </div>
 </td></tr>
@@ -158,7 +158,7 @@ String hm_basePath = request.getContextPath();
   <p>
     The Home page shows a list of supported terminologies. Select a target terminology for mapping by
     clicking on the radio button to the left of the corresponding terminoloy label and click on the <b>New</b> button to 
-    construct a mapping using the selected target terminology.
+    start the process for constructing a mapping using the selected target terminology.
   </p>
 </div>
 </td></tr>
@@ -177,11 +177,12 @@ String hm_basePath = request.getContextPath();
   </table>
   <p>
     You can enter source term data by clicking on the <b>Upload</b> button.
-    The input file can be a list of terms with each line containin a term, or 
-    it can be a list of code and term pairs with each pair of code and term seperated by a tab character.
-    Alternatively, you can enter soure term data directly to the text area using cut and paste.
-    Press the <b>Continue</b> button to start the automated mapping of your terms to the target terminology.
-    Use the <b>Reset</b> button to reset the text field.
+    The input file contains source term data with each line containin a term, or a 
+    code and a term seperated by a tab character if the source code is available.
+    Alternatively, you can enter the above code and term data to the text area directly through cut and paste.
+    Press the <b>Continue</b> button to find out the computer suggested mapping from source terms to the selected target terminology.
+    A Matched Concepts page will appear when the processing is complete.
+    Use the <b>Reset</b> button to reset the text area.
   </p>
 </div>
 </td></tr>
@@ -199,14 +200,15 @@ String hm_basePath = request.getContextPath();
     </tr>
   </table>
   <p>
-The Matched Concepts page contains a list of mapping entries. )
-Each mapping entry contains source code (if available), source label (i.e., source term), target code, and target label (i.e., the "preferred name" of the target
+The Matched Concepts page contains a list of mapping entries. 
+Each mapping entry contains a source code (if available), a source label (i.e., source term), a target code, and a target label (i.e., the "preferred name" of the target
 cocept) if a match is found by the mapping tool.
-Otherwise, the corresponding row will only contain the source code and source label.
-You may remove some mapping entries by first checking the checkboxes corresponding to each mapping entry (i.e., row) 
-and then press the <b>Delete</b> button.
+If not match is found, then the corresponding row will only contain the source code and the source label.
+You may delete mapping entries by first clicking on checkboxes corresponding to mapping entries that you feel are not invalid
+and press the <b>Delete</b> button.
 Click on the <b>Continue</b> button to find out terms that have not been mapped to any concept in the target terminology.
-You may export the mapping results to a CSV formatted file by clicking on the <i>Export Excel</i> link.
+This will take you to the Unmatched Terms page.
+You may export the mapping results at any time to a Comma Separated Value (CSV) formatted file by clicking on the <i>Export Excel</i> link.
   </p>
 </div>
 </td></tr>
@@ -224,9 +226,10 @@ You may export the mapping results to a CSV formatted file by clicking on the <i
     </tr>
   </table>
   <p>
-The Unmatched Terms page contains a table showing the list of terms that have not been mapped to any concept in the target terminology.
+The Unmatched Terms page contains a table showing the list of source terms that have not been mapped to any concept in the target terminology.
 Each row in the table contains a source code (if available), and a source label.
-You may click on the label of any unmatched term to search for matched concepts manually. 
+You may click on the label of any unmatched term to search for matched concepts yourself manually. 
+This will take you to the Manual Mapping page.
 You may export the unmatched terms to a CSV formatted file by clicking on the <i>Export Excel</i> link.
   </p>
 </div>
@@ -245,11 +248,11 @@ You may export the unmatched terms to a CSV formatted file by clicking on the <i
     </tr>
   </table>
   <p>
-The Manual Mapping page provides an interface for you to search for possible concepts in the target terminology that
-match with the specific term.
-Enter words in the text field and press <b>Search</b> to perform the search.
-Check the checkboxes corresponding to the concepts that match well with the source term and press 
+The Manual Mapping page provides an interface that allows you to search for possible matched concepts in the target terminology interactively.
+Enter keywords in the text field and press <b>Search</b> to perform the search.
+Select all checkboxes corresponding to the concepts that you feel match well with the corresponding source concept and press 
 <b>Save</b> to update the mapping results.
+This will bring you back to the Matched Concepts page. 
   </p>
 </div>
 </td></tr>
