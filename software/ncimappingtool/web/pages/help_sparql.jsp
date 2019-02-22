@@ -164,6 +164,7 @@ String hm_basePath = request.getContextPath();
     start the process for constructing a mapping using the selected target terminology.
     This willl take you to the Enter Source Terms page.
     You may also upload an existing CSV formatted mapping that is under construction by pressing the <b>Upload</b> button.
+    Make sure that your file has a file extension "csv".
     After the file is uploaded successfully, the Matched Concepts page will appear.
   </p>
 </div>
@@ -185,6 +186,7 @@ String hm_basePath = request.getContextPath();
     You can enter source term data by clicking on the <b>Upload</b> button.
     The input file contains source term data with each line containin a term, or a 
     code and a term seperated by a tab character if the source code is available.
+    Please assign your data file a file extension "txt".
     Alternatively, you can enter the above code and term data to the text area directly through cut and paste.
     Press the <b>Continue</b> button to find out the computer suggested mapping from source terms to the selected target terminology.
     A Matched Concepts page will appear when the processing is complete.
