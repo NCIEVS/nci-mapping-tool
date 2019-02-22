@@ -1,10 +1,18 @@
-<h:form>  
+<h:form>
+<%
+String warning_msg = (String) request.getSession().getAttribute("msg");
+request.getSession().removeAttribute("msg");
+%>
+<% if (warning_msg != null) { %>
+<p class="textbodyred">&nbsp;<%= warning_msg %></p>
+<%
+}
+%>
 Please select a terminology then press <b>New</b> to start constructing a new mapping,
 or press <b>Upload</b> to load an existing mapping file.
 <table border="0" cellpadding="0" cellspacing="0" role='presentation'>
 <%
 System.out.println("vocabulary_listing.jsp...");
-
 String codingSchemeName = (String) request.getSession().getAttribute("codingSchemeName");
 if (codingSchemeName == null) {
     codingSchemeName = "NCI_Thesaurus";

@@ -22,6 +22,9 @@ L--%>
   //String application_version = new DataUtils().getApplicationVersion();
   //String anthill_build_tag_built = new DataUtils().getNCITAnthillBuildTagBuilt();
   //String evs_service_url = new DataUtils().getEVSServiceURL();
+  
+  
+  
 %>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <html xmlns:c="http://java.sun.com/jsp/jstl/core">

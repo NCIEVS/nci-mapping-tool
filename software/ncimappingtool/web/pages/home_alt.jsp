@@ -43,6 +43,8 @@ System.out.println("hm_basePath : " + hm_basePath);
 Vector cs_data = gov.nih.nci.evs.browser.utils.DataUtils.get_cs_data();
 System.out.println("Rendering home_alt.jsp ...");
 
+
+
 %>
 <f:view>
   <!-- Begin Skip Top Navigation -->

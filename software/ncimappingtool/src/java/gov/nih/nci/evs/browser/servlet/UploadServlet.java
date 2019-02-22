@@ -149,6 +149,8 @@ public final class UploadServlet extends HttpServlet {
 
     public void execute(HttpServletRequest request, HttpServletResponse response)
             throws IOException, ServletException {
+		request.getSession().removeAttribute("msg");
+
         // Determine request by attributes
         String action = (String) request.getParameter("action");
         System.out.println("action: " + action);
@@ -173,6 +175,8 @@ public final class UploadServlet extends HttpServlet {
 		System.out.println("(*) mode: " + mode);
 
         String s = null;
+        String msg = null;
+        String filename = "";
 		try {
 			/*
 			 * Parse the request
@@ -181,6 +185,7 @@ public final class UploadServlet extends HttpServlet {
 			Iterator itr = items.iterator();
 			while(itr.hasNext()) {
 				FileItem item = (FileItem) itr.next();
+				filename = item.getName();
 				/*
 				 * Handle Form Fields.
 				 */
@@ -216,8 +221,14 @@ public final class UploadServlet extends HttpServlet {
 						}
 				    } else {
 						if (action.compareTo("upload_data") == 0) {
+							if (!filename.endsWith("txt")) {
+								msg = "WARNING: Invalid file format.";
+							}
 							request.getSession().setAttribute("data", s);
 						} else {
+							if (!filename.endsWith("csv")) {
+								msg = "WARNING: Invalid file format.";
+							}
 							request.getSession().setAttribute("mapping_data", s);
 						}
 					}
@@ -243,44 +254,59 @@ public final class UploadServlet extends HttpServlet {
 		} else {
 			if (action.compareTo("upload_data") == 0) {
 				System.out.println("*** redirect to enter_mapping_data.jsf");
+				if (msg != null) {
+				    request.getSession().setAttribute("msg", msg);
+				}
 				response.sendRedirect(response.encodeRedirectURL(request.getContextPath() + "/pages/enter_mapping_data.jsf"));
 
 			} else {
-				Vector<String> v = parseData(s, '\n');
-				List entries = new ArrayList();
-				int match_knt = 0;
-				int size = 0;
-				for (int i=1; i<v.size(); i++) {
-					String t = (String) v.elementAt(i);
-					System.out.println(t);
-					if (t.length() > 0) {
-						size++;
-						List<String> values = Arrays.asList(t.split("\\s*,\\s*"));
-						String source_code = values.get(0);
-						source_code = source_code.substring(1, source_code.length()-1);
+				try {
+					if (msg == null) {
+						Vector<String> v = parseData(s, '\n');
+						List entries = new ArrayList();
+						int match_knt = 0;
+						int size = 0;
+						for (int i=1; i<v.size(); i++) {
+							String t = (String) v.elementAt(i);
+							if (t.length() > 0) {
+								size++;
+								List<String> values = Arrays.asList(t.split("\\s*,\\s*"));
+								String source_code = values.get(0);
+								source_code = source_code.substring(1, source_code.length()-1);
 
-						String source_term = values.get(1);
-						source_term = source_term.substring(1, source_term.length()-1);
+								String source_term = values.get(1);
+								source_term = source_term.substring(1, source_term.length()-1);
 
-						String target_code = values.get(2);
-						target_code = target_code.substring(1, target_code.length()-1);
+								String target_code = values.get(2);
+								target_code = target_code.substring(1, target_code.length()-1);
 
-						String target_term = values.get(3);
-						target_term = target_term.substring(1, target_term.length()-1);
+								String target_term = values.get(3);
+								target_term = target_term.substring(1, target_term.length()-1);
 
-						gov.nih.nci.evs.mapping.bean.MappingEntry m = new gov.nih.nci.evs.mapping.bean.MappingEntry(source_code, source_term, target_code, target_term);
-						if (target_code != null && target_code.length() > 0) {
-							match_knt++;
+								gov.nih.nci.evs.mapping.bean.MappingEntry m = new gov.nih.nci.evs.mapping.bean.MappingEntry(source_code, source_term, target_code, target_term);
+								if (target_code != null && target_code.length() > 0) {
+									match_knt++;
+								}
+								entries.add(m);
+							}
 						}
-						entries.add(m);
+
+						gov.nih.nci.evs.mapping.bean.Mapping mapping = new gov.nih.nci.evs.mapping.bean.Mapping(size, match_knt, entries);
+						request.getSession().removeAttribute("mapping_data");
+						request.getSession().setAttribute("mapping", mapping);
 					}
+
+				} catch (Exception ex) {
+					ex.printStackTrace();
+					msg = "WARNING: Invalid file format.";
 				}
 
-				gov.nih.nci.evs.mapping.bean.Mapping mapping = new gov.nih.nci.evs.mapping.bean.Mapping(size, match_knt, entries);
-				request.getSession().removeAttribute("mapping_data");
-				request.getSession().setAttribute("mapping", mapping);
-
-				response.sendRedirect(response.encodeRedirectURL(request.getContextPath() + "/pages/auto_mapping_results.jsf"));
+				if (msg == null) {
+				    response.sendRedirect(response.encodeRedirectURL(request.getContextPath() + "/pages/auto_mapping_results.jsf"));
+				} else {
+					request.getSession().setAttribute("msg", msg);
+					response.sendRedirect(response.encodeRedirectURL(request.getContextPath() + "/pages/home_alt.jsf"));
+				}
 
 			}
 		}

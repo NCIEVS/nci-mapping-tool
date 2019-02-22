@@ -1,4 +1,14 @@
-<h:form>  
+<h:form> 
+<%
+String warning_msg = (String) request.getSession().getAttribute("msg");
+request.getSession().removeAttribute("msg");
+%>
+<% if (warning_msg != null) { %>
+<p class="textbodyred">&nbsp;<%= warning_msg %></p>
+<%
+}
+%>
+
 Please enter or upload a list of terms (and optionally the code of each term) in the text field below. Press <b>Continue</b> to proceed.
 <p></p>
 <table border="0" cellpadding="0" cellspacing="0" role='presentation'>
