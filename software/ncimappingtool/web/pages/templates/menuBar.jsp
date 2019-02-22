@@ -11,7 +11,11 @@ L--%>
     <td align="right">
       <a href="<%= request.getContextPath() %>/pages/home_alt.jsf" >Home</a>
 |
+<!--
       <a href="<%= request.getContextPath() %>/pages/help_sparql.jsf" >Help</a>&nbsp;&nbsp;&nbsp;
+-->      
+      <a href="#" onClick="window.open('<%= request.getContextPath() %>/pages/help_sparql.jsf', '_blank')">Help</a>&nbsp;&nbsp;&nbsp;
+      
     </td>
   </tr>
 </table>
