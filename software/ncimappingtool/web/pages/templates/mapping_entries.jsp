@@ -3,6 +3,7 @@
 
 <%
 String msg = (String) request.getSession().getAttribute("msg");
+request.getSession().removeAttribute("msg");
 String codingSchemeName = (String) request.getSession().getAttribute("codingSchemeName");
 System.out.println("codingSchemeName: " + codingSchemeName);
 %>
@@ -118,15 +119,6 @@ for (int i=0; i<entries.size(); i++) {
 	      alt="Delete"
 	      tabindex="1">
 	    </h:commandButton>
-<!--	    
-	    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	    
-	    <h:commandButton id="upload" value="upload" action="#{mappingSessionBean.uploadMappingAction}"
-	      image="/images/upload.gif"
-	      alt="Upload mapping results from a file"
-	      tabindex="2">
-	    </h:commandButton> 	  
--->	    		    
 	    
 	  </td>
 	  </tr>	    

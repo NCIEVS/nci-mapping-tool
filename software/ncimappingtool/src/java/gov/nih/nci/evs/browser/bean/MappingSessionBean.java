@@ -458,7 +458,7 @@ public class MappingSessionBean {
         request.getSession().removeAttribute("msg");
 
         String[] rowids = (String[]) request.getParameterValues("rowids");
-		if (rowids.length == 0) {
+		if (rowids == null || rowids.length == 0) {
 			String msg = "WARNING: No item is selected.";
 			request.getSession().setAttribute("msg", msg);
 			return "warning";

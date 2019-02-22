@@ -116,6 +116,8 @@ public class DataManager {
 				System.out.println("File " + filePathString + " does not exist.");
 				if (codingSchemeName.compareTo(NCI_THESAURUS) == 0) {
 					data = get_terms(namedGraph, null);
+				} else if (namedGraph.compareTo("http://cbiit.nci.nih.gov/caDSR") == 0) {
+					data = get_names_cadsr(namedGraph);
 				} else {
 					data = get_names(namedGraph);
 				}
@@ -129,6 +131,30 @@ public class DataManager {
 		    //}
 		}
 	}
+
+	public String construct_get_names_cadsr(String namedGraph) {
+		StringBuffer buf = new StringBuffer();
+		buf.append("PREFIX owl:<http://www.w3.org/2002/07/owl#>").append("\n");
+		buf.append("PREFIX rdfs:<http://www.w3.org/2000/01/rdf-schema#>").append("\n");
+		buf.append("PREFIX xsd:<http://www.w3.org/2001/XMLSchema#>").append("\n");
+		buf.append("PREFIX skos:<http://www.w3.org/2004/02/skos/core#>").append("\n");
+		buf.append("").append("\n");
+		buf.append("SELECT DISTINCT ?x_code ?x_label ?x_syn").append("\n");
+		buf.append("{").append("\n");
+		buf.append("GRAPH <" + namedGraph + "> ").append("\n");
+		buf.append("{").append("\n");
+		buf.append("?x ?p ?y .").append("\n");
+		buf.append("?x http://www.w3.org/2000/01/rdf-schema#label ?x_label .").append("\n");
+		buf.append("?x http://cbiit.nci.nih.gov/caDSR#publicId ?x_code .").append("\n");
+		buf.append("OPTIONAL {").append("\n");
+		//buf.append("?x skos:altLabel ?x_syn .").append("\n");
+		buf.append("?x http://www.w3.org/2004/02/skos/core#altLabel ?x_syn .").append("\n");
+		buf.append("}").append("\n");
+		buf.append("}").append("\n");
+		buf.append("}").append("\n");
+		return buf.toString();
+	}
+
 
 	public Vector getTerminologies() {
 		return terminologies;
@@ -337,6 +363,17 @@ public class DataManager {
 
 	public Vector get_names(String namedGraph) {
 	    String query = construct_get_names(namedGraph);
+	    Vector v = executeQuery(query);
+	    if (v == null) return null;
+	    if (v.size() == 0) return null;
+	    v = new ParserUtils().getResponseValues(v);
+	    v = new gov.nih.nci.evs.restapi.util.SortUtils().quickSort(v);
+	    v = replace_null_values(v);
+	    return v;
+	}
+
+	public Vector get_names_cadsr(String namedGraph) {
+	    String query = construct_get_names_cadsr(namedGraph);
 	    Vector v = executeQuery(query);
 	    if (v == null) return null;
 	    if (v.size() == 0) return null;
