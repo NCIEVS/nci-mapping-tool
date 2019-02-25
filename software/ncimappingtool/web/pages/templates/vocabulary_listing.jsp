@@ -58,6 +58,9 @@ cs_data = DataUtils.get_cs_data();
 	    value="<%=ng%>"
 	    <%=checkedStr%>
 	/>
+	
+<!--	
+	
 	<%
 	
 	String href = request.getContextPath() + "/pages/vocabulary_home.jsf" + "?ng=" + ng;
@@ -67,6 +70,9 @@ cs_data = DataUtils.get_cs_data();
 
 	%>
 	<a href="<%=href%>"><%= display_label %></a>
+	
+-->	
+	<%= display_label %>
       </td>
    </tr>
 
