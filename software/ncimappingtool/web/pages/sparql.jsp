@@ -11,6 +11,8 @@
 <%@ page import="gov.nih.nci.evs.restapi.bean.*"%>
 <%@ page import="gov.nih.nci.evs.restapi.util.*"%>
 
+<%@ page import="gov.nih.nci.evs.browser.utils.*"%>
+
 <%@ page import="java.util.*"%>
 
 
@@ -56,8 +58,9 @@ String serviceUrl = NCImtProperties._service_url;
 %>
 <h1><%=serviceUrl%></h1>
 <%
-Vector cs_data = new Vector();
+Vector cs_data = gov.nih.nci.evs.browser.utils.DataUtils.get_cs_data();
 String ng = (String) request.getSession().getAttribute("ng");
+/*
 DataManager dm = (DataManager) request.getSession().getAttribute("dm");
 if (dm == null) {
 	serviceUrl = NCImtProperties._service_url;
@@ -76,6 +79,8 @@ if (dm == null) {
 	request.getSession().setAttribute("dm", dm);
 }
 cs_data = (Vector) request.getSession().getAttribute("cs_data");
+*/
+
 String codingSchemeName = (String) request.getSession().getAttribute("codingSchemeName");
 if (codingSchemeName == null) {
     codingSchemeName = "NCI_Thesaurus";
@@ -269,12 +274,36 @@ if (result_vec != null) {
 </table>
 </div>
 
-        <%@ include file="/pages/templates/nciFooter.jsp" %>
+<div class="footer" style="width:100%">
+  <ul class="textbody">
+    <li><a href="http://www.cancer.gov" target="_blank" alt="National Cancer Institute">NCI Home</a> |</li>
+    <li><a href="<%= request.getContextPath() %>/pages/contact_us.jsf>Contact Us</a> |</li>
+    <li><a href="http://www.cancer.gov/policies" target="_blank" alt="National Cancer Institute Policies">Policies</a> |</li>
+    <li><a href="http://www.cancer.gov/policies/page3" target="_blank" alt="National Cancer Institute Accessibility">Accessibility</a> |</li>
+    <li><a href="http://www.cancer.gov/policies/page6" target="_blank" alt="National Cancer Institute FOIA">FOIA</a></li>
+  </ul>
+<center>
+<a href="http://www.hhs.gov/" alt="U.S. Department of Health and Human Services">
+U.S. Department of Health and Human Services
+</a>
+&nbsp;|&nbsp;
+<a href="https://www.nih.gov/about-nih" alt="National Institutes of Health">
+National Institutes of Health
+</a>
+&nbsp;|&nbsp;
+<a href="http://www.cancer.gov/" alt="National Cancer Institute">
+National Cancer Institute
+</a>
+&nbsp;|&nbsp;
+<a href="https://www.usa.gov/" alt="USA.gov">
+USA.gov
+</a>
+</center>
+</div>
+<!-- end footer -->
+
       </div>
       <!-- end Page content -->        
-<!--        
-    <div class="mainbox-bottom"><img src="/images/mainbox-bottom.gif" width="945" height="5" alt="Mainbox Bottom" /></div>
--->
 
 </f:view>
 </body>

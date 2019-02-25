@@ -27,10 +27,12 @@ if (focus_code != null && focus_code.compareTo("null") != 0) {
 			<a href="#" onclick="javascript:popup_window('<%=request.getContextPath() %>/ajax?action=view_graph&ng=<%=namedGraph%>&code=<%=focus_code%>&type=ALL', '_blank','top=100, left=100, height=740, width=680, status=no, menubar=no, resizable=yes, scrollbars=yes, toolbar=no, location=no, directories=no');" tabindex="12"
 			title="This link displays a graph that recapitulates some information in the Relationships tab in a visual format.">
 			View Graph</a>  
-		|		
+		|
+		
+-->		
 		        <a href="<%=request.getContextPath() %>/pages/sparql.jsf?ng=<%=namedGraph%>" title="Sparql Query Endpoint.">Sparql Query</a>    		
+		|
 
--->
 <%
 Mapping mapping = (Mapping) request.getSession().getAttribute("mapping");
 if (mapping != null) {
