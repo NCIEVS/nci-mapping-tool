@@ -533,4 +533,15 @@ System.out.println("_sparql_service_url: " + _sparql_service_url);
 		if (named_graph.indexOf("NCIt") != -1 || named_graph.indexOf("Thesaurus") != -1) return true;
 		return false;
 	}
+
+	public static String get_SPARQL_SERVICE() {
+			return _service_url;
+	}
+
+
+	public static String get_TERMINOLOGY() {
+		return "NCI Thesaurus";
+	}
+
+
 }

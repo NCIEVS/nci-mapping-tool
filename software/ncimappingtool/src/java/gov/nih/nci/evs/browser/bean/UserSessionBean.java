@@ -7,6 +7,9 @@
 
 package gov.nih.nci.evs.browser.bean;
 
+import gov.nih.nci.evs.browser.properties.*;
+import gov.nih.nci.evs.restapi.util.OWLSPARQLUtils;
+import gov.nih.nci.evs.restapi.util.ParserUtils;
 import java.util.*;
 import java.net.URI;
 
@@ -35,7 +38,7 @@ import org.LexGrid.LexBIG.Extensions.Generic.MappingExtension.Mapping.SearchCont
 
 
 /**
- * 
+ *
  */
 
 /**
@@ -431,7 +434,7 @@ mappingIteratorBean.initialize();
 
         if (NCImtBrowserProperties.get_debugOn()) {
             try {
-                _logger.debug(Utils.SEPARATOR);
+                _logger.debug(gov.nih.nci.evs.browser.utils.Utils.SEPARATOR);
                 _logger.debug("* criteria: " + matchText);
                 // _logger.debug("* matchType: " + matchtype);
                 _logger.debug("* source: " + source);
@@ -2348,4 +2351,45 @@ int selected_knt = 0;
 		}
 		return null;
     }
+
+
+    public String queryAction() {
+        HttpServletRequest request =
+            (HttpServletRequest) FacesContext.getCurrentInstance()
+                .getExternalContext().getRequest();
+
+		request.getSession().removeAttribute("time_taken");
+		request.getSession().removeAttribute("result_vec");
+
+
+		OWLSPARQLUtils owlSPARQLUtils = (OWLSPARQLUtils) request.getSession().getAttribute("owlSPARQLUtils");
+		if (owlSPARQLUtils == null) {
+			String serviceUrl = NCImtProperties._service_url;
+			System.out.println("serviceUrl: " + serviceUrl);
+			owlSPARQLUtils = new OWLSPARQLUtils(serviceUrl);
+			request.getSession().setAttribute("owlSPARQLUtils", owlSPARQLUtils);
+		}
+
+		String queryString = (String) request.getParameter("queryString");
+		//System.out.println("queryString: " + queryString);
+		queryString = owlSPARQLUtils.getPrefixes() + "\n" + queryString;
+		request.getSession().setAttribute("queryString", queryString);
+
+		long ms = System.currentTimeMillis();
+
+        Vector result_vec = owlSPARQLUtils.executeQuery(queryString);
+        if (result_vec == null) {
+			System.out.println("result_vec == null");
+		} else {
+			System.out.println("result_vec" + result_vec.size());
+		}
+		ms = System.currentTimeMillis() - ms;
+		String time_taken = "" + ms;
+		request.getSession().setAttribute("time_taken", time_taken);
+
+		result_vec = new ParserUtils().getResponseValues(result_vec);
+        request.getSession().setAttribute("result_vec", result_vec);
+		return "query_response";
+	}
+
 }

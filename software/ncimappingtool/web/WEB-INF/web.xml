@@ -54,7 +54,15 @@ L-->
         <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
         <load-on-startup> 1 </load-on-startup>
     </servlet>
-	
+
+
+    <servlet>
+        <servlet-name>ajax</servlet-name>
+        <servlet-class>gov.nih.nci.evs.browser.servlet.SparqlServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>	
+    
+    
 	<!-- Faces Servlet Mapping -->
 
 	    <servlet-mapping>
@@ -72,5 +80,11 @@ L-->
 		<servlet-name>Faces Servlet</servlet-name>
 		<url-pattern>*.jsf</url-pattern>
 	</servlet-mapping>
+	
+	
+	    <servlet-mapping>
+		 <servlet-name>ajax</servlet-name>
+		 <url-pattern>/ajax</url-pattern>
+	    </servlet-mapping>	
 	
 </web-app>

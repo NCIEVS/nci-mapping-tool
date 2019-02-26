@@ -55,31 +55,8 @@ Welcome to NCI Enterprise Vocabulary Services (EVS) SPARQL Endpoint
 </div>
 <%
 String serviceUrl = NCImtProperties._service_url;
-%>
-<h1><%=serviceUrl%></h1>
-<%
 Vector cs_data = gov.nih.nci.evs.browser.utils.DataUtils.get_cs_data();
 String ng = (String) request.getSession().getAttribute("ng");
-/*
-DataManager dm = (DataManager) request.getSession().getAttribute("dm");
-if (dm == null) {
-	serviceUrl = NCImtProperties._service_url;
-	String data_directory = NCImtProperties._data_directory;
-	dm = new DataManager(serviceUrl, data_directory);
-	Vector terminologies = dm.getTerminologies();
-	for (int i=0; i<terminologies.size(); i++) {
-	    Terminology terminology = (Terminology) terminologies.elementAt(i);
-	    cs_data.add(terminology.getCodingSchemeName() + "|" + terminology.getCodingSchemeVersion() + "|" + terminology.getNamedGraph());
-	    if (terminology.getCodingSchemeName().compareTo("NCI_Thesaurus") == 0) {
-	    	ng = terminology.getNamedGraph();
-	    }
-	}
-	cs_data = new gov.nih.nci.evs.restapi.util.SortUtils().quickSort(cs_data);
-	request.getSession().setAttribute("cs_data", cs_data);
-	request.getSession().setAttribute("dm", dm);
-}
-cs_data = (Vector) request.getSession().getAttribute("cs_data");
-*/
 
 String codingSchemeName = (String) request.getSession().getAttribute("codingSchemeName");
 if (codingSchemeName == null) {
@@ -119,6 +96,7 @@ if (queryString == null || queryString.compareTo("null") == 0) {
 if (time_taken == null || time_taken.compareTo("null") == 0) {
     time_taken = "";
 }
+Vector row_element_vec = null;
 
 Vector result_vec = (Vector) request.getSession().getAttribute("result_vec");
 %>
@@ -188,6 +166,7 @@ for (int i=0; i<u.size(); i++) {
      
 <%
 String message = (String) request.getSession().getAttribute("message");
+request.getSession().removeAttribute("message");
 if (message != null) {
 %>
       <p class="textbodyred"><%=message%></p>
@@ -226,51 +205,45 @@ if (message != null) {
 </div>
 
 <div align="center">
+
+	<br/>
+    	<div class="results">
+	<b>Time Taken:</b>&nbsp;<%=time_taken%> milliseconds</p>
+
 <table class="datatable_960" summary="" cellpadding="3" cellspacing="0" border="0" width="100%">
 <%
 if (result_vec != null) {
-    String header_str = (String) result_vec.elementAt(0);
-    Vector header_vec = gov.nih.nci.evs.restapi.util.StringUtils.parseData(header_str);
-    for (int i=0; i<header_vec.size(); i++) {
-        String header = (String) header_vec.elementAt(i);
-%>
-        <th class="dataTableHeader" scope="col" align="left"><%=header%></th>
-<%
-    }
-    for (int i=1; i<result_vec.size(); i++) {
-        String row = (String) result_vec.elementAt(i);
-        Vector row_element_vec = gov.nih.nci.evs.restapi.util.StringUtils.parseData(row);
-        
-	    if (i % 2 == 0) {
-	    %>
-	      <tr class="dataRowDark">
-	    <%
-	    } else {
-	    %>
-	      <tr class="dataRowLight">
-	    <%
-	    }
-	for (int j=0; j<row_element_vec.size(); j++) {
-	    String row_element = (String) row_element_vec.elementAt(j);
-	    row_element = gov.nih.nci.evs.restapi.util.StringUtils.encode_term(row_element); 
+		    for (int i=0; i<result_vec.size(); i++) {
+			String row = (String) result_vec.elementAt(i);
+			row_element_vec = gov.nih.nci.evs.restapi.util.StringUtils.parseData(row);
+
+		    	    if (i % 2 == 0) {
+			    %>
+			      <tr class="dataRowDark">
+			    <%
+			    } else {
+			    %>
+			      <tr class="dataRowLight">
+			    <%
+			    }
     
-        %>
-	    <td class="dataCellText" scope="row">
-		 <%=row_element%>
-	    </td>
-<%
-        }
-%>        
-        </tr>
-<%        
-    }
-%>
-<br/>
-    <div class="results">
-<b>Time Taken:</b>&nbsp;<%=time_taken%> milliseconds</p>
-<%
+			for (int j=0; j<row_element_vec.size(); j++) {
+			    String row_element = (String) row_element_vec.elementAt(j);
+			    %>
+			    <td class="dataCellText" scope="row">
+				 <%=row_element%>
+			    </td>
+		<%
+			}
+		%>        
+                        </tr>
+        
+		<%        
+		    }
 }
 %>
+
+
 </table>
 </div>
 

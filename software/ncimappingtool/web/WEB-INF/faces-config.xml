@@ -938,5 +938,29 @@ L-->
         <managed-bean-scope>session</managed-bean-scope>
     </managed-bean>
     
+
+     <navigation-rule>
+           <from-view-id>/pages/sparql.jsp</from-view-id>
+         
+           <navigation-case>
+               <from-action>#{userSessionBean.queryAction}</from-action>
+               <from-outcome>query_response</from-outcome>
+               <to-view-id>/pages/sparql.jsp</to-view-id>
+          </navigation-case>
+          
+            <navigation-case>
+               <from-action>#{userSessionBean.queryAction}</from-action>
+               <from-outcome>message</from-outcome>
+               <to-view-id>/pages/message.jsp</to-view-id>
+          </navigation-case>         
+          
+          
+           <navigation-case>
+               <from-action>#{userSessionBean.resetAction}</from-action>
+               <from-outcome>reset_response</from-outcome>
+               <to-view-id>/pages/sparql.jsp</to-view-id>
+          </navigation-case>          
+          
+    </navigation-rule> 
     
 </faces-config>
