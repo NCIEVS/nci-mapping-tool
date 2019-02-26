@@ -253,31 +253,36 @@ System.out.println("*** action: " + action);
             search_tree(response, ng, node_id);
 
         } else if (action.equals("view_graph")) {
-/*
-			String named_graph = (String) request.getParameter("ng");
-			if (NCImtBrowserProperties.isNCIt(named_graph)) {
-				HashMap nameVersion2NamedGraphMap = NCImtBrowserProperties.getNameVersion2NamedGraphMap();
-				String code = (String) request.getParameter("code");
+			String ng = (String) request.getParameter("ng");
+			String code = (String) request.getParameter("code");
+			String type =  (String) request.getParameter("type");
+			String scheme = null;
+			String version  = null;
+			String named_graph = null;
 
-				System.out.println("View graph named_graph: " + named_graph);
-				System.out.println("View graph code: " + code);
+			Vector cs_data = DataUtils.get_cs_data();
 
-				gov.nih.nci.evs.restapi.util.MetadataUtils mdu = new gov.nih.nci.evs.restapi.util.MetadataUtils();
-				String scheme = mdu.getVocabularyName(nameVersion2NamedGraphMap, named_graph);
-				String version = mdu.getVocabularyVersion(nameVersion2NamedGraphMap, named_graph);
+			System.out.println("cs_data: " + cs_data.size());
 
-				//String scheme =  (String) request.getParameter("scheme");
-				//String version =  (String) request.getParameter("version");
-				String ns = scheme;// (String) request.getParameter("ns");
-				//String code =  (String) request.getParameter("code");
-				String type =  (String) request.getParameter("type");
-				//String named_graph = gd.get_named_graph();
 
-				if (type == null) {
-					type = "ALL";
+			for (int j=0; j<cs_data.size(); j++) {
+				String line = (String) cs_data.elementAt(j);
+				System.out.println(line);
+				Vector u = gov.nih.nci.evs.restapi.util.StringUtils.parseData(line, '|');
+				scheme = (String) u.elementAt(0);
+				version = (String) u.elementAt(1);
+				named_graph = (String) u.elementAt(2);
+
+				if (named_graph.compareTo(ng) == 0) {
+					break;
 				}
+			}
+			String ns = scheme;
+			if (type == null) {
+				type = "ALL";
+			}
+			if (scheme.compareTo("NCI_Thesaurus") == 0) {
 				PrintWriter pw = null;
-
 				System.out.println("scheme: " + scheme);
 				System.out.println("version: " + version);
 				System.out.println("ns: " + ns);
@@ -285,20 +290,20 @@ System.out.println("*** action: " + action);
 				System.out.println("type: " + type);
 				System.out.println("named_graph: " + named_graph);
 				System.out.println("Calling gd.view_graph");
-
-				gd.view_graph(pw, request, response, scheme, version, gd.get_named_graph(), ns, code, type);
+				//gd.view_graph(pw, request, response, scheme, version, gd.get_named_graph(), ns, code, type);
+				gd.view_graph(pw, request, response, "ncimappingtool", scheme, version, ng, ns, code, type);
 
 			} else {
-				String code = (String) request.getParameter("code");
-				String type =  (String) request.getParameter("type");
+				code = (String) request.getParameter("code");
+				type =  (String) request.getParameter("type");
 				if (type == null) {
 					type = "ALL";
 				}
 				PrintWriter pw = null;
-				System.out.println("Calling gd.view_graph");
+				System.out.println("Calling ttl_gd.view_graph");
 				ttl_gd.view_graph(pw, request, response, named_graph, code, type);
 			}
-*/
+
         } else if (action.equals("reset_graph")) {
             String id = (String) request.getParameter("id");
             String scheme = (String) request.getSession().getAttribute("scheme");
