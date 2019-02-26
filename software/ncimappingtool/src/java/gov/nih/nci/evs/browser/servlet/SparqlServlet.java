@@ -301,7 +301,7 @@ System.out.println("*** action: " + action);
 				}
 				PrintWriter pw = null;
 				System.out.println("Calling ttl_gd.view_graph");
-				ttl_gd.view_graph(pw, request, response, named_graph, code, type);
+				ttl_gd.view_graph(pw, request, response, "ncimappingtool", named_graph, code, type);
 			}
 
         } else if (action.equals("reset_graph")) {
