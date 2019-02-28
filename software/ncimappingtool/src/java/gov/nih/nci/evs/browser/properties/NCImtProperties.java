@@ -70,6 +70,9 @@ public class NCImtProperties {
     public static String _service_url = null;
     public static TTLQueryUtilsRunner runner = null;
 
+    public static gov.nih.nci.evs.restapi.meta.util.VIHUtils ttl_vihUtils = null;
+    public static Vector PARENT_CHILDREN_VEC = null;
+
     private NCImtProperties() {
 
     }
@@ -78,7 +81,59 @@ public class NCImtProperties {
         _data_directory = NCImtBrowserProperties._data_directory;
         _service_url = NCImtBrowserProperties._sparql_service_url;
         runner = NCImtBrowserProperties.runner;
+        ttl_vihUtils = new gov.nih.nci.evs.restapi.meta.util.VIHUtils(_service_url);
+
+        String pathname = _data_directory + File.separator + "parent_child.txt";
+        File file = new File(pathname);
+        if (file.exists()) {
+        	PARENT_CHILDREN_VEC = gov.nih.nci.evs.restapi.util.Utils.readFile(pathname);
+		} else {
+			PARENT_CHILDREN_VEC = generate_parent_child_vec();
+            saveToFile("parent_child.txt", PARENT_CHILDREN_VEC);
+		}
     }
+
+	 public static void saveToFile(String outputfile, Vector v) {
+		outputfile = _data_directory + File.separator + outputfile;
+		PrintWriter pw = null;
+		try {
+			pw = new PrintWriter(outputfile, "UTF-8");
+			if (v != null && v.size() > 0) {
+				for (int i=0; i<v.size(); i++) {
+					String t = (String) v.elementAt(i);
+					pw.println(t);
+				}
+		    }
+		} catch (Exception ex) {
+
+		} finally {
+			try {
+				pw.close();
+				System.out.println("Output file " + outputfile + " generated.");
+			} catch (Exception ex) {
+				ex.printStackTrace();
+			}
+		}
+	}
+
+	public static Vector generate_parent_child_vec() {
+		OWLSPARQLUtils owlSPARQLUtils = new OWLSPARQLUtils(NCImtBrowserProperties._sparql_service_url);
+		Vector parent_child_vec = owlSPARQLUtils.getHierarchicalRelationships(get_default_named_graph());
+		parent_child_vec = new ParserUtils().getResponseValues(parent_child_vec);
+		parent_child_vec = new gov.nih.nci.evs.restapi.util.SortUtils().quickSort(parent_child_vec);
+		return parent_child_vec;
+	}
+
+	public static boolean checkIfFileExists(String filename) {
+		File file = null;
+		if (_data_directory != null) {
+			file = new File(_data_directory + File.separator + filename);
+		} else {
+			file = new File(filename);
+		}
+		return file.exists();
+	}
+
 
     public static String getPrefixes() {
 		return NCImtBrowserProperties.getPrefixes();
@@ -114,4 +169,11 @@ public class NCImtProperties {
 		return !isNCIt(named_graph);
 	}
 
+	public static Vector get_PARENT_CHILDREN() {
+        return PARENT_CHILDREN_VEC;
+	}
+
+	public static gov.nih.nci.evs.restapi.meta.util.VIHUtils get_ttl_vihUtils() {
+		return ttl_vihUtils;
+	}
 }

@@ -349,7 +349,6 @@
     }
 
     function searchTree(ontology_node_id, ontology_display_name) {
-
         var handleBuildTreeSuccess = function(o) {
       	var tsTotalStart = getTimeStamp();
 
@@ -402,10 +401,13 @@
         resetEmptyRoot();
 
         showSearchingTreeStatus();
-        var ontology_source = null;//document.pg_form.ontology_source.value;
-        var ontology_version = document.forms["pg_form"].ontology_version.value;
+        //var ontology_display_name = document.pg_form.ontology_display_name.value;
+        //var ontology_node_id = document.forms["pg_form"].ontology_node_id.value;
         var ng = document.forms["pg_form"].ng.value;
-        var request = YAHOO.util.Connect.asyncRequest('GET','<%= request.getContextPath() %>/ajax?action=search_tree&ng=' +ng+'&ontology_node_id=' +ontology_node_id+'&ontology_display_name='+ontology_display_name+'&version='+ontology_version+'&ontology_source='+ontology_source,buildTreeCallback);
+        
+        alert("calling ajax..." +ng);
+        
+        var request = YAHOO.util.Connect.asyncRequest('GET','<%= request.getContextPath() %>/ajax?action=search_tree&ng=' +ng+'&ontology_node_id=' +ontology_node_id+'&ontology_display_name='+ontology_display_name,buildTreeCallback);
 
       }
     }
@@ -481,7 +483,9 @@ if (ng == null) {
 		scheme = ontology_display_name;
 		String ontology_node_ns = ontology_display_name;
 
- 
+System.out.println("hierarchy.jsp ontology_node_id: " + ontology_node_id);
+System.out.println("hierarchy.jsp ontology_display_name: " + ontology_display_name);
+System.out.println("hierarchy.jsp ng: " + ng);
 %>
   
   

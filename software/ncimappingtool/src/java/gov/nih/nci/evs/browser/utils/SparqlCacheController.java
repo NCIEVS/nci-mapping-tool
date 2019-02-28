@@ -472,7 +472,7 @@ for (int j=0; j<label_code_vec.size(); j++) {
 
 	public String getViewInHierarchyJSONString(String named_graph, String focus_code) {
 		String json = null;
-/*
+
 		String key = "vih_of_$" + focus_code;
 		Element element = _cache.get(key);
 		if (element != null) {
@@ -518,7 +518,6 @@ System.out.println("getViewInHierarchyJSONString isNCIt: ");
 		} catch (Exception ex) {
 			ex.printStackTrace();
 		}
-		*/
 		return json;
 
 	}

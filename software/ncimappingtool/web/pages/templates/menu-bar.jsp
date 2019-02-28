@@ -1,4 +1,4 @@
-
+            
 <table border="0" width="920px" style="margin:0px 0px 0px 0px;">
 	<tr class="global-nav"> 
 		<td width="25%"></td>                       
@@ -21,35 +21,16 @@ if (namedGraph == null) {
 
 String scheme = prop_dictionary;
 %>  
-
-			<a href="#" onClick="javascript:popup_window('<%=request.getContextPath() %>/pages/hierarchy.jsf?ng=<%=namedGraph%>&scheme=<%=scheme%>', '_blank','top=100, left=100, height=740, width=680, status=no, menubar=no, resizable=yes, scrollbars=yes, toolbar=no, location=no, directories=no');" title="View In Hierarchy" >
+			<a href="#" onClick="javascript:popup_window('<%=request.getContextPath() %>/pages/hierarchy.jsf?ng=<%=namedGraph%>&scheme=<%=scheme%>', '_blank','top=100, left=100, height=740, width=680, status=no, menubar=no, resizable=yes, scrollbars=yes, toolbar=no, location=no, directories=no');" title="View Hierarchy" >
          		View Hierarchy</a> 
                 |
-               
-<%
-if (focus_code != null && focus_code.compareTo("null") != 0) {
-%>	
-    
-<!--    
-    
-<font color="white">
 			<a href="#" onClick="javascript:popup_window('<%=request.getContextPath() %>/pages/hierarchy.jsf?ng=<%=namedGraph%>&scheme=<%=scheme%>&code=<%=focus_code%>', '_blank','top=100, left=100, height=740, width=680, status=no, menubar=no, resizable=yes, scrollbars=yes, toolbar=no, location=no, directories=no');" title="View In Hierarchy" >
          		View In Hierarchy</a> 
-</font>		
                 |
 			<a href="#" onclick="javascript:popup_window('<%=request.getContextPath() %>/ajax?action=view_graph&ng=<%=namedGraph%>&code=<%=focus_code%>&type=ALL', '_blank','top=100, left=100, height=740, width=680, status=no, menubar=no, resizable=yes, scrollbars=yes, toolbar=no, location=no, directories=no');" tabindex="12"
 			title="This link displays a graph that recapitulates some information in the Relationships tab in a visual format.">
 			View Graph</a>  
 		|
-		
--->		
-
-			<a href="#" onclick="javascript:popup_window('<%=request.getContextPath() %>/ajax?action=view_graph&ng=<%=namedGraph%>&code=<%=focus_code%>&type=ALL', '_blank','top=100, left=100, height=740, width=680, status=no, menubar=no, resizable=yes, scrollbars=yes, toolbar=no, location=no, directories=no');" tabindex="12"
-			title="This link displays a graph that recapitulates some information in the Relationships tab in a visual format.">
-			View Graph</a>  
-		|
-
-
 		        <a href="<%=request.getContextPath() %>/pages/sparql.jsf?ng=<%=namedGraph%>" title="Sparql Query Endpoint.">Sparql Query</a>    		
 		|
 
@@ -58,8 +39,7 @@ Mapping mapping = (Mapping) request.getSession().getAttribute("mapping");
 if (mapping != null) {
 %>
 
-<a href="<%=request.getContextPath() %>/pages/auto_mapping_results.jsf" title="Sparql Query Endpoint.">Mapping Results</a>
-		|
+<a href="<%=request.getContextPath() %>/pages/auto_mapping_results.jsf" title="Back to Mapping Results">Mapping Results</a>
 		
 <%
 }
@@ -67,9 +47,7 @@ if (mapping != null) {
 			<a href="#" onclick="javascript:popup_window('http://ncitermform.nci.nih.gov/ncitermform/?dictionary=NCI Thesaurus&code=<%=focus_code%>', '_blank','top=100, left=100, height=740, width=680, status=no, menubar=no, resizable=yes, scrollbars=yes, toolbar=no, location=no, directories=no');" tabindex="12"
 			title="Term Suggestion.">
 			Suggest Changes</a>  
-<%
-}
-%>			
+			
 			
 		</td>
 	</tr>

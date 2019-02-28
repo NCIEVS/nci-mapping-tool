@@ -55,6 +55,7 @@ public class SparqlServlet extends HttpServlet {
    public void execute(HttpServletRequest request, HttpServletResponse response)
             throws IOException, ServletException {
 		String action = (String) request.getParameter("action");
+		System.out.println("action: " + action);
 //to be modified:
         String ontology_display_name = NCImtBrowserProperties.get_TERMINOLOGY();
         String ontology_version = null;
@@ -595,10 +596,11 @@ public class SparqlServlet extends HttpServlet {
 
 
     public static void search_tree(HttpServletResponse response, String named_graph, String node_id) {
-		/*
+		System.out.println("search_tree named_graph: " + named_graph);
+		System.out.println("search_tree node_id: " + node_id);
         try {
             String jsonString =
-            CacheController.getInstance().getViewInHierarchyJSONString(named_graph, node_id);
+            SparqlCacheController.getInstance().getViewInHierarchyJSONString(named_graph, node_id);
 
             if (jsonString == null)
                 return;
@@ -614,7 +616,6 @@ public class SparqlServlet extends HttpServlet {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        */
     }
 
     public static void dumpHashMap(HashMap map) {
