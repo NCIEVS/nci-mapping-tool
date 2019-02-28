@@ -208,7 +208,13 @@ if (message != null) {
 
 	<br/>
     	<div class="results">
-	<b>Time Taken:</b>&nbsp;<%=time_taken%> milliseconds</p>
+<%    	
+if (time_taken != null && time_taken.length() > 0) {    	
+%>    	
+	<b>Time Taken:</b>&nbsp;<%=time_taken%> (milliseconds)</p>
+<%	
+}	
+%>	
 
 <table class="datatable_960" summary="" cellpadding="3" cellspacing="0" border="0" width="100%">
 <%

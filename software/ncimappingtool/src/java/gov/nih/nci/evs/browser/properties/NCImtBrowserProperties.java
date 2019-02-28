@@ -533,6 +533,9 @@ System.out.println("_sparql_service_url: " + _sparql_service_url);
 		buf.append("PREFIX rdfs:<http://www.w3.org/2000/01/rdf-schema#>").append("|");
 		buf.append("PREFIX ncicp:<http://ncicb.nci.nih.gov/xml/owl/EVS/ComplexProperties.xsd#>").append("|");
 		buf.append("PREFIX dc:<http://purl.org/dc/elements/1.1/>");
+		buf.append("PREFIX skos:<http://www.w3.org/2004/02/skos/core#>").append("\n");
+		buf.append("PREFIX cadsr:<http://cbiit.nci.nih.gov/caDSR#>").append("\n");
+		buf.append("PREFIX ncit:<http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#>").append("\n");
 		return buf.toString();
 	}
 
@@ -545,7 +548,6 @@ System.out.println("_sparql_service_url: " + _sparql_service_url);
 	public static String get_SPARQL_SERVICE() {
 			return _service_url;
 	}
-
 
 	public static String get_TERMINOLOGY() {
 		return "NCI Thesaurus";
