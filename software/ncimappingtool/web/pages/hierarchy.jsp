@@ -404,9 +404,6 @@
         //var ontology_display_name = document.pg_form.ontology_display_name.value;
         //var ontology_node_id = document.forms["pg_form"].ontology_node_id.value;
         var ng = document.forms["pg_form"].ng.value;
-        
-        alert("calling ajax..." +ng);
-        
         var request = YAHOO.util.Connect.asyncRequest('GET','<%= request.getContextPath() %>/ajax?action=search_tree&ng=' +ng+'&ontology_node_id=' +ontology_node_id+'&ontology_display_name='+ontology_display_name,buildTreeCallback);
 
       }

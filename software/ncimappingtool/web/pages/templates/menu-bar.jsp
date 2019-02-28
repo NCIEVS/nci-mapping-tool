@@ -40,7 +40,7 @@ if (mapping != null) {
 %>
 
 <a href="<%=request.getContextPath() %>/pages/auto_mapping_results.jsf" title="Back to Mapping Results">Mapping Results</a>
-		
+|		
 <%
 }
 %>
