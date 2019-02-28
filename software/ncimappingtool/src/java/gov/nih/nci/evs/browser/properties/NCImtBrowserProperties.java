@@ -532,10 +532,10 @@ System.out.println("_sparql_service_url: " + _sparql_service_url);
 		buf.append("PREFIX xsd:<http://www.w3.org/2001/XMLSchema#>").append("|");
 		buf.append("PREFIX rdfs:<http://www.w3.org/2000/01/rdf-schema#>").append("|");
 		buf.append("PREFIX ncicp:<http://ncicb.nci.nih.gov/xml/owl/EVS/ComplexProperties.xsd#>").append("|");
-		buf.append("PREFIX dc:<http://purl.org/dc/elements/1.1/>");
-		buf.append("PREFIX skos:<http://www.w3.org/2004/02/skos/core#>").append("\n");
-		buf.append("PREFIX cadsr:<http://cbiit.nci.nih.gov/caDSR#>").append("\n");
-		buf.append("PREFIX ncit:<http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#>").append("\n");
+		buf.append("PREFIX dc:<http://purl.org/dc/elements/1.1/>").append("|");
+		buf.append("PREFIX skos:<http://www.w3.org/2004/02/skos/core#>").append("|");
+		buf.append("PREFIX cadsr:<http://cbiit.nci.nih.gov/caDSR#>").append("|");
+		buf.append("PREFIX ncit:<http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#>");
 		return buf.toString();
 	}
 

@@ -186,20 +186,13 @@
       var ontology_display_name = document.forms["pg_form"].ontology_display_name.value;
       var ontology_version = document.forms["pg_form"].ontology_version.value;
       var ng = document.forms["pg_form"].ng.value;
-      int n = ng.indexOf("NCI_Thesaurus");
-      if (n != -1) {
+
 	      load('<%= request.getContextPath() %>/concept_details.jsp?dictionary='+ ontology_display_name 
 		   + '&version='+ ontology_version 
 		   + '&ng=' + ng
 		   + '&code=' + ontology_node_id 
 		   + '&ns=' + ontology_node_ns, currOpener);
-      } else {
-	      load('<%= request.getContextPath() %>/concept_details_other.jsp?dictionary='+ ontology_display_name 
-		   + '&version='+ ontology_version 
-		   + '&ng=' + ng
-		   + '&code=' + ontology_node_id 
-		   + '&ns=' + ontology_node_ns, currOpener);      
-      }
+
     }
     
     function onClickViewEntireOntology(ontology_display_name) {
@@ -211,8 +204,10 @@
     }
 
     function initTree() {
+   
       tree = new YAHOO.widget.TreeView("treecontainer");
       var ontology_node_id = document.forms["pg_form"].ontology_node_id.value;
+      
       var ontology_display_name = document.forms["pg_form"].ontology_display_name.value;
       if (ontology_node_id == null || ontology_node_id == "null")
       {
@@ -475,6 +470,7 @@
 if (ng == null) {
     ng = NCImtProperties.get_default_named_graph();
 }
+
                 String scheme = (String) request.getParameter("scheme");
 		String ontology_display_name = scheme;
 		if (ontology_display_name == null) {
@@ -484,6 +480,7 @@ if (ng == null) {
 		String ontology_version = null;
 		scheme = ontology_display_name;
 		String ontology_node_ns = ontology_display_name;
+
  
 %>
   
@@ -513,12 +510,6 @@ if (ng == null) {
           <td valign="top"><div id="closeWindow"><a href="javascript:window.close();"><img src="<%=basePath%>/images/thesaurus_close_icon.gif" width="10" height="10" border="0" alt="Close Window" />&nbsp;CLOSE WINDOW</a></div></td>
         </tr>
         </table>
-
-<%
-if (ng == null) {
-	ng = NCImtProperties.get_default_named_graph();
-}
-%>
 
     <div>
       <img src="<%=basePath%>/images/thesaurus_popup_banner.gif" width="612" height="56" alt="NCI Thesaurus" title="" border="0" />

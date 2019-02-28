@@ -14,13 +14,25 @@ String namedGraph = (String) request.getParameter("ng");
 if (namedGraph == null) {
     namedGraph = (String) request.getSession().getAttribute("ng");
 }
+
+if (namedGraph == null) {
+    namedGraph = NCImtBrowserProperties.get_default_named_graph();
+}
+
 String scheme = prop_dictionary;
+%>  
+
+			<a href="#" onClick="javascript:popup_window('<%=request.getContextPath() %>/pages/hierarchy.jsf?ng=<%=namedGraph%>&scheme=<%=scheme%>', '_blank','top=100, left=100, height=740, width=680, status=no, menubar=no, resizable=yes, scrollbars=yes, toolbar=no, location=no, directories=no');" title="View In Hierarchy" >
+         		View Hierarchy</a> 
+                |
+               
+<%
 if (focus_code != null && focus_code.compareTo("null") != 0) {
-    %>	
+%>	
     
 <!--    
     
-<font color="while">
+<font color="white">
 			<a href="#" onClick="javascript:popup_window('<%=request.getContextPath() %>/pages/hierarchy.jsf?ng=<%=namedGraph%>&scheme=<%=scheme%>&code=<%=focus_code%>', '_blank','top=100, left=100, height=740, width=680, status=no, menubar=no, resizable=yes, scrollbars=yes, toolbar=no, location=no, directories=no');" title="View In Hierarchy" >
          		View In Hierarchy</a> 
 </font>		
