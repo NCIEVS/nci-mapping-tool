@@ -187,7 +187,7 @@
       var ontology_version = document.forms["pg_form"].ontology_version.value;
       var ng = document.forms["pg_form"].ng.value;
 
-	      load('<%= request.getContextPath() %>/concept_details.jsp?dictionary='+ ontology_display_name 
+	      load('<%= request.getContextPath() %>/pages/concept_details.jsf?dictionary='+ ontology_display_name 
 		   + '&version='+ ontology_version 
 		   + '&ng=' + ng
 		   + '&code=' + ontology_node_id 
