@@ -377,16 +377,13 @@ System.out.println("Done setCodingSchemeMap");
 				if (default_named_graph == null && terminology.getCodingSchemeName().compareTo("NCI_THesaurus") == 0) {
 					default_named_graph = terminology.getNamedGraph();
 				}
-				System.out.println(terminology.getCodingSchemeName());
+				//System.out.println(terminology.getCodingSchemeName());
 			}
 			cs_data = new gov.nih.nci.evs.restapi.util.SortUtils().quickSort(cs_data);
 			codingSchemeName2TerminologyHashmap = dm.getCodingSchemeName2TerminologyHashmap();
 			namedGraph2TerminologyHashmap = dm.getNamedGraph2TerminologyHashmap();
 		}
-
-
-
-	    System.out.println("exiting DataUtils static method.");
+	    //System.out.println("exiting DataUtils static method.");
 
 	}
 
@@ -508,9 +505,6 @@ System.out.println("Done setCodingSchemeMap");
  			String value = (String) it.next();
  			String cs = (String) _csnv2codingSchemeNameMap.get(value);
  			String version = (String) _csnv2VersionMap.get(value);
-
-//System.out.println("=== setMappingDisplayNameHashMap: cs " + cs + " version: " + version);
-
  			HashMap hmap = MetadataUtils.getMappingDisplayHashMap(cs, version);
  			if (hmap != null) {
  				_mappingDisplayNameHashMap.put(cs, hmap);

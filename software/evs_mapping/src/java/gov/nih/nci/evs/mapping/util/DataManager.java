@@ -92,12 +92,12 @@ public class DataManager {
 		this.terminologies = new Vector();
 		this.namedGraph2TerminologyHashmap = new HashMap();
 		this.codingSchemeName2TerminologyHashmap = new HashMap();
-		System.out.println("getTerminologyMetadata ...");
+		//System.out.println("getTerminologyMetadata ...");
 		Vector cs_data = getTerminologyMetadata(serviceUrl);
         System.out.println("Number of terminologies: " + cs_data.size());
 		for (int i=0; i<cs_data.size(); i++) {
 			String line = (String) cs_data.elementAt(i);
-			System.out.println(line);
+			//System.out.println(line);
 			Vector u = StringUtils.parseData(line, '|');
 			String codingSchemeName = (String) u.elementAt(0);
 			String codingSchemeVersion = (String) u.elementAt(1);

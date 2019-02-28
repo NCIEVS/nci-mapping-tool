@@ -102,9 +102,12 @@ public class NCImtProperties {
 	}
 
     public static boolean isLeaf(String named_graph, String code) {
-        Vector v = new OWLSPARQLUtils(_service_url).getSubclassesByCode(named_graph, code);
-        if (v == null || v.size() == 0) return true;
-        return false;
+		Vector v = null;
+		if (isNCIt(named_graph)) {
+			return new OWLSPARQLUtils(_service_url).isLeaf(named_graph, code);
+		} else {
+			return new TTLQueryUtils(_service_url).isLeaf(named_graph, code);
+		}
 	}
 
 	public static boolean isMetaThesaurusSource(String named_graph) {

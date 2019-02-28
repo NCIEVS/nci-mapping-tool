@@ -2361,17 +2361,14 @@ int selected_knt = 0;
 		request.getSession().removeAttribute("time_taken");
 		request.getSession().removeAttribute("result_vec");
 
-
 		OWLSPARQLUtils owlSPARQLUtils = (OWLSPARQLUtils) request.getSession().getAttribute("owlSPARQLUtils");
 		if (owlSPARQLUtils == null) {
 			String serviceUrl = NCImtProperties._service_url;
-			System.out.println("serviceUrl: " + serviceUrl);
 			owlSPARQLUtils = new OWLSPARQLUtils(serviceUrl);
 			request.getSession().setAttribute("owlSPARQLUtils", owlSPARQLUtils);
 		}
 
 		String queryString = (String) request.getParameter("queryString");
-		//System.out.println("queryString: " + queryString);
 		queryString = owlSPARQLUtils.getPrefixes() + "\n" + queryString;
 		request.getSession().setAttribute("queryString", queryString);
 

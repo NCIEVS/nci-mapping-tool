@@ -535,7 +535,7 @@ System.out.println("_sparql_service_url: " + _sparql_service_url);
 		buf.append("PREFIX dc:<http://purl.org/dc/elements/1.1/>").append("|");
 		buf.append("PREFIX skos:<http://www.w3.org/2004/02/skos/core#>").append("|");
 		buf.append("PREFIX cadsr:<http://cbiit.nci.nih.gov/caDSR#>").append("|");
-		buf.append("PREFIX ncit:<http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#>");
+		buf.append("PREFIX ncit:<http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#>").append("|");
 		return buf.toString();
 	}
 
