@@ -149,6 +149,9 @@ public class NCImtBrowserProperties {
 
     public static String NCIT_NG = "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl";
 
+    //public static String EHCACHE_XML_PATHNAME = "EHCACHE_XML_PATHNAME";
+    public static String _ehcache_xml_pathname = null;
+
 
     /**
      * Private constructor for singleton pattern.
@@ -273,6 +276,11 @@ System.out.println("_sparql_service_url: " + _sparql_service_url);
 			_standard_ftp_report_url = getProperty(STANDARD_FTP_REPORT_URL);
 			_standard_ftp_report_info_list = StandardFtpReportInfo.parse(
 				STANDARD_FTP_REPORT_INFO, STANDARD_FTP_REPORT_INFO_MAX);
+
+			_ehcache_xml_pathname =
+				_browserProperties
+					.getProperty(_browserProperties.EHCACHE_XML_PATHNAME);
+
 		} catch (Exception ex) {
 			ex.printStackTrace();
 		}
@@ -541,6 +549,10 @@ System.out.println("_sparql_service_url: " + _sparql_service_url);
 
 	public static String get_TERMINOLOGY() {
 		return "NCI Thesaurus";
+	}
+
+	public static String get_EHCACHE_XML_PATHNAME() {
+	    return _ehcache_xml_pathname;
 	}
 
 

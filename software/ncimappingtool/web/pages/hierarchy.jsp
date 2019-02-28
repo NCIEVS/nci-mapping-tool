@@ -4,6 +4,7 @@
 
 <%@ page import="java.util.Vector"%>
 <%@ page import="gov.nih.nci.evs.browser.properties.*"%>
+<%@ page import="gov.nih.nci.evs.browser.utils.*"%>
 
 <!-- Note: This tree is used in Hierarchy (ex. NCIt home page) and 
   View in Hierarchy (ex. Concept Detail page) features. -->
@@ -53,13 +54,10 @@
     function init() {
       rootDescDiv = new YAHOO.widget.Module("rootDesc", {visible:false} );
       resetRootDesc();
-
       emptyRootDiv = new YAHOO.widget.Module("emptyRoot", {visible:true} );
       resetEmptyRoot();
-
       treeStatusDiv = new YAHOO.widget.Module("treeStatus", {visible:true} );
       resetTreeStatus();
-
       currOpener = opener;
       initTree();
     }
@@ -205,7 +203,7 @@
 
     function initTree() {
       tree = new YAHOO.widget.TreeView("treecontainer");
-       var ontology_node_id = document.forms["pg_form"].ontology_node_id.value;
+      var ontology_node_id = document.forms["pg_form"].ontology_node_id.value;
       var ontology_display_name = document.forms["pg_form"].ontology_display_name.value;
       if (ontology_node_id == null || ontology_node_id == "null")
       {
@@ -459,34 +457,25 @@
 
   </script>
 </head>
-<body>
+<body> 
   <f:view>
   
 <%
-
-System.out.println("(*) hierarchy.jsp basePath: " + basePath);	
-
                 String ontology_node_id = (String) request.getParameter("code");
                 String ng = (String) request.getParameter("ng");
-                
 if (ng == null) {
-    ng = SparqlProperties.get_default_named_graph();
+    ng = NCImtProperties.get_default_named_graph();
 }
                 String scheme = (String) request.getParameter("scheme");
 		String ontology_display_name = scheme;
 		if (ontology_display_name == null) {
-		    ontology_display_name = SparqlProperties.get_TERMINOLOGY();
+		    ontology_display_name = NCImtProperties.get_TERMINOLOGY();
 		} 
 		
 		String ontology_version = null;
 		scheme = ontology_display_name;
 		String ontology_node_ns = ontology_display_name;
-		
-		
-System.out.println("(*) hierarchy.jsp ng: " + ng);
-System.out.println("(*) hierarchy.jsp scheme: " + scheme);
-System.out.println("(*) hierarchy.jsp ontology_display_name: " + ontology_display_name);
-  
+ 
 %>
   
   
@@ -517,19 +506,14 @@ System.out.println("(*) hierarchy.jsp ontology_display_name: " + ontology_displa
         </table>
 
 <%
-System.out.println("NG: " + ng);
-if (SparqlProperties.isNCIt(ng)) {
-System.out.println("is NCIt");
+if (ng == null) {
+	ng = NCImtProperties.get_default_named_graph();
+}
 %>
 
     <div>
       <img src="<%=basePath%>/images/thesaurus_popup_banner.gif" width="612" height="56" alt="NCI Thesaurus" title="" border="0" />
     </div>
-
-<%
-}
-%>
-
 
         <div id="popupContentArea">
           <table width="580px" cellpadding="3" cellspacing="0" border="0">
@@ -539,9 +523,9 @@ System.out.println("is NCIt");
               
               
 <%
-if (SparqlProperties.isNCIt(ng)) {
+if (NCImtProperties.isNCIt(ng)) {
 %>              
-              <%=SparqlProperties.get_TERMINOLOGY()%> Hierarchy
+              <%=NCImtProperties.get_TERMINOLOGY()%> Hierarchy
                 
 <%
 } else {

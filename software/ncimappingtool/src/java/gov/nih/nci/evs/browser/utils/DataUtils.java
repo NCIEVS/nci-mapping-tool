@@ -256,6 +256,8 @@ public class DataUtils {
     private static String _mode_of_operation = null;
     private static HashMap _mapping_namespace_hmap = null;
 
+    public static String default_named_graph = null;
+
 
     // ==================================================================================
 
@@ -366,10 +368,15 @@ System.out.println("Done setCodingSchemeMap");
 			dm = new DataManager(serviceUrl, data_directory);
 			System.out.println("DataManager instantiated.");
 
+			default_named_graph = null;
+
 			Vector terminologies = dm.getTerminologies();
 			for (int i=0; i<terminologies.size(); i++) {
 				Terminology terminology = (Terminology) terminologies.elementAt(i);
 				cs_data.add(terminology.getCodingSchemeName() + "|" + terminology.getCodingSchemeVersion() + "|" + terminology.getNamedGraph());
+				if (default_named_graph == null && terminology.getCodingSchemeName().compareTo("NCI_THesaurus") == 0) {
+					default_named_graph = terminology.getNamedGraph();
+				}
 				System.out.println(terminology.getCodingSchemeName());
 			}
 			cs_data = new gov.nih.nci.evs.restapi.util.SortUtils().quickSort(cs_data);

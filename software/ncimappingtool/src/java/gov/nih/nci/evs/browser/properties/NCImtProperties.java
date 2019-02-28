@@ -1,4 +1,5 @@
 package gov.nih.nci.evs.browser.properties;
+import gov.nih.nci.evs.browser.utils.*;
 //import gov.nih.nci.evs.sparqlbrowser.utils.*;
 
 import gov.nih.nci.evs.restapi.util.*;
@@ -83,6 +84,31 @@ public class NCImtProperties {
 		return NCImtBrowserProperties.getPrefixes();
 	}
 
+	public static String get_default_named_graph() {
+		return "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl";//; //DataUtils.default_named_graph;
+	}
 
+	public static String get_TERMINOLOGY() {
+		return "NCI_Thesaurus";
+	}
+
+	public static String get_service_url() {
+		return _service_url;
+	}
+
+	public static boolean isNCIt(String ng) {
+		if (ng.compareTo(get_default_named_graph()) == 0) return true;
+		return false;
+	}
+
+    public static boolean isLeaf(String named_graph, String code) {
+        Vector v = new OWLSPARQLUtils(_service_url).getSubclassesByCode(named_graph, code);
+        if (v == null || v.size() == 0) return true;
+        return false;
+	}
+
+	public static boolean isMetaThesaurusSource(String named_graph) {
+		return !isNCIt(named_graph);
+	}
 
 }

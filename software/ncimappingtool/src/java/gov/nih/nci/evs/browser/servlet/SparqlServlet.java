@@ -55,8 +55,6 @@ public class SparqlServlet extends HttpServlet {
    public void execute(HttpServletRequest request, HttpServletResponse response)
             throws IOException, ServletException {
 		String action = (String) request.getParameter("action");
-
-System.out.println("*** action: " + action);
 //to be modified:
         String ontology_display_name = NCImtBrowserProperties.get_TERMINOLOGY();
         String ontology_version = null;
@@ -125,7 +123,6 @@ System.out.println("*** action: " + action);
             */
 
         } else if (action.equals("build_tree")) {
-			/*
             response.setContentType("text/html");
             response.setHeader("Cache-Control", "no-cache");
 				long ms1 = System.currentTimeMillis();
@@ -135,12 +132,11 @@ System.out.println("*** action: " + action);
 
 					String named_graph = (String) request.getParameter("ng");
 					if (named_graph == null) {
-						named_graph = NCImtBrowserProperties.get_default_named_graph();
+						named_graph = NCImtProperties.get_default_named_graph();
 					}
-
-					System.out.println("SparqlServlet ng: " + named_graph);
-
-					nodesArray = new JSONArray(CacheController.getInstance().getRootJSONString(named_graph, ontology_version));
+					String str = SparqlCacheController.getInstance().getRootJSONString(named_graph, ontology_version);
+					//nodesArray = new JSONArray(SparqlCacheController.getInstance().getRootJSONString(named_graph, ontology_version));
+					nodesArray = new JSONArray(str);
 					if (nodesArray != null) {
 						json.put("root_nodes", nodesArray);
 					}
@@ -151,11 +147,8 @@ System.out.println("*** action: " + action);
 				System.out.println("Run time (milliseconds): " + (System.currentTimeMillis() - ms1));
 
             return;
-            */
-
-
         } else if (action.equals("expand_tree")) {
-			/*
+
             response.setContentType("text/html");
             response.setHeader("Cache-Control", "no-cache");
             String code = (String) request.getParameter("ontology_node_id");
@@ -167,7 +160,8 @@ System.out.println("*** action: " + action);
 				JSONObject json = new JSONObject();
 				JSONArray nodesArray = null;
 				try {
-					nodesArray = new JSONArray(CacheController.getInstance().getSubconceptJSONString(named_graph, code));
+					String str = SparqlCacheController.getInstance().getSubconceptJSONString(named_graph, code);
+					nodesArray = new JSONArray(str);
 					if (nodesArray != null) {
 						json.put("nodes", nodesArray);
 					}
@@ -178,7 +172,7 @@ System.out.println("*** action: " + action);
 				System.out.println("Run time (milliseconds): " + (System.currentTimeMillis() - ms1));
 
             return;
-            */
+            /*
 
         } else if (action.equals("build_ptree")) {
 			/*
@@ -261,13 +255,8 @@ System.out.println("*** action: " + action);
 			String named_graph = null;
 
 			Vector cs_data = DataUtils.get_cs_data();
-
-			System.out.println("cs_data: " + cs_data.size());
-
-
 			for (int j=0; j<cs_data.size(); j++) {
 				String line = (String) cs_data.elementAt(j);
-				System.out.println(line);
 				Vector u = gov.nih.nci.evs.restapi.util.StringUtils.parseData(line, '|');
 				scheme = (String) u.elementAt(0);
 				version = (String) u.elementAt(1);
@@ -283,14 +272,6 @@ System.out.println("*** action: " + action);
 			}
 			if (scheme.compareTo("NCI_Thesaurus") == 0) {
 				PrintWriter pw = null;
-				System.out.println("scheme: " + scheme);
-				System.out.println("version: " + version);
-				System.out.println("ns: " + ns);
-				System.out.println("code: " + code);
-				System.out.println("type: " + type);
-				System.out.println("named_graph: " + named_graph);
-				System.out.println("Calling gd.view_graph");
-				//gd.view_graph(pw, request, response, scheme, version, gd.get_named_graph(), ns, code, type);
 				gd.view_graph(pw, request, response, "ncimappingtool", scheme, version, ng, ns, code, type);
 
 			} else {
@@ -300,7 +281,6 @@ System.out.println("*** action: " + action);
 					type = "ALL";
 				}
 				PrintWriter pw = null;
-				System.out.println("Calling ttl_gd.view_graph");
 				ttl_gd.view_graph(pw, request, response, "ncimappingtool", named_graph, code, type);
 			}
 
@@ -1107,9 +1087,6 @@ System.out.println("*** action: " + action);
 
     public void searchAction(HttpServletRequest request, HttpServletResponse response) {
 /*
-
-System.out.println("************************************** searchAction ");
-
 
 		request.getSession().removeAttribute("ng");
 		String named_graph = request.getParameter("ng");//get_named_graph();
