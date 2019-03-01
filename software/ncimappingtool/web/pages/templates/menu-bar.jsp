@@ -20,7 +20,17 @@ if (namedGraph == null) {
 }
 
 String scheme = prop_dictionary;
-%>  
+%>
+
+<%
+Mapping mapping = (Mapping) request.getSession().getAttribute("mapping");
+if (mapping != null) {
+%>
+<a href="<%=request.getContextPath() %>/pages/auto_mapping_results.jsf" title="Back to Mapping Results">Mapping Results</a>
+|		
+<%
+}
+%>
 			<a href="#" onClick="javascript:popup_window('<%=request.getContextPath() %>/pages/hierarchy.jsf?ng=<%=namedGraph%>&scheme=<%=scheme%>', '_blank','top=100, left=100, height=740, width=680, status=no, menubar=no, resizable=yes, scrollbars=yes, toolbar=no, location=no, directories=no');" title="View Hierarchy" >
          		View Hierarchy</a> 
                 |
@@ -33,22 +43,12 @@ String scheme = prop_dictionary;
 		|
 		        <a href="<%=request.getContextPath() %>/pages/sparql.jsf?ng=<%=namedGraph%>" title="Sparql Query Endpoint.">Sparql Query</a>    		
 		|
-
-<%
-Mapping mapping = (Mapping) request.getSession().getAttribute("mapping");
-if (mapping != null) {
-%>
-
-<a href="<%=request.getContextPath() %>/pages/auto_mapping_results.jsf" title="Back to Mapping Results">Mapping Results</a>
-|		
-<%
-}
-%>
+			<a href="#" onClick="javascript:popup_window('<%=request.getContextPath() %>/pages/vs_hierarchy.jsf?ng=<%=namedGraph%>', '_blank','top=100, left=100, height=740, width=680, status=no, menubar=no, resizable=yes, scrollbars=yes, toolbar=no, location=no, directories=no');" title="Value Set Hierarchy" >
+         		Value Sets</a> 
+                |
 			<a href="#" onclick="javascript:popup_window('http://ncitermform.nci.nih.gov/ncitermform/?dictionary=NCI Thesaurus&code=<%=focus_code%>', '_blank','top=100, left=100, height=740, width=680, status=no, menubar=no, resizable=yes, scrollbars=yes, toolbar=no, location=no, directories=no');" tabindex="12"
 			title="Term Suggestion.">
 			Suggest Changes</a>  
-			
-			
 		</td>
 	</tr>
 </table>

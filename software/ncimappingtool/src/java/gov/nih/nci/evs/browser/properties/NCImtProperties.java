@@ -73,6 +73,10 @@ public class NCImtProperties {
     public static gov.nih.nci.evs.restapi.meta.util.VIHUtils ttl_vihUtils = null;
     public static Vector PARENT_CHILDREN_VEC = null;
 
+    public static gov.nih.nci.evs.restapi.util.HierarchyHelper vs_hh = null;
+    public static Vector embedded_value_set_hierarchy_vec = null;
+
+
     private NCImtProperties() {
 
     }
@@ -91,7 +95,33 @@ public class NCImtProperties {
 			PARENT_CHILDREN_VEC = generate_parent_child_vec();
             saveToFile("parent_child.txt", PARENT_CHILDREN_VEC);
 		}
+
+        pathname = _data_directory + File.separator + "embedded_value_set_hierarchy.txt";
+        file = new File(pathname);
+        if (file.exists()) {
+        	embedded_value_set_hierarchy_vec = removeRootNodes(gov.nih.nci.evs.restapi.util.Utils.readFile(pathname));
+		} else {
+			gov.nih.nci.evs.restapi.util.ValueSetUtils vsu = new gov.nih.nci.evs.restapi.util.ValueSetUtils(_service_url, get_default_named_graph());
+			vsu.set_data_directory(_data_directory);
+			vsu.initialize();
+            embedded_value_set_hierarchy_vec = removeRootNodes(gov.nih.nci.evs.restapi.util.Utils.readFile(pathname));
+		}
+		vs_hh = new gov.nih.nci.evs.restapi.util.HierarchyHelper(embedded_value_set_hierarchy_vec);
+		if (vs_hh != null) {
+			vs_hh.findRootAndLeafNodes();
+		}
     }
+
+    public static Vector removeRootNodes(Vector v) {
+		Vector w = new Vector();
+		for (int i=0; i<v.size(); i++) {
+			String t = (String) v.elementAt(i);
+			if (t.indexOf("<Root>") == -1) {
+				w.add(t);
+			}
+		}
+		return w;
+	}
 
 	 public static void saveToFile(String outputfile, Vector v) {
 		outputfile = _data_directory + File.separator + outputfile;

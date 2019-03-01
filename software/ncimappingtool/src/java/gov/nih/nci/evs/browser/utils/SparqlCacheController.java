@@ -1,6 +1,6 @@
 package gov.nih.nci.evs.browser.utils;
 
-import gov.nih.nci.evs.browser.bean.*;
+//import gov.nih.nci.evs.browser.bean.*;
 import gov.nih.nci.evs.browser.properties.*;
 import gov.nih.nci.evs.restapi.meta.util.*;
 
@@ -603,7 +603,7 @@ System.out.println("getViewInHierarchyJSONString isNCIt: ");
 
 		return json;
 	}
-
+*/
 
     public String getValueSetRootJSONString(String codingScheme, String version) {
 		String key = codingScheme + "$" + version + "$valueset_root";
@@ -613,11 +613,7 @@ System.out.println("getViewInHierarchyJSONString isNCIt: ");
 		}
 
 		long ms = System.currentTimeMillis();
-		TreeItem root = new TreeItem("Root", "<Root>");
-
-        //String roots = NCImtProperties.get_PARTONOMY_ROOT_STRING();
-        //Vector v = gov.nih.nci.evs.restapi.util.StringUtils.parseData(roots);
-
+		gov.nih.nci.evs.restapi.bean.TreeItem root = new gov.nih.nci.evs.restapi.bean.TreeItem("Root", "<Root>");
         Vector w = new Vector();
         codingScheme = NCImtProperties.get_TERMINOLOGY();
         String ns = codingScheme;
@@ -643,7 +639,7 @@ System.out.println("getViewInHierarchyJSONString isNCIt: ");
 			String cs_ns = rcr.getNamespace();
 			String code = rcr.getCode();
 			String name = rcr.getName();
-			gov.nih.nci.evs.restapi.bean.TreeItem child = new gov.nih.nci.evs.restapi.bean.TreeItem(code, name, cs_ns, null);
+			gov.nih.nci.evs.restapi.bean.TreeItem child = new gov.nih.nci.evs.restapi.bean.TreeItem(code, name);
 			child._expandable = true;
 			root.addChild("has_child", child);
 			root._expandable = true;
@@ -653,7 +649,7 @@ System.out.println("getViewInHierarchyJSONString isNCIt: ");
                 + (System.currentTimeMillis() - ms));
 
 		ms = System.currentTimeMillis();
-		String json = JSON2TreeItem.treeItem2Json(root);
+		String json = gov.nih.nci.evs.restapi.util.JSON2TreeItem.treeItem2Json(root);
 
             System.out.println("treeItem2Json run time (milliseconds): "
                 + (System.currentTimeMillis() - ms));
@@ -667,7 +663,7 @@ System.out.println("getViewInHierarchyJSONString isNCIt: ");
 
 		return json;
 	}
-
+/*
 
 
     public String getPartonomySubconceptJSONString(String focus_code) {
@@ -759,7 +755,7 @@ System.out.println("Calling SparqlCacheController getTransitiveClosure .w.size()
 		}
 		return json;
 	}
-
+*/
 
     public String getValueSetSubconceptJSONString(String focus_code) {
 		String key = "partonomy_subclasses_of_$" + focus_code;
@@ -783,7 +779,7 @@ System.out.println("Calling SparqlCacheController getTransitiveClosure .w.size()
 						String cs_version = null;
 						String cs_ns = cs_name;
 						String name = NCImtProperties.vs_hh.getLabel(code);
-						gov.nih.nci.evs.restapi.bean.TreeItem child = new gov.nih.nci.evs.restapi.bean.TreeItem(code, name, cs_ns, null);
+						gov.nih.nci.evs.restapi.bean.TreeItem child = new gov.nih.nci.evs.restapi.bean.TreeItem(code, name);
 
 						boolean isLeaf = leaf_nodes.contains(code);
 						child._expandable = !isLeaf;
@@ -797,7 +793,7 @@ System.out.println("Calling SparqlCacheController getTransitiveClosure .w.size()
 			}
 
 		ms = System.currentTimeMillis();
-		String json = JSON2TreeItem.treeItem2Json(root);
+		String json = gov.nih.nci.evs.restapi.util.JSON2TreeItem.treeItem2Json(root);
             System.out.println("treeItem2Json run time (milliseconds): "
                 + (System.currentTimeMillis() - ms));
 
@@ -810,7 +806,7 @@ System.out.println("Calling SparqlCacheController getTransitiveClosure .w.size()
 		return json;
 	}
 
-
+/*
     public String getValueSetRootJSONString(String codingScheme, String version, String focus_code) {
 		String key = codingScheme + "$" + version + "$" + focus_code + "$valueset_root";
 		Element element = _cache.get(key);

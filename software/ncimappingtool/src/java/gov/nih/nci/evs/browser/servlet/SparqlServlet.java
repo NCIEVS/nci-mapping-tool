@@ -197,14 +197,13 @@ public class SparqlServlet extends HttpServlet {
             */
 
         } else if (action.equals("build_vstree")) {
-			/*
             response.setContentType("text/html");
             response.setHeader("Cache-Control", "no-cache");
 				long ms1 = System.currentTimeMillis();
 				JSONObject json = new JSONObject();
 				JSONArray nodesArray = null;
 				try {
-					nodesArray = new JSONArray(CacheController.getInstance().getValueSetRootJSONString(ontology_display_name, ontology_version));
+					nodesArray = new JSONArray(SparqlCacheController.getInstance().getValueSetRootJSONString(ontology_display_name, ontology_version));
 					if (nodesArray != null) {
 						json.put("root_nodes", nodesArray);
 					}
@@ -215,7 +214,32 @@ public class SparqlServlet extends HttpServlet {
 				System.out.println("Run time (milliseconds): " + (System.currentTimeMillis() - ms1));
 
             return;
-            */
+
+        } else if (action.equals("expand_vstree")) {
+
+            response.setContentType("text/html");
+            response.setHeader("Cache-Control", "no-cache");
+            String code = (String) request.getParameter("ontology_node_id");
+
+ String named_graph = (String) request.getParameter("ng");
+ System.out.println("expand_tree " + code);
+
+				long ms1 = System.currentTimeMillis();
+				JSONObject json = new JSONObject();
+				JSONArray nodesArray = null;
+				try {
+					String str = SparqlCacheController.getInstance().getValueSetSubconceptJSONString(code);
+					nodesArray = new JSONArray(str);
+					if (nodesArray != null) {
+						json.put("nodes", nodesArray);
+					}
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+				response.getWriter().write(json.toString());
+				System.out.println("Run time (milliseconds): " + (System.currentTimeMillis() - ms1));
+
+            return;
 
         } else if (action.equals("expand_ptree")) {
 			/*
