@@ -231,7 +231,7 @@ if (result_vec != null) {
 			for (int j=0; j<row_element_vec.size(); j++) {
 			    String row_element = (String) row_element_vec.elementAt(j);
 			    %>
-			    <td class="dataCellText" scope="row">
+			    <td class="dataCellText" scope="row" align="left">
 				 <%=row_element%>
 			    </td>
 		<%
