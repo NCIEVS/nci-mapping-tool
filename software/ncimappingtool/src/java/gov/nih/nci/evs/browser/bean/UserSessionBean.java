@@ -10,6 +10,7 @@ package gov.nih.nci.evs.browser.bean;
 import gov.nih.nci.evs.browser.properties.*;
 import gov.nih.nci.evs.restapi.util.OWLSPARQLUtils;
 import gov.nih.nci.evs.restapi.util.ParserUtils;
+import gov.nih.nci.evs.restapi.meta.util.*;
 import java.util.*;
 import java.net.URI;
 
@@ -2352,6 +2353,15 @@ int selected_knt = 0;
 		return null;
     }
 
+    public String resetAction() {
+        HttpServletRequest request =
+            (HttpServletRequest) FacesContext.getCurrentInstance()
+                .getExternalContext().getRequest();
+
+        request.getSession().removeAttribute("msg");
+        request.getSession().setAttribute("queryString", "");
+        return "reset_response";
+	}
 
     public String queryAction() {
         HttpServletRequest request =
@@ -2368,13 +2378,22 @@ int selected_knt = 0;
 			request.getSession().setAttribute("owlSPARQLUtils", owlSPARQLUtils);
 		}
 
-		String queryString = (String) request.getParameter("queryString");
-		queryString = owlSPARQLUtils.getPrefixes() + "\n" + queryString;
-		request.getSession().setAttribute("queryString", queryString);
+        String ng = (String) request.getParameter("ng");
+		if (ng == null) {
+			ng = gov.nih.nci.evs.browser.common.Constants.NCIT_NG;
+			request.getSession().setAttribute("ng", ng);
+		}
 
+		String queryString = (String) request.getParameter("queryString");
+		String queryString_with_prefix = owlSPARQLUtils.getPrefixes() + "\n" + queryString;
+		if (!NCImtProperties.isNCIt(ng)) {
+			queryString_with_prefix = TTLQueryUtils.getPrefixes() + "\n" + queryString;
+		}
+
+		request.getSession().setAttribute("queryString", queryString);
 		long ms = System.currentTimeMillis();
 
-        Vector result_vec = owlSPARQLUtils.executeQuery(queryString);
+        Vector result_vec = owlSPARQLUtils.executeQuery(queryString_with_prefix);
         if (result_vec == null) {
 			System.out.println("result_vec == null");
 		} else {
