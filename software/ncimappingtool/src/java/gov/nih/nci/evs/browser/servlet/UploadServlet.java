@@ -268,6 +268,7 @@ public final class UploadServlet extends HttpServlet {
 						int size = 0;
 						for (int i=1; i<v.size(); i++) {
 							String t = (String) v.elementAt(i);
+							t = t.trim();
 							if (t.length() > 0) {
 								size++;
 								List<String> values = Arrays.asList(t.split("\\s*,\\s*"));
@@ -283,6 +284,12 @@ public final class UploadServlet extends HttpServlet {
 								String target_term = values.get(3);
 								target_term = target_term.substring(1, target_term.length()-1);
 
+								if (target_term.startsWith("\"")) {
+									target_term = target_term.substring(1, target_term.length());
+								}
+								if (target_term.endsWith("\"")) {
+									target_term = target_term.substring(0, target_term.length()-1);
+								}
 								gov.nih.nci.evs.mapping.bean.MappingEntry m = new gov.nih.nci.evs.mapping.bean.MappingEntry(source_code, source_term, target_code, target_term);
 								if (target_code != null && target_code.length() > 0) {
 									match_knt++;

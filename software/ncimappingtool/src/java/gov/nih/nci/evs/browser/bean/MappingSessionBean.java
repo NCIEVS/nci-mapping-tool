@@ -182,23 +182,25 @@ public class MappingSessionBean {
 	    Mapping mapping = (Mapping) request.getSession().getAttribute("mapping");
 	    List<gov.nih.nci.evs.mapping.bean.MappingEntry> entries = mapping.getEntries();
 
-           StringBuffer sb = new StringBuffer();
-           try {
+        StringBuffer sb = new StringBuffer();
+        try {
    			sb.append("Source Code,");
    			sb.append("Source Name,");
    			sb.append("Target Code,");
    			sb.append("Target Name,");
    			sb.append("\r\n");
-
-		for (int i=0; i<entries.size(); i++) {
-			gov.nih.nci.evs.mapping.bean.MappingEntry entry
-			   = (gov.nih.nci.evs.mapping.bean.MappingEntry) entries.get(i);
-   				sb.append("\"" + entry.getSourceCode() + "\",");
-   				sb.append("\"" + entry.getSourceTerm() + "\",");
-   				sb.append("\"" + entry.getTargetCode() + "\",");
-   				sb.append("\"" + entry.getTargetLabel() + "\",");
-   				sb.append("\r\n");
-   			}
+			for (int i=0; i<entries.size(); i++) {
+				gov.nih.nci.evs.mapping.bean.MappingEntry entry
+				   = (gov.nih.nci.evs.mapping.bean.MappingEntry) entries.get(i);
+					sb.append("\"" + entry.getSourceCode() + "\",");
+					sb.append("\"" + entry.getSourceTerm() + "\",");
+					sb.append("\"" + entry.getTargetCode() + "\",");
+					sb.append("\"" + entry.getTargetLabel() + "\"");
+					if (i<entries.size()-1)
+					{
+						sb.append("\r\n");
+					}
+			}
    		} catch (Exception ex)	{
    			sb.append("WARNING: Export to CVS action failed.");
    			ex.printStackTrace();
@@ -206,8 +208,7 @@ public class MappingSessionBean {
 
    		//String filename = mapping_schema + "_" + mapping_version;
    		String filename = "mapping";
-   		filename = filename.replaceAll(" ", "_");
-   		filename = filename + ".csv";
+   		filename = filename + "_" + gov.nih.nci.evs.restapi.util.StringUtils.getToday() + ".csv";
 
    		response.setContentType("text/csv");
    		response.setHeader("Content-Disposition", "attachment; filename="
@@ -259,8 +260,11 @@ public class MappingSessionBean {
 					sb.append("\"" + entry.getSourceCode() + "\",");
 					sb.append("\"" + entry.getSourceTerm() + "\",");
 					sb.append("\"" + entry.getTargetCode() + "\",");
-					sb.append("\"" + entry.getTargetLabel() + "\",");
-					sb.append("\r\n");
+					sb.append("\"" + entry.getTargetLabel() + "\"");
+					if (i<entries.size()-1)
+					{
+						sb.append("\r\n");
+					}
 				}
    			}
    		} catch (Exception ex)	{
@@ -270,8 +274,7 @@ public class MappingSessionBean {
 
    		//String filename = mapping_schema + "_" + mapping_version;
    		String filename = "mapping_nomatch";
-   		filename = filename.replaceAll(" ", "_");
-   		filename = filename + ".csv";
+  		filename = filename + "_" + gov.nih.nci.evs.restapi.util.StringUtils.getToday() + ".csv";
 
    		response.setContentType("text/csv");
    		response.setHeader("Content-Disposition", "attachment; filename="
