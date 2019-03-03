@@ -327,7 +327,7 @@ public class MappingUtils {
 				 }
 			 }
 		}
-		words = new gov.nih.nci.evs.mapping.util.SortUtils().quickSort(words);
+		words = new gov.nih.nci.evs.restapi.util.SortUtils().quickSort(words);
 		return words;
 	}
 
@@ -406,34 +406,96 @@ public class MappingUtils {
 		return code2LabelMap;
 	}
 
+	public String removeSpecifiedCharacters(String str, String charsToRemove, String discardedLeadingChars) {
+		if (str == null || str.length() == 0) return str;
+		StringBuffer buf = new StringBuffer();
+
+
+		for (int i=0; i<str.length(); i++) {
+			String s = "" + str.charAt(i);
+			if (charsToRemove.indexOf(s) == -1) {
+				buf.append(s);
+			} else {
+				buf.append(" ");
+			}
+		}
+		String t = buf.toString();
+		return t.trim();
+	}
+
+	public String discardedLeadingChars(String str, String charsToDiscard) {
+		if (str == null || str.length() == 0) return str;
+		String s = "" + str.charAt(0);
+		if (charsToDiscard.indexOf(s) != -1) {
+			str = str.substring(1, str.length());
+		}
+		return str;
+	}
+
+    public Vector tokenize_term(String t) {
+		Vector w = new Vector();
+		String charsToDiscard = "'//";
+		t = t.replaceAll("[-+.^:,]","");
+		t = removeSpecifiedCharacters(t, "()_{}%\"#[]*", charsToDiscard);
+		t = t.toLowerCase();
+		if (t.endsWith(",")) {
+			t = t.substring(0, t.length()-1);
+		}
+
+		StringTokenizer st = new StringTokenizer(t);
+		Vector words = new Vector();
+		while (st.hasMoreTokens()) {
+			 String token = st.nextToken();
+			 token = removeTrailingDiscardedChar(token);
+			 token = discardedLeadingChars(token, charsToDiscard);
+			 token = token.trim();
+			 if (token.length() > 0) {
+				 w.add(token);
+			 }
+		}
+		return w;
+	}
+
 
     public HashSet create_keyword_set(Vector term_vec) {
         if (term_vec == null) return null;
+        String charsToDiscard = "'//";
         HashSet keyword_set = new HashSet();
 		for (int i=0; i<term_vec.size(); i++) {
 			String line = (String) term_vec.elementAt(i);
 			Vector u = parseData(line, '|');
 			for (int k=1; k<=2; k++) {
 				String t = (String) u.elementAt(k);
-
+				/*
+				t = t.replaceAll("[-+.^:,]","");
+				t = removeSpecifiedCharacters(t, "()_{}%\"#[]*", charsToDiscard);
 				t = t.toLowerCase();
 				if (t.endsWith(",")) {
 					t = t.substring(0, t.length()-1);
 				}
 
-				t = t.replaceAll("_", " ");
 				StringTokenizer st = new StringTokenizer(t);
 				Vector words = new Vector();
 				while (st.hasMoreTokens()) {
 					 String token = st.nextToken();
 					 token = removeTrailingDiscardedChar(token);
-					 keyword_set.add(token);
+					 token = discardedLeadingChars(token, charsToDiscard);
+					 token = token.trim();
+					 if (token.length() > 0) {
+					 	 keyword_set.add(token);
+					 }
+				}
+				*/
+
+				Vector w = tokenize_term(t);
+				for (int j=0; j<w.size(); j++) {
+					String word = (String) w.elementAt(j);
+					keyword_set.add(word);
 				}
 			 }
 		 }
 		 return keyword_set;
 	 }
-
 
     public HashMap createKey2ConceptMap(Vector term_vec) {
 		code2LabelMap = createCode2LabelMap(term_vec);
@@ -502,6 +564,7 @@ public class MappingUtils {
 		return w;
 	}
 
+/*
 	public void analyzeVerbatim(PrintWriter pw, String t) {
         if (t == null) return;
         t = t.toLowerCase();
@@ -546,7 +609,7 @@ public class MappingUtils {
 			 }
 		}
 	}
-
+*/
     public List<MappingEntry> loadMappingEntries(String filename) {
         List<MappingEntry> entries =  new ArrayList<>();
         Vector w = readFile(filename);
@@ -631,7 +694,22 @@ public class MappingUtils {
 		return tokenize_str(t, removeFillers);
 	}
 
+	public Vector tokenize_str(String t, boolean removeFillers) {
+		if (t == null) return null;
+		if (t.length() == 0) return new Vector();
+		Vector w = tokenize_term(t);
+		Vector v = new Vector();
+		for (int i=0; i<w.size(); i++) {
+			String word = (String) w.elementAt(i);
+			if (!isFiller(word)) {
+				v.add(word);
+			}
+		}
+		v = new gov.nih.nci.evs.restapi.util.SortUtils().quickSort(v);
+		return v;
+	}
 
+/*
 	public Vector tokenize_str(String t, boolean removeFillers) {
 		if (t == null) return null;
 		t = t.toLowerCase();
@@ -652,11 +730,12 @@ public class MappingUtils {
 				 }
 			 }
 		}
-		words = new gov.nih.nci.evs.mapping.util.SortUtils().quickSort(words);
+		words = new gov.nih.nci.evs.restapi.util.SortUtils().quickSort(words);
 		return words;
 	}
+*/
 
-
+/*
 	public Vector tokenize(String t, boolean removeFillers) {
 		if (t == null) return null;
 		t = t.toLowerCase();
@@ -677,8 +756,13 @@ public class MappingUtils {
 				 }
 			 }
 		}
-		words = new gov.nih.nci.evs.mapping.util.SortUtils().quickSort(words);
+		words = new gov.nih.nci.evs.restapi.util.SortUtils().quickSort(words);
 		return words;
+	}
+*/
+
+	public Vector tokenize(String t, boolean removeFillers) {
+		return tokenize_str(t, removeFillers);
 	}
 
 	public void saveMappingToFile(String outputfile, gov.nih.nci.evs.mapping.bean.Mapping mapping) {
