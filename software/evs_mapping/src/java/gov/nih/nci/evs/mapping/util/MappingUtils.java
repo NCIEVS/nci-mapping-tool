@@ -1,5 +1,4 @@
 package gov.nih.nci.evs.mapping.util;
-
 import gov.nih.nci.evs.mapping.bean.*;
 import gov.nih.nci.evs.mapping.common.*;
 
@@ -79,7 +78,13 @@ public class MappingUtils {
 
 
 	public MappingUtils() {
-		data_directory = System.getProperty("user.dir");
+
+        try {
+			System.out.println("MappingUtils constructor");
+			data_directory = System.getProperty("user.dir");
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		}
 	}
 
 	public MappingUtils(String data_directory) {
@@ -406,11 +411,9 @@ public class MappingUtils {
 		return code2LabelMap;
 	}
 
-	public String removeSpecifiedCharacters(String str, String charsToRemove, String discardedLeadingChars) {
+	public String removeSpecifiedCharacters(String str, String charsToRemove) {
 		if (str == null || str.length() == 0) return str;
 		StringBuffer buf = new StringBuffer();
-
-
 		for (int i=0; i<str.length(); i++) {
 			String s = "" + str.charAt(i);
 			if (charsToRemove.indexOf(s) == -1) {
@@ -434,9 +437,9 @@ public class MappingUtils {
 
     public Vector tokenize_term(String t) {
 		Vector w = new Vector();
-		String charsToDiscard = "'//";
+		String charsToDiscard = "'//\"#%{}";
 		t = t.replaceAll("[-+.^:,]","");
-		t = removeSpecifiedCharacters(t, "()_{}%\"#[]*", charsToDiscard);
+		t = removeSpecifiedCharacters(t, "()_{}%\"#[]*");
 		t = t.toLowerCase();
 		if (t.endsWith(",")) {
 			t = t.substring(0, t.length()-1);
@@ -461,6 +464,7 @@ public class MappingUtils {
         if (term_vec == null) return null;
         String charsToDiscard = "'//";
         HashSet keyword_set = new HashSet();
+        //for (int i=0; i<1000; i++) {
 		for (int i=0; i<term_vec.size(); i++) {
 			String line = (String) term_vec.elementAt(i);
 			Vector u = parseData(line, '|');
@@ -486,6 +490,8 @@ public class MappingUtils {
 					 }
 				}
 				*/
+
+
 
 				Vector w = tokenize_term(t);
 				for (int j=0; j<w.size(); j++) {
@@ -1117,6 +1123,30 @@ public class MappingUtils {
 		return mapping_file.substring(n+"_to_".length(), m);
 	}
 
+	public Vector getKeywords(HashSet keywordSet) {
+		Vector w = new Vector();
+		Iterator it = keywordSet.iterator();
+		while (it.hasNext()) {
+			String word = (String) it.next();
+			w.add(word);
+		}
+		w = new gov.nih.nci.evs.restapi.util.SortUtils().quickSort(w);
+		return w;
+	}
+
+
+    public static void main(String[] args) {
+		MappingUtils mappingUtils = new MappingUtils();
+		String ncit = "NCI_Thesaurus.txt";
+		Vector term_vec = mappingUtils.readFile(ncit);
+		HashSet keywordSet = mappingUtils.create_keyword_set(term_vec);
+		Vector keywords = mappingUtils.getKeywords(keywordSet);
+		mappingUtils.saveToFile("test_keywords.txt", keywords);
+
+	}
+
+
+/*
     public static void main(String[] args) {
 		long ms = System.currentTimeMillis();
         String serviceUrl = args[0];
@@ -1131,6 +1161,7 @@ public class MappingUtils {
         MappingUtils test = new MappingUtils(data_directory, codingSchemeName);
 		test.generateMapping(vbtfile);
 	}
+*/
 
 /*
     public static void main(String[] args) {
