@@ -428,7 +428,7 @@ public class MappingUtils {
 					 String token = st.nextToken();
 					 token = removeTrailingDiscardedChar(token);
 					 keyword_set.add(token);
-				 }
+				}
 			 }
 		 }
 		 return keyword_set;
