@@ -92,7 +92,6 @@ public class DataManager {
 		this.terminologies = new Vector();
 		this.namedGraph2TerminologyHashmap = new HashMap();
 		this.codingSchemeName2TerminologyHashmap = new HashMap();
-		//System.out.println("getTerminologyMetadata ...");
 		Vector cs_data = getTerminologyMetadata(serviceUrl);
         System.out.println("Number of terminologies: " + cs_data.size());
 		for (int i=0; i<cs_data.size(); i++) {

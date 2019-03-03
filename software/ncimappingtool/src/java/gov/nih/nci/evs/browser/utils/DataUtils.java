@@ -815,7 +815,7 @@ System.out.println("Done setCodingSchemeMap");
             }
         }
         _formalName2NCImSABHashMap = createFormalName2NCImSABHashMap();
-        dumpHashMap(_formalName2NCImSABHashMap);
+        //dumpHashMap(_formalName2NCImSABHashMap);
 
         setMappingDisplayNameHashMap();
 
@@ -3857,10 +3857,6 @@ System.out.println("DataUtils.getRelationshipHashMap isMapping: " + isMapping);
 		return hmap;
 	}
 
-
-
-
-
     private static void dumpHashMap(HashMap hmap) {
 		_logger.warn("\n\n");
 		if (hmap == null) return;
@@ -3873,7 +3869,6 @@ System.out.println("DataUtils.getRelationshipHashMap isMapping: " + isMapping);
 			System.out.println(key + " --> " + value);
 		}
 	}
-
 
 ///////////////////////////////////////////////////////////////////////////////////////////////
 //
