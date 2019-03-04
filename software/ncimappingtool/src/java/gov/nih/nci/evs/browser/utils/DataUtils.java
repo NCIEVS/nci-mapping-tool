@@ -7,6 +7,8 @@
 
 package gov.nih.nci.evs.browser.utils;
 
+import gov.nih.nci.evs.restapi.util.*;
+
 import gov.nih.nci.evs.mapping.util.*;
 import gov.nih.nci.evs.mapping.bean.*;
 
@@ -271,6 +273,7 @@ public class DataUtils {
     public static Vector cs_data = null;
     public static HashMap codingSchemeName2TerminologyHashmap = null;
     public static HashMap namedGraph2TerminologyHashmap = null;
+    public static HashMap nameVersion2NamedGraphMap = null;
 
     public static DataManager dm = null;
 
@@ -382,6 +385,9 @@ System.out.println("Done setCodingSchemeMap");
 			cs_data = new gov.nih.nci.evs.restapi.util.SortUtils().quickSort(cs_data);
 			codingSchemeName2TerminologyHashmap = dm.getCodingSchemeName2TerminologyHashmap();
 			namedGraph2TerminologyHashmap = dm.getNamedGraph2TerminologyHashmap();
+
+			gov.nih.nci.evs.restapi.util.MetadataUtils mdu = new gov.nih.nci.evs.restapi.util.MetadataUtils(serviceUrl);
+			nameVersion2NamedGraphMap = mdu.getNameVersion2NamedGraphMap();
 		}
 	    //System.out.println("exiting DataUtils static method.");
 
@@ -391,6 +397,9 @@ System.out.println("Done setCodingSchemeMap");
 		return dm;
 	}
 
+	public static HashMap getNameVersion2NamedGraphMap() {
+		return nameVersion2NamedGraphMap;
+	}
 
 	public static Vector get_cs_data() {
 		return cs_data;

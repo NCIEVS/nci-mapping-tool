@@ -38,6 +38,10 @@ L--%>
 String hm_basePath = request.getContextPath(); 
 HashMap nameVersion2NamedGraphMap = (HashMap) request.getSession().getAttribute("nameVersion2NamedGraphMap");
 if (nameVersion2NamedGraphMap == null) {
+    nameVersion2NamedGraphMap = DataUtils.getNameVersion2NamedGraphMap();
+    request.getSession().setAttribute("nameVersion2NamedGraphMap", nameVersion2NamedGraphMap);
+}
+/*
     String serviceUrl = NCImtProperties._service_url;
     gov.nih.nci.evs.restapi.util.MetadataUtils test = new gov.nih.nci.evs.restapi.util.MetadataUtils(serviceUrl);
     nameVersion2NamedGraphMap = test.getNameVersion2NamedGraphMap();
@@ -56,8 +60,9 @@ if (nameVersion2NamedGraphMap == null) {
 			cs_data.add(codingSchemeName + "|" + version + "|" + named_graph);
 		}
 	}
+*/
+Vector cs_data = DataUtils.get_cs_data();
     request.getSession().setAttribute("cs_data", cs_data);
-}
 %>
 <f:view>
   <!-- Begin Skip Top Navigation -->
