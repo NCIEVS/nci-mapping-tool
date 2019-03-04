@@ -338,17 +338,20 @@ public class MappingUtils {
 	}
 */
 
-    public static String toTabDelimited(Vector words) {
+    public static String toDelimited(Vector words) {
+		return toDelimited(words, "|");
+	}
+
+    public static String toDelimited(Vector words, String tab) {
 		StringBuffer buf = new StringBuffer();
 		for (int k=0; k<words.size(); k++) {
 			String word = (String) words.elementAt(k);
-			buf.append(word).append("|");
+			buf.append(word);
+			if (k<words.size()-1) {
+				buf = buf.append(tab);
+			}
 		}
-		String t = buf.toString();
-		if (t.endsWith("|")) {
-			t = t.substring(0, t.length()-1);
-		}
-		return t;
+		return buf.toString();
 	}
 
 
@@ -974,19 +977,6 @@ public class MappingUtils {
 		return variantHashMap;
 	}
 
-    public static String toTabDelimited(Vector words, String tab) {
-		StringBuffer buf = new StringBuffer();
-		for (int k=0; k<words.size(); k++) {
-			String word = (String) words.elementAt(k);
-			buf.append(word).append(tab);
-		}
-		String t = buf.toString();
-		if (t.endsWith("|")) {
-			t = t.substring(0, t.length()-1);
-		}
-		return t;
-	}
-
 	public String trim_unspecified_clause(String line) {
 		line = substitute(line);
 		line = line.toLowerCase();
@@ -1007,7 +997,7 @@ public class MappingUtils {
 			}
 			w.add(segment);
 		}
-		return toTabDelimited(w, " ").trim();
+		return toDelimited(w, " ").trim();
 	}
 
 	public static String getCurrentWorkingDirectory() {
