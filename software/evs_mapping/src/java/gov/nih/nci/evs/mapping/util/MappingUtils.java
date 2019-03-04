@@ -438,7 +438,7 @@ public class MappingUtils {
     public Vector tokenize_term(String t) {
 		Vector w = new Vector();
 		String charsToDiscard = "'//\"#%{}";
-		t = t.replaceAll("[-+.^:,]","");
+		t = t.replaceAll("[-+.^:,]"," ");
 		t = removeSpecifiedCharacters(t, "()_{}%\"#[]*");
 		t = t.toLowerCase();
 		if (t.endsWith(",")) {
