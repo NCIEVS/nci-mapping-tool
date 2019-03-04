@@ -311,6 +311,7 @@ public class MappingUtils {
 		return vbt2Key(t, true);
 	}
 
+/*
 	public Vector tokenize(String t) {
 		if (t == null) return null;
 		t = t.toLowerCase();
@@ -335,6 +336,7 @@ public class MappingUtils {
 		words = new gov.nih.nci.evs.restapi.util.SortUtils().quickSort(words);
 		return words;
 	}
+*/
 
     public static String toTabDelimited(Vector words) {
 		StringBuffer buf = new StringBuffer();
@@ -377,7 +379,7 @@ public class MappingUtils {
 
     public String vbt2Key(String t, boolean stemming) {
 		if (t == null) return null;
-		Vector words = tokenize(t);
+		Vector words = tokenize_str(t);
 		String s = words2Key(words, stemming);
 		return s;
     }
@@ -385,7 +387,7 @@ public class MappingUtils {
 
     public String toKey(String t) {
         if (t == null) return null;
-		Vector words = tokenize(t);
+		Vector words = tokenize_str(t);
 		String s = words2Key(words, true);
 		return s;
     }
