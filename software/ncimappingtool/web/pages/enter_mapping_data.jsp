@@ -40,12 +40,10 @@ L--%>
 }
 
 <%
-System.out.println("enter_mapping_data.jsp...");
 String hm_basePath = request.getContextPath(); 
 HashMap nameVersion2NamedGraphMap = (HashMap) request.getSession().getAttribute("nameVersion2NamedGraphMap");
 Vector cs_data = new Vector();
 if (nameVersion2NamedGraphMap == null) {
-    System.out.println("nameVersion2NamedGraphMap == null...");
     String serviceUrl = NCImtProperties._service_url;//"https://sparql-evs-dev.nci.nih.gov/sparql";
     gov.nih.nci.evs.restapi.util.MetadataUtils test = new gov.nih.nci.evs.restapi.util.MetadataUtils(serviceUrl);
     nameVersion2NamedGraphMap = test.getNameVersion2NamedGraphMap();

@@ -406,9 +406,9 @@ public class MappingUtils {
 			String code = (String) u.elementAt(0);
 			String pt = (String) u.elementAt(1);
 			String syn = (String) u.elementAt(2);
-			if (!code2LabelMap.containsKey(code)) {
-				code2LabelMap.put(code, pt);
-			}
+			//if (!code2LabelMap.containsKey(code)) {
+			code2LabelMap.put(code, pt);
+			//}
     	}
 		return code2LabelMap;
 	}
@@ -529,7 +529,6 @@ public class MappingUtils {
 			}
 
 			String key = toKey(pt);
-			//System.out.println(pt + " --> " + key);
 
 			Vector w = new Vector();
 			if (hmap.containsKey(key)) {
@@ -541,8 +540,6 @@ public class MappingUtils {
 			hmap.put(key, w);
 
 			key = toKey(syn);
-			//System.out.println(syn + " --> " + key);
-
 
 			w = new Vector();
 			if (hmap.containsKey(key)) {
@@ -817,6 +814,7 @@ public class MappingUtils {
 			if (w == null || w.size() == 0) {
 				w = mapTo(search_history(sourceTerm));
 			}
+
 
 			if (w == null || w.size() == 0) {
 				term = substitute(sourceTerm);
@@ -1131,57 +1129,5 @@ public class MappingUtils {
 		HashSet keywordSet = mappingUtils.create_keyword_set(term_vec);
 		Vector keywords = mappingUtils.getKeywords(keywordSet);
 		mappingUtils.saveToFile("test_keywords.txt", keywords);
-
 	}
-
-
-/*
-    public static void main(String[] args) {
-		long ms = System.currentTimeMillis();
-        String serviceUrl = args[0];
-        String data_directory = args[1];
-        String vbtfile = args[2];
-        String codingSchemeName = args[3];
-        System.out.println("serviceUrl: " + serviceUrl);
-        System.out.println("data_directory: " + data_directory);
-        System.out.println("vbtfile: " + vbtfile);
-        System.out.println("codingSchemeName: " + codingSchemeName);
-
-        MappingUtils test = new MappingUtils(data_directory, codingSchemeName);
-		test.generateMapping(vbtfile);
-	}
-*/
-
-/*
-    public static void main(String[] args) {
-		long ms = System.currentTimeMillis();
-
-		//String data_dir = MappingUtils.getCurrentWorkingDirectory();
-        String serviceUrl = args[0];
-        String data_directory = args[1];
-        String vbtfile = args[2];
-        System.out.println("serviceUrl: " + serviceUrl);
-        System.out.println("data_directory: " + data_directory);
-        System.out.println("vbtfile: " + vbtfile);
-
-        DataManager dm = new DataManager(serviceUrl, data_directory);
-        String codingSchemeName = "MEDDRA";
-        Terminology terminology = dm.getTerminologyByCodingSchemeName(codingSchemeName);
-        if (terminology == null) {
-			System.out.println("CodingSchemeName " + codingSchemeName + " not found.");
-		} else {
-			terminology = dm.populateTerminologyData(terminology);
-			System.out.println(terminology.getCodingSchemeName());
-			System.out.println("\t" + terminology.getCodingSchemeVersion());
-			System.out.println("\t" + terminology.getNamedGraph());
-			System.out.println("\t" + terminology.getFilename());
-			System.out.println("\t" + terminology.getData().size());
-			System.out.println("\t" + terminology.getKeywordSet().size());
-    	}
-
-		MappingUtils test = new MappingUtils(data_directory, terminology);
-		test.generateMapping(vbtfile);
-	}
-*/
-
 }

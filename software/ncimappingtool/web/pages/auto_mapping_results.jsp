@@ -35,8 +35,6 @@ L--%>
   <script type="text/javascript" src="<%= request.getContextPath() %>/js/tip_followscroll.js"></script>
 
 <%
-System.out.println("auto_mapping_results.jsp... Step 1");
-
 String hm_basePath = request.getContextPath(); 
 HashMap nameVersion2NamedGraphMap = (HashMap) request.getSession().getAttribute("nameVersion2NamedGraphMap");
 if (nameVersion2NamedGraphMap == null) {
@@ -60,8 +58,6 @@ if (nameVersion2NamedGraphMap == null) {
 	}
     request.getSession().setAttribute("cs_data", cs_data);
 }
-
-System.out.println("auto_mapping_results.jsp... Step 2");
 %>
 <f:view>
   <!-- Begin Skip Top Navigation -->
