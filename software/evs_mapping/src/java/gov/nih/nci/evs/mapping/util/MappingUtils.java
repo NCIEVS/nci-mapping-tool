@@ -78,9 +78,7 @@ public class MappingUtils {
 
 
 	public MappingUtils() {
-
         try {
-			System.out.println("MappingUtils constructor");
 			data_directory = System.getProperty("user.dir");
 		} catch (Exception ex) {
 			ex.printStackTrace();
@@ -90,7 +88,6 @@ public class MappingUtils {
 	public MappingUtils(String data_directory) {
 		this.data_directory = data_directory;
         initialize(data_directory);
-        //filler_set = this.mh.get_filler_set();
 	}
 
 	public MappingUtils(String data_directory, Terminology terminology) {
