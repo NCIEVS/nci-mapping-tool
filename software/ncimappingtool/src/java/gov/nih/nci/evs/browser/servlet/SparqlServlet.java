@@ -55,9 +55,9 @@ public class SparqlServlet extends HttpServlet {
    public void execute(HttpServletRequest request, HttpServletResponse response)
             throws IOException, ServletException {
 		String action = (String) request.getParameter("action");
-		System.out.println("action: " + action);
-//to be modified:
+
         String ontology_display_name = NCImtBrowserProperties.get_TERMINOLOGY();
+
         String ontology_version = null;
 
         if (action.equals("multiple_search")) {
@@ -203,7 +203,7 @@ public class SparqlServlet extends HttpServlet {
 				JSONObject json = new JSONObject();
 				JSONArray nodesArray = null;
 				try {
-					nodesArray = new JSONArray(SparqlCacheController.getInstance().getValueSetRootJSONString(ontology_display_name, ontology_version));
+					nodesArray = new JSONArray(SparqlCacheController.getInstance().getValueSetRootJSONString(NCImtBrowserProperties.get_TERMINOLOGY(), ontology_version));
 					if (nodesArray != null) {
 						json.put("root_nodes", nodesArray);
 					}

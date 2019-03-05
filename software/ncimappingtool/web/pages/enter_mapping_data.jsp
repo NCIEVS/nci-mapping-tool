@@ -42,6 +42,7 @@ L--%>
 <%
 String hm_basePath = request.getContextPath(); 
 HashMap nameVersion2NamedGraphMap = (HashMap) request.getSession().getAttribute("nameVersion2NamedGraphMap");
+/*
 Vector cs_data = new Vector();
 if (nameVersion2NamedGraphMap == null) {
     String serviceUrl = NCImtProperties._service_url;//"https://sparql-evs-dev.nci.nih.gov/sparql";
@@ -67,7 +68,9 @@ if (nameVersion2NamedGraphMap == null) {
 } else {
     cs_data = (Vector) request.getSession().getAttribute("cs_data");
 }
-
+*/
+Vector cs_data = DataUtils.get_cs_data();
+request.getSession().setAttribute("cs_data", cs_data);
 
 %>
 <f:view>
