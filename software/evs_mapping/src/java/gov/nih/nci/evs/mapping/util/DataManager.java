@@ -68,6 +68,7 @@ public class DataManager {
 
 	private HashMap namedGraph2TerminologyHashmap = null;
 	private HashMap codingSchemeName2TerminologyHashmap = null;
+	private HashMap triple_count_hashmap = null;
 
 	public static String NCI_THESAURUS = "NCI_Thesaurus";
 	public static String NCI_Thesaurus_RDF_Graph = "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.rdf";
@@ -98,27 +99,49 @@ public class DataManager {
 		Vector namedGraphs = new Vector();
         File f = null;
         System.out.println("Number of terminologies: " + cs_data.size());
+
 		for (int i=0; i<cs_data.size(); i++) {
 			String line = (String) cs_data.elementAt(i);
-			//System.out.println(line);
 			Vector u = StringUtils.parseData(line, '|');
 			String codingSchemeName = (String) u.elementAt(0);
 			String codingSchemeVersion = (String) u.elementAt(1);
 			String namedGraph = (String) u.elementAt(2);
 			namedGraphs.add(namedGraph);
+		}
+
+        String tripleCountPathString = data_directory + File.separator + TRIPLE_COUNT_FILE;
+		f = new File(tripleCountPathString);
+		if(!f.exists()) {
+			triple_count_vec = get_triple_counts(namedGraphs);
+			Utils.saveToFile(tripleCountPathString, triple_count_vec);
+		} else {
+			triple_count_vec = Utils.readFile(tripleCountPathString);
+		}
+		triple_count_hashmap = create_triple_count_hashmap(triple_count_vec);
+		for (int i=0; i<cs_data.size(); i++) {
+			String line = (String) cs_data.elementAt(i);
+			Vector u = StringUtils.parseData(line, '|');
+			String codingSchemeName = (String) u.elementAt(0);
+			String codingSchemeVersion = (String) u.elementAt(1);
+			String namedGraph = (String) u.elementAt(2);
 			String filename = codingSchemeName + ".txt";
 			String filePathString = data_directory + File.separator + filename;
 			f = new File(filePathString);
 			Vector data = null;
 			HashSet keywordSet = null;
 			if(f.exists() && !f.isDirectory()) {
-				if (codingSchemeName.compareTo(NCI_THESAURUS) == 0 && REGENERATE_NCIT) {
+				int count = get_triple_count(namedGraph);
+				System.out.println(namedGraph + " (Number of triples: " + count + ")");
+				Integer int_obj = (Integer) triple_count_hashmap.get(namedGraph);
+				int prev_count = int_obj.intValue();
+				//if (codingSchemeName.compareTo(NCI_THESAURUS) == 0 && REGENERATE_NCIT) {
+				if (count != prev_count) {
 					System.out.println("Regenerating File " + filePathString + "...");
 					data = get_terms(namedGraph);
 					Utils.saveToFile(filePathString, data);
 					keywordSet = new MappingUtils().create_keyword_set(data);
 				} else {
-					System.out.println("File " + filePathString + " exist.");
+					System.out.println("File " + filePathString + " exist. (Number of triples: " + count + ")");
 					data = Utils.readFile(filePathString);
 					keywordSet = new MappingUtils().create_keyword_set(data);
 				}
@@ -139,14 +162,18 @@ public class DataManager {
 			namedGraph2TerminologyHashmap.put(namedGraph, terminology);
 			codingSchemeName2TerminologyHashmap.put(codingSchemeName, terminology);
 		}
-        String tripleCountPathString = data_directory + File.separator + TRIPLE_COUNT_FILE;
-		f = new File(tripleCountPathString);
-		if(!f.exists()) {
-			triple_count_vec = get_triple_counts(namedGraphs);
-			Utils.saveToFile(tripleCountPathString, triple_count_vec);
-		} else {
-			triple_count_vec = Utils.readFile(tripleCountPathString);
+	}
+
+	public HashMap create_triple_count_hashmap(Vector triple_count_vec) {
+		HashMap hmap = new HashMap();
+		for (int i=0; i<triple_count_vec.size(); i++) {
+			String line = (String) triple_count_vec.elementAt(i);
+			Vector u = StringUtils.parseData(line, '|');
+			String s1 = (String) u.elementAt(0);
+			String s2 = (String) u.elementAt(1);
+			hmap.put(s1, new Integer(Integer.parseInt(s2)));
 		}
+		return hmap;
 	}
 
 	public Vector get_triple_count_vec() {
