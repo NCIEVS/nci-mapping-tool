@@ -72,6 +72,8 @@ public class DataManager {
 	public static String NCI_Thesaurus_RDF_Graph = "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.rdf";
 	public static String NCI_Thesaurus_OWL_Graph = "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl";
 
+	public static boolean REGENERATE_NCIT = true;
+
 	HTTPUtils httpUtils = null;
 
 
@@ -110,13 +112,20 @@ public class DataManager {
 			Vector data = null;
 			HashSet keywordSet = null;
 			if(f.exists() && !f.isDirectory()) {
-				System.out.println("File " + filePathString + " exists.");
-				data = Utils.readFile(filePathString);
-				keywordSet = new MappingUtils().create_keyword_set(data);
+				if (codingSchemeName.compareTo(NCI_THESAURUS) == 0 && REGENERATE_NCIT) {
+					System.out.println("Regenerating File " + filePathString + "...");
+					data = get_terms(namedGraph);
+					Utils.saveToFile(filePathString, data);
+					keywordSet = new MappingUtils().create_keyword_set(data);
+				} else {
+					System.out.println("File " + filePathString + " exist.");
+					data = Utils.readFile(filePathString);
+					keywordSet = new MappingUtils().create_keyword_set(data);
+				}
 			} else {
 				System.out.println("File " + filePathString + " does not exist.");
 				if (codingSchemeName.compareTo(NCI_THESAURUS) == 0) {
-					data = get_terms(namedGraph, null);
+					data = get_terms(namedGraph);
 				} else if (namedGraph.compareTo("http://cbiit.nci.nih.gov/caDSR") == 0) {
 					data = get_names_cadsr(namedGraph);
 				} else {
@@ -220,7 +229,19 @@ public class DataManager {
 		buf.append("PREFIX dc:<http://purl.org/dc/elements/1.1/>").append("\n");
 		return buf.toString();
 	}
-/*
+
+
+
+	public Vector get_terms(String namedGraph) {
+		Vector w = new Vector();
+	    String query = construct_get_terms(namedGraph);
+	    Vector v2 = executeQuery(query);
+	    if (v2 == null) return w;
+	    if (v2.size() == 0) return w;
+	    w = new ParserUtils().getResponseValues(v2);
+	    return new gov.nih.nci.evs.restapi.util.SortUtils().quickSort(w);
+	}
+
 	public String construct_get_terms(String named_graph) {
 		return construct_get_terms(named_graph, null);
 	}
@@ -250,7 +271,6 @@ public class DataManager {
 		buf.append("}").append("\n");
 		return buf.toString();
 	}
-	*/
 
 	public String construct_get_labels(String named_graph, String code) {
 		String named_graph_id = ":NHC0";
@@ -299,6 +319,7 @@ public class DataManager {
 		return buf.toString();
 	}
 
+/*
 	public Vector get_terms(String namedGraph, String code) {
 	    //String query = construct_get_terms(namedGraph, code);
 	    String query = construct_get_synonyms(namedGraph, code);
@@ -338,7 +359,7 @@ public class DataManager {
 		}
 	    return new gov.nih.nci.evs.restapi.util.SortUtils().quickSort(w);
 	}
-
+*/
 
 	public String construct_get_names(String namedGraph) {
 		StringBuffer buf = new StringBuffer();
@@ -426,7 +447,8 @@ public class DataManager {
 		if (data == null) {
 			System.out.println("Generating " + filename + ". please wait...");
 			if (codingSchemeName.compareTo("NCI_Thesaurus") == 0) {
-				data = get_terms(namedGraph, null);
+				//data = get_terms(namedGraph, null);
+				data = get_terms(namedGraph);
 			} else {
 				data = get_names(namedGraph);
 			}
@@ -538,7 +560,7 @@ public class DataManager {
 				//term_vec = readFile(filePathString);
 			} else {
 				if (codingSchemeName.compareTo("NCI_Thesaurus") == 0) {
-					term_vec = get_terms(ng, null);
+					term_vec = get_terms(ng);
 				} else {
 					term_vec = get_names(ng);
 				}
@@ -560,7 +582,7 @@ public class DataManager {
 			String codingSchemeName = terminology.getCodingSchemeName();
 			String namedGraph = terminology.getNamedGraph();
 			if (codingSchemeName.compareTo(NCI_THESAURUS) == 0) {
-				data = get_terms(namedGraph, null);
+				data = get_terms(namedGraph);
 			} else {
 				data = get_names(namedGraph);
 			}
@@ -573,13 +595,19 @@ public class DataManager {
 		long ms = System.currentTimeMillis();
         String serviceUrl = args[0];
         String data_directory = args[1];
+        String namedGraph = args[2];
         System.out.println("serviceUrl: " + serviceUrl);
         System.out.println("data_directory: " + data_directory);
-
+        System.out.println("namedGraph: " + namedGraph);
+/*
         String queryfile = args[2];
         Vector v = new DataManager().execute(queryfile);
         StringUtils.dumpVector(queryfile, v);
+*/
 
+        DataManager dm = new DataManager(serviceUrl, data_directory);
+        Vector v = dm.get_terms(namedGraph);
+        Utils.saveToFile("NCI_Thesaurus" + "_" + StringUtils.getToday() + ".txt", v);
         System.out.println("Total run time (ms): " + (System.currentTimeMillis() - ms));
 	}
 
