@@ -56,6 +56,7 @@ public class DataManager {
 	private Vector synonyms = new Vector();
 	private HashMap variantHashMap = new HashMap();
 	private Vector variants = new Vector();
+	Vector triple_count_vec = new Vector();
 
 	private Vector discarded_phrases = null;
 	//private HashMap americanBritishSpellingHashMap = null;
@@ -73,6 +74,7 @@ public class DataManager {
 	public static String NCI_Thesaurus_OWL_Graph = "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl";
 
 	public static boolean REGENERATE_NCIT = false;
+	public static String TRIPLE_COUNT_FILE = "tripleCount.txt";;
 
 	HTTPUtils httpUtils = null;
 
@@ -93,7 +95,8 @@ public class DataManager {
 		this.codingSchemeName2TerminologyHashmap = new HashMap();
 		Vector cs_data = getTerminologyMetadata(serviceUrl);
 
-
+		Vector namedGraphs = new Vector();
+        File f = null;
         System.out.println("Number of terminologies: " + cs_data.size());
 		for (int i=0; i<cs_data.size(); i++) {
 			String line = (String) cs_data.elementAt(i);
@@ -102,10 +105,10 @@ public class DataManager {
 			String codingSchemeName = (String) u.elementAt(0);
 			String codingSchemeVersion = (String) u.elementAt(1);
 			String namedGraph = (String) u.elementAt(2);
+			namedGraphs.add(namedGraph);
 			String filename = codingSchemeName + ".txt";
-		//if (namedGraph.compareTo(NCI_Thesaurus_RDF_Graph) != 0 && namedGraph.compareTo(NCI_Thesaurus_OWL_Graph) != 0) {
 			String filePathString = data_directory + File.separator + filename;
-			File f = new File(filePathString);
+			f = new File(filePathString);
 			Vector data = null;
 			HashSet keywordSet = null;
 			if(f.exists() && !f.isDirectory()) {
@@ -135,8 +138,19 @@ public class DataManager {
 			terminologies.add(terminology);
 			namedGraph2TerminologyHashmap.put(namedGraph, terminology);
 			codingSchemeName2TerminologyHashmap.put(codingSchemeName, terminology);
-		    //}
 		}
+        String tripleCountPathString = data_directory + File.separator + TRIPLE_COUNT_FILE;
+		f = new File(tripleCountPathString);
+		if(!f.exists()) {
+			triple_count_vec = get_triple_counts(namedGraphs);
+			Utils.saveToFile(tripleCountPathString, triple_count_vec);
+		} else {
+			triple_count_vec = Utils.readFile(tripleCountPathString);
+		}
+	}
+
+	public Vector get_triple_count_vec() {
+		return triple_count_vec;
 	}
 
 	public String construct_get_names_cadsr(String namedGraph) {
@@ -587,6 +601,40 @@ public class DataManager {
 		}
     }
 
+	public String construct_get_triple_count(String named_graph) {
+		String prefixes = getPrefixes();
+		StringBuffer buf = new StringBuffer();
+		buf.append(prefixes);
+		buf.append("SELECT (count(*) as ?count) ").append("\n");
+		buf.append("{").append("\n");
+		buf.append("    graph <" + named_graph + ">").append("\n");
+		buf.append("    {").append("\n");
+		buf.append("   	    ?s ?p ?o .").append("\n");
+		buf.append("    }").append("\n");
+		buf.append("}").append("\n");
+		return buf.toString();
+	}
+
+	public Vector getTripleCount(String named_graph) {
+		return executeQuery(construct_get_triple_count(named_graph));
+	}
+
+    public int get_triple_count(String named_graph) {
+		Vector w = getTripleCount(named_graph);
+		w = new ParserUtils().getResponseValues(w);
+		String count_str = (String) w.elementAt(0);
+		return Integer.parseInt(count_str);
+	}
+
+	public Vector get_triple_counts(Vector named_graphs) {
+		Vector v = new Vector();
+        for (int i=0; i<named_graphs.size(); i++) {
+			String named_graph = (String) named_graphs.elementAt(i);
+			int count = get_triple_count(named_graph);
+			v.add(named_graph + "|" + count);
+		}
+		return v;
+	}
 
     public static void main(String[] args) {
 		long ms = System.currentTimeMillis();
