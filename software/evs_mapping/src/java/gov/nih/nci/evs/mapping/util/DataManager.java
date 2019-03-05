@@ -72,12 +72,9 @@ public class DataManager {
 	public static String NCI_Thesaurus_RDF_Graph = "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.rdf";
 	public static String NCI_Thesaurus_OWL_Graph = "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl";
 
-	public static boolean REGENERATE_NCIT = true;
+	public static boolean REGENERATE_NCIT = false;
 
 	HTTPUtils httpUtils = null;
-
-
-
 
 	public DataManager() {
 		data_directory = System.getProperty("user.dir");
