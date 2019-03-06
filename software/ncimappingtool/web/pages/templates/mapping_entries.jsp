@@ -32,6 +32,11 @@ System.out.println("codingSchemeName: " + codingSchemeName);
 	  alt="Download Plugin Microsoft Excel Viewer"
       />
     </a>
+    &nbsp;
+    <a href="#" onclick="javascript:window.open('<%=request.getContextPath() %>/ajax?action=details')">
+    View Details
+    </a>
+    
    </td>                                 
 </tr>
 
