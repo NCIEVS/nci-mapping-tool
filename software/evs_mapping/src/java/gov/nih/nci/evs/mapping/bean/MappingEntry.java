@@ -38,37 +38,37 @@ public class MappingEntry
 	}
 
 // Set methods
-	public void setSourceCode(String sourceCode) { 
+	public void setSourceCode(String sourceCode) {
 		this.sourceCode = sourceCode;
 	}
 
-	public void setSourceTerm(String sourceTerm) { 
+	public void setSourceTerm(String sourceTerm) {
 		this.sourceTerm = sourceTerm;
 	}
 
-	public void setTargetCode(String targetCode) { 
+	public void setTargetCode(String targetCode) {
 		this.targetCode = targetCode;
 	}
 
-	public void setTargetLabel(String targetLabel) { 
+	public void setTargetLabel(String targetLabel) {
 		this.targetLabel = targetLabel;
 	}
 
 
 // Get methods
-	public String getSourceCode() { 
+	public String getSourceCode() {
 		return this.sourceCode;
 	}
 
-	public String getSourceTerm() { 
+	public String getSourceTerm() {
 		return this.sourceTerm;
 	}
 
-	public String getTargetCode() { 
+	public String getTargetCode() {
 		return this.targetCode;
 	}
 
-	public String getTargetLabel() { 
+	public String getTargetLabel() {
 		return this.targetLabel;
 	}
 
@@ -81,6 +81,10 @@ public class MappingEntry
 		buf.append(XML_DECLARATION).append("\n").append(xml);
 		xml = buf.toString();
 		return xml;
+	}
+
+	public String toDelimited() {
+		return this.sourceCode + "|" + this.sourceTerm + "|" + this.targetCode + "|" + this.targetLabel;
 	}
 
 	public String toJson() {

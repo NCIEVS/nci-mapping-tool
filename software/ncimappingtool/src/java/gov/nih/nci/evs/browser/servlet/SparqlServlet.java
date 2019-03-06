@@ -1,5 +1,7 @@
 package gov.nih.nci.evs.browser.servlet;
 
+import gov.nih.nci.evs.mapping.bean.*;
+
 import gov.nih.nci.evs.browser.utils.*;
 import gov.nih.nci.evs.browser.bean.*;
 import gov.nih.nci.evs.browser.properties.*;
@@ -62,6 +64,9 @@ public class SparqlServlet extends HttpServlet {
 
         if (action.equals("multiple_search")) {
             //multiple_search(request, response);
+
+        } else if (action.equals("details")) {
+            mapping_concept_details(request, response);
 
         } else if (action.equals("values")) {
             //resolve_value_set(request, response);
@@ -1549,6 +1554,35 @@ System.out.println("nextJSP " + nextJSP + " " + message);
 			dispatcher.forward(request,response);
 			return;
 
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		}
+	}
+
+    public void mapping_concept_details(HttpServletRequest request, HttpServletResponse response) {
+		gov.nih.nci.evs.mapping.bean.Mapping mapping = (gov.nih.nci.evs.mapping.bean.Mapping) request.getSession().getAttribute("mapping");
+        try {
+			System.out.println("mapping_concept_details... ");
+			List<MappingEntry> entries = mapping.getEntries();
+            Vector mapping_entries = new Vector();
+            for (int i=0; i<entries.size(); i++) {
+				MappingEntry e = (MappingEntry) entries.get(i);
+				mapping_entries.add(e.toDelimited());
+			}
+			String serviceUrl = NCImtProperties.get_service_url();
+			String namedGraph = (String) request.getSession().getAttribute("ng");
+			HashMap propertyHashMap = new ConceptDetailsGenerator().appendPropertiesToMappingEntries(serviceUrl, namedGraph, mapping_entries);
+			ConceptDetailsGenerator generator = new ConceptDetailsGenerator(propertyHashMap);
+			String contextPath = request.getContextPath();
+			System.out.println("contextPath: " + contextPath);
+			String hyperlinkUrl = contextPath + "/pages/concept_details.jsf?ng=" + namedGraph + "&code=";
+			generator.setHYPERLINK(hyperlinkUrl);
+			String title = "Concept Details";
+            response.setContentType("text/html");
+            response.setHeader("Cache-Control", "no-cache");
+            PrintWriter pw = response.getWriter();
+			generator.generate(pw, title);
+			pw.flush();
 		} catch (Exception ex) {
 			ex.printStackTrace();
 		}
