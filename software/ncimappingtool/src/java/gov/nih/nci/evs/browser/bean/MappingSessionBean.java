@@ -187,7 +187,7 @@ public class MappingSessionBean {
    			sb.append("\"Source Code\",");
    			sb.append("\"Source Name\",");
    			sb.append("\"Target Code\",");
-   			sb.append("\"Target Name\",");
+   			sb.append("\"Target Name\"");
    			sb.append("\r\n");
 			for (int i=0; i<entries.size(); i++) {
 				gov.nih.nci.evs.mapping.bean.MappingEntry entry
@@ -247,10 +247,10 @@ public class MappingSessionBean {
 
            StringBuffer sb = new StringBuffer();
            try {
-   			sb.append("Source Code,");
-   			sb.append("Source Name,");
-   			sb.append("Target Code,");
-   			sb.append("Target Name,");
+   			sb.append("\"Source Code\",");
+   			sb.append("\"Source Name\",");
+   			sb.append("\"Target Code\",");
+   			sb.append("\"Target Name,");
    			sb.append("\r\n");
 
 		for (int i=0; i<entries.size(); i++) {
