@@ -7,6 +7,8 @@ import gov.nih.nci.evs.restapi.util.*;
 import gov.nih.nci.evs.restapi.bean.*;
 import gov.nih.nci.evs.restapi.common.*;
 
+import gov.nih.nci.evs.restapi.meta.util.*;
+
 import java.io.*;
 import java.io.BufferedReader;
 import java.io.InputStream;
@@ -75,7 +77,12 @@ public class DataManager {
 	public static String NCI_Thesaurus_OWL_Graph = "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl";
 
 	public static boolean REGENERATE_NCIT = false;
-	public static String TRIPLE_COUNT_FILE = "tripleCount.txt";;
+	public static String TRIPLE_COUNT_FILE = "tripleCount.txt";
+
+	public static String PARENT_CHILD_FILE = "parent_child.txt";
+
+	public HashMap hierarchyDataHashMap = null;
+	public Vector cs_data = null;
 
 	HTTPUtils httpUtils = null;
 
@@ -87,6 +94,10 @@ public class DataManager {
 		return this.codingSchemeName2TerminologyHashmap;
 	}
 
+	public Vector get_cs_data() {
+		return this.cs_data;
+	}
+
 	public DataManager(String serviceUrl, String data_directory) {
         this.data_directory = data_directory;
 		this.serviceUrl = serviceUrl;
@@ -94,7 +105,7 @@ public class DataManager {
 		this.terminologies = new Vector();
 		this.namedGraph2TerminologyHashmap = new HashMap();
 		this.codingSchemeName2TerminologyHashmap = new HashMap();
-		Vector cs_data = getTerminologyMetadata(serviceUrl);
+		this.cs_data = getTerminologyMetadata(serviceUrl);
 
 		Vector namedGraphs = new Vector();
         File f = null;
@@ -663,6 +674,65 @@ public class DataManager {
 		return v;
 	}
 
+	public HashMap createHierarchyDataHashMap() {
+		HashMap hmap = new HashMap();
+		for (int i=0; i<cs_data.size(); i++) {
+			String line = (String) cs_data.elementAt(i);
+			Vector u = StringUtils.parseData(line, '|');
+			String codingSchemeName = (String) u.elementAt(0);
+			String codingSchemeVersion = (String) u.elementAt(1);
+			String namedGraph = (String) u.elementAt(2);
+
+
+
+		}
+        return hmap;
+	}
+
+	public static String get_default_named_graph() {
+		return "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl";//; //DataUtils.default_named_graph;
+	}
+
+	public static boolean isNCIt(String ng) {
+		if (ng.compareTo(get_default_named_graph()) == 0) return true;
+		return false;
+	}
+
+	public static Vector get_parent_child_vec(String serviceUrl, String data_directory, String codingSchemeName, String named_graph) {
+		//Terminology terminology = (Terminology) namedGraph2TerminologyHashmap.get(named_graph);
+		//String codingSchemeName = terminology.getCodingSchemeName();
+		String filename = codingSchemeName + "_" + PARENT_CHILD_FILE;
+		if (isNCIt(named_graph)) {
+			filename = PARENT_CHILD_FILE;
+		}
+		Vector parent_child_vec = new Vector();
+		File f = null;
+		String filePathString = data_directory + File.separator + filename;
+		f = new File(filePathString);
+		if (isNCIt(named_graph)) {
+			if(f.exists() && !f.isDirectory()) {
+				System.out.println(filename + " exists.");
+				parent_child_vec = Utils.readFile(filePathString);
+			} else {
+				System.out.println(filename + " does not exists -- generating ...");
+				OWLSPARQLUtils owlSPARQLUtils = new OWLSPARQLUtils(serviceUrl);
+				parent_child_vec = owlSPARQLUtils.getHierarchicalRelationships(named_graph);
+				parent_child_vec = new ParserUtils().getResponseValues(parent_child_vec);
+				parent_child_vec = new gov.nih.nci.evs.restapi.util.SortUtils().quickSort(parent_child_vec);
+				Utils.saveToFile(filePathString, parent_child_vec);
+			}
+		} else {
+			if(f.exists() && !f.isDirectory()) {
+				parent_child_vec = Utils.readFile(filePathString);
+			} else {
+				TTLQueryUtils ttlQueryUtils = new TTLQueryUtils(serviceUrl);
+				parent_child_vec = ttlQueryUtils.hierarchy_data_query(named_graph);
+				Utils.saveToFile(filePathString, parent_child_vec);
+			}
+		}
+		return parent_child_vec;
+	}
+
     public static void main(String[] args) {
 		long ms = System.currentTimeMillis();
         String serviceUrl = args[0];
@@ -671,20 +741,26 @@ public class DataManager {
         System.out.println("serviceUrl: " + serviceUrl);
         System.out.println("data_directory: " + data_directory);
         System.out.println("namedGraph: " + namedGraph);
+
+        DataManager dm = new DataManager(serviceUrl, data_directory);
 /*
         String queryfile = args[2];
         Vector v = new DataManager().execute(queryfile);
         StringUtils.dumpVector(queryfile, v);
 */
+/*
 
-        DataManager dm = new DataManager(serviceUrl, data_directory);
         Vector v = dm.get_terms(namedGraph);
         Utils.saveToFile("NCI_Thesaurus" + "_" + StringUtils.getToday() + ".txt", v);
         System.out.println("Total run time (ms): " + (System.currentTimeMillis() - ms));
+*/
+
+		Terminology terminology = (Terminology) dm.namedGraph2TerminologyHashmap.get(namedGraph);
+		String codingSchemeName = terminology.getCodingSchemeName();
+
+        Vector parent_child_vec = DataManager.get_parent_child_vec(serviceUrl, data_directory, codingSchemeName, namedGraph);
+        System.out.println("parent_child_vec size: " + parent_child_vec.size());
 	}
-
-
-
 }
 
 

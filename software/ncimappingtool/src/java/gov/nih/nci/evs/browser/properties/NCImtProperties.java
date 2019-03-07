@@ -76,6 +76,7 @@ public class NCImtProperties {
     public static gov.nih.nci.evs.restapi.util.HierarchyHelper vs_hh = null;
     public static Vector embedded_value_set_hierarchy_vec = null;
     public static TTLQueryUtils ttlQueryUtils = null;
+    public static HashMap hierarchyDataHashMap = null;
 
     private NCImtProperties() {
 
