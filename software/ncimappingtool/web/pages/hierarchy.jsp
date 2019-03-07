@@ -186,13 +186,22 @@
       var ontology_display_name = document.forms["pg_form"].ontology_display_name.value;
       var ontology_version = document.forms["pg_form"].ontology_version.value;
       var ng = document.forms["pg_form"].ng.value;
-
+      if (ng == null) {
+         ng = "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl";
+      }
+      if (ng.indexOf("Thesaurus") != -1) {
 	      load('<%= request.getContextPath() %>/pages/concept_details.jsf?dictionary='+ ontology_display_name 
 		   + '&version='+ ontology_version 
 		   + '&ng=' + ng
 		   + '&code=' + ontology_node_id 
 		   + '&ns=' + ontology_node_ns, currOpener);
-
+      } else {
+	      load('<%= request.getContextPath() %>/pages/concept_details_others.jsf?dictionary='+ ontology_display_name 
+		   + '&version='+ ontology_version 
+		   + '&ng=' + ng
+		   + '&code=' + ontology_node_id 
+		   + '&ns=' + ontology_node_ns, currOpener);
+      }
     }
     
     function onClickViewEntireOntology(ontology_display_name) {
