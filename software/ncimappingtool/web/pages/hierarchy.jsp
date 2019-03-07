@@ -513,7 +513,18 @@ System.out.println("hierarchy.jsp ng: " + ng);
         </table>
 
     <div>
+<%
+if (NCImtProperties.isNCIt(ng)) {
+%>    
       <img src="<%=basePath%>/images/thesaurus_popup_banner.gif" width="612" height="56" alt="NCI Thesaurus" title="" border="0" />
+<%
+} else {
+%>  
+<%=scheme%>
+<%
+} 
+%> 
+
     </div>
 
         <div id="popupContentArea">
