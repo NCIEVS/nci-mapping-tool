@@ -1577,12 +1577,22 @@ System.out.println("nextJSP " + nextJSP + " " + message);
 			System.out.println("contextPath: " + contextPath);
 			String hyperlinkUrl = contextPath + "/pages/concept_details.jsf?ng=" + namedGraph + "&code=";
 			generator.setHYPERLINK(hyperlinkUrl);
+
+			/*
 			String title = "Concept Details";
             response.setContentType("text/html");
             response.setHeader("Cache-Control", "no-cache");
             PrintWriter pw = response.getWriter();
 			generator.generate(pw, title);
 			pw.flush();
+			*/
+
+			String content = generator.propertyHashMap2HTML(propertyHashMap);
+			request.getSession().setAttribute("matched_concepts", content);
+			String nextJSP = "/pages/matched_concepts.jsf";
+			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextJSP);
+			dispatcher.forward(request,response);
+
 		} catch (Exception ex) {
 			ex.printStackTrace();
 		}
