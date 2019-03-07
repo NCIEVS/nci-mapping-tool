@@ -75,7 +75,7 @@ public class NCImtProperties {
 
     public static gov.nih.nci.evs.restapi.util.HierarchyHelper vs_hh = null;
     public static Vector embedded_value_set_hierarchy_vec = null;
-
+    public static TTLQueryUtils ttlQueryUtils = null;
 
     private NCImtProperties() {
 
@@ -84,8 +84,11 @@ public class NCImtProperties {
     static {
         _data_directory = NCImtBrowserProperties._data_directory;
         _service_url = NCImtBrowserProperties._sparql_service_url;
-        runner = NCImtBrowserProperties.runner;
+        //runner = NCImtBrowserProperties.runner;
         ttl_vihUtils = new gov.nih.nci.evs.restapi.meta.util.VIHUtils(_service_url);
+
+        runner = new TTLQueryUtilsRunner(_service_url);
+        ttlQueryUtils = new TTLQueryUtils(_service_url);
 
         String pathname = _data_directory + File.separator + "parent_child.txt";
         File file = new File(pathname);
@@ -206,4 +209,13 @@ public class NCImtProperties {
 	public static gov.nih.nci.evs.restapi.meta.util.VIHUtils get_ttl_vihUtils() {
 		return ttl_vihUtils;
 	}
+
+    public static TTLQueryUtilsRunner getTTLQueryUtilsRunner() {
+		return runner;
+	}
+
+    public static TTLQueryUtils getTTLQueryUtils() {
+		return ttlQueryUtils;
+	}
+
 }
