@@ -165,8 +165,11 @@ public class SparqlServlet extends HttpServlet {
 				long ms1 = System.currentTimeMillis();
 				JSONObject json = new JSONObject();
 				JSONArray nodesArray = null;
+
+				gov.nih.nci.evs.restapi.util.HierarchyHelper hh = (gov.nih.nci.evs.restapi.util.HierarchyHelper) request.getSession().getAttribute("hh");
+
 				try {
-					String str = SparqlCacheController.getInstance().getSubconceptJSONString(named_graph, code);
+					String str = SparqlCacheController.getInstance().getSubconceptJSONString(hh, named_graph, code);
 					nodesArray = new JSONArray(str);
 					if (nodesArray != null) {
 						json.put("nodes", nodesArray);

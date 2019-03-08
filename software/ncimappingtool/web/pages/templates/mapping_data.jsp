@@ -13,7 +13,7 @@ Please enter or upload a list of terms (and optionally the code of each term) in
 <p></p>
 <table border="0" cellpadding="0" cellspacing="0" role='presentation'>
 <%
-String named_graph = (String) request.getSession().getAttribute("named_graph");
+String ng = (String) request.getSession().getAttribute("ng");
 String msg = (String) request.getSession().getAttribute("msg");
 if (msg != null) {
 %> 
@@ -67,5 +67,5 @@ if (data == null) {
 	  </tr>	    
   
 </table>
-<input type="hidden" name="named_graph" id="named_graph" value="<%=named_graph%>">
+<input type="hidden" name="ng" id="ng" value="<%=ng%>">
 </h:form>   

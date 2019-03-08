@@ -1,6 +1,7 @@
 package gov.nih.nci.evs.browser.properties;
+
 import gov.nih.nci.evs.browser.utils.*;
-//import gov.nih.nci.evs.sparqlbrowser.utils.*;
+import gov.nih.nci.evs.mapping.util.*;
 
 import gov.nih.nci.evs.restapi.util.*;
 import gov.nih.nci.evs.restapi.bean.*;
@@ -72,11 +73,13 @@ public class NCImtProperties {
 
     public static gov.nih.nci.evs.restapi.meta.util.VIHUtils ttl_vihUtils = null;
     public static Vector PARENT_CHILDREN_VEC = null;
+    public static String PARENT_CHILD_FILE = "parent_child.txt";
 
     public static gov.nih.nci.evs.restapi.util.HierarchyHelper vs_hh = null;
     public static Vector embedded_value_set_hierarchy_vec = null;
     public static TTLQueryUtils ttlQueryUtils = null;
     public static HashMap hierarchyDataHashMap = null;
+    public static HashMap namedGraph2codingSchemeNameHashMap = null;
 
     private NCImtProperties() {
 
@@ -85,6 +88,23 @@ public class NCImtProperties {
     static {
         _data_directory = NCImtBrowserProperties._data_directory;
         _service_url = NCImtBrowserProperties._sparql_service_url;
+        namedGraph2codingSchemeNameHashMap = new HashMap();
+		gov.nih.nci.evs.restapi.util.MetadataUtils mdu = new gov.nih.nci.evs.restapi.util.MetadataUtils(_service_url);
+		HashMap nameVersion2NamedGraphMap = mdu.getNameVersion2NamedGraphMap();
+		Iterator it = nameVersion2NamedGraphMap.keySet().iterator();
+		while (it.hasNext()) {
+			String nameVersion = (String) it.next();
+			Vector u = gov.nih.nci.evs.restapi.util.StringUtils.parseData(nameVersion);
+			String codingSchemeName = (String) u.elementAt(0);
+			String version = (String) u.elementAt(1);
+			Vector named_graphs = (Vector) nameVersion2NamedGraphMap.get(nameVersion);
+			for (int i=0; i<named_graphs.size(); i++) {
+				String named_graph = (String) named_graphs.elementAt(i);
+				namedGraph2codingSchemeNameHashMap.put(named_graph, codingSchemeName);
+			}
+		}
+
+
         //runner = NCImtBrowserProperties.runner;
         ttl_vihUtils = new gov.nih.nci.evs.restapi.meta.util.VIHUtils(_service_url);
 
@@ -115,6 +135,10 @@ public class NCImtProperties {
 			vs_hh.findRootAndLeafNodes();
 		}
     }
+
+    public static String getCodingSchemeName(String ng) {
+		return (String) namedGraph2codingSchemeNameHashMap.get(ng);
+	}
 
     public static Vector removeRootNodes(Vector v) {
 		Vector w = new Vector();
@@ -219,4 +243,36 @@ public class NCImtProperties {
 		return ttlQueryUtils;
 	}
 
+	public static Vector get_parent_child_vec(String codingSchemeName, String named_graph) {
+		String filename = codingSchemeName + "_" + PARENT_CHILD_FILE;
+		if (isNCIt(named_graph)) {
+			filename = PARENT_CHILD_FILE;
+		}
+		Vector parent_child_vec = new Vector();
+		File f = null;
+		String filePathString = _data_directory + File.separator + filename;
+		f = new File(filePathString);
+		if (isNCIt(named_graph)) {
+			if(f.exists() && !f.isDirectory()) {
+				System.out.println(filename + " exists.");
+				parent_child_vec = gov.nih.nci.evs.restapi.util.Utils.readFile(filePathString);
+			} else {
+				System.out.println(filename + " does not exists -- generating ...");
+				OWLSPARQLUtils owlSPARQLUtils = new OWLSPARQLUtils(_service_url);
+				parent_child_vec = owlSPARQLUtils.getHierarchicalRelationships(named_graph);
+				parent_child_vec = new ParserUtils().getResponseValues(parent_child_vec);
+				parent_child_vec = new gov.nih.nci.evs.restapi.util.SortUtils().quickSort(parent_child_vec);
+				gov.nih.nci.evs.restapi.util.Utils.saveToFile(filePathString, parent_child_vec);
+			}
+		} else {
+			if(f.exists() && !f.isDirectory()) {
+				parent_child_vec = gov.nih.nci.evs.restapi.util.Utils.readFile(filePathString);
+			} else {
+				TTLQueryUtils ttlQueryUtils = new TTLQueryUtils(_service_url);
+				parent_child_vec = ttlQueryUtils.hierarchy_data_query(named_graph);
+				gov.nih.nci.evs.restapi.util.Utils.saveToFile(filePathString, parent_child_vec);
+			}
+		}
+		return parent_child_vec;
+	}
 }

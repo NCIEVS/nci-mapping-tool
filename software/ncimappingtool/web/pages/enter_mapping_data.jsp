@@ -42,33 +42,6 @@ L--%>
 <%
 String hm_basePath = request.getContextPath(); 
 HashMap nameVersion2NamedGraphMap = (HashMap) request.getSession().getAttribute("nameVersion2NamedGraphMap");
-/*
-Vector cs_data = new Vector();
-if (nameVersion2NamedGraphMap == null) {
-    String serviceUrl = NCImtProperties._service_url;//"https://sparql-evs-dev.nci.nih.gov/sparql";
-    gov.nih.nci.evs.restapi.util.MetadataUtils test = new gov.nih.nci.evs.restapi.util.MetadataUtils(serviceUrl);
-    nameVersion2NamedGraphMap = test.getNameVersion2NamedGraphMap();
-    request.getSession().setAttribute("nameVersion2NamedGraphMap", nameVersion2NamedGraphMap);
-    Iterator it = nameVersion2NamedGraphMap.keySet().iterator();
-    cs_data = new Vector();
-	Vector versions = new Vector();
-	while (it.hasNext()) {
-		String nameVersion = (String) it.next();
-		Vector u = gov.nih.nci.evs.restapi.util.StringUtils.parseData(nameVersion);
-		String codingSchemeName = (String) u.elementAt(0);
-		String version = (String) u.elementAt(1);
-		Vector named_graphs = (Vector) nameVersion2NamedGraphMap.get(nameVersion);
-		for (int i=0; i<named_graphs.size(); i++) {
-			String named_graph = (String) named_graphs.elementAt(i);
-			cs_data.add(codingSchemeName + "|" + version + "|" + named_graph);
-			System.out.println(codingSchemeName + "|" + version + "|" + named_graph);
-		}
-	}
-    request.getSession().setAttribute("cs_data", cs_data);
-} else {
-    cs_data = (Vector) request.getSession().getAttribute("cs_data");
-}
-*/
 Vector cs_data = DataUtils.get_cs_data();
 request.getSession().setAttribute("cs_data", cs_data);
 

@@ -674,21 +674,6 @@ public class DataManager {
 		return v;
 	}
 
-	public HashMap createHierarchyDataHashMap() {
-		HashMap hmap = new HashMap();
-		for (int i=0; i<cs_data.size(); i++) {
-			String line = (String) cs_data.elementAt(i);
-			Vector u = StringUtils.parseData(line, '|');
-			String codingSchemeName = (String) u.elementAt(0);
-			String codingSchemeVersion = (String) u.elementAt(1);
-			String namedGraph = (String) u.elementAt(2);
-
-
-
-		}
-        return hmap;
-	}
-
 	public static String get_default_named_graph() {
 		return "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl";//; //DataUtils.default_named_graph;
 	}

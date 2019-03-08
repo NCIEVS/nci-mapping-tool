@@ -19,9 +19,6 @@
 <%@ page import="gov.nih.nci.evs.mapping.bean.*"%>
 <%@ page import="gov.nih.nci.evs.mapping.common.*"%>
 
-
-<%@ page import="gov.nih.nci.evs.restapi.util.*"%>
-
 <%@ page contentType="text/html;charset=UTF-8"%>
 
         <%
@@ -52,6 +49,8 @@ gov.nih.nci.evs.restapi.meta.bean.Concept c = runner.getConcept(named_graph, con
 request.getSession().setAttribute("ng", named_graph);
 
 ConceptDetailsPageGenerator generator = new ConceptDetailsPageGenerator();
+generator.set_concept_report_jsp(jsp);
+
 String title = null;
 String content = generator.getConceptContent(named_graph, c);
 	

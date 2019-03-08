@@ -83,9 +83,20 @@ public class MappingSessionBean {
         HttpServletRequest request =
             (HttpServletRequest) FacesContext.getCurrentInstance()
                 .getExternalContext().getRequest();
+
+        String prev_ng = (String) request.getSession().getAttribute("prev_ng");
         String ng = (String) request.getParameter("ng");
+        if (prev_ng == null || ng.compareTo(prev_ng) != 0) {
+			Terminology terminology = gov.nih.nci.evs.browser.utils.DataUtils.getTerminologyByNamedGraph(ng);
+			String codingSchemeName = terminology.getCodingSchemeName();
+			Vector parent_child_vec = NCImtProperties.get_parent_child_vec(codingSchemeName, ng);
+			gov.nih.nci.evs.restapi.util.HierarchyHelper hh = new gov.nih.nci.evs.restapi.util.HierarchyHelper(parent_child_vec);
+			request.getSession().setAttribute("hh", hh);
+		}
+
         System.out.println(ng);
         request.getSession().setAttribute("ng", ng);
+        request.getSession().setAttribute("prev_ng", ng);
         return "data";
 	}
 
@@ -141,26 +152,40 @@ public class MappingSessionBean {
 		String prev_ng = (String) request.getSession().getAttribute("prev_ng");
         String ng = (String) request.getParameter("ng");
 
+        System.out.println("mappingAction prev_ng: " + prev_ng);
+        System.out.println("mappingAction ng: " + ng);
+
         if (ng == null) {
 			ng = (String) request.getSession().getAttribute("ng");
 		}
 		if (ng == null) {
 			ng = DataManager.NCI_Thesaurus_OWL_Graph;
 		}
-		System.out.println("ng: " + ng);
+        System.out.println("mappingAction prev_ng: " + prev_ng);
+        System.out.println("mappingAction ng: " + ng);
+
 		Terminology terminology = gov.nih.nci.evs.browser.utils.DataUtils.getTerminologyByNamedGraph(ng);
-
+		System.out.println("mappingAction codingSchemeName: " + terminology.getCodingSchemeName());
 		String data_directory = NCImtProperties._data_directory;
-		gov.nih.nci.evs.mapping.util.MappingUtils mappingUtils = (gov.nih.nci.evs.mapping.util.MappingUtils) request.getSession().getAttribute("mappingUtils");
-        request.getSession().setAttribute("codingSchemeName", terminology.getCodingSchemeName());
+		System.out.println(data_directory);
 
-		if (mappingUtils == null || (prev_ng != null && ng.compareTo(prev_ng) != 0)) {
-			mappingUtils = new gov.nih.nci.evs.mapping.util.MappingUtils(data_directory, terminology);
-			request.getSession().setAttribute("mappingUtils", mappingUtils);
+		HashMap mappingUtilsHashMap = (HashMap) request.getSession().getAttribute("mappingUtilsHashMap");
+		if (mappingUtilsHashMap == null) {
+			mappingUtilsHashMap = new HashMap();
 		}
-		mappingUtils = (gov.nih.nci.evs.mapping.util.MappingUtils) request.getSession().getAttribute("mappingUtils");
+		gov.nih.nci.evs.mapping.util.MappingUtils mappingUtils = null;
+		if (mappingUtilsHashMap.containsKey(ng)) {
+			mappingUtils = (gov.nih.nci.evs.mapping.util.MappingUtils) mappingUtilsHashMap.get(ng);
+		} else {
+			mappingUtils = new gov.nih.nci.evs.mapping.util.MappingUtils(data_directory, terminology);
+			mappingUtilsHashMap.put(ng, mappingUtils);
+		}
+		request.getSession().setAttribute("mappingUtilsHashMap", mappingUtilsHashMap);
+		request.getSession().setAttribute("codingSchemeName", terminology.getCodingSchemeName());
+
         request.getSession().setAttribute("prev_ng", ng);
         request.getSession().setAttribute("ng", ng);
+
 		Mapping mapping = mappingUtils.run(vbt_vec);
         request.getSession().setAttribute("mapping", mapping);
 

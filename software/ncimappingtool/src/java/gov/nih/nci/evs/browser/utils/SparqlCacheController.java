@@ -405,6 +405,15 @@ for (int j=0; j<label_code_vec.size(); j++) {
 
         if (NCImtProperties.isNCIt(named_graph)) {
 			try {
+                OWLSPARQLUtils owlSPARQLUtils = new OWLSPARQLUtils(NCImtProperties.get_service_url());
+				//ParserUtils parser = new ParserUtils();
+				//Vector ret_vec = owlSPARQLUtils.getLabelByCode(named_graph, focus_code);
+				//String line = (String) ret_vec.elementAt(0);
+				//String label = parser.getValue(line);
+
+				//root = new gov.nih.nci.evs.restapi.bean.TreeItem(focus_code, label);
+				//root._expandable = false;
+
 				w = getSubclassesByCode(named_graph, focus_code);
 				if (w != null) {
 					for (int i=0; i<w.size(); i++) {
@@ -428,6 +437,10 @@ for (int j=0; j<label_code_vec.size(); j++) {
 		} else {
 			try {
 				TTLQueryUtils ttlQueryUtils = new TTLQueryUtils(NCImtProperties.get_service_url());
+                //String label = ttlQueryUtils.getLabel(named_graph, focus_code);
+				//root = new gov.nih.nci.evs.restapi.bean.TreeItem(focus_code, label);
+				//root._expandable = false;
+
 				w = ttlQueryUtils.subclass_query(named_graph, focus_code);
 				if (w != null) {
 					for (int i=0; i<w.size(); i++) {
@@ -469,9 +482,113 @@ for (int j=0; j<label_code_vec.size(); j++) {
 		return json;
 	}
 
+    public String getSubconceptJSONString(gov.nih.nci.evs.restapi.util.HierarchyHelper hh, String named_graph, String focus_code) {
+		String key = "subclasses_of_$" + focus_code;
+		Element element = _cache.get(key);
+		if (element != null) {
+			return (String) element.getValue();
+		}
+
+		long ms = System.currentTimeMillis();
+		gov.nih.nci.evs.restapi.bean.TreeItem root = new gov.nih.nci.evs.restapi.bean.TreeItem("Root", "<Root>");
+		root._expandable = false;
+		Vector w = null;
+		if (named_graph == null) {
+			named_graph = NCImtProperties.get_default_named_graph();
+		}
+
+        if (NCImtProperties.isNCIt(named_graph)) {
+			try {
+                OWLSPARQLUtils owlSPARQLUtils = new OWLSPARQLUtils(NCImtProperties.get_service_url());
+				//ParserUtils parser = new ParserUtils();
+				//Vector ret_vec = owlSPARQLUtils.getLabelByCode(named_graph, focus_code);
+				//String line = (String) ret_vec.elementAt(0);
+				//String label = parser.getValue(line);
+
+				//root = new gov.nih.nci.evs.restapi.bean.TreeItem(focus_code, label);
+				//root._expandable = false;
+
+				w = getSubclassesByCode(named_graph, focus_code);
+				if (w != null) {
+					for (int i=0; i<w.size(); i++) {
+						String t = (String) w.elementAt(i);
+						Vector u = gov.nih.nci.evs.restapi.util.StringUtils.parseData(t);
+						String cs_name = NCImtProperties.get_TERMINOLOGY();
+						String cs_version = null;
+						String cs_ns = cs_name;
+						String name = (String) u.elementAt(0);
+						String code = (String) u.elementAt(1);
+						gov.nih.nci.evs.restapi.bean.TreeItem child = new gov.nih.nci.evs.restapi.bean.TreeItem(code, name);
+						boolean isLeaf = NCImtProperties.isLeaf(named_graph, code);
+						child._expandable = !isLeaf;
+						root.addChild("has_child", child);
+						root._expandable = true;
+					}
+			    }
+			} catch (Exception ex) {
+				return null;
+			}
+		} else {
+			try {
+				//TTLQueryUtils ttlQueryUtils = new TTLQueryUtils(NCImtProperties.get_service_url());
+                //String label = ttlQueryUtils.getLabel(named_graph, focus_code);
+				//root = new gov.nih.nci.evs.restapi.bean.TreeItem(focus_code, label);
+				//root._expandable = false;
+				String root_label = hh.getLabel(focus_code);
+				Vector codes = hh.getSubclassCodes(focus_code);
+				w = new Vector();
+				for (int i=0; i<codes.size(); i++) {
+					String sub_code = (String) codes.elementAt(i);
+					String sub_label = hh.getLabel(sub_code);
+					w.add(root_label + "|" + focus_code + "|" + sub_label + "|" + sub_code);
+				}
+
+				//w = ttlQueryUtils.subclass_query(named_graph, focus_code);
+				//if (w != null) {
+					for (int i=0; i<w.size(); i++) {
+						String t = (String) w.elementAt(i);
+						Vector u = gov.nih.nci.evs.restapi.util.StringUtils.parseData(t);
+						String cs_name = named_graph;
+						String cs_version = null;
+						String cs_ns = cs_name;
+						String name = (String) u.elementAt(2);
+						String code = (String) u.elementAt(3);
+						//gov.nih.nci.evs.restapi.bean.TreeItem child = new gov.nih.nci.evs.restapi.bean.TreeItem(code, name, cs_ns, null);
+						gov.nih.nci.evs.restapi.bean.TreeItem child = new gov.nih.nci.evs.restapi.bean.TreeItem(code, name);
+						Vector w2 = hh.getSubclassCodes(code);
+						boolean isLeaf = true;
+						if (w2 != null && w2.size() > 0) {
+							 isLeaf = false;
+						}
+						child._expandable = !isLeaf;
+						root.addChild("has_child", child);
+						root._expandable = true;
+					}
+			    //}
+			} catch (Exception ex) {
+				return null;
+			}
+		}
+
+		ms = System.currentTimeMillis();
+		String json = gov.nih.nci.evs.restapi.util.JSON2TreeItem.treeItem2Json(root);
+            System.out.println("treeItem2Json run time (milliseconds): "
+                + (System.currentTimeMillis() - ms));
+		try {
+			element = new Element(key, json);
+			_cache.put(element);
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		}
+		return json;
+	}
+
 
 	public String getViewInHierarchyJSONString(String named_graph, String focus_code) {
 		String json = null;
+
+System.out.println("getViewInHierarchyJSONString named_graph: " + named_graph);
+System.out.println("getViewInHierarchyJSONString focus_code: " + focus_code);
 
 		String key = "vih_of_$" + focus_code;
 		Element element = _cache.get(key);
@@ -482,15 +599,8 @@ for (int j=0; j<label_code_vec.size(); j++) {
 		if (named_graph == null) {
 			named_graph = NCImtProperties.get_default_named_graph();
 		}
-
-System.out.println("getViewInHierarchyJSONString named_graph: " + named_graph);
-System.out.println("getViewInHierarchyJSONString focus_code: " + focus_code);
-
-
 		long ms = System.currentTimeMillis();
 		if (NCImtProperties.isNCIt(named_graph)) {
-
-System.out.println("getViewInHierarchyJSONString isNCIt: ");
 			gov.nih.nci.evs.restapi.util.VIHUtils vih_util = new gov.nih.nci.evs.restapi.util.VIHUtils(NCImtProperties.get_PARENT_CHILDREN());
 			try {
 				root = vih_util.buildViewInHierarchyTree(focus_code);
@@ -499,9 +609,21 @@ System.out.println("getViewInHierarchyJSONString isNCIt: ");
 				return null;
 			}
 		} else {
-			//System.out.println("getViewInHierarchyJSONString is NOT NCIt: ");
+			//Vector get_parent_child_vec(String codingSchemeName, String named_graph)
+			/*
+			System.out.println("getViewInHierarchyJSONString is NOT NCIt: ");
 			gov.nih.nci.evs.restapi.meta.util.VIHUtils vihUtils = NCImtProperties.get_ttl_vihUtils();//new gov.nih.nci.evs.restapi.meta.util.VIHUtils(NCImtProperties.get_SPARQL_SERVICE());
 			root = vihUtils.buildViewInHierarchyTree(named_graph, focus_code);
+			*/
+			String codingSchemeName = NCImtProperties.getCodingSchemeName(named_graph);
+			Vector parent_child = NCImtProperties.get_parent_child_vec(codingSchemeName, named_graph);
+			gov.nih.nci.evs.restapi.util.VIHUtils vih_util = new gov.nih.nci.evs.restapi.util.VIHUtils(parent_child);
+			try {
+				root = vih_util.buildViewInHierarchyTree(focus_code);
+			} catch (Exception ex) {
+				ex.printStackTrace();
+				return null;
+			}
 		}
 
             System.out.println("TreeItem run time (milliseconds): "
