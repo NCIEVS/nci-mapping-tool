@@ -1574,11 +1574,14 @@ System.out.println("nextJSP " + nextJSP + " " + message);
 			}
 			String serviceUrl = NCImtProperties.get_service_url();
 			String namedGraph = (String) request.getSession().getAttribute("ng");
-			HashMap propertyHashMap = new ConceptDetailsGenerator().appendPropertiesToMappingEntries(serviceUrl, namedGraph, mapping_entries);
-			ConceptDetailsGenerator generator = new ConceptDetailsGenerator(propertyHashMap);
+			HashMap propertyHashMap = new gov.nih.nci.evs.restapi.meta.util.ConceptDetailsGenerator().appendPropertiesToMappingEntries(serviceUrl, namedGraph, mapping_entries);
+			gov.nih.nci.evs.restapi.meta.util.ConceptDetailsGenerator generator = new gov.nih.nci.evs.restapi.meta.util.ConceptDetailsGenerator(propertyHashMap);
 			String contextPath = request.getContextPath();
 			System.out.println("contextPath: " + contextPath);
-			String hyperlinkUrl = contextPath + "/pages/concept_details.jsf?ng=" + namedGraph + "&code=";
+			String hyperlinkUrl = contextPath + "/pages/concept_details_others.jsf?ng=" + namedGraph + "&code=";
+			if (NCImtProperties.isNCIt(namedGraph)) {
+				hyperlinkUrl = contextPath + "/pages/concept_details.jsf?ng=" + namedGraph + "&code=";
+			}
 			generator.setHYPERLINK(hyperlinkUrl);
 
 			/*

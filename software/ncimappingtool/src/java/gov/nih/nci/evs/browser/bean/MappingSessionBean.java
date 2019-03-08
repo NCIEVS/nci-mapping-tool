@@ -94,7 +94,7 @@ public class MappingSessionBean {
 			request.getSession().setAttribute("hh", hh);
 		}
 
-        System.out.println(ng);
+        //System.out.println(ng);
         request.getSession().setAttribute("ng", ng);
         request.getSession().setAttribute("prev_ng", ng);
         return "data";
@@ -118,7 +118,7 @@ public class MappingSessionBean {
 	}
 
     public String resetAction() {
-		System.out.println("resetAction");
+		//System.out.println("resetAction");
         HttpServletRequest request =
             (HttpServletRequest) FacesContext.getCurrentInstance()
                 .getExternalContext().getRequest();
@@ -128,7 +128,7 @@ public class MappingSessionBean {
 	}
 
     public String mappingAction() {
-		System.out.println("mappingAction");
+		//System.out.println("mappingAction");
         HttpServletRequest request =
             (HttpServletRequest) FacesContext.getCurrentInstance()
                 .getExternalContext().getRequest();
@@ -152,22 +152,15 @@ public class MappingSessionBean {
 		String prev_ng = (String) request.getSession().getAttribute("prev_ng");
         String ng = (String) request.getParameter("ng");
 
-        System.out.println("mappingAction prev_ng: " + prev_ng);
-        System.out.println("mappingAction ng: " + ng);
-
         if (ng == null) {
 			ng = (String) request.getSession().getAttribute("ng");
 		}
 		if (ng == null) {
 			ng = DataManager.NCI_Thesaurus_OWL_Graph;
 		}
-        System.out.println("mappingAction prev_ng: " + prev_ng);
-        System.out.println("mappingAction ng: " + ng);
 
 		Terminology terminology = gov.nih.nci.evs.browser.utils.DataUtils.getTerminologyByNamedGraph(ng);
-		System.out.println("mappingAction codingSchemeName: " + terminology.getCodingSchemeName());
 		String data_directory = NCImtProperties._data_directory;
-		System.out.println(data_directory);
 
 		HashMap mappingUtilsHashMap = (HashMap) request.getSession().getAttribute("mappingUtilsHashMap");
 		if (mappingUtilsHashMap == null) {
