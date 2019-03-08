@@ -157,6 +157,13 @@ L-->
               <from-outcome>mapping_results</from-outcome>
               <to-view-id>/pages/auto_mapping_results.jsp</to-view-id>
           </navigation-case> 
+          
+           <navigation-case>
+              <from-action>#{mappingSessionBean.backAction}</from-action>
+              <from-outcome>mapping_results</from-outcome>
+              <to-view-id>/pages/auto_mapping_results.jsp</to-view-id>
+          </navigation-case>          
+          
      </navigation-rule> 
      
 
@@ -962,5 +969,15 @@ L-->
           </navigation-case>          
           
     </navigation-rule> 
-    
+
+
+    <navigation-rule>
+         <from-view-id>/pages/search_form.jsp</from-view-id>
+        <navigation-case>
+             <from-action>#{mappingSessionBean.backAction}</from-action>
+             <from-outcome>mapping_results</from-outcome>
+             <to-view-id>/pages/sparql_manual_mapping.jsp</to-view-id>
+         </navigation-case>
+     </navigation-rule>   
+     
 </faces-config>

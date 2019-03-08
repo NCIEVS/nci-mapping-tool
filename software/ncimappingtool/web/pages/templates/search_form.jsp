@@ -118,6 +118,8 @@ for (int i=0; i<partial_matches.size(); i++) {
 	      tabindex="1">
 	    </h:commandButton>
 	    
+	    &nbsp;
+	    
 		<%         
 		if (partial_matches != null && partial_matches.size() > 0) {      
 		%>	    
@@ -127,10 +129,19 @@ for (int i=0; i<partial_matches.size(); i++) {
 	      alt="Submit"
 	      tabindex="1">
 	    </h:commandButton>	 
+	    
+	    &nbsp;
+	    
 		<%         
 		}     
 		%> 	    
-	    
+
+	    <h:commandButton id="back" value="back" action="#{mappingSessionBean.backAction}"
+	      image="/images/back.gif"
+	      alt="Back"
+	      tabindex="1">
+	    </h:commandButton>
+  	    
 	    
 	 </td>         
 </tr>

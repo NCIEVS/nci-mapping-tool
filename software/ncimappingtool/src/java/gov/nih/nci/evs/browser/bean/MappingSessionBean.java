@@ -145,7 +145,16 @@ public class MappingSessionBean {
 			return "warning";
 		}
 
-        Vector vbt_vec = gov.nih.nci.evs.restapi.util.StringUtils.parseData(data, '\n');
+        Vector vbt_vec = new Vector();
+        Vector vbt_vec_tmp = gov.nih.nci.evs.restapi.util.StringUtils.parseData(data, '\n');
+        for (int i=0; i<vbt_vec_tmp.size(); i++) {
+			String t = (String) vbt_vec_tmp.elementAt(i);
+			t = t.trim();
+			if (t.length() > 0) {
+				vbt_vec.add(t);
+			}
+		}
+
         Vector w = tab2BarDelimited(vbt_vec);
         request.getSession().setAttribute("vbt_vec", w);
 
