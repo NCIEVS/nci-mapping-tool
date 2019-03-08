@@ -1,11 +1,17 @@
 <%@ page import="gov.nih.nci.evs.restapi.ui.*"%>
 <%@ page import="gov.nih.nci.evs.restapi.util.*"%>
+<%@ page import="gov.nih.nci.evs.browser.properties.*"%>
 
 <%
 String term = (String) request.getParameter("term");
 if (term == null) {
     term = (String) request.getSession().getAttribute("term");
+} else {
+    request.getSession().setAttribute("term", term);
 }
+term = term.replaceAll("%22", "\"");
+System.out.println("(*) search_form.jsp term: " + term);
+
 String searchstring = (String) request.getParameter("searchstring");
 if (searchstring == null) {
     searchstring = (String) request.getSession().getAttribute("searchstring");
@@ -15,20 +21,15 @@ if (searchstring == null) {
     searchstring = "";
 }
 
+System.out.println("(*) search_form.jsp searchstring: " + searchstring);
 
-String named_graph = (String) request.getSession().getAttribute("named_graph");
-if (named_graph == null) {
-    named_graph = (String) request.getParameter("named_graph");
-}
-if (named_graph == null) {
-    named_graph = (String) request.getParameter("ng");
-}
+
+String named_graph = (String) request.getSession().getAttribute("ng");
 if (named_graph == null) {
 	named_graph = gov.nih.nci.evs.browser.common.Constants.NCIT_NG;
 }
 
 Vector partial_matches = (Vector) request.getSession().getAttribute("partial_matches");  
-//request.getSession().removeAttribute("partial_matches"); 
 String msg = (String) request.getSession().getAttribute("msg");
 
 %>
@@ -76,8 +77,9 @@ for (int i=0; i<partial_matches.size(); i++) {
     String targetLabel = (String) u.elementAt(1);
     String rowColor = (i%2 == 0) ? "dataRowDark" : "dataRowLight";
     String jsp = "ncimappingtool/pages/concept_details.jsf";
-    //http://localhost:8080/ncimappingtool/pages/concept_details.jsf?ng=http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl&code=C12345
-
+    if (NCImtProperties.isNCIt(named_graph)) {
+        jsp = "ncimappingtool/pages/concept_details_others.jsf";
+    }
     String hyperlink_str = gov.nih.nci.evs.restapi.ui.UIUtils.getHyperlink(jsp, named_graph, targetCode, targetCode);
 
 %>
@@ -123,7 +125,6 @@ for (int i=0; i<partial_matches.size(); i++) {
 		<%         
 		if (partial_matches != null && partial_matches.size() > 0) {      
 		%>	    
-	    &nbsp;
 	    <h:commandButton id="save" value="save" action="#{mappingSessionBean.saveAction}"
 	      image="/images/save.gif"
 	      alt="Submit"
@@ -146,6 +147,9 @@ for (int i=0; i<partial_matches.size(); i++) {
 	 </td>         
 </tr>
 </table>
+<%
+term = term.replaceAll("\"", "%22");
+%>
 <input type="hidden" name="term" id="term" value="<%=term%>">
 <input type="hidden" name="named_graph" id="named_graph" value="<%=named_graph%>">
 </h:form>   

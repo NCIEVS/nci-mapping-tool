@@ -53,7 +53,7 @@ String codingSchemeName = (String) request.getSession().getAttribute("codingSche
    <th class="datatable_960Header" width="120px" scope="col" align="left">Source Code</th>
    <th class="datatable_960Header" width="350px" scope="col" align="left">Source Label</th>
 <%
-
+String ng = (String) request.getSession().getAttribute("ng");
 for (int i=0; i<nomatch_vec.size(); i++) {
     gov.nih.nci.evs.mapping.bean.MappingEntry entry = (gov.nih.nci.evs.mapping.bean.MappingEntry) nomatch_vec.elementAt(i);
     String sourceCode = entry.getSourceCode();
@@ -63,6 +63,7 @@ for (int i=0; i<nomatch_vec.size(); i++) {
     
     String t = sourceTerm;
     t = t.replaceAll(" ", "%20");
+    t = t.replaceAll("\"", "%22");
     
     String rowColor = (i%2 == 0) ? "dataRowDark" : "dataRowLight";
 
@@ -70,7 +71,7 @@ for (int i=0; i<nomatch_vec.size(); i++) {
     <tr class="<%=rowColor%>">
       <td width="120px" class="textbody"><%=sourceCode%></td>
       <td width="350px" class="textbody">
-      <a href="<%= request.getContextPath()%>/pages/sparql_search.jsf?term=<%=t%>">
+      <a href="<%= request.getContextPath()%>/pages/sparql_search.jsf?ng=<%=ng%>&term=<%=t%>">
       <%=sourceTerm%>
       </a>       
       </td>

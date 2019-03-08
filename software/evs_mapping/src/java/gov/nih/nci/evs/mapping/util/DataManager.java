@@ -129,6 +129,7 @@ public class DataManager {
 			triple_count_vec = Utils.readFile(tripleCountPathString);
 		}
 		triple_count_hashmap = create_triple_count_hashmap(triple_count_vec);
+		boolean count_changed = false;
 		for (int i=0; i<cs_data.size(); i++) {
 			String line = (String) cs_data.elementAt(i);
 			Vector u = StringUtils.parseData(line, '|');
@@ -151,6 +152,8 @@ public class DataManager {
 					data = get_terms(namedGraph);
 					Utils.saveToFile(filePathString, data);
 					keywordSet = new MappingUtils().create_keyword_set(data);
+					triple_count_hashmap.put(namedGraph, new Integer(count));
+					count_changed = true;
 				} else {
 					System.out.println("File " + filePathString + " exist. (Number of triples: " + count + ")");
 					data = Utils.readFile(filePathString);
@@ -167,11 +170,24 @@ public class DataManager {
 				}
 				Utils.saveToFile(filePathString, data);
 				keywordSet = new MappingUtils().create_keyword_set(data);
+				int count = get_triple_count(namedGraph);
+				triple_count_hashmap.put(namedGraph, new Integer(count));
+				count_changed = true;
 			}
 			Terminology terminology = new Terminology(namedGraph, codingSchemeName, codingSchemeVersion, filename, data, keywordSet);
 			terminologies.add(terminology);
 			namedGraph2TerminologyHashmap.put(namedGraph, terminology);
 			codingSchemeName2TerminologyHashmap.put(codingSchemeName, terminology);
+		}
+		if (count_changed) {
+			Vector count_vec = new Vector();
+			Iterator it = triple_count_hashmap.keySet().iterator();
+			while (it.hasNext()) {
+				String key = (String) it.next();
+				Integer value = (Integer) triple_count_hashmap.get(key);
+				count_vec.add(key + "|" + value);
+			}
+			Utils.saveToFile(tripleCountPathString, count_vec);
 		}
 	}
 

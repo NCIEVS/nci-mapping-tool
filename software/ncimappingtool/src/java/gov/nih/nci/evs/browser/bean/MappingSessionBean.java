@@ -405,6 +405,7 @@ public class MappingSessionBean {
         if (term == null) {
 			term = (String) request.getSession().getAttribute("term");
 		}
+		term = term.replaceAll("%22", "\"");
         String[] codes = (String[]) request.getParameterValues("concepts");
         Vector code_vec = new Vector();
         if (codes != null && codes.length > 0) {
