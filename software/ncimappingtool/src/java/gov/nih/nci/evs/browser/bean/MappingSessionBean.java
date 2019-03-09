@@ -124,6 +124,7 @@ public class MappingSessionBean {
                 .getExternalContext().getRequest();
         String data = (String) request.getParameter("data");
         request.getSession().setAttribute("data", "");
+        request.getSession().removeAttribute("mapping_name");
         return "reset";
 	}
 

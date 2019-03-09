@@ -48,7 +48,7 @@ Please specifiy a mapping name, then enter or upload a list of terms (and option
 </tr> 
     <tr align="top">
       <td class="textbody">
-      <textarea name="data" cols="110" rows=15 tabindex="3"><%=data%></textarea>
+      <textarea name="data" cols="115" rows=15 tabindex="3"><%=data%></textarea>
       </td>
      </tr>	 
 
