@@ -46,7 +46,6 @@ if (msg != null) {
 Please specifiy a mapping name, then enter or upload a list of terms (and optionally the code of each term) in the text field below. Press <b>Continue</b> to proceed.
 </td> 
 </tr> 
-<tr><td>&nbsp;</td><tr>
     <tr align="top">
       <td class="textbody">
       <textarea name="data" cols="100" rows=15 tabindex="3"><%=data%></textarea>

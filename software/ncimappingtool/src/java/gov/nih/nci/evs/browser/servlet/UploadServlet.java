@@ -150,6 +150,7 @@ public final class UploadServlet extends HttpServlet {
     public void execute(HttpServletRequest request, HttpServletResponse response)
             throws IOException, ServletException {
 		request.getSession().removeAttribute("msg");
+		request.getSession().removeAttribute("mapping_name");
 
         // Determine request by attributes
         String action = (String) request.getParameter("action");
@@ -186,6 +187,15 @@ public final class UploadServlet extends HttpServlet {
 			while(itr.hasNext()) {
 				FileItem item = (FileItem) itr.next();
 				filename = item.getName();
+				int n = filename.lastIndexOf("\\");
+				if (n != -1) {
+					filename = filename.substring(n+1, filename.length());
+				} else {
+					n = filename.lastIndexOf("/");
+					if (n != -1) {
+						filename = filename.substring(n+1, filename.length());
+				    }
+				}
 				/*
 				 * Handle Form Fields.
 				 */

@@ -195,8 +195,23 @@ public class MappingSessionBean {
         return "mapping_results";
 	}
 
+    public String encode_term(String s) {
+		if (s == null || s.length() == 0) return s;
+		StringBuffer buf = new StringBuffer();
+		for (int i=0; i<s.length(); i++) {
+			char c = s.charAt(i);
+			String t = "" + c;
+			//if (t.compareTo(",") == 0 || t.compareTo("\"") == 0) {
+			if (t.compareTo("\"") == 0) {
+				buf.append(t).append(t);
+		    } else {
+				buf.append(t);
+			}
+		}
+		return buf.toString();
+	}
+
     public String exportToExcelAction() {
-System.out.println("exportToExcelAction...");
         HttpServletRequest request =
             (HttpServletRequest) FacesContext.getCurrentInstance()
                 .getExternalContext().getRequest();
@@ -219,14 +234,22 @@ System.out.println("exportToExcelAction...");
 			for (int i=0; i<entries.size(); i++) {
 				gov.nih.nci.evs.mapping.bean.MappingEntry entry
 				   = (gov.nih.nci.evs.mapping.bean.MappingEntry) entries.get(i);
-					sb.append("\"" + entry.getSourceCode() + "\",");
-					sb.append("\"" + entry.getSourceTerm() + "\",");
-					sb.append("\"" + entry.getTargetCode() + "\",");
-					sb.append("\"" + entry.getTargetLabel() + "\"");
-					if (i<entries.size()-1)
-					{
-						sb.append("\r\n");
-					}
+
+				   String source_code = entry.getSourceCode();
+				   String source_term = entry.getSourceTerm();
+				   source_term = encode_term(source_term);
+				   String target_code = entry.getTargetCode();
+				   String target_label = entry.getTargetLabel();
+				   target_label = encode_term(target_label);
+
+				   sb.append("\"" + source_code + "\",");
+				   sb.append("\"" + source_term + "\",");
+				   sb.append("\"" + target_code + "\",");
+				   sb.append("\"" + target_label + "\"");
+				   if (i<entries.size()-1)
+				   {
+					    sb.append("\r\n");
+				   }
 			}
    		} catch (Exception ex)	{
    			sb.append("WARNING: Export to CVS action failed.");
