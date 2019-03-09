@@ -176,7 +176,7 @@ public final class UploadServlet extends HttpServlet {
 
         String s = null;
         String msg = null;
-        String filename = "";
+        String filename = null;
 		try {
 			/*
 			 * Parse the request
@@ -238,6 +238,9 @@ public final class UploadServlet extends HttpServlet {
 			log("Error encountered while parsing the request",ex);
 		} catch(Exception ex) {
 			log("Error encountered while uploading file",ex);
+		}
+		if (filename != null) {
+			request.getSession().setAttribute("mapping_name", filename);
 		}
 
         if (mode.compareTo("batch") == 0 || mode.compareTo("interactive") == 0) {

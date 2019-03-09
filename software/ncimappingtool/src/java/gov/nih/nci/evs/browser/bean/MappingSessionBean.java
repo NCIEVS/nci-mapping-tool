@@ -196,7 +196,7 @@ public class MappingSessionBean {
 	}
 
     public String exportToExcelAction() {
-
+System.out.println("exportToExcelAction...");
         HttpServletRequest request =
             (HttpServletRequest) FacesContext.getCurrentInstance()
                 .getExternalContext().getRequest();
@@ -234,9 +234,15 @@ public class MappingSessionBean {
    		}
 
    		//String filename = mapping_schema + "_" + mapping_version;
-   		String filename = "mapping";
-   		filename = filename + "_" + gov.nih.nci.evs.restapi.util.StringUtils.getToday() + ".csv";
 
+   		String filename = (String) request.getSession().getAttribute("mapping_name");
+        if (filename == null) {
+   			filename = filename + "_" + gov.nih.nci.evs.restapi.util.StringUtils.getToday() + ".csv";
+		} else {
+			int n = filename.lastIndexOf(".");
+			filename = filename.substring(0, n) + "_" + gov.nih.nci.evs.restapi.util.StringUtils.getToday() + ".csv";
+		}
+        System.out.println("Export to " + filename);
    		response.setContentType("text/csv");
    		response.setHeader("Content-Disposition", "attachment; filename="
    				+ filename);

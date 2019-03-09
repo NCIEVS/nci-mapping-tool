@@ -1,29 +1,12 @@
 <h:form> 
 <%
-String warning_msg = (String) request.getSession().getAttribute("msg");
-request.getSession().removeAttribute("msg");
-%>
-<% if (warning_msg != null) { %>
-<p class="textbodyred">&nbsp;<%= warning_msg %></p>
-<%
-}
-%>
-
-Please enter or upload a list of terms (and optionally the code of each term) in the text field below. Press <b>Continue</b> to proceed.
-<p></p>
-<table border="0" cellpadding="0" cellspacing="0" role='presentation'>
-<%
-String ng = (String) request.getSession().getAttribute("ng");
+String mapping_name = (String) request.getSession().getAttribute("mapping_name");
+if (mapping_name == null) {
+    mapping_name = "";
+} 
 String msg = (String) request.getSession().getAttribute("msg");
-if (msg != null) {
-%> 
-<table>
-	<tr><td class="textbodyred">
-	<%=msg%>
-	</td></tr> 
-</table>	
-<%  
-}
+request.getSession().removeAttribute("msg");
+String ng = (String) request.getSession().getAttribute("ng");
 String data = (String) request.getSession().getAttribute("data");
 if (data == null) {
     data = "";
@@ -31,9 +14,42 @@ if (data == null) {
     request.getSession().removeAttribute("data");
 }
 %>
+<table border="0" cellpadding="0" cellspacing="0" role='presentation'>
+<%  
+String mapping = "";
+if (mapping_name != null && mapping_name.length() > 0) {
+    mapping = mapping_name;
+    int m = mapping_name.lastIndexOf(".");
+    if (m != -1) {
+        mapping = mapping_name.substring(0, m);
+    }
+}
+if (mapping.length() > 0) {
+%>  
+<tr>
+<td align="left" class="texttitle-blue">Mapping:&nbsp;<%=mapping%></td>
+</tr>
+<tr><td>&nbsp;</td><tr>
+<%
+}
+%>        
+<%  
+if (msg != null) {
+%>    
+	<tr><td class="textbodyred">&nbsp;<%= msg %>
+	</td></tr>  
+<%
+}
+%>
+<tr>
+<td class="textbody">
+Please specifiy a mapping name, then enter or upload a list of terms (and optionally the code of each term) in the text field below. Press <b>Continue</b> to proceed.
+</td> 
+</tr> 
+<tr><td>&nbsp;</td><tr>
     <tr align="top">
       <td class="textbody">
-      <textarea name="data" cols="80" rows=15 tabindex="3"><%=data%></textarea>
+      <textarea name="data" cols="100" rows=15 tabindex="3"><%=data%></textarea>
       </td>
      </tr>	 
 
