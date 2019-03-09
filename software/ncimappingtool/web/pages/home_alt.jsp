@@ -40,6 +40,12 @@ System.out.println("home.alt.jsp...");
 String hm_basePath = request.getContextPath(); 
 Vector cs_data = gov.nih.nci.evs.browser.utils.DataUtils.get_cs_data();
 
+String codingSchemeName = (String) request.getSession().getAttribute("codingSchemeName");
+if (codingSchemeName == null) {
+    codingSchemeName = "NCI_Thesaurus";
+    request.getSession().setAttribute("codingSchemeName", codingSchemeName);
+}
+
 %>
 <f:view>
   <!-- Begin Skip Top Navigation -->

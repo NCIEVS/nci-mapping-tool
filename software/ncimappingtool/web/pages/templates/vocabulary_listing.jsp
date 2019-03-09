@@ -12,13 +12,7 @@ Please select a terminology then press <b>New</b> to start constructing a new ma
 or press <b>Upload</b> to load an existing mapping file.
 <table border="0" cellpadding="0" cellspacing="0" role='presentation'>
 <%
-System.out.println("vocabulary_listing.jsp...");
-String codingSchemeName = (String) request.getSession().getAttribute("codingSchemeName");
-if (codingSchemeName == null) {
-    codingSchemeName = "NCI_Thesaurus";
-}
-request.getSession().setAttribute("codingSchemeName", codingSchemeName);
-
+System.out.println("vocabulary_listing codingSchemeName: " + codingSchemeName);
 String indent = "&nbsp;&nbsp;";
 cs_data = DataUtils.get_cs_data();
 

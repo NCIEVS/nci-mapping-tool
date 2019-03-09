@@ -249,6 +249,7 @@ public final class UploadServlet extends HttpServlet {
 		} catch(Exception ex) {
 			log("Error encountered while uploading file",ex);
 		}
+
 		if (filename != null) {
 			request.getSession().setAttribute("mapping_name", filename);
 		}

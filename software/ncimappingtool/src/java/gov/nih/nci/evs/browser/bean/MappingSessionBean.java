@@ -86,17 +86,26 @@ public class MappingSessionBean {
 
         String prev_ng = (String) request.getSession().getAttribute("prev_ng");
         String ng = (String) request.getParameter("ng");
-        if (prev_ng == null || ng.compareTo(prev_ng) != 0) {
-			Terminology terminology = gov.nih.nci.evs.browser.utils.DataUtils.getTerminologyByNamedGraph(ng);
-			String codingSchemeName = terminology.getCodingSchemeName();
-			Vector parent_child_vec = NCImtProperties.get_parent_child_vec(codingSchemeName, ng);
-			gov.nih.nci.evs.restapi.util.HierarchyHelper hh = new gov.nih.nci.evs.restapi.util.HierarchyHelper(parent_child_vec);
-			request.getSession().setAttribute("hh", hh);
+        HashMap hh_hmap = (HashMap) request.getSession().getAttribute("hh_hmap");
+		if (hh_hmap == null) {
+			hh_hmap = new HashMap();
 		}
-
-        //System.out.println(ng);
+		Terminology terminology = gov.nih.nci.evs.browser.utils.DataUtils.getTerminologyByNamedGraph(ng);
+		String cs_name = terminology.getCodingSchemeName();
+		gov.nih.nci.evs.restapi.util.HierarchyHelper hh = (gov.nih.nci.evs.restapi.util.HierarchyHelper) hh_hmap.get("ng");
+		if (hh == null) {
+			Vector parent_child_vec = NCImtProperties.get_parent_child_vec(cs_name, ng);
+			hh = new gov.nih.nci.evs.restapi.util.HierarchyHelper(parent_child_vec);
+			hh_hmap.put(ng, hh);
+		}
+		request.getSession().setAttribute("hh", hh);
+        request.getSession().setAttribute("hh_hmap", hh_hmap);
         request.getSession().setAttribute("ng", ng);
         request.getSession().setAttribute("prev_ng", ng);
+        request.getSession().removeAttribute("mapping_name");
+
+        String codingSchemeName = (String) request.getParameter("codingSchemeName");
+        request.getSession().setAttribute("codingSchemeName", codingSchemeName);
         return "data";
 	}
 
@@ -168,10 +177,9 @@ public class MappingSessionBean {
 		if (ng == null) {
 			ng = DataManager.NCI_Thesaurus_OWL_Graph;
 		}
-
+//////////////////////////////
 		Terminology terminology = gov.nih.nci.evs.browser.utils.DataUtils.getTerminologyByNamedGraph(ng);
 		String data_directory = NCImtProperties._data_directory;
-
 		HashMap mappingUtilsHashMap = (HashMap) request.getSession().getAttribute("mappingUtilsHashMap");
 		if (mappingUtilsHashMap == null) {
 			mappingUtilsHashMap = new HashMap();
@@ -188,7 +196,7 @@ public class MappingSessionBean {
 
         request.getSession().setAttribute("prev_ng", ng);
         request.getSession().setAttribute("ng", ng);
-
+////////////////////////
 		Mapping mapping = mappingUtils.run(vbt_vec);
         request.getSession().setAttribute("mapping", mapping);
 

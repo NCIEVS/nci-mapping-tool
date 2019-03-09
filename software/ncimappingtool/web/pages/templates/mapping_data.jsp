@@ -4,6 +4,16 @@ String mapping_name = (String) request.getSession().getAttribute("mapping_name")
 if (mapping_name == null) {
     mapping_name = "";
 } 
+String mapping = "";
+if (mapping_name != null && mapping_name.length() > 0) {
+    mapping = mapping_name;
+    int m = mapping_name.lastIndexOf(".");
+    if (m != -1) {
+        mapping = mapping_name.substring(0, m);
+    }
+}
+System.out.println("mapping_data.jsp: mapping = " + mapping);
+
 String msg = (String) request.getSession().getAttribute("msg");
 request.getSession().removeAttribute("msg");
 String ng = (String) request.getSession().getAttribute("ng");
@@ -16,14 +26,7 @@ if (data == null) {
 %>
 <table border="0" cellpadding="0" cellspacing="0" role='presentation'>
 <%  
-String mapping = "";
-if (mapping_name != null && mapping_name.length() > 0) {
-    mapping = mapping_name;
-    int m = mapping_name.lastIndexOf(".");
-    if (m != -1) {
-        mapping = mapping_name.substring(0, m);
-    }
-}
+
 if (mapping.length() > 0) {
 %>  
 <tr>
@@ -43,12 +46,14 @@ if (msg != null) {
 %>
 <tr>
 <td class="textbody">
+<p>
 Please specifiy a mapping name, then enter or upload a list of terms (and optionally the code of each term) in the text field below. Press <b>Continue</b> to proceed.
+</p>
 </td> 
 </tr> 
     <tr align="top">
       <td class="textbody">
-      <textarea name="data" cols="115" rows=15 tabindex="3"><%=data%></textarea>
+      <textarea name="data" cols="112" rows=15 tabindex="3"><%=data%></textarea>
       </td>
      </tr>	 
 
