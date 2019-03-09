@@ -1,5 +1,6 @@
 <%@ page import="gov.nih.nci.evs.restapi.ui.*"%>
 <%@ page import="gov.nih.nci.evs.browser.bean.*"%>
+<%@ page import="gov.nih.nci.evs.browser.properties.*"%>
 
 <%
 String msg = (String) request.getSession().getAttribute("msg");
@@ -88,6 +89,13 @@ for (int i=0; i<entries.size(); i++) {
     String sourceTerm = entry.getSourceTerm();
     String targetCode = entry.getTargetCode();
     String targetLabel = entry.getTargetLabel();
+    
+    String concept_status = NCImtProperties.get_concept_status(targetCode);
+    if (concept_status != null) {
+        concept_status = concept_status.toLowerCase();
+        concept_status = concept_status.replaceAll("_", " ");
+    }
+    
     String rowColor = (i%2 == 0) ? "dataRowDark" : "dataRowLight";
     String jsp = "ncimappingtool/pages/concept_details.jsf";
     String hyperlink_str = gov.nih.nci.evs.restapi.ui.UIUtils.getHyperlink(jsp, ng, targetCode, targetCode);
@@ -103,7 +111,16 @@ for (int i=0; i<entries.size(); i++) {
       <td width="120px" class="textbody"><%=sourceCode%></td>
       <td width="350px" class="textbody"><%=sourceTerm%></td>
       <td width="120px" class="textbody"><%=hyperlink_str%></td>
+<%
+if (concept_status != null) {
+%>    <td width="350px" class="textbody"><%=targetLabel%>&nbsp;(<i class="textbodyred"><%=concept_status%></i>)</td>
+<%
+} else {
+%>      
       <td width="350px" class="textbody"><%=targetLabel%></td>
+<%
+} 
+%>
     </tr>
 <%
 }

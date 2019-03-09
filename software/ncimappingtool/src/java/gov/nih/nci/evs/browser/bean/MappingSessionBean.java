@@ -86,6 +86,19 @@ public class MappingSessionBean {
 
         String prev_ng = (String) request.getSession().getAttribute("prev_ng");
         String ng = (String) request.getParameter("ng");
+
+
+        gov.nih.nci.evs.restapi.util.HierarchyHelper hh =
+        (gov.nih.nci.evs.restapi.util.HierarchyHelper) request.getSession().getAttribute("hh");
+
+        if (hh == null || ng.compareTo(prev_ng) != 0) {
+			Terminology terminology = gov.nih.nci.evs.browser.utils.DataUtils.getTerminologyByNamedGraph(ng);
+			String cs_name = terminology.getCodingSchemeName();
+			Vector parent_child_vec = NCImtProperties.get_parent_child_vec(cs_name, ng);
+			hh = new gov.nih.nci.evs.restapi.util.HierarchyHelper(parent_child_vec);
+			request.getSession().setAttribute("hh", hh);
+        }
+        /*
         HashMap hh_hmap = (HashMap) request.getSession().getAttribute("hh_hmap");
 		if (hh_hmap == null) {
 			hh_hmap = new HashMap();
@@ -98,8 +111,9 @@ public class MappingSessionBean {
 			hh = new gov.nih.nci.evs.restapi.util.HierarchyHelper(parent_child_vec);
 			hh_hmap.put(ng, hh);
 		}
-		request.getSession().setAttribute("hh", hh);
-        request.getSession().setAttribute("hh_hmap", hh_hmap);
+		*/
+
+        //request.getSession().setAttribute("hh_hmap", hh_hmap);
         request.getSession().setAttribute("ng", ng);
         request.getSession().setAttribute("prev_ng", ng);
         request.getSession().removeAttribute("mapping_name");

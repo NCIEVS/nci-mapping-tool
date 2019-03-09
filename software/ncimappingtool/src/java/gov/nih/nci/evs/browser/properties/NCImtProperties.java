@@ -80,12 +80,16 @@ public class NCImtProperties {
     public static TTLQueryUtils ttlQueryUtils = null;
     public static HashMap hierarchyDataHashMap = null;
     public static HashMap namedGraph2codingSchemeNameHashMap = null;
+    public static HashMap concept_status_hmap = null;
+
+    public static String CONCEPT_STATUS = "Concept_Status";
 
     private NCImtProperties() {
 
     }
 
     static {
+		long ms = System.currentTimeMillis();
         _data_directory = NCImtBrowserProperties._data_directory;
         _service_url = NCImtBrowserProperties._sparql_service_url;
         namedGraph2codingSchemeNameHashMap = new HashMap();
@@ -103,7 +107,6 @@ public class NCImtProperties {
 				namedGraph2codingSchemeNameHashMap.put(named_graph, codingSchemeName);
 			}
 		}
-
 
         //runner = NCImtBrowserProperties.runner;
         ttl_vihUtils = new gov.nih.nci.evs.restapi.meta.util.VIHUtils(_service_url);
@@ -134,6 +137,8 @@ public class NCImtProperties {
 		if (vs_hh != null) {
 			vs_hh.findRootAndLeafNodes();
 		}
+		concept_status_hmap = getConceptsWithAnnotationProperty(get_default_named_graph(), CONCEPT_STATUS);
+		System.out.println("NCImtProperties total run time (ms): " + (System.currentTimeMillis() - ms));
     }
 
     public static String getCodingSchemeName(String ng) {
@@ -173,6 +178,23 @@ public class NCImtProperties {
 			}
 		}
 	}
+
+
+	public static HashMap getConceptsWithAnnotationProperty(String named_graph, String propertyName) {
+		OWLSPARQLUtils owlSPARQLUtils = new OWLSPARQLUtils(NCImtBrowserProperties._sparql_service_url);
+		Vector w = owlSPARQLUtils.getConceptsWithAnnotationProperty(named_graph, propertyName);
+		w = new ParserUtils().getResponseValues(w);
+		HashMap hmap = new HashMap();
+		for (int i=0; i<w.size(); i++) {
+			String t = (String) w.elementAt(i);
+			Vector u = gov.nih.nci.evs.restapi.util.StringUtils.parseData(t, '|');
+			String code = (String) u.elementAt(1);
+			String value = (String) u.elementAt(3);
+			hmap.put(code, value);
+		}
+		return hmap;
+	}
+
 
 	public static Vector generate_parent_child_vec() {
 		OWLSPARQLUtils owlSPARQLUtils = new OWLSPARQLUtils(NCImtBrowserProperties._sparql_service_url);
@@ -275,4 +297,10 @@ public class NCImtProperties {
 		}
 		return parent_child_vec;
 	}
+
+	public static String get_concept_status(String code) {
+		String value = (String) concept_status_hmap.get(code);
+		return value;
+	}
+
 }
