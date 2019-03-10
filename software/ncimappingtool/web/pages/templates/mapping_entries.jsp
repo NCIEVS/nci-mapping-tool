@@ -3,6 +3,7 @@
 <%@ page import="gov.nih.nci.evs.browser.properties.*"%>
 
 <%
+boolean allow_restriction = true;
 String msg = (String) request.getSession().getAttribute("msg");
 request.getSession().removeAttribute("msg");
 String codingSchemeName = (String) request.getSession().getAttribute("codingSchemeName");
@@ -51,10 +52,21 @@ if (msg != null) {
 <%  
 }
 %> 	
-	
-	
 </table>
-
+<%
+if (allow_restriction) {
+%>
+<p>
+You may restrict matched concepts to a <%=codingSchemeName%> tree 
+with the root of the branch specified by a code below. Press the <b>Continue</b> button to apply the restriction.
+If no code is provided, then the <b>Continue</b> button press will take you to a page
+containing terms that have not yet been assigned any match.<br>  
+</p>
+Restrict to the branch of tree stemming from: <input type="text" id="root" name="root" value=""><br>
+<%  
+}
+%> 
+<p></p>
 <table border="0" cellpadding="0" cellspacing="0" role='presentation'>
    <th width="5px" scope="col" align="left"></th>
    <th class="datatable_960Header" width="120px" scope="col" align="left">Source Code</th>
@@ -65,10 +77,7 @@ if (msg != null) {
 gov.nih.nci.evs.mapping.bean.Mapping mapping = null;
 String mapping_data = (String) request.getSession().getAttribute("mapping_data");
 if (mapping_data != null) {
-    //System.out.println(mapping_data);
-    System.out.println("************************** creating mapping ...");
     mapping = MappingSessionBean.createMapping(mapping_data); 
-    System.out.println("************************** Done creating mapping ..." + mapping.getEntries().size());
     request.getSession().removeAttribute("mapping_data");
     request.getSession().setAttribute("mapping", mapping);  
 } else {

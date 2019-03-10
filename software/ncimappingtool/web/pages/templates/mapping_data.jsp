@@ -46,9 +46,7 @@ if (msg != null) {
 %>
 <tr>
 <td class="textbody">
-<p>
-Please specifiy a mapping name, then enter or upload a list of terms (and optionally the code of each term) in the text field below. Press <b>Continue</b> to proceed.
-</p>
+Please enter or upload a list of terms (or paris of code and term separated by a tab character) in the text area below. Press <b>Continue</b> to proceed.</b>
 </td> 
 </tr> 
     <tr align="top">

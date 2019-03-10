@@ -329,21 +329,29 @@ public class MappingSessionBean {
    			sb.append("\"Source Code\",");
    			sb.append("\"Source Name\",");
    			sb.append("\"Target Code\",");
-   			sb.append("\"Target Name,");
+   			sb.append("\"Target Name");
    			sb.append("\r\n");
 
 		for (int i=0; i<entries.size(); i++) {
 			gov.nih.nci.evs.mapping.bean.MappingEntry entry
 			   = (gov.nih.nci.evs.mapping.bean.MappingEntry) entries.get(i);
 			   if (entry.getTargetCode().compareTo("") == 0) {
-					sb.append("\"" + entry.getSourceCode() + "\",");
-					sb.append("\"" + entry.getSourceTerm() + "\",");
-					sb.append("\"" + entry.getTargetCode() + "\",");
-					sb.append("\"" + entry.getTargetLabel() + "\"");
-					if (i<entries.size()-1)
-					{
-						sb.append("\r\n");
-					}
+
+				   String source_code = entry.getSourceCode();
+				   String source_term = entry.getSourceTerm();
+				   source_term = encode_term(source_term);
+				   String target_code = entry.getTargetCode();
+				   String target_label = entry.getTargetLabel();
+				   target_label = encode_term(target_label);
+
+				   sb.append("\"" + source_code + "\",");
+				   sb.append("\"" + source_term + "\",");
+				   sb.append("\"" + target_code + "\",");
+				   sb.append("\"" + target_label + "\"");
+				   if (i<entries.size()-1)
+				   {
+					    sb.append("\r\n");
+				   }
 				}
    			}
    		} catch (Exception ex)	{
@@ -376,7 +384,55 @@ public class MappingSessionBean {
 
 
 	public String manualMappingAction() {
-		return "manual_mapping";
+		System.out.println("manualMappingAction ...");
+
+        HttpServletRequest request =
+            (HttpServletRequest) FacesContext.getCurrentInstance()
+                .getExternalContext().getRequest();
+
+        String root = (String) request.getParameter("root");
+        System.out.println("manualMappingAction code: " + root);
+		root = root.trim();
+		if (root.length() == 0) {
+			return "manual_mapping";
+		} else {
+			System.out.println("manualMappingAction apply restriction using " + root);
+			gov.nih.nci.evs.restapi.util.HierarchyHelper hh =
+			(gov.nih.nci.evs.restapi.util.HierarchyHelper) request.getSession().getAttribute("hh");
+			Vector v = hh.getTransitiveClosure(root);
+
+			Mapping mapping = (Mapping) request.getSession().getAttribute("mapping");
+			List<gov.nih.nci.evs.mapping.bean.MappingEntry> entries = mapping.getEntries();
+            Vector rowid_vec = new Vector();
+            int lcv = 0;
+			try {
+				System.out.println("entries.size() " + entries.size());
+				for (int i=0; i<entries.size(); i++) {
+					gov.nih.nci.evs.mapping.bean.MappingEntry entry
+					   = (gov.nih.nci.evs.mapping.bean.MappingEntry) entries.get(i);
+
+				   String source_code = entry.getSourceCode();
+				   String source_term = entry.getSourceTerm();
+				   source_term = encode_term(source_term);
+				   String target_code = entry.getTargetCode();
+				   String target_label = entry.getTargetLabel();
+				   target_label = encode_term(target_label);
+
+				   if (target_code != null && target_code.length()>0 && !v.contains(target_code)) {
+					   String rowid_str = "" + i;
+					   rowid_vec.add(rowid_str);
+					   lcv++;
+				   }
+				}
+				System.out.println("delete " + rowid_vec.size());
+				Mapping new_mapping = deleteMappingEntries(mapping, rowid_vec);
+				request.getSession().setAttribute("mapping", new_mapping);
+
+			} catch (Exception ex) {
+				ex.printStackTrace();
+			}
+			return "restriction";
+		}
 	}
 
     public String searchAction() {
@@ -533,6 +589,31 @@ public class MappingSessionBean {
 		return false;
     }
 
+    private Mapping deleteMappingEntries(Mapping mapping, Vector rowid_vec) {
+	    List<gov.nih.nci.evs.mapping.bean.MappingEntry> entries = mapping.getEntries();
+	    List<gov.nih.nci.evs.mapping.bean.MappingEntry> new_entries = new ArrayList<gov.nih.nci.evs.mapping.bean.MappingEntry>();
+	    int knt = 0;
+		for (int i=0; i<entries.size(); i++) {
+			gov.nih.nci.evs.mapping.bean.MappingEntry entry = (gov.nih.nci.evs.mapping.bean.MappingEntry) entries.get(i);
+			Integer row_id = new Integer(i);
+			String rowid = row_id.toString();
+			String sourceCode = entry.getSourceCode();
+			String sourceTerm = entry.getSourceTerm();
+			if (rowid_vec.contains(rowid)) {
+				if (!hasMultiple(entries, sourceTerm)) {
+					gov.nih.nci.evs.mapping.bean.MappingEntry new_entry = new gov.nih.nci.evs.mapping.bean.MappingEntry(
+						sourceCode, sourceTerm, "", "");
+				    new_entries.add(new_entry);
+				}
+			} else {
+				new_entries.add(entry);
+			}
+		}
+		Mapping new_mapping = new Mapping(mapping.getTotalCount(), mapping.getMatchCount() + knt, new_entries);
+		return new_mapping;
+	}
+
+
     public String deleteAction() {
         HttpServletRequest request =
             (HttpServletRequest) FacesContext.getCurrentInstance()
@@ -556,6 +637,7 @@ public class MappingSessionBean {
 		}
 
 	    Mapping mapping = (Mapping) request.getSession().getAttribute("mapping");
+	    /*
 	    List<gov.nih.nci.evs.mapping.bean.MappingEntry> entries = mapping.getEntries();
 	    List<gov.nih.nci.evs.mapping.bean.MappingEntry> new_entries = new ArrayList<gov.nih.nci.evs.mapping.bean.MappingEntry>();
 	    int knt = 0;
@@ -576,6 +658,8 @@ public class MappingSessionBean {
 			}
 		}
 		Mapping new_mapping = new Mapping(mapping.getTotalCount(), mapping.getMatchCount() + knt, new_entries);
+*/
+        Mapping new_mapping = deleteMappingEntries(mapping, rowid_vec);
         request.getSession().setAttribute("mapping", new_mapping);
         request.getSession().removeAttribute("rowids");
         request.getSession().removeAttribute("msg");
