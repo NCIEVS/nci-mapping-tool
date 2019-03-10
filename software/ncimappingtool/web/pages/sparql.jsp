@@ -78,10 +78,6 @@ String tripleCountString = new gov.nih.nci.evs.restapi.util.ParserUtils().getVal
  
 %>
 <h3>Sparql Endpoint URL:&nbsp;<%=serviceUrl%></h3>
-<%
-
-%>
-
     <a href="#" onclick="javascript:window.open('<%=request.getContextPath() %>/pages/hierarchy.jsf',
     '_blank','top=100, left=100, height=740, width=780, status=no, menubar=no, resizable=yes, scrollbars=yes, toolbar=no, location=no, directories=no');">
     <img src="<%= request.getContextPath() %>/images/hierarchy.gif" alt="Hierarchy" title="Hierarchy" border="0">

@@ -26,7 +26,6 @@ if (data == null) {
 %>
 <table border="0" cellpadding="0" cellspacing="0" role='presentation'>
 <%  
-
 if (mapping.length() > 0) {
 %>  
 <tr>
@@ -35,7 +34,9 @@ if (mapping.length() > 0) {
 <tr><td>&nbsp;</td><tr>
 <%
 }
-%>        
+%>   
+Please enter or upload a list of terms (or paris of code and term separated by a tab character) 
+in the text area below. Press <b>Continue</b> to proceed.</b><br></br>
 <%  
 if (msg != null) {
 %>    
@@ -44,11 +45,7 @@ if (msg != null) {
 <%
 }
 %>
-<tr>
-<td class="textbody">
-Please enter or upload a list of terms (or paris of code and term separated by a tab character) in the text area below. Press <b>Continue</b> to proceed.</b>
-</td> 
-</tr> 
+
     <tr align="top">
       <td class="textbody">
       <textarea name="data" cols="112" rows=15 tabindex="3"><%=data%></textarea>

@@ -62,7 +62,13 @@ with the root of the branch specified by a code below. Press the <b>Continue</b>
 If no code is provided, then the <b>Continue</b> button press will take you to a page
 containing terms that have not yet been assigned any match.<br>  
 </p>
-Restrict to the branch of tree stemming from: <input type="text" id="root" name="root" value=""><br>
+Restrict to the branch of tree stemming from: <input type="text" id="root" name="root" value="">
+&nbsp;
+    <a href="#" onclick="javascript:window.open('<%=request.getContextPath() %>/pages/hierarchy.jsf',
+    '_blank','top=100, left=100, height=740, width=780, status=no, menubar=no, resizable=yes, scrollbars=yes, toolbar=no, location=no, directories=no');">
+    View Hierarchy<a>
+    
+<br>
 <%  
 }
 %> 
