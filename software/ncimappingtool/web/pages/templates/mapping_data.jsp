@@ -12,8 +12,6 @@ if (mapping_name != null && mapping_name.length() > 0) {
         mapping = mapping_name.substring(0, m);
     }
 }
-System.out.println("mapping_data.jsp: mapping = " + mapping);
-
 String msg = (String) request.getSession().getAttribute("msg");
 request.getSession().removeAttribute("msg");
 String ng = (String) request.getSession().getAttribute("ng");
@@ -29,14 +27,15 @@ if (data == null) {
 if (mapping.length() > 0) {
 %>  
 <tr>
-<td align="left" class="texttitle-blue">Mapping:&nbsp;<%=mapping%></td>
+<td align="left" class="texttitle-blue">Mapping:&nbsp;<%=mapping%></td><br></br>
 </tr>
-<tr><td>&nbsp;</td><tr>
 <%
 }
-%>   
+%>
+<tr><td class="textbody">
 Please enter or upload a list of terms (or paris of code and term separated by a tab character) 
 in the text area below. Press <b>Continue</b> to proceed.</b><br></br>
+</td></tr>
 <%  
 if (msg != null) {
 %>    
