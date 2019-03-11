@@ -1,6 +1,7 @@
 package gov.nih.nci.evs.browser.servlet;
 
 import gov.nih.nci.evs.mapping.bean.*;
+import gov.nih.nci.evs.mapping.util.*;
 
 import gov.nih.nci.evs.browser.utils.*;
 import gov.nih.nci.evs.browser.bean.*;
@@ -287,7 +288,7 @@ public class SparqlServlet extends HttpServlet {
 			String version  = null;
 			String named_graph = null;
 
-			Vector cs_data = DataUtils.get_cs_data();
+			Vector cs_data = gov.nih.nci.evs.browser.utils.DataUtils.get_cs_data();
 			for (int j=0; j<cs_data.size(); j++) {
 				String line = (String) cs_data.elementAt(j);
 				Vector u = gov.nih.nci.evs.restapi.util.StringUtils.parseData(line, '|');
@@ -1562,6 +1563,46 @@ System.out.println("nextJSP " + nextJSP + " " + message);
 		}
 	}
 
+	public gov.nih.nci.evs.mapping.bean.PropertyData propertyHashMap2PropertyData(HashMap propertyHashMap) {
+        List<ConceptProperties> conceptPropertyList = new ArrayList();
+		Iterator it = propertyHashMap.keySet().iterator();
+		while (it.hasNext()) {
+			String key = (String) it.next();
+			String line = gov.nih.nci.evs.restapi.util.CSVFileReader.csv2Delimited(key, "|");
+			Vector u = gov.nih.nci.evs.restapi.util.StringUtils.parseData(line, '|');
+			String source_code = (String) u.elementAt(0);
+			String source_term = (String) u.elementAt(1);
+			String target_code = (String) u.elementAt(2);
+			String target_name = (String) u.elementAt(3);
+
+			HashMap hmap = (HashMap) propertyHashMap.get(key);
+
+			List<ConceptProperty> properties = new ArrayList();
+			Vector key_vec = new Vector();
+			Iterator it2 = hmap.keySet().iterator();
+			while (it2.hasNext()) {
+				String key2 = (String) it2.next();
+				key_vec.add(key2);
+			}
+			key_vec = new gov.nih.nci.evs.restapi.util.SortUtils().quickSort(key_vec);
+			for (int k=0; k<key_vec.size(); k++) {
+				String propertyName = (String) key_vec.elementAt(k);
+                List<String> propertyValues = new ArrayList();
+				Vector values = (Vector) hmap.get(propertyName);
+				values = new gov.nih.nci.evs.restapi.util.SortUtils().quickSort(values);
+			    for (int k2=0; k2<values.size(); k2++) {
+					String value = (String) values.elementAt(k2);
+					propertyValues.add(value);
+				}
+				ConceptProperty property = new ConceptProperty(propertyName, propertyValues);
+				properties.add(property);
+			}
+			ConceptProperties cp = new ConceptProperties(target_name, target_code, properties);
+		    conceptPropertyList.add(cp);
+		}
+		return new gov.nih.nci.evs.mapping.bean.PropertyData(conceptPropertyList);
+	}
+
     public void mapping_concept_details(HttpServletRequest request, HttpServletResponse response) {
 		gov.nih.nci.evs.mapping.bean.Mapping mapping = (gov.nih.nci.evs.mapping.bean.Mapping) request.getSession().getAttribute("mapping");
         try {
@@ -1584,16 +1625,11 @@ System.out.println("nextJSP " + nextJSP + " " + message);
 			}
 			generator.setHYPERLINK(hyperlinkUrl);
 
-			/*
-			String title = "Concept Details";
-            response.setContentType("text/html");
-            response.setHeader("Cache-Control", "no-cache");
-            PrintWriter pw = response.getWriter();
-			generator.generate(pw, title);
-			pw.flush();
-			*/
-
 			String content = generator.propertyHashMap2HTML(propertyHashMap);
+			request.getSession().setAttribute("propertyHashMap", propertyHashMap);
+			gov.nih.nci.evs.mapping.bean.PropertyData propertyData = propertyHashMap2PropertyData(propertyHashMap);
+			request.getSession().setAttribute("propertyData", propertyData);
+
 			request.getSession().setAttribute("matched_concepts", content);
 			String nextJSP = "/pages/matched_concepts.jsf";
 			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextJSP);
