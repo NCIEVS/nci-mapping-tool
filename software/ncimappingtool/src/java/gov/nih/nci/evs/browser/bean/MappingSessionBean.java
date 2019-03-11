@@ -86,8 +86,6 @@ public class MappingSessionBean {
 
         String prev_ng = (String) request.getSession().getAttribute("prev_ng");
         String ng = (String) request.getParameter("ng");
-
-
         gov.nih.nci.evs.restapi.util.HierarchyHelper hh =
         (gov.nih.nci.evs.restapi.util.HierarchyHelper) request.getSession().getAttribute("hh");
 
@@ -214,6 +212,25 @@ public class MappingSessionBean {
 		Mapping mapping = mappingUtils.run(vbt_vec);
         request.getSession().setAttribute("mapping", mapping);
 
+        HashMap mapping_hashmap = (HashMap) request.getSession().getAttribute("mapping_hashmap");
+        if (mapping_hashmap == null) {
+			mapping_hashmap = new HashMap();
+		}
+		String mapping_name = (String) request.getSession().getAttribute("mapping_name");
+		if (mapping_name == null) {
+			int m = mapping_hashmap.keySet().size() + 1;
+			mapping_name = "mapping_" + m;
+		}
+
+		MappingTask mappingTask = null;
+		if (mapping_hashmap.containsKey(mapping_name)) {
+			mappingTask = (MappingTask) mapping_hashmap.get(mapping_name);
+		}
+		if (mappingTask == null) {
+			mappingTask = new MappingTask(mapping_name, terminology.getCodingSchemeName(), mapping, gov.nih.nci.evs.restapi.util.StringUtils.getToday());
+		}
+		mapping_hashmap.put(mapping_name, mappingTask);
+		request.getSession().setAttribute("mapping_hashmap", mapping_hashmap);
         System.out.println("Redirect to mapping_results...");
         return "mapping_results";
 	}
@@ -777,5 +794,35 @@ public class MappingSessionBean {
 		return mapping;
 	}
 
+    public String editMappingAction() {
+        HttpServletRequest request =
+            (HttpServletRequest) FacesContext.getCurrentInstance()
+                .getExternalContext().getRequest();
+
+        request.getSession().removeAttribute("msg");
+        String mapping_name = (String) request.getParameter("mapping_name");
+        HashMap mapping_hashmap = (HashMap) request.getSession().getAttribute("mapping_hashmap");
+        MappingTask mt = (MappingTask) mapping_hashmap.get(mapping_name);
+        String targetCodingScheme = mt.getTargetCodingScheme();
+        request.getSession().setAttribute("codingSchemeName", targetCodingScheme);
+        request.getSession().setAttribute("mapping", mt.getMapping());
+		return "mapping_results";
+	}
+
+    public String deleteMappingAction() {
+        HttpServletRequest request =
+            (HttpServletRequest) FacesContext.getCurrentInstance()
+                .getExternalContext().getRequest();
+
+        request.getSession().removeAttribute("msg");
+        String mapping_name = (String) request.getParameter("mapping_name");
+        HashMap mapping_hashmap = (HashMap) request.getSession().getAttribute("mapping_hashmap");
+        MappingTask mt = (MappingTask) mapping_hashmap.get(mapping_name);
+        String targetCodingScheme = mt.getTargetCodingScheme();
+        request.getSession().removeAttribute("codingSchemeName");
+        request.getSession().removeAttribute("mapping");
+        mapping_hashmap.remove(mapping_name);
+		return "mappings";
+	}
 }
 

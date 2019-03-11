@@ -25,6 +25,7 @@ if (data == null) {
 <table border="0" cellpadding="0" cellspacing="0" role='presentation'>
 <%  
 if (mapping.length() > 0) {
+     request.getSession().setAttribute("mapping_name", mapping_name);
 %>  
 <tr>
 <td align="left" class="texttitle-blue">Mapping:&nbsp;<%=mapping%></td><br></br>
@@ -35,7 +36,8 @@ if (mapping.length() > 0) {
 <tr><td class="textbody">
 Please enter or upload a list of terms (or paris of code and term separated by a tab character) 
 in the text area below. Press <b>Continue</b> to proceed.</b><br></br>
-</td></tr>
+</td>
+</tr>
 <%  
 if (msg != null) {
 %>    

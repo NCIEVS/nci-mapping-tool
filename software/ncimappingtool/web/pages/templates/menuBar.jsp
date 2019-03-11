@@ -16,12 +16,26 @@ String vocabulary = (String) request.getSession().getAttribute("scheme");
 if (vocabulary == null) {
     vocabulary = NCImtBrowserProperties.get_TERMINOLOGY();
     request.getSession().setAttribute("scheme", vocabulary);
-} 
-
+}
+boolean has_mapping = false;
+HashMap mapping_hashmap = (HashMap) request.getSession().getAttribute("mapping_hashmap");
+if (mapping_hashmap != null && mapping_hashmap.keySet().size() > 0) {
+    has_mapping = true;
+}
 %>
 <table class="global-nav" border="0" width="100%" height="15px" cellpadding="0" cellspacing="0">
   <tr valign="bottom">
       <td align="right">
+
+<%
+if (has_mapping) {
+%>
+	<a href="<%=request.getContextPath() %>/pages/mappings.jsf">Mappings</a>    		
+	|  
+<%
+}      
+%>      
+      
 	<a href="<%=request.getContextPath() %>/pages/sparql.jsf?ng=<%=namedGraph%>" title="Sparql Query Endpoint.">Sparql Query</a>    		
 	|  
         <a href="<%= request.getContextPath() %>/pages/home_alt.jsf" >Home</a>
