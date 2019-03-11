@@ -28,6 +28,47 @@
 <script type="text/javascript" src="<%=request.getContextPath()%>/js/script.js"></script>
 <script type="text/javascript" src="<%=request.getContextPath()%>/js/search.js"></script>
 <script type="text/javascript" src="<%=request.getContextPath()%>/js/dropdown.js"></script>
+
+<script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+<script src="js/jquery.json-viewer.js"></script>
+<link href="css/jquery.json-viewer.css" type="text/css" rel="stylesheet" />
+
+<style type="text/css">
+body {
+  margin: 0 100px;
+  font-family: sans-serif;
+}
+textarea#json-input {
+  width: 100%;
+  height: 200px;
+}
+pre#json-renderer {
+  border: 1px solid #aaa;
+  padding: 0.5em 1.5em;
+}
+</style>
+
+<script>
+$(function() {
+  $('#btn-json-viewer').click(function() {
+    try {
+      var input = eval('(' + $('#json-input').val() + ')');
+    }
+    catch (error) {
+      return alert("Cannot eval JSON: " + error);
+    }
+    var options = {
+      collapsed: $('#collapsed').is(':checked'),
+      withQuotes: $('#with-quotes').is(':checked')
+    };
+    $('#json-renderer').jsonViewer(input, options);
+  });
+
+  // Display JSON sample on load
+  $('#btn-json-viewer').click();
+});
+</script>
+    
 </head>
 <body>
    <script type="text/javascript" src="<%=request.getContextPath()%>/js/wz_tooltip.js"></script>

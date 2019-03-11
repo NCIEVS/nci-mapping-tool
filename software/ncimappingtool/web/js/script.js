@@ -327,3 +327,4 @@ else if (document.getElementById)
 
 if (persistmenu=="yes" && document.getElementById)
 	window.onunload=savemenustate
+
