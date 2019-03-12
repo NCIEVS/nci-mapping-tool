@@ -26,7 +26,6 @@ if (mapping_hashmap != null && mapping_hashmap.keySet().size() > 0) {
 <table class="global-nav" border="0" width="100%" height="15px" cellpadding="0" cellspacing="0">
   <tr valign="bottom">
       <td align="right">
-
 <%
 if (has_mapping) {
 %>
@@ -40,7 +39,7 @@ if (has_mapping) {
 	|  
         <a href="<%= request.getContextPath() %>/pages/home_alt.jsf" >Home</a>
         |
-        <a href="#" onClick="window.open('<%= request.getContextPath() %>/pages/help_sparql.jsf', '_blank')">Help</a>&nbsp;&nbsp;&nbsp;
+        <a href="#" onClick="window.open('<%= request.getContextPath() %>/pages/help_sparql.jsf', '_blank')">Help</a>
     </td>
   </tr>
 </table>

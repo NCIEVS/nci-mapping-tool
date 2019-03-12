@@ -1,6 +1,7 @@
 <h:form>
-<table>
-<tr><td class="textbody" align="right" width="75%">
+<table class="global-nav" border="0" width="100%" height="15px" cellpadding="0" cellspacing="0">
+  <tr valign="bottom">
+      <td align="right">
 			<a href="<%=request.getContextPath() %>/pages/matched_concepts.jsf?format=html">
          		HTML</a> 
                 |
