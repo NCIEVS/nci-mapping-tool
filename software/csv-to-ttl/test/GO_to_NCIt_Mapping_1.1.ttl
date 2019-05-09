@@ -1,0 +1,4365 @@
+@prefix mapping: <http://gov.nih.nci.evs/mapping/go_to_ncit_mapping_1.1> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+
+<http://gov.nih.nci.evs/mapping/go_to_ncit_mapping_1.1>
+	dc:title "GO_to_NCIt_Mapping" ;
+	owl:versionInfo "1.1" ;
+	dc:creator "NCI EVS" .
+
+
+mapping:sourceCode skos:definition "Source Code" .
+mapping:sourceName skos:definition "Source Name" .
+mapping:sourceCodingScheme skos:definition "Source Coding Scheme" .
+mapping:sourceCodingSchemeVersion skos:definition "Source Coding Scheme Version" .
+mapping:sourceCodingSchemeNamespace skos:definition "Source Coding Scheme Namespace" .
+mapping:associationName skos:definition "Association Name" .
+mapping:rel skos:definition "Relationship Attribute" .
+mapping:mapRank skos:definition "Map Rank" .
+mapping:targetCode skos:definition "Target Code" .
+mapping:targetName skos:definition "Target Name" .
+mapping:targetCodingScheme skos:definition "Target Coding Scheme" .
+mapping:targetCodingSchemeVersion skos:definition "Target Coding Scheme Version" .
+mapping:targetCodingSchemeNamespace skos:definition "Target Coding Scheme Namespace" .
+
+mapping:9a43968c-6002-43fa-94d5-f2cd3eb45d28 mapping:sourceCode "GO:0000003" ;
+	mapping:sourceName "reproduction" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C17087" ;
+	mapping:targetName "Reproduction" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:f0c694be-8489-418c-963d-8e70962a06f8 mapping:sourceCode "GO:0000012" ;
+	mapping:sourceName "single strand break repair" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C21566" ;
+	mapping:targetName "Single Strand Break Repair" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:a40b0cb7-c338-4e7c-8f4e-8b1353dcc4cf mapping:sourceCode "GO:0000075" ;
+	mapping:sourceName "cell cycle checkpoint" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C18689" ;
+	mapping:targetName "Cell Cycle Checkpoint" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:212a9b43-43bd-4e29-98aa-7fd1f61b0f7b mapping:sourceCode "GO:0000088" ;
+	mapping:sourceName "mitotic prophase" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C17014" ;
+	mapping:targetName "Prophase Process" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:29ddac9c-3cc2-4b8e-a4e7-f5d69a1dd474 mapping:sourceCode "GO:0000089" ;
+	mapping:sourceName "mitotic metaphase" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C16846" ;
+	mapping:targetName "Metaphase Process" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:ea15e7d7-9446-47c0-a46c-cc82f7aad766 mapping:sourceCode "GO:0000090" ;
+	mapping:sourceName "mitotic anaphase" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C16286" ;
+	mapping:targetName "Anaphase" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:143dbda3-83d1-475e-8ba4-7edf0f5f3206 mapping:sourceCode "GO:0000093" ;
+	mapping:sourceName "mitotic telophase" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C17189" ;
+	mapping:targetName "Telophase" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:2d9ed339-11c7-4869-9137-b80d6e8bb680 mapping:sourceCode "GO:0000209" ;
+	mapping:sourceName "protein polyubiquitination" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C21587" ;
+	mapping:targetName "Polyubiquitination" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:2ae05372-fcd7-45e9-82df-0226ca4c1c1e mapping:sourceCode "GO:0000278" ;
+	mapping:sourceName "mitotic cell cycle" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C16397" ;
+	mapping:targetName "Cell Cycle Process" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:34373d05-fdb1-41bc-b9d6-a7e8044be856 mapping:sourceCode "GO:0000279" ;
+	mapping:sourceName "M phase" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C20349" ;
+	mapping:targetName "M Phase Process" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:5c95308a-fc21-40d4-9014-f74eb02fd09e mapping:sourceCode "GO:0000280" ;
+	mapping:sourceName "nuclear division" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C20143" ;
+	mapping:targetName "Nuclear Division" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:b6dabe79-f5bd-48ef-ac92-3204f3347724 mapping:sourceCode "GO:0000387" ;
+	mapping:sourceName "spliceosomal snRNP assembly" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C30092" ;
+	mapping:targetName "snRNP Biogenesis" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:dca1c3ac-1082-4e48-b58a-ad9125b1a192 mapping:sourceCode "GO:0000722" ;
+	mapping:sourceName "telomere maintenance via recombination" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C20340" ;
+	mapping:targetName "Telomere Recombination" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:9a520773-73e7-4c18-8f32-8a5d9c662914 mapping:sourceCode "GO:0000723" ;
+	mapping:sourceName "telomere maintenance" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C20152" ;
+	mapping:targetName "Telomere Maintenance" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:078731d3-e9a6-47bd-9d1c-342b92a2366e mapping:sourceCode "GO:0000725" ;
+	mapping:sourceName "recombinational repair" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C19534" ;
+	mapping:targetName "Recombination Repair" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:746a2474-72bd-433d-8423-766af9b74b5f mapping:sourceCode "GO:0000910" ;
+	mapping:sourceName "cytokinesis" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C16489" ;
+	mapping:targetName "Cytokinesis" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:06465f5a-3e54-48b8-82e4-9af94ac5917a mapping:sourceCode "GO:0001309" ;
+	mapping:sourceName "obsolete age-dependent telomere shortening" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C21548" ;
+	mapping:targetName "Telomere Shortening" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:c70bb8f5-e3bb-42c8-bdf5-7b1e1bacd79a mapping:sourceCode "GO:0001501" ;
+	mapping:sourceName "skeletal system development" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C20138" ;
+	mapping:targetName "Skeletal Development" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:2b81a13a-747d-4759-b3b8-a7a25a45c193 mapping:sourceCode "GO:0001525" ;
+	mapping:sourceName "angiogenesis" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C17932" ;
+	mapping:targetName "Angiogenic Process" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:150f3baf-672a-4f8f-838e-42c1407003a3 mapping:sourceCode "GO:0001654" ;
+	mapping:sourceName "eye development" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C19413" ;
+	mapping:targetName "Eye Development" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:c383ec61-0616-430f-a67e-dee076cb6cb6 mapping:sourceCode "GO:0001695" ;
+	mapping:sourceName "histamine catabolic process" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C40626" ;
+	mapping:targetName "Histamine Degradation" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:48238151-5b27-4bdb-9d78-18d7e718f1f1 mapping:sourceCode "GO:0001788" ;
+	mapping:sourceName "antibody-dependent cellular cytotoxicity" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C16298" ;
+	mapping:targetName "Antibody-Dependent Cellular Cytotoxicity" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:54f1a970-18b4-4c3f-9a79-beab6cdd9632 mapping:sourceCode "GO:0001972" ;
+	mapping:sourceName "retinoic acid binding" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C26052" ;
+	mapping:targetName "Retinoic Acid Binding" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:069e643a-92d7-4688-a2c1-5d4fea1a5422 mapping:sourceCode "GO:0002456" ;
+	mapping:sourceName "T cell mediated immunity" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C16711" ;
+	mapping:targetName "Cell-Mediated Immunity" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:42825318-b77e-487b-844e-9856d2000a09 mapping:sourceCode "GO:0003676" ;
+	mapping:sourceName "nucleic acid binding" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C40523" ;
+	mapping:targetName "Nucleic Acid Binding" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:8e4c05c2-4d18-49a7-8800-0d316451c0d3 mapping:sourceCode "GO:0003677" ;
+	mapping:sourceName "DNA binding" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C18597" ;
+	mapping:targetName "DNA Binding" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:2c21eb0b-ec6a-40c7-9ddf-5fa640a01c8f mapping:sourceCode "GO:0003708" ;
+	mapping:sourceName "retinoic acid receptor activity" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C45546" ;
+	mapping:targetName "Retinoic Acid Receptor Activation" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:0f80136e-ce38-4598-b3a4-6af803deff5b mapping:sourceCode "GO:0003723" ;
+	mapping:sourceName "RNA binding" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C20737" ;
+	mapping:targetName "RNA Binding" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:63b38c55-a03f-4e49-aa1c-c090ffd53c17 mapping:sourceCode "GO:0003823" ;
+	mapping:sourceName "antigen binding" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C40474" ;
+	mapping:targetName "Antigen Binding" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:5fc80a9c-97be-4f11-80cb-d08be7661bfe mapping:sourceCode "GO:0004872" ;
+	mapping:sourceName "receptor activity" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C40702" ;
+	mapping:targetName "Receptor Activation Process" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:86221cdf-fff5-484f-9aea-5505e1c6532b mapping:sourceCode "GO:0004896" ;
+	mapping:sourceName "cytokine receptor activity" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C45547" ;
+	mapping:targetName "Cytokine Receptor Activation" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:7343dda0-b8cb-4bd2-bf37-c2f69bc54d25 mapping:sourceCode "GO:0005102" ;
+	mapping:sourceName "receptor binding" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C40536" ;
+	mapping:targetName "Receptor Binding" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:ed887901-7f97-415e-8913-c2bf57c1bc8f mapping:sourceCode "GO:0005126" ;
+	mapping:sourceName "cytokine receptor binding" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C40487" ;
+	mapping:targetName "Cytokine Receptor Binding" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:dafff262-6afd-4cde-aa82-9744386fa6c3 mapping:sourceCode "GO:0005164" ;
+	mapping:sourceName "tumor necrosis factor receptor binding" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C40550" ;
+	mapping:targetName "Tumor Necrosis Factor Receptor Binding" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:5bf6cb9f-056f-4abb-9c62-8ff6cc2c1104 mapping:sourceCode "GO:0005178" ;
+	mapping:sourceName "integrin binding" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C25864" ;
+	mapping:targetName "Integrin Binding" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:c7b803ae-3754-4435-b9f6-de65386d9e34 mapping:sourceCode "GO:0005488" ;
+	mapping:sourceName "binding" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C18219" ;
+	mapping:targetName "Molecular Interaction Process" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:554e59e5-00f1-4d17-a9be-2ac62794c876 mapping:sourceCode "GO:0005525" ;
+	mapping:sourceName "GTP binding" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C20979" ;
+	mapping:targetName "GTP Binding" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:6231c30d-a43e-4b7e-b90a-8f3ceaf90ae0 mapping:sourceCode "GO:0005540" ;
+	mapping:sourceName "hyaluronic acid binding" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C20758" ;
+	mapping:targetName "Hyaluronic Acid Binding" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:129f8d1d-afb8-4109-9ce0-c00e3136368b mapping:sourceCode "GO:0005543" ;
+	mapping:sourceName "phospholipid binding" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C41555" ;
+	mapping:targetName "Phospholipid Binding" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:bc3bd8f4-dc6c-43d0-b782-9ed07ae95e80 mapping:sourceCode "GO:0005975" ;
+	mapping:sourceName "carbohydrate metabolic process" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C17933" ;
+	mapping:targetName "Carbohydrate Metabolic Process" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:189553c4-074f-46d6-a1de-10dd54f4a740 mapping:sourceCode "GO:0006067" ;
+	mapping:sourceName "ethanol metabolic process" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C18221" ;
+	mapping:targetName "Ethanol Metabolism" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:6af74ab6-958b-43a7-93c6-aa879a52c17c mapping:sourceCode "GO:0006091" ;
+	mapping:sourceName "generation of precursor metabolites and energy" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C21198" ;
+	mapping:targetName "Intermediary Metabolic Process" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:14125adc-8810-4067-bfef-dfeaecc26776 mapping:sourceCode "GO:0006094" ;
+	mapping:sourceName "gluconeogenesis" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C28151" ;
+	mapping:targetName "Gluconeogenic Process" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:e4b6b37f-c392-4c2f-b902-3a44f6f390bc mapping:sourceCode "GO:0006096" ;
+	mapping:sourceName "glycolytic process" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C28152" ;
+	mapping:targetName "Glycolysis" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:13d1a6d4-4b2a-46d1-8b37-586c0785d8fa mapping:sourceCode "GO:0006200" ;
+	mapping:sourceName "obsolete ATP catabolic process" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C19939" ;
+	mapping:targetName "ATP Hydrolysis" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:2ff155e9-41e8-40d6-9ccf-8f9ea0bafc9f mapping:sourceCode "GO:0006260" ;
+	mapping:sourceName "DNA replication" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C16514" ;
+	mapping:targetName "DNA Replication" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:8d074274-3f10-4a49-abc9-a16eb68fa962 mapping:sourceCode "GO:0006270" ;
+	mapping:sourceName "DNA replication initiation" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C28677" ;
+	mapping:targetName "Replication Initiation" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:3c909fbf-8915-411f-a6d0-15ed22e333ab mapping:sourceCode "GO:0006281" ;
+	mapping:sourceName "DNA repair" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C16513" ;
+	mapping:targetName "DNA Repair" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:96020c64-ef7a-4488-b070-2d75bb984880 mapping:sourceCode "GO:0006284" ;
+	mapping:sourceName "base-excision repair" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C20212" ;
+	mapping:targetName "Base Excision Repair" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:25470e1d-856a-4680-8486-a53ccc2004d3 mapping:sourceCode "GO:0006289" ;
+	mapping:sourceName "nucleotide-excision repair" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C20213" ;
+	mapping:targetName "Nucleotide Excision Repair" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:bdbc36ac-81f8-4b34-9f2c-a532b013ba5a mapping:sourceCode "GO:0006298" ;
+	mapping:sourceName "mismatch repair" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C20639" ;
+	mapping:targetName "Mismatch Repair" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:3b163d43-896a-4777-8224-9d31042e416e mapping:sourceCode "GO:0006302" ;
+	mapping:sourceName "double-strand break repair" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C19608" ;
+	mapping:targetName "Double Strand Break Repair" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:25a45101-3afa-4b48-8442-9d90e152dcd0 mapping:sourceCode "GO:0006303" ;
+	mapping:sourceName "double-strand break repair via nonhomologous end joining" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C20207" ;
+	mapping:targetName "Nonhomologous DNA End Joining" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:a6c90e90-9b0a-4f9a-aa19-645369250f40 mapping:sourceCode "GO:0006304" ;
+	mapping:sourceName "DNA modification" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C19449" ;
+	mapping:targetName "DNA Modification Process" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:0e151058-058a-495d-ba5d-ed32f5145383 mapping:sourceCode "GO:0006305" ;
+	mapping:sourceName "DNA alkylation" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C25826" ;
+	mapping:targetName "DNA Alkylation" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:7dfd5148-72a0-4c9d-bcae-fa4e65ed62a6 mapping:sourceCode "GO:0006306" ;
+	mapping:sourceName "DNA methylation" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C17961" ;
+	mapping:targetName "DNA Methylation" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:67776041-e685-43d8-a7f6-09695d4e3e08 mapping:sourceCode "GO:0006310" ;
+	mapping:sourceName "DNA recombination" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C17082" ;
+	mapping:targetName "DNA Recombination Process" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:3b1442df-6d6c-4228-8cc9-b42c3deee2a8 mapping:sourceCode "GO:0006312" ;
+	mapping:sourceName "mitotic recombination" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C20146" ;
+	mapping:targetName "Mitotic Recombination" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:36ffb3f4-fb9c-4133-a2a8-e787ed12f392 mapping:sourceCode "GO:0006338" ;
+	mapping:sourceName "chromatin remodeling" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C19797" ;
+	mapping:targetName "Chromatin Remodeling" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:7abedf98-9a5e-4373-872c-0939695ea644 mapping:sourceCode "GO:0006351" ;
+	mapping:sourceName "transcription, DNA-templated" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C17208" ;
+	mapping:targetName "Transcription" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:015f8141-f650-4c44-9656-696908065585 mapping:sourceCode "GO:0006352" ;
+	mapping:sourceName "DNA-templated transcription, initiation" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C20147" ;
+	mapping:targetName "Transcription Initiation" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:e9bb24c5-ed84-4187-a55d-f3394d151f11 mapping:sourceCode "GO:0006353" ;
+	mapping:sourceName "DNA-templated transcription, termination" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C28615" ;
+	mapping:targetName "Transcription Termination" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:62ddb347-61e8-4738-81b7-8f183259bbe5 mapping:sourceCode "GO:0006354" ;
+	mapping:sourceName "DNA-templated transcription, elongation" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C28586" ;
+	mapping:targetName "Transcription Elongation" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:1b188084-0cf9-45e8-b9c5-219ede46d294 mapping:sourceCode "GO:0006355" ;
+	mapping:sourceName "regulation of transcription, DNA-templated" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C19077" ;
+	mapping:targetName "Transcriptional Regulation" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:79a95a44-52bf-42b5-8d2d-82f7eb6f729d mapping:sourceCode "GO:0006396" ;
+	mapping:sourceName "RNA processing" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C19325" ;
+	mapping:targetName "RNA Processing" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:944239c7-cc13-4ff0-8be4-7a87aecff747 mapping:sourceCode "GO:0006401" ;
+	mapping:sourceName "RNA catabolic process" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C19144" ;
+	mapping:targetName "RNA Degradation" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:4230e011-eb8f-4bbc-b71a-2aac28e71125 mapping:sourceCode "GO:0006410" ;
+	mapping:sourceName "obsolete transcription, RNA-dependent" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C17097" ;
+	mapping:targetName "Reverse Transcription Process" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:54498bae-1857-4a79-a341-fd914664249e mapping:sourceCode "GO:0006412" ;
+	mapping:sourceName "translation" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C30022" ;
+	mapping:targetName "Translation Process" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:526e9847-6102-4c46-b93c-eab47788f2e8 mapping:sourceCode "GO:0006413" ;
+	mapping:sourceName "translational initiation" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C30023" ;
+	mapping:targetName "Translation Initiation" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:cd6f8e53-d8fd-48a4-a94d-ba392f77b5d6 mapping:sourceCode "GO:0006417" ;
+	mapping:sourceName "regulation of translation" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C29857" ;
+	mapping:targetName "Translational Regulation" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:6d8371bc-861f-4720-bb86-a9db80e11d94 mapping:sourceCode "GO:0006457" ;
+	mapping:sourceName "protein folding" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C17568" ;
+	mapping:targetName "Protein Folding" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:9b7d6ccd-d5b7-457f-8a29-f978fa253f73 mapping:sourceCode "GO:0006473" ;
+	mapping:sourceName "protein acetylation" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C21017" ;
+	mapping:targetName "Protein Acetylation" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:023c03ed-fd66-4536-81e6-4f580bb32575 mapping:sourceCode "GO:0006479" ;
+	mapping:sourceName "protein methylation" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C21035" ;
+	mapping:targetName "Protein Methylation" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:63ba04cc-06a2-4af5-9178-4cce6b0bf73a mapping:sourceCode "GO:0006486" ;
+	mapping:sourceName "protein glycosylation" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C16643" ;
+	mapping:targetName "Protein Glycosylation" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:6547543e-701f-4a0d-a64f-8a4f6a7f03c6 mapping:sourceCode "GO:0006508" ;
+	mapping:sourceName "proteolysis" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C18105" ;
+	mapping:targetName "Proteolysis" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:772d4b23-ec42-45fd-b242-33fc16c1bd09 mapping:sourceCode "GO:0006511" ;
+	mapping:sourceName "ubiquitin-dependent protein catabolic process" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C21243" ;
+	mapping:targetName "Ubiquitinated Protein Degradation" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:ac5e018c-dc98-4c9d-a681-7edb6f5dc74c mapping:sourceCode "GO:0006518" ;
+	mapping:sourceName "peptide metabolic process" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C20148" ;
+	mapping:targetName "Peptide Metabolism" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:1ea23d40-3683-4924-990e-e8be07e8eb29 mapping:sourceCode "GO:0006576" ;
+	mapping:sourceName "cellular biogenic amine metabolic process" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C40625" ;
+	mapping:targetName "Biogenic Amine Metabolic Process" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:b22338df-c96f-472b-85a5-b0e97d9a3b83 mapping:sourceCode "GO:0006598" ;
+	mapping:sourceName "polyamine catabolic process" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C19824" ;
+	mapping:targetName "Polyamine Catabolism" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:26a35b88-60cb-44a8-a643-94d189c07db5 mapping:sourceCode "GO:0006623" ;
+	mapping:sourceName "protein targeting to vacuole" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C21242" ;
+	mapping:targetName "Vacuolar Protein Sorting" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:85f03771-4c89-429a-8d70-d23258f10647 mapping:sourceCode "GO:0006629" ;
+	mapping:sourceName "lipid metabolic process" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C19405" ;
+	mapping:targetName "Lipid Metabolic Process" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:9495c7f0-16ac-474f-a0ff-504eed8f385e mapping:sourceCode "GO:0006631" ;
+	mapping:sourceName "fatty acid metabolic process" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C26565" ;
+	mapping:targetName "Fatty Acid Metabolism" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:f0c84f06-f813-41ae-8146-1860268a2347 mapping:sourceCode "GO:0006641" ;
+	mapping:sourceName "triglyceride metabolic process" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C40657" ;
+	mapping:targetName "Triglyceride Metabolism" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:41d3fabc-aaae-4723-95e9-63e4af58c1c4 mapping:sourceCode "GO:0006644" ;
+	mapping:sourceName "phospholipid metabolic process" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C40656" ;
+	mapping:targetName "Phospholipid Metabolism" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:c59b82e0-5481-4a90-8d87-1eb2ad006386 mapping:sourceCode "GO:0006656" ;
+	mapping:sourceName "phosphatidylcholine biosynthetic process" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C28751" ;
+	mapping:targetName "Phosphatidylcholine Biosynthesis" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:87c628e7-be6d-42ab-b2d4-0d848f74b5cc mapping:sourceCode "GO:0006805" ;
+	mapping:sourceName "xenobiotic metabolic process" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C26533" ;
+	mapping:targetName "Xenobiotic Metabolism" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:dfbcc689-3aee-414c-9a21-dfb98206bd35 mapping:sourceCode "GO:0006810" ;
+	mapping:sourceName "transport" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C21079" ;
+	mapping:targetName "Transport Process" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:09421921-cf9c-45fc-937e-c6a3accd51b9 mapping:sourceCode "GO:0006869" ;
+	mapping:sourceName "lipid transport" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C20739" ;
+	mapping:targetName "Lipid Transport" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:aa4b7bcf-4941-4891-9379-bbf4ad36e77a mapping:sourceCode "GO:0006886" ;
+	mapping:sourceName "intracellular protein transport" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C20149" ;
+	mapping:targetName "Subcellular Protein Targeting" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:29b7573c-167b-4dc7-a311-ca8b3f5aaf57 mapping:sourceCode "GO:0006887" ;
+	mapping:sourceName "exocytosis" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C16568" ;
+	mapping:targetName "Exocytosis" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:4e1fbe82-24c6-4017-abe4-5d5bb2fb0e05 mapping:sourceCode "GO:0006897" ;
+	mapping:sourceName "endocytosis" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C16544" ;
+	mapping:targetName "Endocytotic Process" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:979270a0-2f16-4136-a29d-6ac9b4fe5619 mapping:sourceCode "GO:0006898" ;
+	mapping:sourceName "receptor-mediated endocytosis" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C18107" ;
+	mapping:targetName "Receptor Mediated Endocytosis" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:9e14e430-2664-41f7-8c8d-bca280f3bd03 mapping:sourceCode "GO:0006909" ;
+	mapping:sourceName "phagocytosis" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C26115" ;
+	mapping:targetName "Phagocytosis" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:fba051b4-9607-4937-bba1-61cd7b5f1a52 mapping:sourceCode "GO:0006913" ;
+	mapping:sourceName "nucleocytoplasmic transport" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C19415" ;
+	mapping:targetName "Nucleocytoplasmic Transport" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:160af26a-a7ca-4c40-9461-4df39e547252 mapping:sourceCode "GO:0006914" ;
+	mapping:sourceName "autophagy" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C71427" ;
+	mapping:targetName "Autophagy" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:543202d0-9ef3-4824-a2d7-70cf80600fa6 mapping:sourceCode "GO:0006915" ;
+	mapping:sourceName "apoptotic process" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C17557" ;
+	mapping:targetName "Apoptosis" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:771d52c2-4f8a-4efa-8d7b-b7e6037a9652 mapping:sourceCode "GO:0006919" ;
+	mapping:sourceName "activation of cysteine-type endopeptidase activity involved in apoptotic process" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C42784" ;
+	mapping:targetName "Caspase Activation" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:05cc984e-bdba-4d19-8707-0e8b22b4a82e mapping:sourceCode "GO:0006928" ;
+	mapping:sourceName "movement of cell or subcellular component" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C28486" ;
+	mapping:targetName "Cell Movement" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:c361e7f5-f07a-4c1d-a18a-3380739e8a33 mapping:sourceCode "GO:0006935" ;
+	mapping:sourceName "chemotaxis" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C16422" ;
+	mapping:targetName "Chemotactic Process" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:3999cf22-4f6b-4d0c-a13c-d51fb6253f38 mapping:sourceCode "GO:0006936" ;
+	mapping:sourceName "muscle contraction" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C30085" ;
+	mapping:targetName "Muscle Contraction" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:f3744593-11de-4105-898c-d6632c8594f7 mapping:sourceCode "GO:0006954" ;
+	mapping:sourceName "inflammatory response" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C20151" ;
+	mapping:targetName "Inflammatory Response" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:16a14104-e32e-44ca-9b2a-e3f8d7bb5bc5 mapping:sourceCode "GO:0006955" ;
+	mapping:sourceName "immune response" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C17930" ;
+	mapping:targetName "Immune Response Process" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:fc182321-ca84-434e-b259-7af4a13d10ec mapping:sourceCode "GO:0006956" ;
+	mapping:sourceName "complement activation" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C21519" ;
+	mapping:targetName "Complement Activation" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:9f64031b-bf43-46b4-b262-a0b51a04d8cc mapping:sourceCode "GO:0007019" ;
+	mapping:sourceName "microtubule depolymerization" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C19555" ;
+	mapping:targetName "Microtubule Depolymerization Process" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:d412a529-b505-46c7-a958-3268654b5585 mapping:sourceCode "GO:0007021" ;
+	mapping:sourceName "tubulin complex assembly" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C40549" ;
+	mapping:targetName "Tubulin Binding" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:b407e1f9-70e7-47d7-9589-35abc55e372a mapping:sourceCode "GO:0007026" ;
+	mapping:sourceName "negative regulation of microtubule depolymerization" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C41588" ;
+	mapping:targetName "Negative Regulation of Microtubule Depolymerization" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:f02e8807-ae31-44e2-b3c6-627505f214b5 mapping:sourceCode "GO:0007048" ;
+	mapping:sourceName "obsolete oncogenesis" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C21471" ;
+	mapping:targetName "Oncogenesis" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:a47543fd-c0d2-4853-99ef-cf68319548aa mapping:sourceCode "GO:0007050" ;
+	mapping:sourceName "cell cycle arrest" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C18824" ;
+	mapping:targetName "Negative Regulation of Cell Cycle" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:a8d36429-0d69-4693-b236-d03f4800ee22 mapping:sourceCode "GO:0007059" ;
+	mapping:sourceName "chromosome segregation" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C28547" ;
+	mapping:targetName "Chromosome Segregation" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:5b169e58-d620-44c5-9ca8-37f1262185d5 mapping:sourceCode "GO:0007067" ;
+	mapping:sourceName "NOT AVAILABLE" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C16864" ;
+	mapping:targetName "Mitosis" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:1118a126-cfd9-410f-9826-6f47cfa2d641 mapping:sourceCode "GO:0007094" ;
+	mapping:sourceName "mitotic spindle assembly checkpoint" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C21492" ;
+	mapping:targetName "Mitotic/Spindle Checkpoint" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:a9da99f4-c9f6-405b-a09a-393572c3b936 mapping:sourceCode "GO:0007126" ;
+	mapping:sourceName "NOT AVAILABLE" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C16834" ;
+	mapping:targetName "Meiosis" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:2ac65864-240d-4e8f-b7b1-e8070de9858d mapping:sourceCode "GO:0007155" ;
+	mapping:sourceName "cell adhesion" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C41514" ;
+	mapping:targetName "Cell Adhesion Process" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:d2e93f59-2dab-44cf-9f7b-7c22aa6f904c mapping:sourceCode "GO:0007160" ;
+	mapping:sourceName "cell-matrix adhesion" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C20191" ;
+	mapping:targetName "Cell-Matrix Adhesion Process" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:3726063c-4d7c-4cb3-b1ef-0ad163f6fbe4 mapping:sourceCode "GO:0007165" ;
+	mapping:sourceName "signal transduction" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C17133" ;
+	mapping:targetName "Signal Transduction" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:39c990e2-c5f2-4d0d-a668-f70623bc1ded mapping:sourceCode "GO:0007267" ;
+	mapping:sourceName "cell-cell signaling" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C16395" ;
+	mapping:targetName "Intercellular Communication Process" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:b74b8ad5-a33a-4dbf-ad1f-9c0b7e2cbad6 mapping:sourceCode "GO:0007276" ;
+	mapping:sourceName "gamete generation" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C16599" ;
+	mapping:targetName "Gametogenesis" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:c6456890-17fa-4f3e-9931-0befe2475b6c mapping:sourceCode "GO:0007283" ;
+	mapping:sourceName "spermatogenesis" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C17161" ;
+	mapping:targetName "Spermatogenesis" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:7cb23df4-7f87-4d06-96b9-05d095033313 mapping:sourceCode "GO:0007389" ;
+	mapping:sourceName "pattern specification process" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C19970" ;
+	mapping:targetName "Pattern Formation" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:3b844ed3-c3ca-40d0-8b22-8a29cf2f9277 mapping:sourceCode "GO:0007399" ;
+	mapping:sourceName "nervous system development" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C26161" ;
+	mapping:targetName "Nervous System Development" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:d95feee6-c936-4c26-9797-dfec8089be67 mapping:sourceCode "GO:0007568" ;
+	mapping:sourceName "aging" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C16269" ;
+	mapping:targetName "Aging" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:8d528754-fb3a-403f-948e-ef327499b6c6 mapping:sourceCode "GO:0007569" ;
+	mapping:sourceName "cell aging" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C16394" ;
+	mapping:targetName "Cell Aging" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:dfb1291b-1add-489b-acf3-0ac2af17e464 mapping:sourceCode "GO:0007586" ;
+	mapping:sourceName "digestion" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C16503" ;
+	mapping:targetName "Digestion" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:2c0790b5-72f0-472a-ace3-1268e3c1f9c5 mapping:sourceCode "GO:0007596" ;
+	mapping:sourceName "blood coagulation" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C21045" ;
+	mapping:targetName "Coagulation Process" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:be994d02-b0d4-4f5f-b7a8-7271735126a8 mapping:sourceCode "GO:0007601" ;
+	mapping:sourceName "visual perception" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C38533" ;
+	mapping:targetName "Sight" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:90903959-c5a9-4408-9ac4-4412bc26a89c mapping:sourceCode "GO:0007605" ;
+	mapping:sourceName "sensory perception of sound" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C16670" ;
+	mapping:targetName "Hearing" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:3d30fafd-2a09-4b5e-bdf3-2b541028c591 mapping:sourceCode "GO:0007608" ;
+	mapping:sourceName "sensory perception of smell" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C17139" ;
+	mapping:targetName "Olfaction" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:505b7641-94a6-4749-952c-224a39c55e2b mapping:sourceCode "GO:0007612" ;
+	mapping:sourceName "learning" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C19369" ;
+	mapping:targetName "Learning" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:5c0618ab-8e01-4a0c-82e9-1a11bdb9ffea mapping:sourceCode "GO:0007613" ;
+	mapping:sourceName "memory" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C37992" ;
+	mapping:targetName "Memory" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:08ca10da-a70d-4bbb-b2e3-b0cdc9edb1a8 mapping:sourceCode "GO:0008015" ;
+	mapping:sourceName "blood circulation" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C16353" ;
+	mapping:targetName "Blood Circulation" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:9e0232ad-a60a-4501-95b7-8383993b55fb mapping:sourceCode "GO:0008150" ;
+	mapping:sourceName "biological_process" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C17828" ;
+	mapping:targetName "Biological Process" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:8f156d8f-6379-47c2-a020-f6f84bf78d8d mapping:sourceCode "GO:0008152" ;
+	mapping:sourceName "metabolic process" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C19536" ;
+	mapping:targetName "Metabolic Process" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:716688f1-4dee-4b56-838e-be71b0e03154 mapping:sourceCode "GO:0008201" ;
+	mapping:sourceName "heparin binding" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C26124" ;
+	mapping:targetName "Heparin Binding" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:6d037e85-cc3f-4810-b31a-4ef0974192a5 mapping:sourceCode "GO:0008202" ;
+	mapping:sourceName "steroid metabolic process" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C18109" ;
+	mapping:targetName "Steroid Metabolic Process" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:2a541a71-8d3f-4d47-bc94-45c3ec566e43 mapping:sourceCode "GO:0008209" ;
+	mapping:sourceName "androgen metabolic process" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C19958" ;
+	mapping:targetName "Androgen Metabolism Process" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:a451c7c2-d25f-44b2-932e-574b185a63b8 mapping:sourceCode "GO:0008210" ;
+	mapping:sourceName "estrogen metabolic process" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C20136" ;
+	mapping:targetName "Estrogen Metabolic Process" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:daccc0c1-8b94-44f8-8ff3-e6de178054eb mapping:sourceCode "GO:0008219" ;
+	mapping:sourceName "cell death" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C41515" ;
+	mapping:targetName "Cell Death Process" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:bfd5a00c-1a54-4933-8401-4bdbef398cb7 mapping:sourceCode "GO:0008283" ;
+	mapping:sourceName "cell proliferation" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C18081" ;
+	mapping:targetName "Cell Proliferation" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:72901d93-fecc-4772-b585-ef6058ad3cbc mapping:sourceCode "GO:0008284" ;
+	mapping:sourceName "positive regulation of cell proliferation" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C20863" ;
+	mapping:targetName "Stimulation of Cell Proliferation" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:c34738d8-7afd-45d6-b920-7789e5f1b2db mapping:sourceCode "GO:0008285" ;
+	mapping:sourceName "negative regulation of cell proliferation" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C20751" ;
+	mapping:targetName "Inhibition of Cell Proliferation" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:6020208b-b073-41ad-90b6-fb3f0a099efa mapping:sourceCode "GO:0008289" ;
+	mapping:sourceName "lipid binding" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C20738" ;
+	mapping:targetName "Lipid Binding" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:e9456598-3631-4e37-a2be-d6d59b31373d mapping:sourceCode "GO:0008360" ;
+	mapping:sourceName "regulation of cell shape" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C20748" ;
+	mapping:targetName "Regulation of Cell Shape" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:f8d38d96-b936-4e57-a262-34903e917750 mapping:sourceCode "GO:0008361" ;
+	mapping:sourceName "regulation of cell size" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C21576" ;
+	mapping:targetName "Regulation of Cell Size" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:9275c21a-2ede-406f-8bcc-5df2b359ef0c mapping:sourceCode "GO:0008380" ;
+	mapping:sourceName "RNA splicing" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C17106" ;
+	mapping:targetName "RNA Splicing" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:2c2957ab-5ae4-42c9-bcf8-52f51d93b75d mapping:sourceCode "GO:0008610" ;
+	mapping:sourceName "lipid biosynthetic process" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C20906" ;
+	mapping:targetName "Adipogenesis" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:ffa331f4-0349-4e6a-b25f-9187aa6a0665 mapping:sourceCode "GO:0009048" ;
+	mapping:sourceName "dosage compensation by inactivation of X chromosome" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C20674" ;
+	mapping:targetName "X-Chromosome Inactivation" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:efea0fbd-2b4a-4ad6-a4ff-532fd4c53590 mapping:sourceCode "GO:0009056" ;
+	mapping:sourceName "catabolic process" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C41544" ;
+	mapping:targetName "Catabolic Process" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:0c7896e0-1758-4a85-9c73-4896cf99f42a mapping:sourceCode "GO:0009056" ;
+	mapping:sourceName "catabolic process" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C41544" ;
+	mapping:targetName "Catabolic Process" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:9afed27c-c5f8-4f8f-8db5-3e14e6ebcda6 mapping:sourceCode "GO:0009056" ;
+	mapping:sourceName "catabolic process" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C61559" ;
+	mapping:targetName "Degradation" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:3bdf816c-d15d-49cb-9a54-0557a0593207 mapping:sourceCode "GO:0009058" ;
+	mapping:sourceName "biosynthetic process" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C17702" ;
+	mapping:targetName "Biosynthetic Process" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:a87934fc-fe18-470a-9d88-a971d8e86aeb mapping:sourceCode "GO:0009060" ;
+	mapping:sourceName "aerobic respiration" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C17894" ;
+	mapping:targetName "Cell Respiration" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:69e160fc-33fc-4ac8-bc14-a7ab29116041 mapping:sourceCode "GO:0009117" ;
+	mapping:sourceName "nucleotide metabolic process" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C19403" ;
+	mapping:targetName "Nucleotide Metabolic Process" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:9816f604-fbd1-4f6f-8ee6-de95ee01021c mapping:sourceCode "GO:0009165" ;
+	mapping:sourceName "nucleotide biosynthetic process" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C41545" ;
+	mapping:targetName "Nucleotide Biosynthesis Process" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:cc2e438d-be4b-4680-9f55-67d482f6d968 mapping:sourceCode "GO:0009306" ;
+	mapping:sourceName "protein secretion" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C18971" ;
+	mapping:targetName "Protein Secretion" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:2bec0796-f22d-4605-8023-292edba94a64 mapping:sourceCode "GO:0009315" ;
+	mapping:sourceName "obsolete drug resistance" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C16523" ;
+	mapping:targetName "Drug Resistance Process" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:7ae115ac-0d4e-4b73-8aa0-84342e8147ed mapping:sourceCode "GO:0009405" ;
+	mapping:sourceName "pathogenesis" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C18264" ;
+	mapping:targetName "Pathogenesis" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:12dfdf1f-97e9-4d77-9700-c0261acb208a mapping:sourceCode "GO:0009566" ;
+	mapping:sourceName "fertilization" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C16579" ;
+	mapping:targetName "Fertilization" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:fd14f9d2-df18-4d3b-a393-b56a9e6daf23 mapping:sourceCode "GO:0009653" ;
+	mapping:sourceName "anatomical structure morphogenesis" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C16879" ;
+	mapping:targetName "Morphogenesis" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:f3242627-94ce-42b8-a1ba-71243eef6258 mapping:sourceCode "GO:0009790" ;
+	mapping:sourceName "embryo development" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C16649" ;
+	mapping:targetName "Embryogenesis" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:546e8c49-bab9-4c96-82b4-3fdf95702289 mapping:sourceCode "GO:0009792" ;
+	mapping:sourceName "embryo development ending in birth or egg hatching" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C16649" ;
+	mapping:targetName "Embryogenesis" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:7dfe499f-d5a0-40f1-8b40-98af58be5466 mapping:sourceCode "GO:0009888" ;
+	mapping:sourceName "tissue development" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C21128" ;
+	mapping:targetName "Histogenic Process" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:642ceef5-73f2-4d21-9cb9-f5de86eb9fe9 mapping:sourceCode "GO:0009953" ;
+	mapping:sourceName "dorsal/ventral pattern formation" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C19971" ;
+	mapping:targetName "Dorsal-Ventral Pattern Formation" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:1aba9417-3caa-42b2-b889-38aed2238f1d mapping:sourceCode "GO:0009967" ;
+	mapping:sourceName "positive regulation of signal transduction" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C40820" ;
+	mapping:targetName "Signal Transduction Induction" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:c30feb1c-e11f-45b8-bf64-00a663d0e402 mapping:sourceCode "GO:0009968" ;
+	mapping:sourceName "negative regulation of signal transduction" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C40821" ;
+	mapping:targetName "Signal Transduction Inhibition" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:57a9c8be-c904-42d4-a742-82fd92ae7fdf mapping:sourceCode "GO:0009987" ;
+	mapping:sourceName "cellular process" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C20480" ;
+	mapping:targetName "Cellular Process" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:028427dd-b52c-4f61-9ef4-fedc1b2b72eb mapping:sourceCode "GO:0010149" ;
+	mapping:sourceName "obsolete senescence" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C17467" ;
+	mapping:targetName "Senescence" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:0d83696c-1676-4d3e-a508-53ba42a68a8e mapping:sourceCode "GO:0010467" ;
+	mapping:sourceName "gene expression" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C16608" ;
+	mapping:targetName "Gene Expression" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:79fe7d81-d19b-4e7e-84b0-b6c3de2ee934 mapping:sourceCode "GO:0010468" ;
+	mapping:sourceName "regulation of gene expression" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C21050" ;
+	mapping:targetName "Gene Regulation Process" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:e3bef89f-f3be-4985-a2fd-63b514ab24fe mapping:sourceCode "GO:0010940" ;
+	mapping:sourceName "positive regulation of necrotic cell death" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C40726" ;
+	mapping:targetName "Positive Regulation of Necrotic Process" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:6858fef7-d2d7-456c-8269-a5915bccb624 mapping:sourceCode "GO:0010941" ;
+	mapping:sourceName "regulation of cell death" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C51037" ;
+	mapping:targetName "Regulation of Cell Death Process" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:95f947e1-ff3f-4749-8221-d27db9620100 mapping:sourceCode "GO:0010942" ;
+	mapping:sourceName "positive regulation of cell death" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C40715" ;
+	mapping:targetName "Positive Regulation of Cell Death" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:4df0ee15-e3e9-4622-8a13-70af95bd889d mapping:sourceCode "GO:0014009" ;
+	mapping:sourceName "glial cell proliferation" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C26150" ;
+	mapping:targetName "Glial Cell Proliferation" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:6b562130-04ae-4ea0-8860-c341e110bec1 mapping:sourceCode "GO:0015074" ;
+	mapping:sourceName "DNA integration" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C18855" ;
+	mapping:targetName "DNA Integration" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:4fe15d24-066f-499e-b79c-953d6f1df877 mapping:sourceCode "GO:0015631" ;
+	mapping:sourceName "tubulin binding" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C40549" ;
+	mapping:targetName "Tubulin Binding" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:4d8d50ec-f874-4700-8fc4-1edcce205a8c mapping:sourceCode "GO:0015833" ;
+	mapping:sourceName "peptide transport" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C21572" ;
+	mapping:targetName "Peptide Transport" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:fa6314b7-1dbc-445b-861d-2986c8c859e2 mapping:sourceCode "GO:0015893" ;
+	mapping:sourceName "drug transport" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C19412" ;
+	mapping:targetName "Drug Transport Process" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:75f1de42-078c-4561-932a-0bb0cd9da2ef mapping:sourceCode "GO:0015979" ;
+	mapping:sourceName "photosynthesis" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C16986" ;
+	mapping:targetName "Photosynthesis" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:ca5c0ca2-ab4e-49d8-a10f-b43abd82f89e mapping:sourceCode "GO:0016049" ;
+	mapping:sourceName "cell growth" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C16402" ;
+	mapping:targetName "Cell Growth" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:20f70593-bb4f-4202-abc6-ffd4b83d8a08 mapping:sourceCode "GO:0016233" ;
+	mapping:sourceName "telomere capping" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C20339" ;
+	mapping:targetName "Telomere Capping" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:78f78136-26b4-4411-8a19-0886c8683370 mapping:sourceCode "GO:0016246" ;
+	mapping:sourceName "RNA interference" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C20153" ;
+	mapping:targetName "RNA Interference" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:eaba54b1-6bc6-4eca-9c80-dc0a4625765d mapping:sourceCode "GO:0016310" ;
+	mapping:sourceName "phosphorylation" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C16983" ;
+	mapping:targetName "Phosphorylation Process" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:a2498be5-e0d0-4e4c-9ed0-d705d6429ae7 mapping:sourceCode "GO:0016311" ;
+	mapping:sourceName "dephosphorylation" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C20612" ;
+	mapping:targetName "Dephosphorylation" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:192b7169-acff-4950-9ae4-112b1a7a9a57 mapping:sourceCode "GO:0016337" ;
+	mapping:sourceName "single organismal cell-cell adhesion" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C19663" ;
+	mapping:targetName "Cell-Cell Adhesion Process" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:34917e5b-753c-49f3-adb2-bb4b51584f1a mapping:sourceCode "GO:0016477" ;
+	mapping:sourceName "cell migration" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C26169" ;
+	mapping:targetName "Cellular Migration Process" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:14da078a-5abf-4d97-b645-e85e03b309c7 mapping:sourceCode "GO:0016559" ;
+	mapping:sourceName "peroxisome fission" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C18933" ;
+	mapping:targetName "Peroxisome Proliferation" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:49c90234-c093-4424-8ca3-c0e18d63d315 mapping:sourceCode "GO:0016567" ;
+	mapping:sourceName "protein ubiquitination" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C19358" ;
+	mapping:targetName "Ubiquitination" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:38bdf1e5-0e12-453e-9939-d9d6c52caba2 mapping:sourceCode "GO:0016568" ;
+	mapping:sourceName "NOT AVAILABLE" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C40800" ;
+	mapping:targetName "Chromatin Structural Process" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:010af463-c052-4814-bb7b-98387fe48c1d mapping:sourceCode "GO:0016573" ;
+	mapping:sourceName "histone acetylation" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C20740" ;
+	mapping:targetName "Histone Acetylation" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:683ab1ae-7595-4683-a64b-fd9504070003 mapping:sourceCode "GO:0016575" ;
+	mapping:sourceName "histone deacetylation" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C40580" ;
+	mapping:targetName "Histone Deacetylation" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:11bd4ceb-60f1-407f-8755-67f7b45b1f56 mapping:sourceCode "GO:0016579" ;
+	mapping:sourceName "protein deubiquitination" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C21556" ;
+	mapping:targetName "Deubiquitination" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:2ca81320-8266-47f6-af5f-2f009a67e93a mapping:sourceCode "GO:0017038" ;
+	mapping:sourceName "protein import" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C18969" ;
+	mapping:targetName "Protein Import" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:9d8d6fa7-ee56-4a78-95ba-69da52b79ab6 mapping:sourceCode "GO:0017144" ;
+	mapping:sourceName "drug metabolic process" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C26633" ;
+	mapping:targetName "Drug Metabolism" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:e5140c52-28e1-40c5-b698-17cf7ff79b44 mapping:sourceCode "GO:0017148" ;
+	mapping:sourceName "negative regulation of translation" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C29860" ;
+	mapping:targetName "Translational Repression" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:f26cb4ee-941f-4c8e-b019-ce6c3ddf4ee9 mapping:sourceCode "GO:0017157" ;
+	mapping:sourceName "regulation of exocytosis" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C20978" ;
+	mapping:targetName "Regulation of Exocytosis" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:20a55bb2-dc84-44a1-b2a1-650d4d6f4ed7 mapping:sourceCode "GO:0018108" ;
+	mapping:sourceName "peptidyl-tyrosine phosphorylation" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C18497" ;
+	mapping:targetName "Tyrosine Phosphorylation" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:081c1020-c777-4aa8-a05b-73b23c58e621 mapping:sourceCode "GO:0019233" ;
+	mapping:sourceName "sensory perception of pain" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C21075" ;
+	mapping:targetName "Nociception" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:7b2dec45-3f3f-43e6-b1cc-e642741eac12 mapping:sourceCode "GO:0019722" ;
+	mapping:sourceName "calcium-mediated signaling" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C21582" ;
+	mapping:targetName "Calcium Signaling" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:55499dfb-ba36-4e98-a282-3a83b1eb038f mapping:sourceCode "GO:0019835" ;
+	mapping:sourceName "cytolysis" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C61553" ;
+	mapping:targetName "Cytolytic Process" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:be7bd498-2d64-471c-9334-a586daa7216b mapping:sourceCode "GO:0019838" ;
+	mapping:sourceName "growth factor binding" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C40508" ;
+	mapping:targetName "Growth Factor Binding" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:f14656b3-00f4-4a09-9a2f-3461d9a891a6 mapping:sourceCode "GO:0019882" ;
+	mapping:sourceName "antigen processing and presentation" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C17662" ;
+	mapping:targetName "Antigen Processing" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:06940a66-c49f-4b58-aa01-1c895c6783e9 mapping:sourceCode "GO:0022008" ;
+	mapping:sourceName "neurogenesis" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C19375" ;
+	mapping:targetName "Neural Development" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:bfefb304-cca7-4f66-aa42-bf5c81efb3e5 mapping:sourceCode "GO:0022403" ;
+	mapping:sourceName "cell cycle phase" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C20180" ;
+	mapping:targetName "Cell Cycle Phase" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:281ea454-fce2-40c7-a056-763e6b38f553 mapping:sourceCode "GO:0022414" ;
+	mapping:sourceName "reproductive process" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C21173" ;
+	mapping:targetName "Reproductive Process" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:b7f845eb-4ba7-4ede-b3f9-7cf6b90d3d4e mapping:sourceCode "GO:0022617" ;
+	mapping:sourceName "extracellular matrix disassembly" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C41580" ;
+	mapping:targetName "Extracellular Matrix Degradation" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:269d15b1-8609-4fdb-a7c6-14391ad68dbe mapping:sourceCode "GO:0030097" ;
+	mapping:sourceName "hemopoiesis" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C16674" ;
+	mapping:targetName "Hematopoietic Process" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:deb3bc3e-dce3-49cd-b4c3-832aa673156e mapping:sourceCode "GO:0030101" ;
+	mapping:sourceName "natural killer cell activation" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C19940" ;
+	mapping:targetName "NK Cell Activation" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:72baad3b-e641-465b-a689-bd964841c0a3 mapping:sourceCode "GO:0030154" ;
+	mapping:sourceName "cell differentiation" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C16399" ;
+	mapping:targetName "Cell Differentiation Process" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:782945d7-36ab-4099-a7e9-68fa18266c42 mapping:sourceCode "GO:0030162" ;
+	mapping:sourceName "regulation of proteolysis" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C20140" ;
+	mapping:targetName "Regulation of Proteolysis" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:38502c59-c6a4-46f9-8e93-65f2d6b59aa0 mapping:sourceCode "GO:0030163" ;
+	mapping:sourceName "protein catabolic process" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C18104" ;
+	mapping:targetName "Protein Degradation Process" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:af9a9249-f35f-49b2-8d31-284586608a36 mapping:sourceCode "GO:0030168" ;
+	mapping:sourceName "platelet activation" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C40854" ;
+	mapping:targetName "Platelet Activation" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:27a03ef3-b84d-432c-9117-1a9055476621 mapping:sourceCode "GO:0030216" ;
+	mapping:sourceName "keratinocyte differentiation" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C19439" ;
+	mapping:targetName "Keratinocyte Differentiation" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:bdfa059c-302e-4d05-9e80-dc42820cdd08 mapping:sourceCode "GO:0030217" ;
+	mapping:sourceName "T cell differentiation" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C19055" ;
+	mapping:targetName "T-Cell Differentiation" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:1fa2b8e7-ce42-4c4d-a4ad-4d50aac4b577 mapping:sourceCode "GO:0030218" ;
+	mapping:sourceName "erythrocyte differentiation" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C16559" ;
+	mapping:targetName "Erythropoiesis" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:0bdb77b3-7f27-4701-b312-70cdd5026d7a mapping:sourceCode "GO:0030220" ;
+	mapping:sourceName "platelet formation" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C17707" ;
+	mapping:targetName "Thrombopoiesis" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:a83d6ff8-9b93-421a-a5ff-a3a355e88623 mapping:sourceCode "GO:0030261" ;
+	mapping:sourceName "chromosome condensation" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C19395" ;
+	mapping:targetName "Chromosome Condensation" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:1b5400ce-4fc3-45fa-96eb-d873061722bd mapping:sourceCode "GO:0030324" ;
+	mapping:sourceName "lung development" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C19443" ;
+	mapping:targetName "Lung Development" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:57c905df-cffc-46b6-ba0a-4e32a4eb8b58 mapping:sourceCode "GO:0030371" ;
+	mapping:sourceName "translation repressor activity" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C45554" ;
+	mapping:targetName "Ribosomal Function Inhibition" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:98e2ce68-a78e-414b-90f0-0797ce4c68fd mapping:sourceCode "GO:0030421" ;
+	mapping:sourceName "defecation" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C62787" ;
+	mapping:targetName "Defecation" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:8f2186a7-db5d-4ece-953d-fdab655b7fb5 mapping:sourceCode "GO:0030432" ;
+	mapping:sourceName "peristalsis" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C16968" ;
+	mapping:targetName "Peristalsis" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:1a6428d6-cbf4-4825-8ff7-feb241434a1b mapping:sourceCode "GO:0030728" ;
+	mapping:sourceName "ovulation" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C66849" ;
+	mapping:targetName "Ovulation" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:7847ce36-c32b-4a95-911c-67258494c110 mapping:sourceCode "GO:0030908" ;
+	mapping:sourceName "protein splicing" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C26398" ;
+	mapping:targetName "Protein Splicing" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:0a432648-305a-46a5-a7b4-8870107d09b5 mapping:sourceCode "GO:0031099" ;
+	mapping:sourceName "regeneration" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C17083" ;
+	mapping:targetName "Regeneration" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:d5bf23d4-0337-45c9-9bae-167bb1db20ca mapping:sourceCode "GO:0031628" ;
+	mapping:sourceName "opioid receptor binding" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C40525" ;
+	mapping:targetName "Opioid Receptor Binding" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:a93ee932-5ba3-49b0-965f-f29d396c0df8 mapping:sourceCode "GO:0031701" ;
+	mapping:sourceName "angiotensin receptor binding" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C40471" ;
+	mapping:targetName "Angiotensin II Receptor Binding" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:54221792-d3c1-4d1d-9181-3a2764ccd569 mapping:sourceCode "GO:0031769" ;
+	mapping:sourceName "glucagon receptor binding" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C40506" ;
+	mapping:targetName "Glucagon Receptor Binding" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:ec096b6f-d119-4f33-836d-e1db5a6584bf mapping:sourceCode "GO:0031774" ;
+	mapping:sourceName "leukotriene receptor binding" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C40517" ;
+	mapping:targetName "Leukotriene Receptor Binding" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:eb735d70-68f4-487b-810c-05382f20a7a9 mapping:sourceCode "GO:0032197" ;
+	mapping:sourceName "transposition, RNA-mediated" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C19915" ;
+	mapping:targetName "Retrotransposition" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:765ad7b1-2214-4f23-b0ca-fb31626d0445 mapping:sourceCode "GO:0032259" ;
+	mapping:sourceName "methylation" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C16848" ;
+	mapping:targetName "Methylation" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:a7e917f3-9e0c-4311-bfb1-ccc54d996ae7 mapping:sourceCode "GO:0032502" ;
+	mapping:sourceName "developmental process" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C21147" ;
+	mapping:targetName "Developmental Process" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:54aea719-a9b2-4a4c-9c93-45bec4ffbd1c mapping:sourceCode "GO:0032774" ;
+	mapping:sourceName "RNA biosynthetic process" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C19018" ;
+	mapping:targetName "RNA Synthesis" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:93e31373-e8c7-403a-b58c-7b75b9d2dcf0 mapping:sourceCode "GO:0033151" ;
+	mapping:sourceName "V(D)J recombination" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C20971" ;
+	mapping:targetName "V(D)J Recombination" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:ef0db1e1-7830-4172-af1b-f7a02d16aeb0 mapping:sourceCode "GO:0033554" ;
+	mapping:sourceName "cellular response to stress" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C19944" ;
+	mapping:targetName "Stress Response Signaling" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:a446dd2e-347d-44c2-8e3b-2f416ff33f8c mapping:sourceCode "GO:0034337" ;
+	mapping:sourceName "RNA folding" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C19017" ;
+	mapping:targetName "RNA Folding" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:8e4eb771-cb79-4ade-91bc-c06f1813e28c mapping:sourceCode "GO:0042098" ;
+	mapping:sourceName "T cell proliferation" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C19599" ;
+	mapping:targetName "T-Cell Proliferation" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:c4251170-289e-45c6-8241-b0ec26ac7311 mapping:sourceCode "GO:0042100" ;
+	mapping:sourceName "B cell proliferation" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C19385" ;
+	mapping:targetName "B Cell Proliferation" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:0d173acc-75b7-4822-bb2a-fe6b89bafd3f mapping:sourceCode "GO:0042110" ;
+	mapping:sourceName "T cell activation" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C19053" ;
+	mapping:targetName "T-Cell Activation" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:921b0c47-1010-4e30-a2cf-154a35d39ac4 mapping:sourceCode "GO:0042113" ;
+	mapping:sourceName "B cell activation" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C19255" ;
+	mapping:targetName "B-Cell Activation" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:17feee42-acc5-431c-8fd4-168cd4684e56 mapping:sourceCode "GO:0042119" ;
+	mapping:sourceName "neutrophil activation" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C26281" ;
+	mapping:targetName "Neutrophil Activation" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:d2fc67e0-0f9a-4e50-933f-f3c2c7310048 mapping:sourceCode "GO:0042127" ;
+	mapping:sourceName "regulation of cell proliferation" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C20750" ;
+	mapping:targetName "Cell Proliferation Regulatory Process" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:848fb693-82eb-435b-83f4-6c4d6edf2773 mapping:sourceCode "GO:0042311" ;
+	mapping:sourceName "vasodilation" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C40867" ;
+	mapping:targetName "Vasodilation" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:42b6e63e-eb49-49b7-83c6-275d5bc8d04c mapping:sourceCode "GO:0042427" ;
+	mapping:sourceName "serotonin biosynthetic process" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C40629" ;
+	mapping:targetName "Serotonin Production" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:9ac107ff-1ad0-4391-b1e3-da6b01ef1a28 mapping:sourceCode "GO:0042429" ;
+	mapping:sourceName "serotonin catabolic process" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C40628" ;
+	mapping:targetName "Serotonin Degradation" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:4a48d2f4-e7c7-4ade-ae81-6e1b91c6ae9f mapping:sourceCode "GO:0042592" ;
+	mapping:sourceName "homeostatic process" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C25989" ;
+	mapping:targetName "Homeostatic Process" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:293b16d6-fdcf-4d09-950f-8a63c3fb6b14 mapping:sourceCode "GO:0042608" ;
+	mapping:sourceName "T cell receptor binding" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C19060" ;
+	mapping:targetName "T-Cell Receptor Activation" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:7c12aeac-d465-4d89-9515-1e7c0738b53d mapping:sourceCode "GO:0042632" ;
+	mapping:sourceName "cholesterol homeostasis" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C29885" ;
+	mapping:targetName "Cholesterol Homeostasis" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:00f279b5-98b9-4008-9ef3-2610c6ca4200 mapping:sourceCode "GO:0042696" ;
+	mapping:sourceName "menarche" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C3228" ;
+	mapping:targetName "Menarche" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:12d74038-bfe3-493c-b1f2-d63ac6486c2d mapping:sourceCode "GO:0042697" ;
+	mapping:sourceName "menopause" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C3231" ;
+	mapping:targetName "Menopause" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:968fa1d8-67a3-4d9b-b0fa-eb7ecfdfcc91 mapping:sourceCode "GO:0042698" ;
+	mapping:sourceName "ovulation cycle" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C16838" ;
+	mapping:targetName "Menstrual Cycle" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:e49f45c1-5a6a-4a45-8be3-c15b8768f0d4 mapping:sourceCode "GO:0042730" ;
+	mapping:sourceName "fibrinolysis" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C61457" ;
+	mapping:targetName "Thrombolysis" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:a5dcc157-d234-4dca-afd2-eacaa53195ef mapping:sourceCode "GO:0043065" ;
+	mapping:sourceName "positive regulation of apoptotic process" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C20150" ;
+	mapping:targetName "Positive Regulation of Apoptosis" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:1c4229c7-4eed-44bc-b794-9d3382a17efd mapping:sourceCode "GO:0043066" ;
+	mapping:sourceName "negative regulation of apoptotic process" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C19932" ;
+	mapping:targetName "Negative Regulation of Apoptosis" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:99d4f0ad-cee6-43aa-b96e-5efc5a63b156 mapping:sourceCode "GO:0043114" ;
+	mapping:sourceName "regulation of vascular permeability" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C40864" ;
+	mapping:targetName "Vascular Permeability Alteration" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:21a63abd-5d6b-4267-83cd-3246eb1d40a8 mapping:sourceCode "GO:0043276" ;
+	mapping:sourceName "anoikis" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C45839" ;
+	mapping:targetName "Anoikis" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:12abb8d5-47ef-43f7-b63d-4227ced995f8 mapping:sourceCode "GO:0043631" ;
+	mapping:sourceName "RNA polyadenylation" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C18947" ;
+	mapping:targetName "RNA Polyadenylation" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:6d506551-635a-4967-8317-05f21df66e9c mapping:sourceCode "GO:0043687" ;
+	mapping:sourceName "post-translational protein modification" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C17019" ;
+	mapping:targetName "Post-Translational Modification" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:c68c411c-bcc0-49f5-a45e-849f8ba99f94 mapping:sourceCode "GO:0045004" ;
+	mapping:sourceName "DNA replication proofreading" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C21048" ;
+	mapping:targetName "DNA Replication Proofreading" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:1d788d91-2154-408c-a93f-e80df36e67d8 mapping:sourceCode "GO:0045007" ;
+	mapping:sourceName "depurination" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C41574" ;
+	mapping:targetName "Depurination" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:e87f3abb-e995-4932-a144-c527ecaa009f mapping:sourceCode "GO:0045321" ;
+	mapping:sourceName "leukocyte activation" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C26280" ;
+	mapping:targetName "Immune Cell Activation Process" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:35b84f63-27ab-49dc-a955-bcc17b326a5a mapping:sourceCode "GO:0045596" ;
+	mapping:sourceName "negative regulation of cell differentiation" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C40740" ;
+	mapping:targetName "Negative Regulation of Cell Differentiation" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:696b7f07-0a09-4c26-ac08-f454b1fd4f02 mapping:sourceCode "GO:0045597" ;
+	mapping:sourceName "positive regulation of cell differentiation" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C40738" ;
+	mapping:targetName "Positive Regulation of Cell Differentiation" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:1e976741-307d-4cb8-9e38-fe820679865c mapping:sourceCode "GO:0045727" ;
+	mapping:sourceName "positive regulation of translation" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C29859" ;
+	mapping:targetName "Translational Activation" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:1e9c082a-cca1-4a84-8124-ffae167078e0 mapping:sourceCode "GO:0045730" ;
+	mapping:sourceName "respiratory burst" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C63849" ;
+	mapping:targetName "Oxidative Burst" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:87e1eb99-304e-47fc-890c-5e0e86d20661 mapping:sourceCode "GO:0045749" ;
+	mapping:sourceName "obsolete negative regulation of S phase of mitotic cell cycle" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C40778" ;
+	mapping:targetName "Negative Regulation of S Phase" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:632381ea-6e33-4588-ae1f-f45d45a92b14 mapping:sourceCode "GO:0045839" ;
+	mapping:sourceName "negative regulation of mitotic nuclear division" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C40784" ;
+	mapping:targetName "Negative Regulation of Mitosis" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:63fa2fd7-fcb2-42cc-864d-09931c53394c mapping:sourceCode "GO:0045840" ;
+	mapping:sourceName "positive regulation of mitotic nuclear division" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C40783" ;
+	mapping:targetName "Positive Regulation of Mitosis" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:60c6b8a3-65ce-4326-bbad-9222423bd1d4 mapping:sourceCode "GO:0045892" ;
+	mapping:sourceName "negative regulation of transcription, DNA-templated" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C16521" ;
+	mapping:targetName "Transcriptional Repression" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:3799a602-c151-4f3d-81c6-36030e2e0b15 mapping:sourceCode "GO:0045893" ;
+	mapping:sourceName "positive regulation of transcription, DNA-templated" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C17554" ;
+	mapping:targetName "Transcriptional Activation" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:3d72a31a-32fb-4d18-820c-313c4cdaa5ac mapping:sourceCode "GO:0046649" ;
+	mapping:sourceName "lymphocyte activation" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C40833" ;
+	mapping:targetName "Lymphocyte Activation Process" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:f22cdc33-6e21-4971-b2d3-9f3d8a291d79 mapping:sourceCode "GO:0046655" ;
+	mapping:sourceName "folic acid metabolic process" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C19956" ;
+	mapping:targetName "Folic Acid Metabolic Process" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:8763fc68-3970-4473-b80c-fe32d4a8153a mapping:sourceCode "GO:0046785" ;
+	mapping:sourceName "microtubule polymerization" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C19556" ;
+	mapping:targetName "Microtubule Polymerization Process" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:c3ba9bf8-bfb9-407a-9e79-a6ba6ac7cd88 mapping:sourceCode "GO:0046849" ;
+	mapping:sourceName "bone remodeling" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C3475" ;
+	mapping:targetName "Bone Remodeling" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:df084a4f-1dd4-44a2-a795-23496d6b562a mapping:sourceCode "GO:0046872" ;
+	mapping:sourceName "metal ion binding" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C19426" ;
+	mapping:targetName "Metal Ion Binding" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:78b2122d-147c-4cb4-b4d6-66f9db6d182e mapping:sourceCode "GO:0046878" ;
+	mapping:sourceName "positive regulation of saliva secretion" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C41485" ;
+	mapping:targetName "Saliva Production Induction" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:a5f75ae8-e7ed-4c74-8931-89624f234e96 mapping:sourceCode "GO:0046903" ;
+	mapping:sourceName "secretion" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C17119" ;
+	mapping:targetName "Cellular Secretion" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:ade3ba5c-cebd-41f8-8a82-532966192db3 mapping:sourceCode "GO:0046907" ;
+	mapping:sourceName "intracellular transport" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C18146" ;
+	mapping:targetName "Intracellular Transport" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:8a532e10-f96a-46d5-ab70-624d851b97a2 mapping:sourceCode "GO:0048469" ;
+	mapping:sourceName "cell maturation" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C28594" ;
+	mapping:targetName "Cell Maturation" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:bffe7a59-3485-452c-a301-cb837f85e041 mapping:sourceCode "GO:0048477" ;
+	mapping:sourceName "oogenesis" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C16938" ;
+	mapping:targetName "Oogenesis" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:2c9fb201-e1c5-496b-abd7-be869b81ca0e mapping:sourceCode "GO:0048513" ;
+	mapping:sourceName "animal organ development" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C17729" ;
+	mapping:targetName "Organogenesis" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:41416542-1fb7-4586-9875-d11cf519500f mapping:sourceCode "GO:0048536" ;
+	mapping:sourceName "spleen development" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C19953" ;
+	mapping:targetName "Spleen Development" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:11ccb366-e967-4145-8962-968d4af3a68d mapping:sourceCode "GO:0048864" ;
+	mapping:sourceName "stem cell development" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C19045" ;
+	mapping:targetName "Stem Cell Differentiation" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:5c779427-c3ea-4fc7-ba86-ffe496b14af3 mapping:sourceCode "GO:0048870" ;
+	mapping:sourceName "cell motility" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C16404" ;
+	mapping:targetName "Cell Motility" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:f41dd0a8-0bc3-4003-8ac7-8b0194372b15 mapping:sourceCode "GO:0050658" ;
+	mapping:sourceName "RNA transport" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C18127" ;
+	mapping:targetName "RNA Transport" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:5afa145d-80e5-437a-b1fb-53154887240b mapping:sourceCode "GO:0050673" ;
+	mapping:sourceName "epithelial cell proliferation" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C19947" ;
+	mapping:targetName "Epithelial Cell Proliferation" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:ce463fef-d3ec-4a06-ba85-3226c4633c88 mapping:sourceCode "GO:0050890" ;
+	mapping:sourceName "cognition" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C16446" ;
+	mapping:targetName "Cognition" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:eb4cd620-b9d1-4737-a3db-59f3c933f874 mapping:sourceCode "GO:0050893" ;
+	mapping:sourceName "sensory processing" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C19989" ;
+	mapping:targetName "Sensory Process" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:8e6edea8-1fc0-4f2d-aea6-187adfa50772 mapping:sourceCode "GO:0050900" ;
+	mapping:sourceName "leukocyte migration" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C19438" ;
+	mapping:targetName "Leukocyte Trafficking" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:8c81f095-4576-41d7-a169-3d9aa62668b5 mapping:sourceCode "GO:0050909" ;
+	mapping:sourceName "sensory perception of taste" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C20620" ;
+	mapping:targetName "Gustation" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:2e3add51-adba-4c11-ae7e-61f7e3a9cfe7 mapping:sourceCode "GO:0050975" ;
+	mapping:sourceName "sensory perception of touch" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C38535" ;
+	mapping:targetName "Touch" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:52be7519-81bc-42a1-bdc6-a7df841f0e2a mapping:sourceCode "GO:0051301" ;
+	mapping:sourceName "cell division" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C21102" ;
+	mapping:targetName "Cell Division Process" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:7e22c3a2-999d-4400-829e-3bccdf64a8df mapping:sourceCode "GO:0051318" ;
+	mapping:sourceName "G1 phase" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C17355" ;
+	mapping:targetName "G1 Phase Process" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:5efbc28c-556d-4992-8119-f06f04254b28 mapping:sourceCode "GO:0051319" ;
+	mapping:sourceName "G2 phase" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C17356" ;
+	mapping:targetName "G2 Phase Process" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:9d0c0816-fe9e-434d-9eda-4b39995f22bf mapping:sourceCode "GO:0051320" ;
+	mapping:sourceName "S phase" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C17395" ;
+	mapping:targetName "S Phase Process" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:4f48e063-0f65-49d6-a023-427bef00e52f mapping:sourceCode "GO:0051325" ;
+	mapping:sourceName "interphase" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C16750" ;
+	mapping:targetName "Interphase Process" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:307f25d3-db37-4538-bf58-7cd8f273a9e6 mapping:sourceCode "GO:0051607" ;
+	mapping:sourceName "defense response to virus" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C26011" ;
+	mapping:targetName "Antiviral Response" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:6b1d80ff-ef11-4d14-8081-68ad589b2985 mapping:sourceCode "GO:0051726" ;
+	mapping:sourceName "regulation of cell cycle" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C19598" ;
+	mapping:targetName "Cell Cycle Regulation Process" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:2cb0945c-0ed0-418c-9824-4a9dad59c05b mapping:sourceCode "GO:0051919" ;
+	mapping:sourceName "positive regulation of fibrinolysis" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C40869" ;
+	mapping:targetName "Thrombolysis Induction" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:6d0be6f5-3b0d-492d-89e4-6053ee528e5a mapping:sourceCode "GO:0055085" ;
+	mapping:sourceName "transmembrane transport" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C19950" ;
+	mapping:targetName "Transmembrane Transport" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:f1c71937-6c84-4408-bea0-9e3e4ba430d0 mapping:sourceCode "GO:0055114" ;
+	mapping:sourceName "oxidation-reduction process" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C16945" ;
+	mapping:targetName "Oxidation/Reduction" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:00f4e5ca-ff29-45a8-9247-bf18659f3e8c mapping:sourceCode "GO:0060048" ;
+	mapping:sourceName "cardiac muscle contraction" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C30095" ;
+	mapping:targetName "Cardiac Muscle Contraction" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:792c9fc7-4248-495a-8be6-da9f607177f3 mapping:sourceCode "GO:0060073" ;
+	mapping:sourceName "micturition" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C25744" ;
+	mapping:targetName "Urination" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:da5597b4-12d3-489e-a1eb-5acd0b2d7cc8 mapping:sourceCode "GO:0060173" ;
+	mapping:sourceName "limb development" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C19946" ;
+	mapping:targetName "Limb Development" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:52554369-56b6-48af-b663-d597e0883b63 mapping:sourceCode "GO:0060537" ;
+	mapping:sourceName "muscle tissue development" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C18100" ;
+	mapping:targetName "Myogenesis" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:94b3c543-276b-4661-9765-c9f33acbf69a mapping:sourceCode "GO:0065007" ;
+	mapping:sourceName "biological regulation" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C48805" ;
+	mapping:targetName "Regulatory Process" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:2601c132-3a05-4d38-8900-d164b4ef091b mapping:sourceCode "GO:0070085" ;
+	mapping:sourceName "glycosylation" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C21034" ;
+	mapping:targetName "Glycosylation" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:537de1bb-31f1-4429-a7b4-3db9eb885d51 mapping:sourceCode "GO:0070265" ;
+	mapping:sourceName "necrotic cell death" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C16897" ;
+	mapping:targetName "Necrotic Process" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:ec178502-37ad-4205-b30d-20198c20616e mapping:sourceCode "GO:0070267" ;
+	mapping:sourceName "oncosis" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C51034" ;
+	mapping:targetName "Oncosis" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:5af05351-f290-4756-a681-00c207383cc2 mapping:sourceCode "GO:0070481" ;
+	mapping:sourceName "nuclear-transcribed mRNA catabolic process, non-stop decay" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C29647" ;
+	mapping:targetName "Non-Stop Decay" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:bbedf924-76cd-4aed-83e4-236672b2ba35 mapping:sourceCode "GO:0070527" ;
+	mapping:sourceName "platelet aggregation" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C16999" ;
+	mapping:targetName "Platelet Aggregation Process" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:eefc9e42-f42d-47d1-93c1-28fa343ca7e5 mapping:sourceCode "GO:0070628" ;
+	mapping:sourceName "proteasome binding" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C41596" ;
+	mapping:targetName "Proteasome Binding" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
+
+mapping:d6146788-b45a-4772-b034-3c355b3cf733 mapping:sourceCode "GO:0090071" ;
+	mapping:sourceName "negative regulation of ribosome biogenesis" ;
+	mapping:sourceCodingScheme "GO" ;
+	mapping:sourceCodingSchemeVersion "August2017" ;
+	mapping:sourceCodingSchemeNamespace "gene_ontology" ;
+	mapping:associationName "mapsTo" ;
+	mapping:rel "SY" ;
+	mapping:mapRank "1" ;
+	mapping:targetCode "C40540" ;
+	mapping:targetName "Ribosome Assembly Interference" ;
+	mapping:targetCodingScheme "NCI_Thesaurus" ;
+	mapping:targetCodingSchemeVersion "18.03d" ;
+	mapping:targetCodingSchemeNamespace "NCI_Thesaurus" .
